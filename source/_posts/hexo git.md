@@ -1,5 +1,8 @@
----
 title: Hexo搭建githubpage博客
+tags:
+  - hexo githubpage
+categories: []
+date: 2017-02-20 10:01:00
 ---
 
 ## 系统环境配置
