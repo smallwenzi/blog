@@ -7,9 +7,9 @@ menu:
 
 # SubNav
 subnav:
-  #github: "#"
-  #weibo: "#"
-  #rss: "/atom.xml"
+  github: "https://github.com/smallwenzi/smallwenzi.github.io"
+  weibo: "http://weibo.com/1762122412/profile"
+  rss: "/atom.xml"
   #zhihu: "#"
   #qq: "#"
   #weixin: "#"

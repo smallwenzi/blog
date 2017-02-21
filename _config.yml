@@ -119,7 +119,7 @@ algolia:
     - gallery
 baidu_url_submit:
   count: 1
-  host: smallwenzi.github.io
+  host: https://smallwenzi.github.io
   token: rPfiazIClIO56OPC
   path: baidu_urls.txt
   deploy:
