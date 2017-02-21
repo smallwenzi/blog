@@ -1,10 +1,11 @@
 title: Hexo搭建githubpage博客
 tags:
-  - hexo githubpage
+  - hexo
+  - githubpage
+  - hexo-admin
 categories: []
 date: 2017-02-20 10:01:00
 ---
-
 ## 系统环境配置
 要使用Hexo，需要在你的系统中支持Nodejs以及Git，如果还没有，那就开始安装吧！
 
@@ -157,3 +158,15 @@ MacGesture2-Publish
 MacGesture2-Publish.md
 
 ![logo](hexo git/3.png)
+
+## Hexo 后台管理配置
+在blog 跟目录下
+``` bash
+$ npm install --save hexo-admin 
+```
+``` bash
+$ hexo server -d
+```
+如下图：
+![logo](hexo git/4.png)
+[参考](https://github.com/jaredly/hexo-admin)

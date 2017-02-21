@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>wen blog</title>
-  
+  <subtitle>tanyanwen的技术分享</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://smallwenzi.github.io/"/>
-  <updated>2017-02-20T08:56:01.360Z</updated>
+  <updated>2017-02-21T03:18:28.046Z</updated>
   <id>https://smallwenzi.github.io/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <title>Hexo搭建githubpage博客</title>
     <link href="https://smallwenzi.github.io/2017/02/20/hexo%20git/"/>
     <id>https://smallwenzi.github.io/2017/02/20/hexo git/</id>
-    <published>2017-02-20T02:01:26.297Z</published>
-    <updated>2017-02-20T08:56:01.360Z</updated>
+    <published>2017-02-20T02:01:00.000Z</published>
+    <updated>2017-02-21T03:18:28.046Z</updated>
     
     <content type="html"><![CDATA[<h2 id="系统环境配置"><a href="#系统环境配置" class="headerlink" title="系统环境配置"></a>系统环境配置</h2><p>要使用Hexo，需要在你的系统中支持Nodejs以及Git，如果还没有，那就开始安装吧！</p>
 <h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>下载:<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a><br>参考地址：<a href="http://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="external">安装Node.js</a></p>
@@ -56,6 +56,9 @@
 <p>npm install <a href="https://github.com/CodeFalling/hexo-asset-image" target="_blank" rel="external">https://github.com/CodeFalling/hexo-asset-image</a> –save<br>假设在</p>
 <p>MacGesture2-Publish<br>├── apppicker.jpg<br>├── logo.jpg<br>└── rules.jpg<br>MacGesture2-Publish.md</p>
 <p><img src="/2017/02/20/hexo git/3.png" alt="logo"></p>
+<h2 id="Hexo-后台管理配置"><a href="#Hexo-后台管理配置" class="headerlink" title="Hexo 后台管理配置"></a>Hexo 后台管理配置</h2><p>在blog 跟目录下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save hexo-admin</div></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server <span class="_">-d</span></div></pre></td></tr></table></figure>
+<p>如下图：<br><img src="/2017/02/20/hexo git/4.png" alt="logo"><br><a href="https://github.com/jaredly/hexo-admin" target="_blank" rel="external">参考</a></p>
 ]]></content>
     
     <summary type="html">
@@ -65,6 +68,12 @@
     
     </summary>
     
+    
+      <category term="hexo" scheme="https://smallwenzi.github.io/tags/hexo/"/>
+    
+      <category term="githubpage" scheme="https://smallwenzi.github.io/tags/githubpage/"/>
+    
+      <category term="hexo-admin" scheme="https://smallwenzi.github.io/tags/hexo-admin/"/>
     
   </entry>
   

@@ -4,15 +4,15 @@
 
 # Site
 title: wen blog
-subtitle:
-description:
+subtitle: tanyanwen的技术分享
+description: 
 author: wen
-language:
-timezone:
+language: zh-CN
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://smallwenzi.github.io/
+url: https://smallwenzi.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -102,4 +102,26 @@ feed:
   #limit:20
 #sitemap
 sitemap:
-  path: sitemap.xml 
+  path: sitemap.xml
+algolia:
+  appId: "4XNL3YFSZQ"
+  apiKey: "3ba596153dd55c3a83fc3b341b4e5e01"
+  adminApiKey: "9b001293f0cd9a0e882829e9ad80b102"
+  chunkSize: 5000
+  indexName: "wen-hexo-blog"
+  fields:
+    - title
+    - tags
+    - slug
+    - excerpt
+    - excerpt:strip
+    - photos
+    - gallery
+baidu_url_submit:
+  count: 1
+  host: smallwenzi.github.io
+  token: rPfiazIClIO56OPC
+  path: baidu_urls.txt
+  deploy:
+    type:baidu_url_submitter
+
