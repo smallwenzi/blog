@@ -3,9 +3,12 @@ tags:
   - hexo
   - githubpage
   - hexo-admin
-categories: []
+categories: hexo
 date: 2017-02-20 10:01:00
 ---
+<Excerpt in index | 首页摘要>
+这是一篇很详尽的独立博客搭建教程 里面介绍了github、Hexo和hexo-admin设置等过程<!-- more -->
+<The rest of contents | 余下全文>
 ## 系统环境配置
 要使用Hexo，需要在你的系统中支持Nodejs以及Git，如果还没有，那就开始安装吧！
 

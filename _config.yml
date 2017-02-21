@@ -7,7 +7,7 @@ title: wen blog
 subtitle: tanyanwen的技术分享
 description: 
 author: wen
-language: zh-CN
+language: zh-Hans
 timezone: Asia/Shanghai
 
 # URL
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: yilia
+theme: Yelee
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
