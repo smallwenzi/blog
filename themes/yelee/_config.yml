@@ -31,7 +31,7 @@ favicon: /img/head.jpg
 root_url: 
 
 # Year of Site Creation | 网站成立年份
-since: 2016
+since: 2017
 
 # Social info. Bar | 社交信息展示
 ## Keep "mailto:" in Email | 设置 Email 时保留 "mailto:"
@@ -40,9 +40,9 @@ since: 2016
 ## https://github.com/hexojs/hexo-generator-feed
 
 subnav:
-  Email: "mailto:123@123.com"
-  #新浪微博: "sina weibo"
-  GitHub: "#"
+  Email: "mailto:beityw@hotmail.com"
+  新浪微博: "http://weibo.com/1762122412"
+  GitHub: "https://github.com/smallwenzi/smallwenzi.github.io"
   #V2EX: "#"
   RSS: "/atom.xml"
   #知乎: "zhihu"
@@ -117,7 +117,7 @@ youyan:
 ## "5": show images form bg-1.jpg to bg-5.jpg in `/yelee/source/background/`
 ## "5": 显示`/yelee/source/background/`文件夹中 bg-1.jpg 到 bg-5.jpg 这5张图片
 ## "0": white-gray background | 淳朴灰白背景
-background_image: 5
+background_image: 1
 
 # Base Font Size | 字号调节
 base_font_size: 16  #px, 16 - 24
@@ -166,7 +166,7 @@ animate: true
 
 # Load jQuery UI to style tooltips
 # 工具提示框样式美化
-jquery_ui: false
+jquery_ui: true
 
 # Max width of right cloumn | 限制右侧内容的宽带 
 limit_article_width: 
@@ -183,12 +183,12 @@ tagcloud: true
 friends:
   Hexo: https://hexo.io
   GitHub: https://pages.github.com/
-  MOxFIVE: http://moxfive.xyz/
+  #MOxFIVE: http://moxfive.xyz/
 #friends: false
 
 #是否开启“关于我”。
-aboutme: 专注于前端
-#aboutme: false
+#aboutme: 专注于后端
+aboutme: false
 
 # Open link in a new tab | 是否在新窗口打开链接
 ## `global` 0: Set separately, 1: Open all in new 2: Open all in current
@@ -246,15 +246,15 @@ mathjax: false
 # Socail Share | 是否开启分享
 share: 
   on: true
-  baidu: true
-  addthis: false
-  addthis_pubid: "ra-56ff76c972fc0cf9"
+  baidu: false
+  addthis: true
+  addthis_pubid: "ra-58ad2677ffb1e7c4"
   ## Go to www.addthis.com/dashboard to get your pubid (in src of Code)
   ## and customize AddThis share buttons
 
 # 百度、谷歌站长验证。填写 HTML 标签 content
 # Site Verification for Google and Baidu. HTML label content.
-baidu_site: 
+baidu_site: d6a5WSV3It
 google_site: 
 
 # Fill in Google Analytics tracking ID, #e.g. UA-XXXXX-X
@@ -262,7 +262,7 @@ google_analytics:
 
 # 百度统计 http://sitecenter.baidu.com/sc-web/
 # 查看代码，填入 //hm.baidu.com/hm.js? 之后的内容
-baidu_tongji: 
+baidu_tongji: 54768e95527ea89b815041379f4d75dd
 
 # 不蒜子网站计数设置
 # http://ibruce.info/2015/04/04/busuanzi/
@@ -273,7 +273,7 @@ visit_counter:
 
 # GitHub Repo Widget
 # https://github.com/hustcc/GitHub-Repo-Widget.js
-github_widget: false
+github_widget: true
 
 # Progress Bar | 页面加载进度条
 # Demo: http://github.hubspot.com/pace/docs/welcome/
