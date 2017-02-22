@@ -245,10 +245,10 @@ mathjax: false
 
 # Socail Share | 是否开启分享
 share: 
-  on: true
+  on: false
   baidu: false
   addthis: true
-  addthis_pubid: "ra-58ad2677ffb1e7c4"
+  addthis_pubid: ra-58ad2677ffb1e7c4
   ## Go to www.addthis.com/dashboard to get your pubid (in src of Code)
   ## and customize AddThis share buttons
 
