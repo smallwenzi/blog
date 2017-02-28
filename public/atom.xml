@@ -85,7 +85,7 @@
     <link href="https://smallwenzi.github.io/2017/02/20/Singleton/"/>
     <id>https://smallwenzi.github.io/2017/02/20/Singleton/</id>
     <published>2017-02-20T02:01:00.000Z</published>
-    <updated>2017-02-23T10:21:36.249Z</updated>
+    <updated>2017-02-23T10:25:30.038Z</updated>
     
     <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>在所有的设计模式中，单例模式是我们在项目开发中最为常见的设计模式之一，而单例模式有很多种实现方式，你是否都了解呢？高并发下如何保证单例模式的线程安全性呢？如何保证序列化后的单例对象在反序列化后任然是单例的呢？这些问题在看了本文之后都会一一的告诉你答案，赶快来阅读吧<a id="more"></a></excerpt></p>
 <p><the rest="" of="" contents="" |="" 余下全文=""></the></p>

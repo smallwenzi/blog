@@ -1,1 +1,2 @@
 https://smallwenzi.github.io/2017/02/20/hexo git/
+https://smallwenzi.github.io/2017/02/20/Singleton/
