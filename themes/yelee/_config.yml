@@ -44,10 +44,10 @@ subnav:
   新浪微博: "http://weibo.com/1762122412"
   GitHub: "https://github.com/smallwenzi/smallwenzi.github.io"
   #V2EX: "#"
-  RSS: "/atom.xml"
+  #RSS: "/atom.xml"
   #知乎: "zhihu"
   #豆瓣: "douban"
-  #简书: "jianshu"
+  简书: "https://www.jianshu.com/u/1e0817ccc306"
   #SegmentFault: ""
   #博客园: "cnblogs"
   #CSDN: ""
@@ -97,7 +97,7 @@ disqus:
   # you have set "disqus_shortname" in your site's "_config.yml" 
 
 duoshuo: 
-  on: true
+  #on: true
   domain: yanwen
   # 是否开启多说评论，http://duoshuo.com/create-site/
   # 使用上面网址登陆你的多说，然后创建站点，在 domain 中填入你设定的域名前半部分

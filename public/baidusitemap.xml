@@ -4,6 +4,474 @@
 
     
   <url>
+    <loc>https://smallwenzi.github.io/2018/10/14/windows%E4%B8%8Batom%E4%B8%8A%E6%90%AD%E5%BB%BAPlantUML%E4%B9%A6%E5%86%99%E7%8E%AF%E5%A2%83/</loc>
+    <lastmod>2018-10-14T07:52:24.276Z</lastmod>
+    <data>
+        <display>
+        <title>在windows下atom上搭建PlantUML书写环境</title>
+        <pubTime>2018-10-14T07:36:00.000Z</pubTime>
+        
+        <tag>plantuml</tag>
+         
+        <tag>atom</tag>
+         
+         
+           
+             
+              <breadCrumb title="atom" url="https://smallwenzi.github.io/categories/atom/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://smallwenzi.github.io/2018/10/14/olr%E7%9A%84%E4%B8%BB%E4%BB%8E%E6%A8%A1%E5%BC%8FMaster-Slave/</loc>
+    <lastmod>2018-10-14T07:33:13.713Z</lastmod>
+    <data>
+        <display>
+        <title>Solr的主从模式Master-Slave</title>
+        <pubTime>2018-10-14T07:25:00.000Z</pubTime>
+        
+        <tag>solr</tag>
+         
+        <tag>solr-master</tag>
+         
+        <tag>solr-slave</tag>
+         
+         
+           
+             
+              <breadCrumb title="solr" url="https://smallwenzi.github.io/categories/solr/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://smallwenzi.github.io/2018/10/13/lr%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2018-10-14T07:09:11.274Z</lastmod>
+    <data>
+        <display>
+        <title>solr教程</title>
+        <pubTime>2018-10-13T05:50:00.000Z</pubTime>
+        
+        <tag>solr</tag>
+         
+         
+           
+             
+              <breadCrumb title="solr" url="https://smallwenzi.github.io/categories/solr/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://smallwenzi.github.io/2018/06/11/docker%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2018-10-13T05:35:19.099Z</lastmod>
+    <data>
+        <display>
+        <title>docker的使用</title>
+        <pubTime>2018-06-11T12:50:00.000Z</pubTime>
+        
+        <tag>docker</tag>
+         
+         
+           
+             
+              <breadCrumb title="docker" url="https://smallwenzi.github.io/categories/docker/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://smallwenzi.github.io/2018/05/08/%EF%BC%88%E5%9B%9B%EF%BC%89%E5%AE%89%E8%A3%85docker%EF%BC%88root%E7%94%A8%E6%88%B7%EF%BC%89/</loc>
+    <lastmod>2018-06-11T12:46:54.748Z</lastmod>
+    <data>
+        <display>
+        <title>（四）安装docker（root用户）</title>
+        <pubTime>2018-05-08T07:59:00.000Z</pubTime>
+        
+        <tag>docker</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://smallwenzi.github.io/2018/05/08/Red-Hat-%E5%8D%87%E7%BA%A7-rpm%E8%BD%AF%E4%BB%B6%E3%80%81YUM%E8%BD%AF%E4%BB%B6%EF%BC%88root%E7%94%A8%E6%88%B7%EF%BC%89/</loc>
+    <lastmod>2018-06-08T15:26:14.768Z</lastmod>
+    <data>
+        <display>
+        <title>(二）Red-Hat-升级-rpm软件、YUM软件（root用户）</title>
+        <pubTime>2018-05-08T07:30:00.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>rpm</tag>
+         
+        <tag>yum</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="https://smallwenzi.github.io/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://smallwenzi.github.io/2018/05/08/%E4%B8%89%EF%BC%89linux-%E5%AE%89%E8%A3%85-GIT%EF%BC%88root%E7%94%A8%E6%88%B7%EF%BC%89/</loc>
+    <lastmod>2018-06-08T13:30:48.968Z</lastmod>
+    <data>
+        <display>
+        <title>（三）linux 安装 GIT（root用户）</title>
+        <pubTime>2018-05-08T07:52:00.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="git" url="https://smallwenzi.github.io/categories/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://smallwenzi.github.io/2018/05/11/-jenkins-%E9%85%8D%E7%BD%AEmaven%E6%89%93%E5%8C%85git%E4%BB%A3%E7%A0%81/</loc>
+    <lastmod>2018-05-14T13:10:45.233Z</lastmod>
+    <data>
+        <display>
+        <title>十二 jenkins 配置maven打包git代码</title>
+        <pubTime>2018-05-11T15:36:00.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+        <tag>maven</tag>
+         
+        <tag>docker</tag>
+         
+        <tag>jenkins</tag>
+         
+         
+           
+             
+              <breadCrumb title="jenkins" url="https://smallwenzi.github.io/categories/jenkins/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://smallwenzi.github.io/2018/05/11/-jenkins-%E9%85%8D%E7%BD%AEgit%E8%AF%81%E4%B9%A6/</loc>
+    <lastmod>2018-05-11T15:38:51.977Z</lastmod>
+    <data>
+        <display>
+        <title>十一 jenkins 配置git证书</title>
+        <pubTime>2018-05-11T15:26:00.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+        <tag>jenkins</tag>
+         
+         
+           
+             
+              <breadCrumb title="jenkins" url="https://smallwenzi.github.io/categories/jenkins/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://smallwenzi.github.io/2018/05/11/enkinx-%E9%85%8D%E7%BD%AE%E4%BB%BB%E5%8A%A1/</loc>
+    <lastmod>2018-05-11T15:27:28.001Z</lastmod>
+    <data>
+        <display>
+        <title>十）jenkins 配置java和Maven环境</title>
+        <pubTime>2018-05-11T15:01:00.000Z</pubTime>
+        
+        <tag>maven</tag>
+         
+        <tag>docker</tag>
+         
+        <tag>jenkins</tag>
+         
+        <tag>java</tag>
+         
+         
+           
+             
+              <breadCrumb title="jenkins" url="https://smallwenzi.github.io/categories/jenkins/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://smallwenzi.github.io/2018/05/08/%EF%BC%88%E5%85%AD%EF%BC%89docker%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%EF%BC%88root%E7%94%A8%E6%88%B7%EF%BC%89/</loc>
+    <lastmod>2018-05-11T15:15:24.540Z</lastmod>
+    <data>
+        <display>
+        <title>（六）docker安装本地仓库（root用户）</title>
+        <pubTime>2018-05-08T09:09:00.000Z</pubTime>
+        
+        <tag>docker</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://smallwenzi.github.io/2018/05/11/%E4%B9%9D-linux%E9%85%8D%E7%BD%AEjava%E5%92%8Cmaven/</loc>
+    <lastmod>2018-05-11T14:59:51.185Z</lastmod>
+    <data>
+        <display>
+        <title>九 linux配置java和maven</title>
+        <pubTime>2018-05-11T14:46:00.000Z</pubTime>
+        
+        <tag>maven</tag>
+         
+        <tag>java</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="https://smallwenzi.github.io/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://smallwenzi.github.io/2018/05/08/%E5%AE%89%E8%A3%85jenkins/</loc>
+    <lastmod>2018-05-08T10:14:48.416Z</lastmod>
+    <data>
+        <display>
+        <title>八）安装jenkins</title>
+        <pubTime>2018-05-08T10:03:00.000Z</pubTime>
+        
+        <tag>jenkins</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://smallwenzi.github.io/2018/05/08/ring-cloud-docker-git-maven-jenkins-Kubernetes-%E7%9B%AE%E5%BD%95/</loc>
+    <lastmod>2018-05-08T09:57:40.039Z</lastmod>
+    <data>
+        <display>
+        <title>spring cloud+docker+git+maven+jenkins+Kubernetes 目录</title>
+        <pubTime>2018-05-08T09:45:58.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://smallwenzi.github.io/2018/05/08/%E4%B8%83%EF%BC%89maven-build-docker-and-push-Image/</loc>
+    <lastmod>2018-05-08T09:42:04.873Z</lastmod>
+    <data>
+        <display>
+        <title>七）maven build docker and push Image</title>
+        <pubTime>2018-05-08T09:36:00.000Z</pubTime>
+        
+        <tag>maven</tag>
+         
+        <tag>docker</tag>
+         
+         
+           
+             
+              <breadCrumb title="docker" url="https://smallwenzi.github.io/categories/docker/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://smallwenzi.github.io/2018/05/08/ocker-mysql/</loc>
+    <lastmod>2018-05-08T09:34:24.586Z</lastmod>
+    <data>
+        <display>
+        <title>docker -mysql</title>
+        <pubTime>2018-05-08T09:28:00.000Z</pubTime>
+        
+        <tag>docker</tag>
+         
+        <tag>mysql</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://smallwenzi.github.io/2018/05/08/%EF%BC%89%E6%9B%B4%E6%96%B0docker-%E7%89%88%E6%9C%AC%EF%BC%88root%E7%94%A8%E6%88%B7%EF%BC%89/</loc>
+    <lastmod>2018-05-08T09:07:47.675Z</lastmod>
+    <data>
+        <display>
+        <title>（五）更新docker 版本（root用户）</title>
+        <pubTime>2018-05-08T09:00:00.000Z</pubTime>
+        
+        <tag>docker</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://smallwenzi.github.io/2018/05/08/%EF%BC%89oracle-VM%E5%AE%89%E8%A3%85red-hat-liunx/</loc>
+    <lastmod>2018-05-08T07:28:17.424Z</lastmod>
+    <data>
+        <display>
+        <title>（一）oracle VM安装red hat liunx</title>
+        <pubTime>2018-05-08T07:01:00.000Z</pubTime>
+        
+        <tag>red hat Linux</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://smallwenzi.github.io/2018/05/08/hymeleaf%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%9D%91/</loc>
+    <lastmod>2018-05-08T06:39:45.556Z</lastmod>
+    <data>
+        <display>
+        <title>thymeleaf学习的坑</title>
+        <pubTime>2018-05-08T06:30:00.000Z</pubTime>
+        
+        <tag>thymeleaf</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://smallwenzi.github.io/2018/05/08/%E9%82%A3%E4%BA%9B%E6%8F%90%E5%8D%87%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87%E7%9A%84%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2018-05-08T06:29:13.937Z</lastmod>
+    <data>
+        <display>
+        <title>那些提升开发人员工作效率的在线工具</title>
+        <pubTime>2018-05-08T06:20:00.000Z</pubTime>
+        
+        <tag>work</tag>
+         
+        <tag>工作</tag>
+         
+        <tag>工具</tag>
+         
+        <tag>tools</tag>
+         
+         
+           
+             
+              <breadCrumb title="work" url="https://smallwenzi.github.io/categories/work/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://smallwenzi.github.io/2018/05/08/%E5%8D%87%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87/</loc>
+    <lastmod>2018-05-08T06:28:50.021Z</lastmod>
+    <data>
+        <display>
+        <title>提升工作效率</title>
+        <pubTime>2018-05-08T06:16:00.000Z</pubTime>
+        
+        <tag>工作效率</tag>
+         
+        <tag>work</tag>
+         
+         
+           
+             
+              <breadCrumb title="work" url="https://smallwenzi.github.io/categories/work/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://smallwenzi.github.io/2017/03/06/tepad-compare/</loc>
+    <lastmod>2018-05-08T06:13:18.766Z</lastmod>
+    <data>
+        <display>
+        <title>Notepad++文本比较插件：Compare</title>
+        <pubTime>2017-03-06T07:26:00.000Z</pubTime>
+        
+        <tag>notepad</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://smallwenzi.github.io/2017/02/28/gtmetix/</loc>
+    <lastmod>2017-03-01T03:21:37.958Z</lastmod>
+    <data>
+        <display>
+        <title>用GTmetrix来优化你的网页（集成了YSlow、FireBug的功能）</title>
+        <pubTime>2017-02-28T06:57:00.000Z</pubTime>
+        
+        <tag>性能优化</tag>
+         
+         
+           
+             
+              <breadCrumb title="性能优化" url="https://smallwenzi.github.io/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
     <loc>https://smallwenzi.github.io/2017/02/20/Singleton/</loc>
     <lastmod>2017-02-23T10:25:30.038Z</lastmod>
     <data>
@@ -31,7 +499,6 @@
     </data>
     </url>
 
-    
     
     
     

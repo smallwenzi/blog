@@ -1,1 +1,1 @@
-hexo server -d
+hexo server -p 5000 -d

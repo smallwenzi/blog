@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="wen" />
+
+
+     
+        <meta name="baidu-site-verification" content="d6a5WSV3It" />
+    
+    
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="wen blog">
+<meta property="og:url" content="https://smallwenzi.github.io/page/3/index.html">
+<meta property="og:site_name" content="wen blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="wen blog">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="wen blog" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/img/head.jpg">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <style> .article { opacity: 0;} </style>
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>wen blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: true,
+        isPost: false,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?54768e95527ea89b815041379f4d75dd";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/head.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">wen</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">tanyanwen的技术分享</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:beityw@hotmail.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" href="http://weibo.com/1762122412" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/smallwenzi/smallwenzi.github.io" title="GitHub"></a>
+                            
+                                <a class="fa 简书" href="https://www.jianshu.com/u/1e0817ccc306" title="简书"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/">atom</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/githubpage/">githubpage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-admin/">hexo-admin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jenkins/">jenkins</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/notepad/">notepad</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plantuml/">plantuml</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/red-hat-Linux/">red hat Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rpm/">rpm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/solr/">solr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/solr-master/">solr-master</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/solr-slave/">solr-slave</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thymeleaf/">thymeleaf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work/">work</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yum/">yum</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单例模式/">单例模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工作/">工作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工作效率/">工作效率</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能优化/">性能优化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线程/">线程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">wen</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/head.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">wen</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">tanyanwen的技术分享</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:beityw@hotmail.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/1762122412" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/smallwenzi/smallwenzi.github.io" title="GitHub"></a>
+                            
+                                <a class="fa 简书" target="_blank" href="https://www.jianshu.com/u/1e0817ccc306" title="简书"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-升工作效率" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/05/08/升工作效率/" class="article-date">
+      <time datetime="2018-05-08T06:16:00.000Z" itemprop="datePublished">2018-05-08</time>
+</a>
+
+ 
+    <a href="/2018/05/08/升工作效率/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+            <span class="ds-thread-count"  data-thread-key="2018/05/08/升工作效率/" ></span>
+        
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/08/升工作效率/">提升工作效率</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>1 时间常有，时间在于优先。</p>
+<p>2 时间总会有的：每天只计划 4～5 小时真正的工作。</p>
+<p>3 当你在状态时，就多干点；不然就好好休息：有时候会连着几天不是工作状态，有时在工作状态时却又能天天忙活 12 小时，这都很正常的。</p>
+<p>4 重视你的时间，并使其值得重视：你的时间值 1000 美元/小时，你得动起来。</p>
+<p>5 不要多任务，这只会消耗注意力；保持专注，一心一用。</p>
+<p>6、养成工作习惯，并持之以恒，你的身体会适应的。</p>
+<p>7.在有限的时间内，我们总是非常专注并且有效率。</p>
+<p>8.进入工作状态的最佳方式就是工作，从小任务开始做起，让工作运转起来。</p>
+<p>9、迭代工作，期待完美收工会令人窒息：“做完事情，要胜于完美收工” Facebook 办公室墙壁上贴的箴言。动手做，胜过任何完美的想象。</p>
+<p>10、工作时间越长，并不等于效率越高</p>
+<p>11、按重要性工作，提高效率。</p>
+<p>12 有会议就尽早安排，用于准备会议</p>
+<p>的时间往往都浪费掉了。</p>
+<p>13、把会议和沟通 (邮件或电话) 结合，创造不间断工作时间：一个小会，也会毁了一个下午，因为它会把下午撕成两个较小的时间段，以至于啥也干不成。PS：当看到一个程序员冥思苦想时，不要过去打扰，甚至一句问候都是多余的。</p>
+<p>14、一整天保持相同的工作环境。在项目/客户之间切换，会效率低。</p>
+<p>15 工作—放松—工作=高效(番茄工作法)</p>
+<p>16、把不切实际的任务分割成合理的小任务，只要每天都完成小任务，你就会越来越接近那个大目标了。</p>
+<p>17 从来没有两个任务会有相同的优先级，总会有个更重要，仔细考虑待办事情列表。</p>
+<p>18 必须清楚白天必须完成的那件事，是什么。“Only ever work on the thing that will have the biggest impact” 只去做那件有着最大影响的事情。</p>
+<p>19 把任务按时间分段，就能感觉它快被搞定了。</p>
+<p>20 授权并擅用他人的力量。—君子善假于物(人)也，如果某件事其他人也可以做到八成，那就给他做！</p>
+<p>21 把昨天翻过去，只考虑今天和明天。昨天的全垒打赢不了今天的比赛。—好汉不提当年勇。</p>
+<p>22 给所有事情都设定一个期限。不要让工作无期限地进行下去。</p>
+<p>23 针对时间紧或有压力的任务，设置结束时间，万事皆可终结</p>
+<p>24 多记，多做笔记</p>
+<p>25 进入高效状态后，记下任何分散你注意力的东西比如Google搜索词、灵光乍现的想法、新点子等等。如果你把它们记下来，它就不会再蹦来蹦去了。</p>
+<p>26 休息，休息一下～</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/work/">work</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/work/">work</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工作效率/">工作效率</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-tepad-compare" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/06/tepad-compare/" class="article-date">
+      <time datetime="2017-03-06T07:26:00.000Z" itemprop="datePublished">2017-03-06</time>
+</a>
+
+ 
+    <a href="/2017/03/06/tepad-compare/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+            <span class="ds-thread-count"  data-thread-key="2017/03/06/tepad-compare/" ></span>
+        
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/06/tepad-compare/">Notepad++文本比较插件：Compare</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p><Excerpt in="" index="" |="" 首页摘要=""><br>对程序员来说，文本比较就是代码的比较，对比新老两个版本的代码的差异是经常需要做的事情，尤其是多人开发的代码尤甚，今天，一个转给了同事，然后同事请小长假，代码又回来了，首先就是要了解代码已经修改了哪些地方。</Excerpt></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/notepad/">notepad</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2017/03/06/tepad-compare/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-gtmetix" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/02/28/gtmetix/" class="article-date">
+      <time datetime="2017-02-28T06:57:00.000Z" itemprop="datePublished">2017-02-28</time>
+</a>
+
+ 
+    <a href="/2017/02/28/gtmetix/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+            <span class="ds-thread-count"  data-thread-key="2017/02/28/gtmetix/" ></span>
+        
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/28/gtmetix/">用GTmetrix来优化你的网页（集成了YSlow、FireBug的功能）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p><Excerpt in="" index="" |="" 首页摘要=""><br>网址是：<a href="http://gtmetrix.com/">http://gtmetrix.com/</a> ，输入自己需要分析的链接，稍微等会儿，有两个得分，一是YSlow的分析得分，二是PageSpeed的分析得分。<br></Excerpt></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/性能优化/">性能优化</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/性能优化/">性能优化</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2017/02/28/gtmetix/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Singleton" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/02/20/Singleton/" class="article-date">
+      <time datetime="2017-02-20T02:01:00.000Z" itemprop="datePublished">2017-02-20</time>
+</a>
+
+ 
+    <a href="/2017/02/20/Singleton/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+            <span class="ds-thread-count"  data-thread-key="2017/02/20/Singleton/" ></span>
+        
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/20/Singleton/">java 单例模式</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p><Excerpt in="" index="" |="" 首页摘要=""><br>在所有的设计模式中，单例模式是我们在项目开发中最为常见的设计模式之一，而单例模式有很多种实现方式，你是否都了解呢？高并发下如何保证单例模式的线程安全性呢？如何保证序列化后的单例对象在反序列化后任然是单例的呢？这些问题在看了本文之后都会一一的告诉你答案，赶快来阅读吧</Excerpt></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/java/">java</a><a class="article-category-link" href="/categories/java/设计模式/">设计模式</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/单例模式/">单例模式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/线程/">线程</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2017/02/20/Singleton/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-hexo git" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/02/20/hexo git/" class="article-date">
+      <time datetime="2017-02-20T02:01:00.000Z" itemprop="datePublished">2017-02-20</time>
+</a>
+
+ 
+    <a href="/2017/02/20/hexo git/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+            <span class="ds-thread-count"  data-thread-key="2017/02/20/hexo git/" ></span>
+        
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/20/hexo git/">Hexo搭建githubpage博客</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p><Excerpt in="" index="" |="" 首页摘要=""><br>这是一篇很详尽的独立博客搭建教程 里面介绍了github、Hexo和hexo-admin设置等过程</Excerpt></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/hexo/">hexo</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/githubpage/">githubpage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo-admin/">hexo-admin</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2017/02/20/hexo git/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    </nav>
+  
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2017-2018 wen
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+    <script src="/js/GithubRepoWidget.js"></script>
+
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 1;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+    
+        <script>
+            if ($(".left-col").is(":visible")) {
+                var duoshuoQuery = {short_name:"yanwen"};
+                (function() {
+                    var d = document, s = d.createElement('script');
+                    s.src = 'http://static.duoshuo.com/embed.js';
+                    s.async = true; s.charset = 'UTF-8';
+                    (d.head || d.body).appendChild(s);
+                })();
+
+                $(document).ready(function(){
+                    var $duoshuoCount = $(".ds-thread-count");
+                    $duoshuoCount.bind("DOMNodeInserted", function(e) {
+                        var num = $(this).text().replace(/[^0-9]/ig,"");
+                        $(this).siblings(".count-comment").text(num);
+                        $(this).remove();
+                    })
+                })
+            }
+        </script>
+    
+
+     
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+             github: ".github-widget a", 
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
