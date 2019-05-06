@@ -42,7 +42,9 @@ yum-config-manager--enable docker-ce-edge
 
 # 4 设置集群功能
 ```
-vi /etc/systemd/system/multi-user.target.wants/docker.service ExecStart=/usr/bin/dockerd 添加 --experimental=true  表示启用集群功能
+vi /etc/systemd/system/multi-user.target.wants/docker.service 
+在
+ExecStart=/usr/bin/dockerd 添加 --experimental=true  表示启用集群功能
 ```
 # 5 重新加载配置
 ```

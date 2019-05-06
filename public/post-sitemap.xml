@@ -7,6 +7,38 @@
     </url>
 
     <url>
+        <loc>https://smallwenzi.github.io/2018/05/08/%EF%BC%88%E5%85%AD%EF%BC%89docker%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%EF%BC%88root%E7%94%A8%E6%88%B7%EF%BC%89/</loc>
+        <lastmod>2019-05-06T07:50:59.709Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://smallwenzi.github.io/2018/05/08/%EF%BC%89%E6%9B%B4%E6%96%B0docker-%E7%89%88%E6%9C%AC%EF%BC%88root%E7%94%A8%E6%88%B7%EF%BC%89/</loc>
+        <lastmod>2019-05-06T06:03:39.216Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://smallwenzi.github.io/2018/05/08/%EF%BC%88%E5%9B%9B%EF%BC%89%E5%AE%89%E8%A3%85docker%EF%BC%88root%E7%94%A8%E6%88%B7%EF%BC%89/</loc>
+        <lastmod>2019-05-06T06:03:17.972Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://smallwenzi.github.io/2019/05/06/A%E9%97%AE%E9%A2%98/</loc>
+        <lastmod>2019-05-06T03:17:25.926Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://smallwenzi.github.io/2018/10/14/windows%E4%B8%8Batom%E4%B8%8A%E6%90%AD%E5%BB%BAPlantUML%E4%B9%A6%E5%86%99%E7%8E%AF%E5%A2%83/</loc>
         <lastmod>2018-10-14T07:52:24.276Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -33,14 +65,6 @@
     <url>
         <loc>https://smallwenzi.github.io/2018/06/11/docker%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
         <lastmod>2018-10-13T05:35:19.099Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://smallwenzi.github.io/2018/05/08/%EF%BC%88%E5%9B%9B%EF%BC%89%E5%AE%89%E8%A3%85docker%EF%BC%88root%E7%94%A8%E6%88%B7%EF%BC%89/</loc>
-        <lastmod>2018-06-11T12:46:54.748Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -87,14 +111,6 @@
     </url>
 
     <url>
-        <loc>https://smallwenzi.github.io/2018/05/08/%EF%BC%88%E5%85%AD%EF%BC%89docker%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%EF%BC%88root%E7%94%A8%E6%88%B7%EF%BC%89/</loc>
-        <lastmod>2018-05-11T15:15:24.540Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://smallwenzi.github.io/2018/05/11/%E4%B9%9D-linux%E9%85%8D%E7%BD%AEjava%E5%92%8Cmaven/</loc>
         <lastmod>2018-05-11T14:59:51.185Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -129,14 +145,6 @@
     <url>
         <loc>https://smallwenzi.github.io/2018/05/08/ocker-mysql/</loc>
         <lastmod>2018-05-08T09:34:24.586Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://smallwenzi.github.io/2018/05/08/%EF%BC%89%E6%9B%B4%E6%96%B0docker-%E7%89%88%E6%9C%AC%EF%BC%88root%E7%94%A8%E6%88%B7%EF%BC%89/</loc>
-        <lastmod>2018-05-08T09:07:47.675Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
