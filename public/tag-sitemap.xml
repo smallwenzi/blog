@@ -163,13 +163,6 @@
     </url>
 
     <url>
-        <loc>https://smallwenzi.github.io/tags/docker/</loc>
-        <lastmod>2018-10-13T05:35:19.099Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://smallwenzi.github.io/tags/solr/</loc>
         <lastmod>2018-10-14T07:33:13.713Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -207,6 +200,13 @@
     <url>
         <loc>https://smallwenzi.github.io/tags/jpa/</loc>
         <lastmod>2019-05-06T03:17:25.926Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://smallwenzi.github.io/tags/docker/</loc>
+        <lastmod>2019-05-06T06:03:39.216Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

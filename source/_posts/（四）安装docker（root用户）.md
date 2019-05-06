@@ -34,7 +34,9 @@ date: 2018-05-08 15:59:00
 > systemctl enable docker
 
 开启集群权限
->vi /etc/systemd/system/multi-user.target.wants/docker.service ExecStart=/usr/bin/dockerd 
+>vi /etc/systemd/system/multi-user.target.wants/docker.service 
+在
+ExecStart=/usr/bin/dockerd 
 添加
 --experimental=true 
 
