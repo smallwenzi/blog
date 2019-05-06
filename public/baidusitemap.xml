@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>https://smallwenzi.github.io/2019/05/06/A%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2019-05-06T03:17:25.926Z</lastmod>
+    <data>
+        <display>
+        <title>底层代码构造sql忽略NUll条件</title>
+        <pubTime>2019-05-06T03:00:00.000Z</pubTime>
+        
+        <tag>jpa</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://smallwenzi.github.io/2018/10/14/windows%E4%B8%8Batom%E4%B8%8A%E6%90%AD%E5%BB%BAPlantUML%E4%B9%A6%E5%86%99%E7%8E%AF%E5%A2%83/</loc>
     <lastmod>2018-10-14T07:52:24.276Z</lastmod>
     <data>
@@ -156,11 +173,11 @@
         <title>十二 jenkins 配置maven打包git代码</title>
         <pubTime>2018-05-11T15:36:00.000Z</pubTime>
         
+        <tag>docker</tag>
+         
         <tag>git</tag>
          
         <tag>maven</tag>
-         
-        <tag>docker</tag>
          
         <tag>jenkins</tag>
          
@@ -204,9 +221,9 @@
         <title>十）jenkins 配置java和Maven环境</title>
         <pubTime>2018-05-11T15:01:00.000Z</pubTime>
         
-        <tag>maven</tag>
-         
         <tag>docker</tag>
+         
+        <tag>maven</tag>
          
         <tag>jenkins</tag>
          
@@ -301,9 +318,9 @@
         <title>七）maven build docker and push Image</title>
         <pubTime>2018-05-08T09:36:00.000Z</pubTime>
         
-        <tag>maven</tag>
-         
         <tag>docker</tag>
+         
+        <tag>maven</tag>
          
          
            
@@ -393,9 +410,9 @@
         <title>那些提升开发人员工作效率的在线工具</title>
         <pubTime>2018-05-08T06:20:00.000Z</pubTime>
         
-        <tag>work</tag>
-         
         <tag>工作</tag>
+         
+        <tag>work</tag>
          
         <tag>工具</tag>
          
@@ -419,9 +436,9 @@
         <title>提升工作效率</title>
         <pubTime>2018-05-08T06:16:00.000Z</pubTime>
         
-        <tag>工作效率</tag>
-         
         <tag>work</tag>
+         
+        <tag>工作效率</tag>
          
          
            
