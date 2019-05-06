@@ -26,12 +26,12 @@ date: 2018-05-08 17:09:00
 
 # 4 创建域名证书
 ```
-> keyopenssl genrsa -out rep.itmuch.com.key 2048 
+> openssl genrsa -out rep.itmuch.com.key 2048 
 ```
 
 # 5 创建证书
 ```
-> openssl req -newkey rsa:4096 -nodes -sha256-keyout rep.itmuch.com.key -x509 -days 365 -out rep.itmuch.com.crt  
+> openssl req -newkey rsa:4096 -nodes -sha256 -keyout \ rep.itmuch.com.key -x509 -days 365 -out \ rep.itmuch.com.crt  
 
 Country Name (2 letter code) [XX]:       # 你的国家名称
 
@@ -54,7 +54,7 @@ Email Address []:     # 邮箱
 ```
 ## 3.2 复制证书至docker目录
 ```
-> cp ~/certs/rep.itmuch.com.crt/etc/docker/certs.d/rep.itmuch.com/ 
+> cp ~/certs/rep.itmuch.com.crt /etc/docker/certs.d/rep.itmuch.com/ 
 ```
 ## 3.3 重启docker
 ```
@@ -76,11 +76,11 @@ Email Address []:     # 邮箱
 ```
 ## 4.4创建用户名和密码 
 ```
-htpasswd-Bbn testuser testpassword > auth/htpasswd  
+htpasswd -Bbn testuser testpassword > auth/htpasswd  
 ```
 ## 5 运行
 ```
-registrydocker run -d -p 443:5000   \-v /root/certs:/certs \ -v/root/auth:/auth \-v /opt/docker-image:/var/lib/registry \-e STORAGE_PATH=/opt/docker-image \-e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/rep.itmuch.com.crt\-e REGISTRY_HTTP_TLS_KEY=/certs/rep.itmuch.com.key\ -e"REGISTRY_AUTH=htpasswd" \  -e"REGISTRY_AUTH_HTPASSWD_REALM=Registry Realm" \  -eREGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd \registry 
+docker run -d -p 443:5000   \-v /root/certs:/certs \ -v/root/auth:/auth \-v /opt/docker-image:/var/lib/registry \-e STORAGE_PATH=/opt/docker-image \-e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/rep.itmuch.com.crt\-e REGISTRY_HTTP_TLS_KEY=/certs/rep.itmuch.com.key\ -e"REGISTRY_AUTH=htpasswd" \  -e"REGISTRY_AUTH_HTPASSWD_REALM=Registry Realm" \  -eREGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd \registry
 ```
 # host主机名
 ```
@@ -108,5 +108,5 @@ https://rep.itmuch.com/v2/_catalog
 
 # 查看镜像 版本列表
 ```
-https://reg.itmuch.com/v2/alpine/tags/list
+https://rep.itmuch.com/v2/alpine/tags/list
 ```

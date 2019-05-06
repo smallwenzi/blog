@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>https://smallwenzi.github.io/2018/05/08/%EF%BC%88%E5%85%AD%EF%BC%89docker%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%EF%BC%88root%E7%94%A8%E6%88%B7%EF%BC%89/</loc>
+        <lastmod>2019-05-06T07:50:59.709Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://smallwenzi.github.io/2018/05/08/%EF%BC%89%E6%9B%B4%E6%96%B0docker-%E7%89%88%E6%9C%AC%EF%BC%88root%E7%94%A8%E6%88%B7%EF%BC%89/</loc>
         <lastmod>2019-05-06T06:03:39.216Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -97,14 +105,6 @@
     <url>
         <loc>https://smallwenzi.github.io/2018/05/11/enkinx-%E9%85%8D%E7%BD%AE%E4%BB%BB%E5%8A%A1/</loc>
         <lastmod>2018-05-11T15:27:28.001Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://smallwenzi.github.io/2018/05/08/%EF%BC%88%E5%85%AD%EF%BC%89docker%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%EF%BC%88root%E7%94%A8%E6%88%B7%EF%BC%89/</loc>
-        <lastmod>2018-05-11T15:15:24.540Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
