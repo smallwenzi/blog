@@ -1,10 +1,10 @@
+https://smallwenzi.github.io/2019/05/29/pring-config-bus/
+https://smallwenzi.github.io/2019/05/29/pring-admin配置/
+https://smallwenzi.github.io/2019/05/29/rabbitmq-队列信息/
+https://smallwenzi.github.io/2019/05/29/sttemplate-问题/
 https://smallwenzi.github.io/2019/05/06/A问题/
 https://smallwenzi.github.io/2018/10/14/windows下atom上搭建PlantUML书写环境/
 https://smallwenzi.github.io/2018/10/14/olr的主从模式Master-Slave/
 https://smallwenzi.github.io/2018/10/13/lr教程/
 https://smallwenzi.github.io/2018/06/11/docker的使用/
 https://smallwenzi.github.io/2018/05/11/-jenkins-配置maven打包git代码/
-https://smallwenzi.github.io/2018/05/11/-jenkins-配置git证书/
-https://smallwenzi.github.io/2018/05/11/enkinx-配置任务/
-https://smallwenzi.github.io/2018/05/11/九-linux配置java和maven/
-https://smallwenzi.github.io/2018/05/08/安装jenkins/

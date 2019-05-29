@@ -2,7 +2,8 @@ title: 底层代码构造sql忽略NUll条件
 author: wen
 tags:
   - jpa
-categories: []
+categories:
+  - spring cloud
 date: 2019-05-06 11:00:00
 ---
 代码没有判断查询的值null，导致把全部数据load内存里，这样系统崩溃
