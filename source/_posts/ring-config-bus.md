@@ -65,9 +65,12 @@ management.endpoints.web.exposure.include=bus-refresh
 ## 开启消息跟踪
 spring.cloud.bus.enabled=true
 spring.cloud.bus.trace.enabled=true
-spring.rabbitmq.addresses=10.210.93.176:5672
-spring.rabbitmq.username=logincenter
-spring.rabbitmq.password=amway123
+#mq的地址
+spring.rabbitmq.addresses=
+#mq的用户名
+spring.rabbitmq.username=
+#mq的密码
+spring.rabbitmq.password=
 spring.rabbitmq.publisherConfirms=false
 spring.rabbitmq.publisherReturns=false
 spring.rabbitmq.virtual-host=/
@@ -76,4 +79,3 @@ spring.rabbitmq.virtual-host=/
 
 测试连接
 测试入口：http://ip:port/hello
-

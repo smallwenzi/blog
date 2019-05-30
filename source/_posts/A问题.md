@@ -8,7 +8,7 @@ date: 2019-05-06 11:00:00
 ---
 代码没有判断查询的值null，导致把全部数据load内存里，这样系统崩溃
 
-代码：com.amway.common.jpa.repository.JpaRepoUtil
+代码：com.test.common.jpa.repository.JpaRepoUtil
 ```
 
 	private static StringBuilder generateQlForQueryByProperties(Map<String, Object> propertiesMap,

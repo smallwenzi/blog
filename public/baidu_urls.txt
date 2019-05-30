@@ -1,4 +1,4 @@
-https://smallwenzi.github.io/2019/05/29/pring-config-bus/
+https://smallwenzi.github.io/2019/05/29/ring-config-bus/
 https://smallwenzi.github.io/2019/05/29/pring-admin配置/
 https://smallwenzi.github.io/2019/05/29/rabbitmq-队列信息/
 https://smallwenzi.github.io/2019/05/29/sttemplate-问题/
