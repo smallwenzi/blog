@@ -277,6 +277,153 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-）更新docker-版本（root用户）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/05/08/）更新docker-版本（root用户）/" class="article-date">
+      <time datetime="2018-05-08T09:00:00.000Z" itemprop="datePublished">2018-05-08</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/08/）更新docker-版本（root用户）/">（五）更新docker 版本（root用户）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>参考：<a href="/2018/05/08/（四）安装docker（root用户）/">安装docker 操作</a></p>
+<h1 id="1-删除旧版本（以下操作都是使用root用户）"><a href="#1-删除旧版本（以下操作都是使用root用户）" class="headerlink" title="1 删除旧版本（以下操作都是使用root用户）"></a>1 删除旧版本（以下操作都是使用root用户）</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">yum remove docker \</span><br><span class="line"></span><br><span class="line">docker-client \</span><br><span class="line"></span><br><span class="line">docker-client-latest\ </span><br><span class="line"></span><br><span class="line">docker-common \</span><br><span class="line"></span><br><span class="line">docker-latest \</span><br><span class="line"></span><br><span class="line">docker-latest-logrotate \</span><br><span class="line"></span><br><span class="line">docker-logrotate \</span><br><span class="line"></span><br><span class="line">docker-selinux \</span><br><span class="line"></span><br><span class="line">docker-engine-selinux \</span><br><span class="line"></span><br><span class="line">docker-engine</span><br></pre></td></tr></table></figure>
+<h1 id="2-确保docker-ce-edge最新版本"><a href="#2-确保docker-ce-edge最新版本" class="headerlink" title="2 确保docker-ce-edge最新版本"></a>2 确保docker-ce-edge最新版本</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum-config-manager--enable docker-ce-edge</span><br></pre></td></tr></table></figure>
+<h1 id="3-安装docker"><a href="#3-安装docker" class="headerlink" title="3 安装docker"></a>3 安装docker</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install docker-ce</span><br></pre></td></tr></table></figure>
+<h1 id="4-设置集群功能"><a href="#4-设置集群功能" class="headerlink" title="4 设置集群功能"></a>4 设置集群功能</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/systemd/system/multi-user.target.wants/docker.service </span><br><span class="line">在</span><br><span class="line">ExecStart=/usr/bin/dockerd 添加 --experimental=true  表示启用集群功能</span><br></pre></td></tr></table></figure>
+<h1 id="5-重新加载配置"><a href="#5-重新加载配置" class="headerlink" title="5 重新加载配置"></a>5 重新加载配置</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br></pre></td></tr></table></figure>
+<h1 id="6-启动服务"><a href="#6-启动服务" class="headerlink" title="6 启动服务"></a>6 启动服务</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctemctl start docker</span><br></pre></td></tr></table></figure>
+<h1 id="7-查看版本："><a href="#7-查看版本：" class="headerlink" title="7 查看版本："></a>7 查看版本：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker version</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-（四）安装docker（root用户）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/05/08/（四）安装docker（root用户）/" class="article-date">
+      <time datetime="2018-05-08T07:59:00.000Z" itemprop="datePublished">2018-05-08</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/08/（四）安装docker（root用户）/">（四）安装docker（root用户）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>链接：<br><a href="/2018/05/08/）oracle-VM安装red-hat-liunx/">oracle VM安装red hat liunx</a></p>
+<p><a href="/2018/05/08/）Red-Hat-升级-rpm软件、YUM软件（root用户）/">升级RPM和YUM 包</a></p>
+<h1 id="1-安装docker（以下操作都是使用root用户）"><a href="#1-安装docker（以下操作都是使用root用户）" class="headerlink" title="1 安装docker（以下操作都是使用root用户）"></a>1 安装docker（以下操作都是使用root用户）</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">--安装驱动（red-hat为例,不同操作系统，驱动不同详细看官网教程）</span><br><span class="line">&gt; yum install -y yum-utils device-mapper-persistent-data lvm2  </span><br><span class="line"></span><br><span class="line">--添加docker仓库</span><br><span class="line">&gt; yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</span><br><span class="line"></span><br><span class="line">--清除缓存</span><br><span class="line">&gt; yum clean all</span><br><span class="line"></span><br><span class="line">--重新更新缓存</span><br><span class="line">&gt; yum makecache</span><br><span class="line"></span><br><span class="line">--确保docker engine最新</span><br><span class="line">&gt; yum-config-manager --enable docker-ce-edge</span><br><span class="line"></span><br><span class="line">--安装docker</span><br><span class="line">&gt; yum install docker-ce</span><br><span class="line"></span><br><span class="line">开机启动</span><br><span class="line">&gt; systemctl enable docker</span><br><span class="line"></span><br><span class="line">开启集群权限</span><br><span class="line">&gt;vi /etc/systemd/system/multi-user.target.wants/docker.service </span><br><span class="line">在</span><br><span class="line">ExecStart=/usr/bin/dockerd </span><br><span class="line">添加</span><br><span class="line">--experimental=true </span><br><span class="line"></span><br><span class="line">重新加载配置</span><br><span class="line">&gt;systemctl daemon-reload </span><br><span class="line"></span><br><span class="line"> --启动docker</span><br><span class="line">&gt;systemctl start docker</span><br></pre></td></tr></table></figure>
+<p>参考：<a href="https://docs.docker.com/install/linux/docker-ce/centos/" target="_blank" rel="noopener">docker官网</a></p>
+<p>docker 常用命令 参考<a href="https://docs.docker.com/engine/reference/run/" target="_blank" rel="noopener">docker 命令官网</a></p>
+<h1 id="2-查看docker-版本"><a href="#2-查看docker-版本" class="headerlink" title="2 查看docker 版本"></a>2 查看docker 版本</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker version --目前最新版本是 17.12.1-ce</span><br></pre></td></tr></table></figure>
+<h1 id="3-查看docker-信息"><a href="#3-查看docker-信息" class="headerlink" title="3 查看docker 信息"></a>3 查看docker 信息</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker info</span><br></pre></td></tr></table></figure>
+<h1 id="4-运行镜像"><a href="#4-运行镜像" class="headerlink" title="4 运行镜像"></a>4 运行镜像</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run hello-word --本地没有会找镜像库</span><br></pre></td></tr></table></figure>
+<p>关于run 一些参数详细参考<a href="https://docs.docker.com/engine/reference/run/" target="_blank" rel="noopener">docker官网</a></p>
+<h1 id="5-下载镜像"><a href="#5-下载镜像" class="headerlink" title="5 下载镜像"></a>5 下载镜像</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull alpine</span><br></pre></td></tr></table></figure>
+<h1 id="6-制作java环境镜像："><a href="#6-制作java环境镜像：" class="headerlink" title="6 制作java环境镜像："></a>6 制作java环境镜像：</h1><p>使用DockerFile 进行编写 ,参考<a href="https://docs.docker.com/engine/reference/builder/#usage" target="_blank" rel="noopener">dockerFile官网</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">FROM alpine</span><br><span class="line">MAINTAINER killko &lt;killko@qq.com&gt;</span><br><span class="line">ENV TIME_ZONE Asiz/Shanghai</span><br><span class="line">RUN echo &apos;@edge http://nl.alpinelinux.org/alpine/edge/main&apos; &gt;&gt; /etc/apk/repositories &amp;&amp; \</span><br><span class="line">    echo &apos;@community http://nl.alpinelinux.org/alpine/edge/community&apos; &gt;&gt; /etc/apk/repositories &amp;&amp; \</span><br><span class="line">    apk update &amp;&amp; \</span><br><span class="line">    apk upgrade &amp;&amp; \</span><br><span class="line">    apk add ca-certificates openjdk8-jre-base@community &amp;&amp; \</span><br><span class="line">    apk del ca-certificates &amp;&amp; \</span><br><span class="line">    apk add --no-cache tzdata &amp;&amp; \</span><br><span class="line">    echo &quot;$&#123;TIME_ZONE&#125;&quot; &gt; /etc/timezone &amp;&amp; \</span><br><span class="line">    ln -sf /usr/share/zoneinfo/$&#123;TIME_ZONE&#125; /etc/localtime &amp;&amp; \</span><br><span class="line">    rm -rf /tmp/* /var/cache/apk/*</span><br><span class="line">RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime</span><br></pre></td></tr></table></figure>
+<p>编写完成进行build<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;docker build  -t openjre:latest . --表示在当前目录进行制作镜像</span><br><span class="line">&gt;docker images --查看镜像</span><br><span class="line">&gt;docker run -it openjre sh --进行查看java是否安装成功</span><br></pre></td></tr></table></figure></p>
+<h1 id="7-导入镜像"><a href="#7-导入镜像" class="headerlink" title="7 导入镜像"></a>7 导入镜像</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker load &lt; openjre.tar</span><br></pre></td></tr></table></figure>
+<h1 id="8-导出镜像："><a href="#8-导出镜像：" class="headerlink" title="8 导出镜像："></a>8 导出镜像：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker save openjre:latest  openjre.tar</span><br></pre></td></tr></table></figure>
+<h1 id="9-查看镜像"><a href="#9-查看镜像" class="headerlink" title="9 查看镜像"></a>9 查看镜像</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+<h1 id="10-查看正在运行容器"><a href="#10-查看正在运行容器" class="headerlink" title="10 查看正在运行容器"></a>10 查看正在运行容器</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a --查看容器id 运行状态 映射端口</span><br></pre></td></tr></table></figure>
+<h1 id="11-查看容器日志"><a href="#11-查看容器日志" class="headerlink" title="11 查看容器日志"></a>11 查看容器日志</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs -f 容器id --容器id从docker ps -a获取</span><br></pre></td></tr></table></figure>
+<h1 id="12-停止容器"><a href="#12-停止容器" class="headerlink" title="12 停止容器"></a>12 停止容器</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop 容器id ----容器id从docker ps -a获取</span><br></pre></td></tr></table></figure>
+<h1 id="13-删除容器"><a href="#13-删除容器" class="headerlink" title="13 删除容器"></a>13 删除容器</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm 容器id --容器id从docker ps -a获取</span><br></pre></td></tr></table></figure>
+<h1 id="14-删除镜像"><a href="#14-删除镜像" class="headerlink" title="14 删除镜像"></a>14 删除镜像</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi imagename:tag --imagename:tag imagename表示镜像名称 tag表示版本 这些信息可以从docker images进行获取</span><br></pre></td></tr></table></figure>
+<h1 id="15-进入容器-运行sh命令："><a href="#15-进入容器-运行sh命令：" class="headerlink" title="15 进入容器 运行sh命令："></a>15 进入容器 运行sh命令：</h1><p>docker exec -it 容器id sh –容器id从docker ps -a获取</p>
+<h1 id="16-添加普通用户操作docker"><a href="#16-添加普通用户操作docker" class="headerlink" title="16 添加普通用户操作docker"></a>16 添加普通用户操作docker</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">vi etc/systemd/system/multi-user.target.wants/docker.service （操作服务）</span><br><span class="line"></span><br><span class="line">ExecStart=/usr/bin/dockerd -G jenkins  #表示jenkins用户组可以操作docker命令</span><br><span class="line"></span><br><span class="line">保存后</span><br><span class="line"></span><br><span class="line">systemctl daemon-reload --重新加载服务</span><br><span class="line"></span><br><span class="line">systemctl restart docker --重启服务</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-三）linux-安装-GIT（root用户）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -964,145 +1111,9 @@
 
 
   
-    <article id="post-Singleton" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/02/20/Singleton/" class="article-date">
-      <time datetime="2017-02-20T02:01:00.000Z" itemprop="datePublished">2017-02-20</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/20/Singleton/">java 单例模式</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><excerpt in="" index="" |="" 首页摘要=""><br>在所有的设计模式中，单例模式是我们在项目开发中最为常见的设计模式之一，而单例模式有很多种实现方式，你是否都了解呢？高并发下如何保证单例模式的线程安全性呢？如何保证序列化后的单例对象在反序列化后任然是单例的呢？这些问题在看了本文之后都会一一的告诉你答案，赶快来阅读吧</excerpt></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/java/">java</a><a class="article-category-link" href="/categories/java/设计模式/">设计模式</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/单例模式/">单例模式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/线程/">线程</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2017/02/20/Singleton/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hexo git" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/02/20/hexo git/" class="article-date">
-      <time datetime="2017-02-20T02:01:00.000Z" itemprop="datePublished">2017-02-20</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/20/hexo git/">Hexo搭建githubpage博客</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><excerpt in="" index="" |="" 首页摘要=""><br>这是一篇很详尽的独立博客搭建教程 里面介绍了github、Hexo和hexo-admin设置等过程</excerpt></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/hexo/">hexo</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/githubpage/">githubpage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo-admin/">hexo-admin</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2017/02/20/hexo git/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 </div>

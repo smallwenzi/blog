@@ -277,6 +277,154 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-具集" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/11/13/具集/" class="article-date">
+      <time datetime="2019-11-13T03:31:00.000Z" itemprop="datePublished">2019-11-13</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/13/具集/">工具集</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="GC分析工具"><a href="#GC分析工具" class="headerlink" title="GC分析工具"></a>GC分析工具</h1><p><a href="https://gceasy.io/" target="_blank" rel="noopener">https://gceasy.io/</a><br>上传java gc文件，进行分析<br><img src="/2019/11/13/具集/2.png" alt="logo"></p>
+<h1 id="json转换"><a href="#json转换" class="headerlink" title="json转换"></a>json转换</h1><p><a href="http://www.bejson.com/jsonviewernew/" target="_blank" rel="noopener">http://www.bejson.com/jsonviewernew/</a><br><img src="/2019/11/13/具集/1.png" alt="logo"></p>
+<h1 id="MemoryAnalyzer"><a href="#MemoryAnalyzer" class="headerlink" title="MemoryAnalyzer"></a>MemoryAnalyzer</h1><p><a href="https://www.eclipse.org/mat/" target="_blank" rel="noopener">https://www.eclipse.org/mat/</a><br>分析java dump<br><img src="/2019/11/13/具集/3.png" alt="logo"></p>
+<h1 id="性能测试jmeter"><a href="#性能测试jmeter" class="headerlink" title="性能测试jmeter"></a>性能测试jmeter</h1>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/tools/">tools</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-ava-查看占用-CPU-最高的线程" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/11/13/ava-查看占用-CPU-最高的线程/" class="article-date">
+      <time datetime="2019-11-13T03:15:00.000Z" itemprop="datePublished">2019-11-13</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/13/ava-查看占用-CPU-最高的线程/">[Java] 查看占用 CPU 最高的线程</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><ul>
+<li>top 命令找出应用 pid-app</li>
+<li>top -Hp <pid-app> 命令找出线程 pid-thread</pid-app></li>
+<li>printf ‘%x\n’ <pid-thread> 命令将线程 pid 转换成 16 进制 pid-thread-hex</pid-thread></li>
+<li>jstack <pid-app> | grep ‘pid-thread-hex’ 命令查看线程信息<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1></pid-app></li>
+<li>1.top 命令找出应用 pid-app<br><img src="/2019/11/13/ava-查看占用-CPU-最高的线程/1.png" alt="logo"></li>
+</ul>
+<p>应用 pid 为8790</p>
+<ul>
+<li>top -Hp <pid-app> 命令找出线程 pid-thread<br><img src="/2019/11/13/ava-查看占用-CPU-最高的线程/2.png" alt="logo"></pid-app></li>
+</ul>
+<p>线程 pid 为9702</p>
+<ul>
+<li><p>printf ‘%x\n’ <pid-thread> 命令将线程 pid 转换成 16 进制 pid-thread-hex<br><img src="/2019/11/13/ava-查看占用-CPU-最高的线程/3.png" alt="logo"></pid-thread></p>
+</li>
+<li><p>jstack <pid-app> | grep ‘pid-thread-hex’ 命令查看线程信息</pid-app></p>
+</li>
+</ul>
+<p><img src="/2019/11/13/ava-查看占用-CPU-最高的线程/4.png" alt="logo"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/java/">java</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-ring-config-bus" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -861,145 +1009,9 @@
 
 
   
-    <article id="post-docker的使用" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/06/11/docker的使用/" class="article-date">
-      <time datetime="2018-06-11T12:50:00.000Z" itemprop="datePublished">2018-06-11</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/11/docker的使用/">docker的使用</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>1 docker build出现Temporary failure resolving<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vi/etc/systemd/system/multi-user.target.wants/docker.service ExecStart=/usr/bin/dockerd </span><br><span class="line">添加 --dns=8.8.8.8</span><br><span class="line">重新加载配置</span><br><span class="line">&gt;systemctl daemon-reload </span><br><span class="line"> --启动docker</span><br><span class="line">&gt;systemctl start docker</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/docker/">docker</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post--jenkins-配置maven打包git代码" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/05/11/-jenkins-配置maven打包git代码/" class="article-date">
-      <time datetime="2018-05-11T15:36:00.000Z" itemprop="datePublished">2018-05-11</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/11/-jenkins-配置maven打包git代码/">十二 jenkins 配置maven打包git代码</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>一 <a href="/2018/05/11/-jenkins-配置git证书/">jenkins-配置git证书</a><br>二 <a href="/2018/05/08/安装jenkins/">安装jenkins</a><br>三 <a href="/2018/05/11/enkinx-配置任务/">jenkins 配置java和Maven环境</a></p>
-<p><img src="/2018/05/11/-jenkins-配置maven打包git代码/总图.png" alt="logo"></p>
-<h1 id="一配置任务"><a href="#一配置任务" class="headerlink" title="一配置任务"></a>一配置任务</h1><p>1.1点击 创建一个新任务<br><img src="/2018/05/11/-jenkins-配置maven打包git代码/1.png" alt="logo"><br>1.2 输入名称  选择自由风格的软件项目<br><img src="/2018/05/11/-jenkins-配置maven打包git代码/2.png" alt="logo"><br>1.3新增文本参数<br>1.3.1参数docker.image.prefix: 私有库域名<br><img src="/2018/05/11/-jenkins-配置maven打包git代码/3.png" alt="logo"><br>1.3.2参数docker.registry：私有库地址<br><img src="/2018/05/11/-jenkins-配置maven打包git代码/4.png" alt="logo"><br>1.3.3参数docker.servcerId：刚才maven配置 私有库用户名和密码<br><img src="/2018/05/11/-jenkins-配置maven打包git代码/5.png" alt="logo"><br>1.3.4参数version<br><img src="/2018/05/11/-jenkins-配置maven打包git代码/6.png" alt="logo"><br>1.4配置 git库<br><img src="/2018/05/11/-jenkins-配置maven打包git代码/7.png" alt="logo"><br>1.5构建步骤添加 执行Shell脚本<br><img src="/2018/05/11/-jenkins-配置maven打包git代码/8.png" alt="logo"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">脚本命令：</span><br><span class="line">echo $WORKSPACE</span><br><span class="line">echo $MAVEN_HOME</span><br><span class="line">cd $WORKSPACE/Eureka</span><br><span class="line">$MAVEN_HOME/bin/mvn clean package docker:build -DpushImage -Ddocker.image.prefix=$docker_image_prefix -Ddocker.registry=$docker_registry -Ddocker.servcerId=$docker_servcerId -Dtag.version=$version</span><br></pre></td></tr></table></figure></p>
-<p>保存</p>
-<h1 id="二-配置jenkins用户可以执行docker-命令"><a href="#二-配置jenkins用户可以执行docker-命令" class="headerlink" title="二 配置jenkins用户可以执行docker 命令"></a>二 配置jenkins用户可以执行docker 命令</h1><p>liunx用户 使用jenkins 用户启动jenkins<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/systemd/system/multi-user.target.wants/docker.service</span><br><span class="line"> ExecStart=/usr/bin/dockerd  -G jenkins</span><br></pre></td></tr></table></figure></p>
-<p> -G表示 jenkins用户可以执行docker 命令<br> <img src="/2018/05/11/-jenkins-配置maven打包git代码/9.png" alt="logo"></p>
-<p> 重新加载配置<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br></pre></td></tr></table></figure></p>
-<p>  重新启动docker<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure></p>
-<h1 id="三执行任务"><a href="#三执行任务" class="headerlink" title="三执行任务"></a>三执行任务</h1><p>3.1 点击 Build with Parameters<br><img src="/2018/05/11/-jenkins-配置maven打包git代码/10.png" alt="logo"><br>3.2 点击开始创建<br><img src="/2018/05/11/-jenkins-配置maven打包git代码/11.png" alt="logo"><br>3.3查看脚本执行情况<br><img src="/2018/05/11/-jenkins-配置maven打包git代码/12.png" alt="logo"><br>3.4成功后查看私有仓库目录<br><img src="/2018/05/11/-jenkins-配置maven打包git代码/132.png" alt="logo"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/jenkins/">jenkins</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jenkins/">jenkins</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/">maven</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 </div>
