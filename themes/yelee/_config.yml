@@ -196,7 +196,7 @@ aboutme: false
 open_in_new:
   global: 0 # 0-2
   title: false # article title in homepage 主页文章标题
-  post: false # link within post/page 正文中的链接
+  post: true # link within post/page 正文中的链接
   tags: false # 标签
   categories: false # 分类
   article_nav: false # 导航

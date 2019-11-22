@@ -7,8 +7,32 @@
     </url>
 
     <url>
-        <loc>https://smallwenzi.github.io/2019/11/13/%E5%85%B7%E9%9B%86/</loc>
-        <lastmod>2019-11-13T03:48:34.517Z</lastmod>
+        <loc>https://smallwenzi.github.io/2019/11/22/bbitMq/</loc>
+        <lastmod>2019-11-22T08:39:26.850Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://smallwenzi.github.io/2019/11/22/pringSession%E6%BA%90%E7%A0%81%EF%BC%88%E4%BA%8C%EF%BC%89/</loc>
+        <lastmod>2019-11-22T08:05:37.884Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://smallwenzi.github.io/2019/11/21/SpringSession%E6%BA%90%E7%A0%81/</loc>
+        <lastmod>2019-11-22T06:53:11.955Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://smallwenzi.github.io/2019/11/13/ring-session%EF%BC%881%EF%BC%89/</loc>
+        <lastmod>2019-11-22T06:24:25.635Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -16,7 +40,31 @@
 
     <url>
         <loc>https://smallwenzi.github.io/2019/11/13/ava-%E6%9F%A5%E7%9C%8B%E5%8D%A0%E7%94%A8-CPU-%E6%9C%80%E9%AB%98%E7%9A%84%E7%BA%BF%E7%A8%8B/</loc>
-        <lastmod>2019-11-13T03:29:53.099Z</lastmod>
+        <lastmod>2019-11-21T09:05:17.980Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://smallwenzi.github.io/2019/11/21/tch-%E5%9D%91/</loc>
+        <lastmod>2019-11-21T02:18:52.016Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://smallwenzi.github.io/2019/11/21/acheHttpd%E6%97%A5%E5%BF%97%E8%AF%B4%E6%98%8E/</loc>
+        <lastmod>2019-11-21T02:06:18.705Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://smallwenzi.github.io/2019/11/13/%E5%85%B7%E9%9B%86/</loc>
+        <lastmod>2019-11-13T03:48:34.517Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

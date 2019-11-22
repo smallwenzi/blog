@@ -84,15 +84,71 @@
     </url>
 
     <url>
-        <loc>https://smallwenzi.github.io/categories/java/</loc>
-        <lastmod>2019-11-13T03:29:53.099Z</lastmod>
+        <loc>https://smallwenzi.github.io/categories/tools/</loc>
+        <lastmod>2019-11-13T03:48:34.517Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://smallwenzi.github.io/categories/tools/</loc>
-        <lastmod>2019-11-13T03:48:34.517Z</lastmod>
+        <loc>https://smallwenzi.github.io/categories/apache/</loc>
+        <lastmod>2019-11-21T02:06:18.705Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://smallwenzi.github.io/categories/java/</loc>
+        <lastmod>2019-11-21T09:05:17.980Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://smallwenzi.github.io/categories/Spring/</loc>
+        <lastmod>2019-11-22T06:24:25.635Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://smallwenzi.github.io/categories/Spring/Spring-boot/</loc>
+        <lastmod>2019-11-22T06:24:25.635Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://smallwenzi.github.io/categories/spring/</loc>
+        <lastmod>2019-11-22T06:53:11.955Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://smallwenzi.github.io/categories/spring/spring-boot/</loc>
+        <lastmod>2019-11-22T06:53:11.955Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://smallwenzi.github.io/categories/springsession/</loc>
+        <lastmod>2019-11-22T08:05:37.884Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://smallwenzi.github.io/categories/RabbitMq/</loc>
+        <lastmod>2019-11-22T08:39:26.850Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://smallwenzi.github.io/categories/RabbitMq/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/</loc>
+        <lastmod>2019-11-22T08:39:26.850Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

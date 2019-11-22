@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="wen" />
+
+
+
+<meta name="description" content="如何使用spring session上一篇文章中介绍了Spring-Session的核心原理，Filter，Session，Repository等等，传送门：SpringSession源码 这篇继上一篇的原理逐渐深入Spring-Session中的事件机制原理的探索。众所周知，Servlet规范中有对HttpSession的事件的处理，如：HttpSessionEvent/HttpSessionI">
+<meta name="keywords" content="springsession">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringSession源码（二）">
+<meta property="og:url" content="https://smallwenzi.github.io/2019/11/22/pringSession源码（二）/index.html">
+<meta property="og:site_name" content="wen blog">
+<meta property="og:description" content="如何使用spring session上一篇文章中介绍了Spring-Session的核心原理，Filter，Session，Repository等等，传送门：SpringSession源码 这篇继上一篇的原理逐渐深入Spring-Session中的事件机制原理的探索。众所周知，Servlet规范中有对HttpSession的事件的处理，如：HttpSessionEvent/HttpSessionI">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://smallwenzi.github.io/2019/11/22/pringSession源码（二）/1.png">
+<meta property="og:image" content="https://smallwenzi.github.io/2019/11/22/pringSession源码（二）/2.png">
+<meta property="og:image" content="https://smallwenzi.github.io/2019/11/22/pringSession源码（二）/3.png">
+<meta property="og:image" content="https://smallwenzi.github.io/2019/11/22/pringSession源码（二）/4.png">
+<meta property="og:image" content="https://smallwenzi.github.io/2019/11/22/pringSession源码（二）/5.png">
+<meta property="og:image" content="https://smallwenzi.github.io/2019/11/22/pringSession源码（二）/6.png">
+<meta property="og:updated_time" content="2019-11-22T08:05:37.884Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SpringSession源码（二）">
+<meta name="twitter:description" content="如何使用spring session上一篇文章中介绍了Spring-Session的核心原理，Filter，Session，Repository等等，传送门：SpringSession源码 这篇继上一篇的原理逐渐深入Spring-Session中的事件机制原理的探索。众所周知，Servlet规范中有对HttpSession的事件的处理，如：HttpSessionEvent/HttpSessionI">
+<meta name="twitter:image" content="https://smallwenzi.github.io/2019/11/22/pringSession源码（二）/1.png">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="wen blog" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/img/head.jpg">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>SpringSession源码（二） | wen blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?54768e95527ea89b815041379f4d75dd";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/head.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">wen</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">tanyanwen的技术分享</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:beityw@hotmail.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" href="http://weibo.com/1762122412" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/smallwenzi/smallwenzi.github.io" title="GitHub"></a>
+                            
+                                <a class="fa 简书" href="https://www.jianshu.com/u/1e0817ccc306" title="简书"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/RabbitMq/">RabbitMq</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/">atom</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/githubpage/">githubpage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-admin/">hexo-admin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/httpd/">httpd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jenkins/">jenkins</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jpa/">jpa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/notepad/">notepad</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nutch/">nutch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plantuml/">plantuml</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rabbitMq/">rabbitMq</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/red-hat-Linux/">red hat Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/resttemplate/">resttemplate</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rpm/">rpm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/session/">session</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/solr/">solr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/solr-master/">solr-master</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/solr-slave/">solr-slave</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring-cloud/">spring cloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring-config/">spring config</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springAdmin/">springAdmin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springsession/">springsession</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thymeleaf/">thymeleaf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work/">work</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yum/">yum</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单例模式/">单例模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工作/">工作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工作效率/">工作效率</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能优化/">性能优化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/消息队列/">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线程/">线程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">wen</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/head.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">wen</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">tanyanwen的技术分享</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:beityw@hotmail.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/1762122412" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/smallwenzi/smallwenzi.github.io" title="GitHub"></a>
+                            
+                                <a class="fa 简书" target="_blank" href="https://www.jianshu.com/u/1e0817ccc306" title="简书"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-pringSession源码（二）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/11/22/pringSession源码（二）/" class="article-date">
+      <time datetime="2019-11-22T07:25:00.000Z" itemprop="datePublished">2019-11-22</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SpringSession源码（二）
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/springsession/">springsession</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springsession/">springsession</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><a href="https://smallwenzi.github.io/2019/11/13/ring-session%EF%BC%881%EF%BC%89/">如何使用spring session</a><br>上一篇文章中介绍了Spring-Session的核心原理，Filter，Session，Repository等等，传送门：<a href="https://smallwenzi.github.io/2019/11/21/SpringSession%E6%BA%90%E7%A0%81/">SpringSession源码</a></p>
+<p>这篇继上一篇的原理逐渐深入Spring-Session中的事件机制原理的探索。众所周知，Servlet规范中有对HttpSession的事件的处理，如：HttpSessionEvent/HttpSessionIdListener/HttpSessionListener，可以查看Package javax.servlet</p>
+<p>在Spring-Session中也有相应的Session事件机制实现，包括Session创建/过期/删除事件。<br>本文主要从以下方面探索Spring-Session中事件机制</p>
+<ul>
+<li>Session事件的抽象</li>
+<li>事件的触发机制<h1 id="Session事件的抽象"><a href="#Session事件的抽象" class="headerlink" title="Session事件的抽象"></a>Session事件的抽象</h1>先来看下Session事件抽象UML类图，整体掌握事件之间的依赖关系。<br><img src="/2019/11/22/pringSession源码（二）/1.png" alt="Session事件的抽象"><br>Session Event最顶层是ApplicationEvent，即Spring上下文事件对象。由此可以看出Spring-Session的事件机制是基于Spring上下文事件实现。</li>
+</ul>
+<p>抽象的AbstractSessionEvent事件对象提供了获取Session（这里的是指Spring Session的对象）和SessionId。   </p>
+<p>基于事件的类型，分类为：</p>
+<ul>
+<li>Session创建事件</li>
+<li>Session删除事件</li>
+<li>Session过期事件<br>事件对象只是对事件本身的抽象，描述事件的属性，如：</li>
+</ul>
+<p>获取事件产生的源：getSource获取事件产生源<br>获取相应事件特性：getSession/getSessoinId获取时间关联的Session<br>下面再深入探索以上的Session事件是如何触发，从事件源到事件监听器的链路分析事件流转过程。</p>
+<h1 id="二-事件的触发机制"><a href="#二-事件的触发机制" class="headerlink" title="二.事件的触发机制"></a>二.事件的触发机制</h1><p>介绍Session Event事件基于Spring的ApplicationEvent实现。先简单认识spring上下文事件机制：<br><img src="/2019/11/22/pringSession源码（二）/2.png" alt="Session事件的抽象"></p>
+<ul>
+<li>ApplicationEventPublisher实现用于发布Spring上下文事件ApplicationEvent</li>
+<li>ApplicationListener实现用于监听Spring上下文事件ApplicationEvent</li>
+<li>ApplicationEvent抽象上下文事件</li>
+</ul>
+<p>那么在Spring-Session中必然包含事件发布者ApplicationEventPublisher发布Session事件和ApplicationListener监听Session事件。</p>
+<p>可以看出ApplicationEventPublisher发布一个事件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">@FunctionalInterface</span><br><span class="line">public interface ApplicationEventPublisher &#123;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * Notify all &lt;strong&gt;matching&lt;/strong&gt; listeners registered with this</span><br><span class="line">     * application of an application event. Events may be framework events</span><br><span class="line">     * (such as RequestHandledEvent) or application-specific events.</span><br><span class="line">     * @param event the event to publish</span><br><span class="line">     * @see org.springframework.web.context.support.RequestHandledEvent</span><br><span class="line">     */</span><br><span class="line">    default void publishEvent(ApplicationEvent event) &#123;</span><br><span class="line">        publishEvent((Object) event);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * Notify all &lt;strong&gt;matching&lt;/strong&gt; listeners registered with this</span><br><span class="line">     * application of an event.</span><br><span class="line">     * &lt;p&gt;If the specified &#123;@code event&#125; is not an &#123;@link ApplicationEvent&#125;,</span><br><span class="line">     * it is wrapped in a &#123;@link PayloadApplicationEvent&#125;.</span><br><span class="line">     * @param event the event to publish</span><br><span class="line">     * @since 4.2</span><br><span class="line">     * @see PayloadApplicationEvent</span><br><span class="line">     */</span><br><span class="line">    void publishEvent(Object event);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>ApplicationListener用于监听相应的事件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@FunctionalInterface</span><br><span class="line">public interface ApplicationListener&lt;E extends ApplicationEvent&gt; extends EventListener &#123;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * Handle an application event.</span><br><span class="line">     * @param event the event to respond to</span><br><span class="line">     */</span><br><span class="line">    void onApplicationEvent(E event);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Session事件的流程实现如下：<br><img src="/2019/11/22/pringSession源码（二）/3.png" alt="Session事件的抽象"><br>RedisMessageListenerContainer初始化时会启动一个线程SubscriptionTask进行订阅redis信息</p>
+<p>上图展示了Spring-Session事件流程图，事件源来自于Redis键空间通知，在spring-data-redis项目中抽象MessageListener监听Redis事件源，然后将其传播至spring应用上下文发布者，由发布者发布事件。在spring上下文中的监听器Listener即可监听到Session事件。</p>
+<p>因为两者是Spring框架提供的对Spring的ApplicationEvent的支持。Session Event基于ApplicationEvent实现，必然也有其相应发布者和监听器的的实现。</p>
+<p>Spring-Session中的RedisSession的SessionRepository是RedisOperationSessionRepository。所有关于RedisSession的管理操作都是由其实现，所以Session的产生源是RedisOperationSessionRepository。</p>
+<p>在RedisOperationSessionRepository中持有ApplicationEventPublisher对象用于发布Session事件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">private ApplicationEventPublisher eventPublisher = new ApplicationEventPublisher() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void publishEvent(ApplicationEvent event) &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    @Override</span><br><span class="line">    public void publishEvent(Object event) &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>但是该ApplicationEventPublisher是空实现，实际实现是在应用启动时由Spring-Session自动配置。在spring-session-data-redis模块中RedisHttpSessionConfiguration中有关于创建RedisOperationSessionRepository Bean时将调用set方法将ApplicationEventPublisher配置。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">@EnableScheduling</span><br><span class="line">public class RedisHttpSessionConfiguration extends SpringHttpSessionConfiguration</span><br><span class="line">        implements BeanClassLoaderAware, EmbeddedValueResolverAware, ImportAware,</span><br><span class="line">        SchedulingConfigurer &#123;</span><br><span class="line"></span><br><span class="line">    private ApplicationEventPublisher applicationEventPublisher;</span><br><span class="line"></span><br><span class="line">    @Bean</span><br><span class="line">    public RedisOperationsSessionRepository sessionRepository() &#123;</span><br><span class="line">        RedisTemplate&lt;Object, Object&gt; redisTemplate = createRedisTemplate();</span><br><span class="line">        RedisOperationsSessionRepository sessionRepository = new RedisOperationsSessionRepository(</span><br><span class="line">                redisTemplate);</span><br><span class="line">        // 注入依赖</span><br><span class="line">        sessionRepository.setApplicationEventPublisher(this.applicationEventPublisher);</span><br><span class="line">        if (this.defaultRedisSerializer != null) &#123;</span><br><span class="line">            sessionRepository.setDefaultSerializer(this.defaultRedisSerializer);</span><br><span class="line">        &#125;</span><br><span class="line">        sessionRepository</span><br><span class="line">                .setDefaultMaxInactiveInterval(this.maxInactiveIntervalInSeconds);</span><br><span class="line">        if (StringUtils.hasText(this.redisNamespace)) &#123;</span><br><span class="line">            sessionRepository.setRedisKeyNamespace(this.redisNamespace);</span><br><span class="line">        &#125;</span><br><span class="line">        sessionRepository.setRedisFlushMode(this.redisFlushMode);</span><br><span class="line">        return sessionRepository;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 注入上下文中的ApplicationEventPublisher Bean</span><br><span class="line">    @Autowired</span><br><span class="line">    public void setApplicationEventPublisher(</span><br><span class="line">            ApplicationEventPublisher applicationEventPublisher) &#123;</span><br><span class="line">        this.applicationEventPublisher = applicationEventPublisher;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在进行自动配置时，将上下文中的ApplicationEventPublisher的注入，实际上即ApplicationContext对象。<br>对于ApplicationListener是由应用开发者自行实现，注册成Bean即可。当有Session Event发布时，即可监听。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * session事件监听器</span><br><span class="line"> *</span><br><span class="line"> * @author huaijin</span><br><span class="line"> */</span><br><span class="line">@Component</span><br><span class="line">public class SessionEventListener implements ApplicationListener&lt;SessionDeletedEvent&gt; &#123;</span><br><span class="line"></span><br><span class="line">    private static final String CURRENT_USER = &quot;currentUser&quot;;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onApplicationEvent(SessionDeletedEvent event) &#123;</span><br><span class="line">        Session session = event.getSession();</span><br><span class="line">        UserVo userVo = session.getAttribute(CURRENT_USER);</span><br><span class="line">        System.out.println(&quot;Current session&apos;s user:&quot; + userVo.toString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>以上部分探索了Session事件的发布者和监听者，但是核心事件的触发发布则是由Redis的键空间通知机制触发，当有Session创建/删除/过期时，Redis键空间会通知Spring-Session应用。</p>
+<p>RedisOperationsSessionRepository实现spring-data-redis中的MessageListener接口。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Listener of messages published in Redis.</span><br><span class="line"> *</span><br><span class="line"> * @author Costin Leau</span><br><span class="line"> * @author Christoph Strobl</span><br><span class="line"> */</span><br><span class="line">public interface MessageListener &#123;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * Callback for processing received objects through Redis.</span><br><span class="line">     *</span><br><span class="line">     * @param message message must not be &#123;@literal null&#125;.</span><br><span class="line">     * @param pattern pattern matching the channel (if specified) - can be &#123;@literal null&#125;.</span><br><span class="line">     */</span><br><span class="line">    void onMessage(Message message, @Nullable byte[] pattern);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>该监听器即用来监听redis发布的消息。RedisOperationsSessionRepositorys实现了该Redis键空间消息通知监听器接口，实现如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">public class RedisOperationsSessionRepository implements</span><br><span class="line">        FindByIndexNameSessionRepository&lt;RedisOperationsSessionRepository.RedisSession&gt;,</span><br><span class="line">        MessageListener &#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    @SuppressWarnings(&quot;unchecked&quot;)</span><br><span class="line">    public void onMessage(Message message, byte[] pattern) &#123;</span><br><span class="line">        // 获取该消息发布的redis通道channel</span><br><span class="line">        byte[] messageChannel = message.getChannel();</span><br><span class="line">        // 获取消息体内容</span><br><span class="line">        byte[] messageBody = message.getBody();</span><br><span class="line"></span><br><span class="line">        String channel = new String(messageChannel);</span><br><span class="line"></span><br><span class="line">        // 如果是由Session创建通道发布的消息，则是Session创建事件</span><br><span class="line">        if (channel.startsWith(getSessionCreatedChannelPrefix())) &#123;</span><br><span class="line">            // 从消息体中载入Session</span><br><span class="line">            Map&lt;Object, Object&gt; loaded = (Map&lt;Object, Object&gt;) this.defaultSerializer</span><br><span class="line">                    .deserialize(message.getBody());</span><br><span class="line">            // 发布创建事件</span><br><span class="line">            handleCreated(loaded, channel);</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 如果消息体不是以过期键前缀，直接返回。因为spring-session在redis中的key命名规则：</span><br><span class="line">        // &quot;$&#123;namespace&#125;:sessions:expires:$&#123;sessionId&#125;&quot;，如：</span><br><span class="line">        // session.example:sessions:expires:a5236a19-7325-4783-b1f0-db9d4442db9a</span><br><span class="line">        // 所以判断过期或者删除的键是否为spring-session的过期键。如果不是，可能是应用中其他的键的操作，所以直接return</span><br><span class="line">        String body = new String(messageBody);</span><br><span class="line">        if (!body.startsWith(getExpiredKeyPrefix())) &#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 根据channel判断键空间的事件类型del或者expire时间</span><br><span class="line">        boolean isDeleted = channel.endsWith(&quot;:del&quot;);</span><br><span class="line">        if (isDeleted || channel.endsWith(&quot;:expired&quot;)) &#123;</span><br><span class="line">            int beginIndex = body.lastIndexOf(&quot;:&quot;) + 1;</span><br><span class="line">            int endIndex = body.length();</span><br><span class="line">            // Redis键空间消息通知内容即操作的键，spring-session键中命名规则：</span><br><span class="line">            // &quot;$&#123;namespace&#125;:sessions:expires:$&#123;sessionId&#125;&quot;，以下是根据规则解析sessionId</span><br><span class="line">            String sessionId = body.substring(beginIndex, endIndex);</span><br><span class="line"></span><br><span class="line">            // 根据sessionId加载session</span><br><span class="line">            RedisSession session = getSession(sessionId, true);</span><br><span class="line"></span><br><span class="line">            if (session == null) &#123;</span><br><span class="line">                logger.warn(&quot;Unable to publish SessionDestroyedEvent for session &quot;</span><br><span class="line">                        + sessionId);</span><br><span class="line">                return;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            if (logger.isDebugEnabled()) &#123;</span><br><span class="line">                logger.debug(&quot;Publishing SessionDestroyedEvent for session &quot; + sessionId);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            cleanupPrincipalIndex(session);</span><br><span class="line"></span><br><span class="line">            // 发布Session delete事件</span><br><span class="line">            if (isDeleted) &#123;</span><br><span class="line">                handleDeleted(session);</span><br><span class="line">            &#125;</span><br><span class="line">            else &#123;</span><br><span class="line">                // 否则发布Session expire事件</span><br><span class="line">                handleExpired(session);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>下续再深入每种事件产生的前世今生。</p>
+<h2 id="Session创建事件的触发"><a href="#Session创建事件的触发" class="headerlink" title="Session创建事件的触发"></a>Session创建事件的触发</h2><p><img src="/2019/11/22/pringSession源码（二）/4.png" alt="Session事件的抽象"></p>
+<ul>
+<li>由RedisOperationSessionRepository向Redis指定通道${namespace}:event:created:${sessionId}发布一个message</li>
+<li>MessageListener的实现RedisOperationSessionRepository监听到Redis指定通道${namespace}:event:created:${sessionId}的消息</li>
+<li>将其传播至ApplicationEventPublisher</li>
+<li>ApplicationEventPublisher发布SessionCreateEvent</li>
+<li>ApplicationListener监听SessionCreateEvent，执行相应逻辑</li>
+</ul>
+<p>RedisOperationSessionRepository中保存一个Session时，判断Session是否新创建。<br>如果新创建，则向<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">public void save(RedisSession session) &#123;</span><br><span class="line">    session.saveDelta();</span><br><span class="line">    // 判断是否为新创建的session</span><br><span class="line">    if (session.isNew()) &#123;</span><br><span class="line">        // 获取redis指定的channel：$&#123;namespace&#125;:event:created:$&#123;sessionId&#125;，</span><br><span class="line">        // 如：session.example:event:created:82sdd-4123-o244-ps123</span><br><span class="line">        String sessionCreatedKey = getSessionCreatedChannel(session.getId());</span><br><span class="line">        // 向该通道发布session数据</span><br><span class="line">        this.sessionRedisOperations.convertAndSend(sessionCreatedKey, session.delta);</span><br><span class="line">        // 设置session为非新创建</span><br><span class="line">        session.setNew(false);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>该save方法的调用是由HttpServletResponse提交时——即返回客户端响应调用，上篇文章已经详解，这里不再赘述。关于RedisOperationSessionRepository实现MessageListener上述已经介绍，这里同样不再赘述。</p>
+<h2 id="Session删除事件的触发"><a href="#Session删除事件的触发" class="headerlink" title="Session删除事件的触发"></a>Session删除事件的触发</h2><p>删除事件中使用到了Redis KeySpace Notification，建议先了解该技术。</p>
+<p><img src="/2019/11/22/pringSession源码（二）/5.png" alt="Session事件的抽象"></p>
+<ul>
+<li>由RedisOperationSessionRepository删除Redis键空间中的指定Session的过期键，Redis键空间会向<strong>__keyevent@*:del</strong>的channel发布删除事件消息</li>
+<li>MessageListener的实现RedisOperationSessionRepository监听到Redis指定通道<strong>__keyevent@*:del</strong>的消息</li>
+<li>将其传播至ApplicationEventPublisher</li>
+<li>ApplicationEventPublisher发布SessionDeleteEvent</li>
+<li>ApplicationListener监听SessionDeleteEvent，执行相应逻辑<br>当调用HttpSession的invalidate方法让Session失效时，即会调用RedisOperationSessionRepository的deleteById方法删除Session的过期键。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Allows creating an HttpSession from a Session instance.</span><br><span class="line"> *</span><br><span class="line"> * @author Rob Winch</span><br><span class="line"> * @since 1.0</span><br><span class="line"> */</span><br><span class="line">private final class HttpSessionWrapper extends HttpSessionAdapter&lt;S&gt; &#123;</span><br><span class="line">    HttpSessionWrapper(S session, ServletContext servletContext) &#123;</span><br><span class="line">        super(session, servletContext);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void invalidate() &#123;</span><br><span class="line">        super.invalidate();</span><br><span class="line">        SessionRepositoryRequestWrapper.this.requestedSessionInvalidated = true;</span><br><span class="line">        setCurrentSession(null);</span><br><span class="line">        clearRequestedSessionCache();</span><br><span class="line">        // 调用删除方法</span><br><span class="line">        SessionRepositoryFilter.this.sessionRepository.deleteById(getId());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>上篇中介绍了包装Spring Session为HttpSession，这里不再赘述。这里重点分析deleteById内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">public void deleteById(String sessionId) &#123;</span><br><span class="line">    // 如果session为空则返回</span><br><span class="line">    RedisSession session = getSession(sessionId, true);</span><br><span class="line">    if (session == null) &#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cleanupPrincipalIndex(session);</span><br><span class="line">    this.expirationPolicy.onDelete(session);</span><br><span class="line">    // 获取session的过期键</span><br><span class="line">    String expireKey = getExpiredKey(session.getId());</span><br><span class="line">    // 删除过期键，redis键空间产生del事件消息，被MessageListener即</span><br><span class="line">    // RedisOperationSessionRepository监听</span><br><span class="line">    this.sessionRedisOperations.delete(expireKey);</span><br><span class="line">    session.setMaxInactiveInterval(Duration.ZERO);</span><br><span class="line">    save(session);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>后续流程同SessionCreateEvent流程。</p>
+<h2 id="Session失效事件的触发"><a href="#Session失效事件的触发" class="headerlink" title="Session失效事件的触发"></a>Session失效事件的触发</h2><p>Session的过期事件流程比较特殊，因为Redis的键空间通知的特殊性，Redis键空间通知不能保证过期键的通知的及时性。<br><img src="/2019/11/22/pringSession源码（二）/6.png" alt="Session事件的抽象"></p>
+<ul>
+<li>RedisOperationsSessionRepository中有个定时任务方法每整分运行访问整分Session过期键集合中的过期sessionId，如：spring:session:expirations:1439245080000。触发Redis键空间会向<strong>__keyevent@*:expired</strong>的channel发布过期事件消息</li>
+<li>MessageListener的实现RedisOperationSessionRepository监听到Redis指定通道<strong>__keyevent@*:expired</strong>的消息</li>
+<li>将其传播至ApplicationEventPublisher</li>
+<li>ApplicationEventPublisher发布SessionDeleteEvent</li>
+<li>ApplicationListener监听SessionDeleteEvent，执行相应逻辑</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@Scheduled(cron = &quot;0 * * * * *&quot;)</span><br><span class="line">public void cleanupExpiredSessions() &#123;</span><br><span class="line">    this.expirationPolicy.cleanExpiredSessions();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定时任务每整分运行，执行cleanExpiredSessions方法。expirationPolicy是RedisSessionExpirationPolicy实例，是RedisSession过期策略。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public void cleanExpiredSessions() &#123;</span><br><span class="line">    // 获取当前时间戳</span><br><span class="line">    long now = System.currentTimeMillis();</span><br><span class="line">    // 时间滚动至整分，去掉秒和毫秒部分</span><br><span class="line">    long prevMin = roundDownMinute(now);</span><br><span class="line">    if (logger.isDebugEnabled()) &#123;</span><br><span class="line">        logger.debug(&quot;Cleaning up sessions expiring at &quot; + new Date(prevMin));</span><br><span class="line">    &#125;</span><br><span class="line">    // 根据整分时间获取过期键集合，如：spring:session:expirations:1439245080000</span><br><span class="line">    String expirationKey = getExpirationKey(prevMin);</span><br><span class="line">    // 获取所有的所有的过期session</span><br><span class="line">    Set&lt;Object&gt; sessionsToExpire = this.redis.boundSetOps(expirationKey).members();</span><br><span class="line">    // 删除过期Session键集合</span><br><span class="line">    this.redis.delete(expirationKey);</span><br><span class="line">    // touch访问所有已经过期的session，触发Redis键空间通知消息</span><br><span class="line">    for (Object session : sessionsToExpire) &#123;</span><br><span class="line">        String sessionKey = getSessionKey((String) session);</span><br><span class="line">        touch(sessionKey);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>将时间戳滚动至整分<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">static long roundDownMinute(long timeInMs) &#123;</span><br><span class="line">    Calendar date = Calendar.getInstance();</span><br><span class="line">    date.setTimeInMillis(timeInMs);</span><br><span class="line">    // 清理时间错的秒位和毫秒位</span><br><span class="line">    date.clear(Calendar.SECOND);</span><br><span class="line">    date.clear(Calendar.MILLISECOND);</span><br><span class="line">    return date.getTimeInMillis();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>获取过期Session的集合<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">String getExpirationKey(long expires) &#123;</span><br><span class="line">    return this.redisSession.getExpirationsKey(expires);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 如：spring:session:expirations:1439245080000</span><br><span class="line">String getExpirationsKey(long expiration) &#123;</span><br><span class="line">    return this.keyPrefix + &quot;expirations:&quot; + expiration;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>调用Redis的Exists命令，访问过期Session键，触发Redis键空间消息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * By trying to access the session we only trigger a deletion if it the TTL is</span><br><span class="line"> * expired. This is done to handle</span><br><span class="line"> * https://github.com/spring-projects/spring-session/issues/93</span><br><span class="line"> *</span><br><span class="line"> * @param key the key</span><br><span class="line"> */</span><br><span class="line">private void touch(String key) &#123;</span><br><span class="line">    this.redis.hasKey(key);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>总结<br>至此Spring-Session的Session事件通知模块就已经很清晰：</p>
+<ul>
+<li>Redis键空间Session事件源：Session创建通道/Session删除通道/Session过期通道</li>
+<li>Spring-Session中的RedisOperationsSessionRepository消息监听器监听Redis的事件类型</li>
+<li>RedisOperationsSessionRepository负责将其传播至ApplicationEventPublisher</li>
+<li>ApplicationEventPublisher将其包装成ApplicationEvent类型的Session Event发布</li>
+<li>ApplicationListener监听Session Event，处理相应逻辑</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2019/11/22/pringSession源码（二）/">SpringSession源码（二）</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">wen</a></p>
+        <p><span>发布时间:</span>2019-11-22, 15:25:00</p>
+        <p><span>最后更新:</span>2019-11-22, 16:05:37</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2019/11/22/pringSession源码（二）/" title="SpringSession源码（二）">https://smallwenzi.github.io/2019/11/22/pringSession源码（二）/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://smallwenzi.github.io/2019/11/22/pringSession源码（二）/　　作者: wen" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2019/11/22/bbitMq/">
+                    RabbitMq
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2019/11/21/SpringSession源码/">
+                    SpringSession源码
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Session事件的抽象"><span class="toc-number">1.</span> <span class="toc-text">Session事件的抽象</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-事件的触发机制"><span class="toc-number">2.</span> <span class="toc-text">二.事件的触发机制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Session创建事件的触发"><span class="toc-number">2.1.</span> <span class="toc-text">Session创建事件的触发</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Session删除事件的触发"><span class="toc-number">2.2.</span> <span class="toc-text">Session删除事件的触发</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Session失效事件的触发"><span class="toc-number">2.3.</span> <span class="toc-text">Session失效事件的触发</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2019/11/22/bbitMq/" title="上一篇: RabbitMq">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2019/11/21/SpringSession源码/" title="下一篇: SpringSession源码">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/bbitMq/">RabbitMq</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/pringSession源码（二）/">SpringSession源码（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/21/SpringSession源码/">SpringSession源码</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/21/tch-坑/">nutch 坑</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/21/acheHttpd日志说明/">apacheHttpd日志说明</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/ring-session（1）/">spring session（1）</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/具集/">工具集</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/ava-查看占用-CPU-最高的线程/">[Java] 查看占用 CPU 最高的线程</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/29/ring-config-bus/">spring config bus</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/29/pring-admin配置/">spring admin配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/29/rabbitmq-队列信息/">查询rabbitmq 队列信息</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/29/sttemplate-问题/">resttemplate 问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/06/A问题/">底层代码构造sql忽略NUll条件</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/14/windows下atom上搭建PlantUML书写环境/">在windows下atom上搭建PlantUML书写环境</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/14/olr的主从模式Master-Slave/">Solr的主从模式Master-Slave</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/13/lr教程/">solr教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/11/docker的使用/">docker的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/11/-jenkins-配置maven打包git代码/">十二 jenkins 配置maven打包git代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/11/-jenkins-配置git证书/">十一 jenkins 配置git证书</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/11/enkinx-配置任务/">十）jenkins 配置java和Maven环境</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/11/九-linux配置java和maven/">九 linux配置java和maven</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/08/安装jenkins/">八）安装jenkins</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/08/ring-cloud-docker-git-maven-jenkins-Kubernetes-目录/">spring cloud+docker+git+maven+jenkins+Kubernetes 目录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/08/七）maven-build-docker-and-push-Image/">七）maven build docker and push Image</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/08/ocker-mysql/">docker -mysql</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/08/（六）docker安装本地仓库（root用户）/">（六）docker安装本地仓库（root用户）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/08/）更新docker-版本（root用户）/">（五）更新docker 版本（root用户）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/08/（四）安装docker（root用户）/">（四）安装docker（root用户）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/08/三）linux-安装-GIT（root用户）/">（三）linux 安装 GIT（root用户）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/08/Red-Hat-升级-rpm软件、YUM软件（root用户）/">(二）Red-Hat-升级-rpm软件、YUM软件（root用户）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/08/）oracle-VM安装red-hat-liunx/">（一）oracle VM安装red hat liunx</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/08/hymeleaf学习的坑/">thymeleaf学习的坑</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/08/那些提升开发人员工作效率的在线工具/">那些提升开发人员工作效率的在线工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/08/升工作效率/">提升工作效率</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/06/tepad-compare/">Notepad++文本比较插件：Compare</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/28/gtmetix/">用GTmetrix来优化你的网页（集成了YSlow、FireBug的功能）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/20/hexo git/">Hexo搭建githubpage博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/20/Singleton/">java 单例模式</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2017-2019 wen
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+    <script src="/js/GithubRepoWidget.js"></script>
+
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 1;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+             github: ".github-widget a", 
+            
+             post: ".article-entry a[href], .copyright a[href]", 
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

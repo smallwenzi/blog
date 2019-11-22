@@ -4,6 +4,158 @@
 
     
   <url>
+    <loc>https://smallwenzi.github.io/2019/11/22/bbitMq/</loc>
+    <lastmod>2019-11-22T08:39:26.850Z</lastmod>
+    <data>
+        <display>
+        <title>RabbitMq</title>
+        <pubTime>2019-11-22T08:13:00.000Z</pubTime>
+        
+        <tag>RabbitMq</tag>
+         
+        <tag>消息队列</tag>
+         
+         
+           
+             
+              <breadCrumb title="RabbitMq" url="https://smallwenzi.github.io/categories/RabbitMq/"/>
+          
+             
+              <breadCrumb title="消息队列" url="https://smallwenzi.github.io/categories/RabbitMq/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://smallwenzi.github.io/2019/11/22/pringSession%E6%BA%90%E7%A0%81%EF%BC%88%E4%BA%8C%EF%BC%89/</loc>
+    <lastmod>2019-11-22T08:05:37.884Z</lastmod>
+    <data>
+        <display>
+        <title>SpringSession源码（二）</title>
+        <pubTime>2019-11-22T07:25:00.000Z</pubTime>
+        
+        <tag>springsession</tag>
+         
+         
+           
+             
+              <breadCrumb title="springsession" url="https://smallwenzi.github.io/categories/springsession/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://smallwenzi.github.io/2019/11/21/SpringSession%E6%BA%90%E7%A0%81/</loc>
+    <lastmod>2019-11-22T06:53:11.955Z</lastmod>
+    <data>
+        <display>
+        <title>SpringSession源码</title>
+        <pubTime>2019-11-21T08:34:00.000Z</pubTime>
+        
+        <tag>springsession</tag>
+         
+        <tag>session</tag>
+         
+         
+           
+             
+              <breadCrumb title="spring" url="https://smallwenzi.github.io/categories/spring/"/>
+          
+             
+              <breadCrumb title="spring boot" url="https://smallwenzi.github.io/categories/spring/spring-boot/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://smallwenzi.github.io/2019/11/13/ring-session%EF%BC%881%EF%BC%89/</loc>
+    <lastmod>2019-11-22T06:24:25.635Z</lastmod>
+    <data>
+        <display>
+        <title>spring session（1）</title>
+        <pubTime>2019-11-13T03:54:00.000Z</pubTime>
+        
+        <tag>spring</tag>
+         
+        <tag>session</tag>
+         
+         
+           
+             
+              <breadCrumb title="Spring" url="https://smallwenzi.github.io/categories/Spring/"/>
+          
+             
+              <breadCrumb title="Spring boot" url="https://smallwenzi.github.io/categories/Spring/Spring-boot/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://smallwenzi.github.io/2019/11/13/ava-%E6%9F%A5%E7%9C%8B%E5%8D%A0%E7%94%A8-CPU-%E6%9C%80%E9%AB%98%E7%9A%84%E7%BA%BF%E7%A8%8B/</loc>
+    <lastmod>2019-11-21T09:05:17.980Z</lastmod>
+    <data>
+        <display>
+        <title>[Java] 查看占用 CPU 最高的线程</title>
+        <pubTime>2019-11-13T03:15:00.000Z</pubTime>
+        
+        <tag>java</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="https://smallwenzi.github.io/categories/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://smallwenzi.github.io/2019/11/21/tch-%E5%9D%91/</loc>
+    <lastmod>2019-11-21T02:18:52.016Z</lastmod>
+    <data>
+        <display>
+        <title>nutch 坑</title>
+        <pubTime>2019-11-21T02:05:00.000Z</pubTime>
+        
+        <tag>nutch</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://smallwenzi.github.io/2019/11/21/acheHttpd%E6%97%A5%E5%BF%97%E8%AF%B4%E6%98%8E/</loc>
+    <lastmod>2019-11-21T02:06:18.705Z</lastmod>
+    <data>
+        <display>
+        <title>apacheHttpd日志说明</title>
+        <pubTime>2019-11-21T02:00:00.000Z</pubTime>
+        
+        <tag>httpd</tag>
+         
+         
+           
+             
+              <breadCrumb title="apache" url="https://smallwenzi.github.io/categories/apache/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://smallwenzi.github.io/2019/11/13/%E5%85%B7%E9%9B%86/</loc>
     <lastmod>2019-11-13T03:48:34.517Z</lastmod>
     <data>
@@ -17,26 +169,6 @@
            
              
               <breadCrumb title="tools" url="https://smallwenzi.github.io/categories/tools/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://smallwenzi.github.io/2019/11/13/ava-%E6%9F%A5%E7%9C%8B%E5%8D%A0%E7%94%A8-CPU-%E6%9C%80%E9%AB%98%E7%9A%84%E7%BA%BF%E7%A8%8B/</loc>
-    <lastmod>2019-11-13T03:29:53.099Z</lastmod>
-    <data>
-        <display>
-        <title>[Java] 查看占用 CPU 最高的线程</title>
-        <pubTime>2019-11-13T03:15:00.000Z</pubTime>
-        
-        <tag>java</tag>
-         
-         
-           
-             
-              <breadCrumb title="java" url="https://smallwenzi.github.io/categories/java/"/>
           
         </display>
     </data>

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="wen" />
+
+
+
+<meta name="description" content="前言在开始spring-session揭秘之前，先做下热脑（活动活动脑子）运动。主要从以下三个方面进行热脑：  为什么要spring-session 比较traditional-session方案和spring-session方案 JSR340规范与spring-session的透明继承一.为什么要spring-session在传统单机web应用中，一般使用tomcat/jetty等web容器时，">
+<meta name="keywords" content="spring,session">
+<meta property="og:type" content="article">
+<meta property="og:title" content="spring session（1）">
+<meta property="og:url" content="https://smallwenzi.github.io/2019/11/13/ring-session（1）/index.html">
+<meta property="og:site_name" content="wen blog">
+<meta property="og:description" content="前言在开始spring-session揭秘之前，先做下热脑（活动活动脑子）运动。主要从以下三个方面进行热脑：  为什么要spring-session 比较traditional-session方案和spring-session方案 JSR340规范与spring-session的透明继承一.为什么要spring-session在传统单机web应用中，一般使用tomcat/jetty等web容器时，">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://smallwenzi.github.io/2019/11/13/ring-session（1）/1.png">
+<meta property="og:updated_time" content="2019-11-22T06:24:25.635Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="spring session（1）">
+<meta name="twitter:description" content="前言在开始spring-session揭秘之前，先做下热脑（活动活动脑子）运动。主要从以下三个方面进行热脑：  为什么要spring-session 比较traditional-session方案和spring-session方案 JSR340规范与spring-session的透明继承一.为什么要spring-session在传统单机web应用中，一般使用tomcat/jetty等web容器时，">
+<meta name="twitter:image" content="https://smallwenzi.github.io/2019/11/13/ring-session（1）/1.png">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="wen blog" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/img/head.jpg">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>spring session（1） | wen blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?54768e95527ea89b815041379f4d75dd";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/head.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">wen</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">tanyanwen的技术分享</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:beityw@hotmail.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" href="http://weibo.com/1762122412" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/smallwenzi/smallwenzi.github.io" title="GitHub"></a>
+                            
+                                <a class="fa 简书" href="https://www.jianshu.com/u/1e0817ccc306" title="简书"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/RabbitMq/">RabbitMq</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/">atom</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/githubpage/">githubpage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-admin/">hexo-admin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/httpd/">httpd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jenkins/">jenkins</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jpa/">jpa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/notepad/">notepad</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nutch/">nutch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plantuml/">plantuml</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rabbitMq/">rabbitMq</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/red-hat-Linux/">red hat Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/resttemplate/">resttemplate</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rpm/">rpm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/session/">session</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/solr/">solr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/solr-master/">solr-master</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/solr-slave/">solr-slave</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring-cloud/">spring cloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring-config/">spring config</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springAdmin/">springAdmin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springsession/">springsession</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thymeleaf/">thymeleaf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work/">work</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yum/">yum</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单例模式/">单例模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工作/">工作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工作效率/">工作效率</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能优化/">性能优化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/消息队列/">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线程/">线程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">wen</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/head.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">wen</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">tanyanwen的技术分享</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:beityw@hotmail.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/1762122412" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/smallwenzi/smallwenzi.github.io" title="GitHub"></a>
+                            
+                                <a class="fa 简书" target="_blank" href="https://www.jianshu.com/u/1e0817ccc306" title="简书"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-ring-session（1）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/11/13/ring-session（1）/" class="article-date">
+      <time datetime="2019-11-13T03:54:00.000Z" itemprop="datePublished">2019-11-13</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      spring session（1）
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Spring/">Spring</a><a class="article-category-link" href="/categories/Spring/Spring-boot/">Spring boot</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/session/">session</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在开始spring-session揭秘之前，先做下热脑（活动活动脑子）运动。主要从以下三个方面进行热脑：</p>
+<ul>
+<li>为什么要spring-session</li>
+<li>比较traditional-session方案和spring-session方案</li>
+<li>JSR340规范与spring-session的透明继承<h1 id="一-为什么要spring-session"><a href="#一-为什么要spring-session" class="headerlink" title="一.为什么要spring-session"></a>一.为什么要spring-session</h1>在传统单机web应用中，一般使用tomcat/jetty等web容器时，用户的session都是由容器管理。浏览器使用cookie中记录sessionId，容器根据sessionId判断用户是否存在会话session。这里的限制是，session存储在web容器中，被单台服务器容器管理。</li>
+</ul>
+<p>但是网站主键演变，分布式应用和集群是趋势（提高性能）。此时用户的请求可能被负载分发至不同的服务器，此时传统的web容器管理用户会话session的方式即行不通。除非集群或者分布式web应用能够共享session，尽管tomcat等支持这样做。但是这样存在以下两点问题：</p>
+<ul>
+<li>需要侵入web容器，提高问题的复杂</li>
+<li>web容器之间共享session，集群机器之间势必要交互耦合<br>基于这些，必须提供新的可靠的集群分布式/集群session的解决方案，突破traditional-session单机限制（即web容器session方式，下面简称traditional-session），spring-session应用而生。</li>
+</ul>
+<h1 id="二-比较traditional-session方案和spring-session方案"><a href="#二-比较traditional-session方案和spring-session方案" class="headerlink" title="二.比较traditional-session方案和spring-session方案"></a>二.比较traditional-session方案和spring-session方案</h1><p>下图展示了traditional-session和spring-session的区别</p>
+<p><img src="/2019/11/13/ring-session（1）/1.png" alt="logo"><br>传统模式中，当request进入web容器，根据reqest获取session时，如果web容器中存在session则返回，如果不存在，web容器则创建一个session。然后返回response时，将sessonId作为response的head一并返回给客户端或者浏览器。</p>
+<p>但是上节中说明了traditional-session的局限性在于：单机session。在此限制的相反面，即将session从web容器中抽出来，形成独立的模块，以便分布式应用或者集群都能共享，即能解决。</p>
+<p>spring-session的核心思想在于此：将session从web容器中剥离，存储在独立的存储服务器中。目前支持多种形式的session存储器：Redis、Database、MogonDB等。session的管理责任委托给spring-session承担。当request进入web容器，根据request获取session时，由spring-session负责存存储器中获取session，如果存在则返回，如果不存在则创建并持久化至存储器中。</p>
+<h1 id="JSR340规范与spring-session的透明继承"><a href="#JSR340规范与spring-session的透明继承" class="headerlink" title="JSR340规范与spring-session的透明继承"></a>JSR340规范与spring-session的透明继承</h1><p>JSR340是Java Servlet 3.1的规范提案，其中定义了大量的api，包括：servlet、servletRequest/HttpServletRequest/HttpServletRequestWrapper、servletResponse/HttpServletResponse/HttpServletResponseWrapper、Filter、Session等，是标准的web容器需要遵循的规约，如tomcat/jetty/weblogic等等。</p>
+<p>在日常的应用开发中，develpers也在频繁的使用servlet-api，比如：</p>
+<p>以下的方式获取请求的session：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HttpServletRequest request = ...</span><br><span class="line">HttpSession session = request.getSession(false);</span><br></pre></td></tr></table></figure></p>
+<p>其中HttpServletRequest和HttpSession都是servlet规范中定义的接口，web容器实现的标准。那如果引入spring-session，要如何获取session？</p>
+<ul>
+<li>遵循servlet规范，同样方式获取session，对应用代码无侵入且对于developers透明化</li>
+<li>全新实现一套session规范，定义一套新的api和session管理机制<br>两种方案都可以实现，但是显然第一种更友好，且具有兼容性。spring-session正是第一种方案的实现。</li>
+</ul>
+<p>实现第一种方案的关键点在于做到透明和兼容</p>
+<p>接口适配：仍然使用HttpServletRequest获取session，获取到的session仍然是HttpSession类型——适配器模式<br>类型包装增强：Session不能存储在web容器内，要外化存储——装饰模式<br>让人兴奋的是，以上的需求在Servlet规范中的扩展性都是予以支持！Servlet规范中定义一系列的接口都是支持扩展，同时提供Filter支撑扩展点。</p>
+<h1 id="spring-session入门"><a href="#spring-session入门" class="headerlink" title="spring session入门"></a>spring session入门</h1><p>主要从以下两个方面来说spring-session：</p>
+<ul>
+<li>特点</li>
+<li><p>工作原理</p>
+<h2 id="一-特点"><a href="#一-特点" class="headerlink" title="一.特点"></a>一.特点</h2><p>spring-session在无需绑定web容器的情况下提供对集群session的支持。并提供对以下情况的透明集成：</p>
+</li>
+<li><p>HttpSession：容许替换web容器的HttpSession</p>
+</li>
+<li>WebSocket：使用WebSocket通信时，提供Session的活跃</li>
+<li>WebSession：容许以应用中立的方式替换webflux的webSession</li>
+</ul>
+<p>下面以项目接入spring session redis为例</p>
+<h1 id="spring-项目"><a href="#spring-项目" class="headerlink" title="spring 项目"></a>spring 项目</h1><p>引入spring session的jar<br>代码：<a href="https://github.com/smallwenzi/testSpringSession" target="_blank" rel="noopener">https://github.com/smallwenzi/testSpringSession</a></p>
+<h2 id="引入"><a href="#引入" class="headerlink" title="引入:"></a>引入:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    	&lt;groupId&gt;org.springframework.session&lt;/groupId&gt;</span><br><span class="line">    	&lt;artifactId&gt;spring-session&lt;/artifactId&gt;</span><br><span class="line">    	&lt;version&gt;1.3.0.RELEASE&lt;/version&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line">         &lt;dependency&gt;</span><br><span class="line">    	&lt;groupId&gt;org.springframework.session&lt;/groupId&gt;</span><br><span class="line">    	&lt;artifactId&gt;spring-session&lt;/artifactId&gt;</span><br><span class="line">    	&lt;version&gt;1.3.0.RELEASE&lt;/version&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;!-- Spring session redis 依赖start --&gt;</span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line">		&lt;groupId&gt;org.springframework.session&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;spring-session-data-redis&lt;/artifactId&gt;</span><br><span class="line">		&lt;version&gt;1.2.0.RELEASE&lt;/version&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line">	    &lt;groupId&gt;org.springframework.data&lt;/groupId&gt;</span><br><span class="line">	    &lt;artifactId&gt;spring-data-redis&lt;/artifactId&gt;</span><br><span class="line">	    &lt;version&gt;1.6.0.RELEASE&lt;/version&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line">	    &lt;groupId&gt;redis.clients&lt;/groupId&gt;</span><br><span class="line">	    &lt;artifactId&gt;jedis&lt;/artifactId&gt;</span><br><span class="line">	    &lt;version&gt;2.9.0&lt;/version&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="配置redis"><a href="#配置redis" class="headerlink" title="配置redis"></a>配置redis</h2><p>applicationContext.xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=&quot;redisTemplate&quot; class=&quot;org.springframework.data.redis.core.StringRedisTemplate&quot;&gt;</span><br><span class="line">    &lt;property name=&quot;connectionFactory&quot; ref=&quot;jedisConnectionFactory&quot; /&gt;</span><br><span class="line">&lt;/bean&gt;   </span><br><span class="line"> &lt;bean id=&quot;jedisConnectionFactory&quot; class=&quot;org.springframework.data.redis.connection.jedis.JedisConnectionFactory&quot;&gt;</span><br><span class="line">     &lt;property name=&quot;hostName&quot; value=&quot;$&#123;redis.hostName&#125;&quot; /&gt;</span><br><span class="line">     &lt;property name=&quot;port&quot; value=&quot;$&#123;redis.port&#125;&quot; /&gt;</span><br><span class="line">     &lt;property name=&quot;password&quot; value=&quot;$&#123;redis.password&#125;&quot; /&gt;</span><br><span class="line">     &lt;property name=&quot;usePool&quot; value=&quot;$&#123;redis.usePool&#125;&quot; /&gt;</span><br><span class="line">     &lt;property name=&quot;timeout&quot; value=&quot;$&#123;redis.timeout&#125;&quot; /&gt;</span><br><span class="line"> &lt;/bean&gt;</span><br></pre></td></tr></table></figure></p>
+<p>redis.properties（自行更改redis 配置）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">redis.hostName=localhost</span><br><span class="line">redis.port=6379</span><br><span class="line">redis.password=</span><br><span class="line">redis.usePool=true</span><br><span class="line">redis.timeout=10000</span><br></pre></td></tr></table></figure></p>
+<h2 id="开启spring-session"><a href="#开启spring-session" class="headerlink" title="开启spring session"></a>开启spring session</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">//redisNamespace区分每个项目spring session key唯一</span><br><span class="line">@EnableRedisHttpSession(redisNamespace = &quot;testSpringSession&quot;)</span><br><span class="line">public class SpringSessionHttpConfig &#123;</span><br><span class="line"></span><br><span class="line">    private static final Logger logger = LoggerFactory.getLogger(SpringSessionHttpConfig.class);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.corepoolsize&#125;&quot;)</span><br><span class="line">    private String corepoolsize;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.maxpoolsize&#125;&quot;)</span><br><span class="line">    private String maxpoolsize;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.keepaliveseconds&#125;&quot;)</span><br><span class="line">    private String keepaliveseconds;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.queuecapacity&#125;&quot;)</span><br><span class="line">    private String queuecapacity;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.threadnameprefix&#125;&quot;)</span><br><span class="line">    private String threadnameprefix;</span><br><span class="line"></span><br><span class="line">//控制springsession 线程池 否则线程会无限制创建 导致oom 线程配置详细看看项目里test.properties</span><br><span class="line">    @Bean</span><br><span class="line">    public ThreadPoolTaskExecutor springSessionRedisTaskExecutor() &#123;</span><br><span class="line">        logger.info(&quot;JedisPool注入成功！！&quot;);</span><br><span class="line">        ThreadPoolTaskExecutor springSessionRedisTaskExecutor = new ThreadPoolTaskExecutor();</span><br><span class="line">        springSessionRedisTaskExecutor.setCorePoolSize(getRedisTaskexecutorStrToInt(this.corepoolsize, 16));</span><br><span class="line">        springSessionRedisTaskExecutor.setMaxPoolSize(getRedisTaskexecutorStrToInt(this.maxpoolsize, 300));</span><br><span class="line">        springSessionRedisTaskExecutor.setKeepAliveSeconds(getRedisTaskexecutorStrToInt(this.keepaliveseconds, 30));</span><br><span class="line">        springSessionRedisTaskExecutor.setQueueCapacity(getRedisTaskexecutorStrToInt(this.queuecapacity, 500));</span><br><span class="line">        springSessionRedisTaskExecutor.setThreadNamePrefix(this.threadnameprefix);</span><br><span class="line">        return springSessionRedisTaskExecutor;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private int getRedisTaskexecutorStrToInt(String size, int defaultSize) &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            int sizeInt = Integer.parseInt(size);</span><br><span class="line">            return sizeInt;</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            return defaultSize;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="web-xml"><a href="#web-xml" class="headerlink" title="web.xml"></a>web.xml</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> &lt;filter&gt;</span><br><span class="line"> &lt;!-- 必须这样命名 SpringHttpSessionConfiguration类中定义了springSessionRepositoryFilter类 --&gt;</span><br><span class="line">&lt;filter-name&gt;springSessionRepositoryFilter&lt;/filter-name&gt;</span><br><span class="line">&lt;filter-class&gt;org.springframework.web.filter.DelegatingFilterProxy&lt;/filter-class&gt;	</span><br><span class="line"> &lt;/filter&gt;</span><br><span class="line"> &lt;filter-mapping&gt;</span><br><span class="line">&lt;filter-name&gt;springSessionRepositoryFilter&lt;/filter-name&gt;</span><br><span class="line">   &lt;!-- 需要spring session的访问路径 --&gt;</span><br><span class="line">&lt;url-pattern&gt;/*&lt;/url-pattern&gt; </span><br><span class="line"> &lt;/filter-mapping&gt;</span><br></pre></td></tr></table></figure>
+<p>本地分别部署tomcat 进行测试<a href="http://localhost:8082/testSpringSession/testSession.do" target="_blank" rel="noopener">http://localhost:8082/testSpringSession/testSession.do</a><br><a href="http://localhost:8080/testSpringSession/testSession.do" target="_blank" rel="noopener">http://localhost:8080/testSpringSession/testSession.do</a><br>输出的session id是否一致<br>若一致则spring session成功</p>
+<h1 id="spring-boot项目"><a href="#spring-boot项目" class="headerlink" title="spring boot项目"></a>spring boot项目</h1><p>项目：<a href="https://github.com/smallwenzi/testSpringBootSession" target="_blank" rel="noopener">https://github.com/smallwenzi/testSpringBootSession</a></p>
+<h2 id="引入jar"><a href="#引入jar" class="headerlink" title="引入jar"></a>引入jar</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">          &lt;dependency&gt;</span><br><span class="line">   &lt;groupId&gt;org.springframework.session&lt;/groupId&gt;</span><br><span class="line">   &lt;artifactId&gt;spring-session&lt;/artifactId&gt;</span><br><span class="line">  &lt;/dependency&gt;</span><br><span class="line">  	&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;/dependencies&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="开启springsession"><a href="#开启springsession" class="headerlink" title="开启springsession"></a>开启springsession</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">//redisNamespace区分每个项目spring session key唯一</span><br><span class="line">@EnableRedisHttpSession(redisNamespace = &quot;testSpringBootSession&quot;)</span><br><span class="line">public class SpringSessionHttpConfig &#123;</span><br><span class="line">    private static final Logger logger = LoggerFactory.getLogger(SpringSessionHttpConfig.class);</span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.corepoolsize&#125;&quot;)</span><br><span class="line">    private String corepoolsize;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.maxpoolsize&#125;&quot;)</span><br><span class="line">    private String maxpoolsize;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.keepaliveseconds&#125;&quot;)</span><br><span class="line">    private String keepaliveseconds;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.queuecapacity&#125;&quot;)</span><br><span class="line">    private String queuecapacity;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.threadnameprefix&#125;&quot;)</span><br><span class="line">    private String threadnameprefix;</span><br><span class="line"></span><br><span class="line">//控制springsession 线程池 否则线程会无限制创建 导致oom 线程配置详细看看项目里application.properties</span><br><span class="line">    @Bean</span><br><span class="line">    public ThreadPoolTaskExecutor springSessionRedisTaskExecutor() &#123;</span><br><span class="line">        logger.info(&quot;JedisPool注入成功！！&quot;);</span><br><span class="line">        ThreadPoolTaskExecutor springSessionRedisTaskExecutor = new ThreadPoolTaskExecutor();</span><br><span class="line">        springSessionRedisTaskExecutor.setCorePoolSize(getRedisTaskexecutorStrToInt(this.corepoolsize, 16));</span><br><span class="line">        springSessionRedisTaskExecutor.setMaxPoolSize(getRedisTaskexecutorStrToInt(this.maxpoolsize, 300));</span><br><span class="line">        springSessionRedisTaskExecutor.setKeepAliveSeconds(getRedisTaskexecutorStrToInt(this.keepaliveseconds, 30));</span><br><span class="line">        springSessionRedisTaskExecutor.setQueueCapacity(getRedisTaskexecutorStrToInt(this.queuecapacity, 500));</span><br><span class="line">        springSessionRedisTaskExecutor.setThreadNamePrefix(this.threadnameprefix);</span><br><span class="line">        return springSessionRedisTaskExecutor;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private int getRedisTaskexecutorStrToInt(String size, int defaultSize) &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            int sizeInt = Integer.parseInt(size);</span><br><span class="line">            return sizeInt;</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            return defaultSize;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="application-properties"><a href="#application-properties" class="headerlink" title="application.properties"></a>application.properties</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#本地测试设置随机端口 （自行更改redis 配置）</span><br><span class="line">server.port=0</span><br><span class="line"># redis start</span><br><span class="line">#spring.redis.database=0</span><br><span class="line">spring.redis.password=</span><br><span class="line">spring.redis.pool.max-idle=10</span><br><span class="line">spring.redis.pool.min-idle=0</span><br><span class="line">spring.redis.pool.max-active=100</span><br><span class="line">spring.redis.pool.max-wait=1000</span><br><span class="line">spring.redis.database=0</span><br><span class="line"># Redis\u670D\u52A1\u5668\u5730\u5740</span><br><span class="line">spring.redis.host=localhost</span><br><span class="line"># Redis\u670D\u52A1\u5668\u8FDE\u63A5\u7AEF\u53E3</span><br><span class="line">spring.redis.port=6379</span><br><span class="line"></span><br><span class="line"># redis end</span><br><span class="line">#spring session\u4f7f\u7528\u5b58\u50a8\u7c7b\u578b</span><br><span class="line">spring.session.store-type=redis</span><br><span class="line"></span><br><span class="line">##spring-session redis \u7ebf\u7a0b\u6c60\u914d\u7f6e</span><br><span class="line">redis.taskexecutor.corepoolsize=16</span><br><span class="line">redis.taskexecutor.maxpoolsize=300</span><br><span class="line">redis.taskexecutor.keepaliveseconds=30</span><br><span class="line">redis.taskexecutor.queuecapacity=500</span><br><span class="line">redis.taskexecutor.threadnameprefix=testSpringBootSession-spring-session-redis-executor-thread:</span><br></pre></td></tr></table></figure>
+<p>本地分别启动 WebApplication进行测试<a href="http://localhost:port/testSession" target="_blank" rel="noopener">http://localhost:port/testSession</a><br><a href="http://localhost:port/" target="_blank" rel="noopener">http://localhost:port/</a><br>testSession<br>输出的session id是否一致<br>若一致则spring session成功</p>
+<p>有兴趣可以读<a href="https://smallwenzi.github.io/2019/11/21/SpringSession%E6%BA%90%E7%A0%81/" title="《spring sesson源码》">《spring sesson源码》</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2019/11/13/ring-session（1）/">spring session（1）</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">wen</a></p>
+        <p><span>发布时间:</span>2019-11-13, 11:54:00</p>
+        <p><span>最后更新:</span>2019-11-22, 14:24:25</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2019/11/13/ring-session（1）/" title="spring session（1）">https://smallwenzi.github.io/2019/11/13/ring-session（1）/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://smallwenzi.github.io/2019/11/13/ring-session（1）/　　作者: wen" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2019/11/21/acheHttpd日志说明/">
+                    apacheHttpd日志说明
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2019/11/13/具集/">
+                    工具集
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一-为什么要spring-session"><span class="toc-number">2.</span> <span class="toc-text">一.为什么要spring-session</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-比较traditional-session方案和spring-session方案"><span class="toc-number">3.</span> <span class="toc-text">二.比较traditional-session方案和spring-session方案</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JSR340规范与spring-session的透明继承"><span class="toc-number">4.</span> <span class="toc-text">JSR340规范与spring-session的透明继承</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#spring-session入门"><span class="toc-number">5.</span> <span class="toc-text">spring session入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一-特点"><span class="toc-number">5.1.</span> <span class="toc-text">一.特点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#spring-项目"><span class="toc-number">6.</span> <span class="toc-text">spring 项目</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#引入"><span class="toc-number">6.1.</span> <span class="toc-text">引入:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置redis"><span class="toc-number">6.2.</span> <span class="toc-text">配置redis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开启spring-session"><span class="toc-number">6.3.</span> <span class="toc-text">开启spring session</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web-xml"><span class="toc-number">6.4.</span> <span class="toc-text">web.xml</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#spring-boot项目"><span class="toc-number">7.</span> <span class="toc-text">spring boot项目</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#引入jar"><span class="toc-number">7.1.</span> <span class="toc-text">引入jar</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开启springsession"><span class="toc-number">7.2.</span> <span class="toc-text">开启springsession</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#application-properties"><span class="toc-number">7.3.</span> <span class="toc-text">application.properties</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2019/11/21/acheHttpd日志说明/" title="上一篇: apacheHttpd日志说明">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2019/11/13/具集/" title="下一篇: 工具集">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/bbitMq/">RabbitMq</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/pringSession源码（二）/">SpringSession源码（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/21/SpringSession源码/">SpringSession源码</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/21/tch-坑/">nutch 坑</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/21/acheHttpd日志说明/">apacheHttpd日志说明</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/ring-session（1）/">spring session（1）</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/具集/">工具集</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/ava-查看占用-CPU-最高的线程/">[Java] 查看占用 CPU 最高的线程</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/29/ring-config-bus/">spring config bus</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/29/pring-admin配置/">spring admin配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/29/rabbitmq-队列信息/">查询rabbitmq 队列信息</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/29/sttemplate-问题/">resttemplate 问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/06/A问题/">底层代码构造sql忽略NUll条件</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/14/windows下atom上搭建PlantUML书写环境/">在windows下atom上搭建PlantUML书写环境</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/14/olr的主从模式Master-Slave/">Solr的主从模式Master-Slave</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/13/lr教程/">solr教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/11/docker的使用/">docker的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/11/-jenkins-配置maven打包git代码/">十二 jenkins 配置maven打包git代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/11/-jenkins-配置git证书/">十一 jenkins 配置git证书</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/11/enkinx-配置任务/">十）jenkins 配置java和Maven环境</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/11/九-linux配置java和maven/">九 linux配置java和maven</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/08/安装jenkins/">八）安装jenkins</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/08/ring-cloud-docker-git-maven-jenkins-Kubernetes-目录/">spring cloud+docker+git+maven+jenkins+Kubernetes 目录</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/08/七）maven-build-docker-and-push-Image/">七）maven build docker and push Image</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/08/ocker-mysql/">docker -mysql</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/08/（六）docker安装本地仓库（root用户）/">（六）docker安装本地仓库（root用户）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/08/）更新docker-版本（root用户）/">（五）更新docker 版本（root用户）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/08/（四）安装docker（root用户）/">（四）安装docker（root用户）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/08/三）linux-安装-GIT（root用户）/">（三）linux 安装 GIT（root用户）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/08/Red-Hat-升级-rpm软件、YUM软件（root用户）/">(二）Red-Hat-升级-rpm软件、YUM软件（root用户）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/08/）oracle-VM安装red-hat-liunx/">（一）oracle VM安装red hat liunx</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/08/hymeleaf学习的坑/">thymeleaf学习的坑</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/08/那些提升开发人员工作效率的在线工具/">那些提升开发人员工作效率的在线工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/08/升工作效率/">提升工作效率</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/06/tepad-compare/">Notepad++文本比较插件：Compare</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/28/gtmetix/">用GTmetrix来优化你的网页（集成了YSlow、FireBug的功能）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/20/hexo git/">Hexo搭建githubpage博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/20/Singleton/">java 单例模式</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2017-2019 wen
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+    <script src="/js/GithubRepoWidget.js"></script>
+
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 1;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+             github: ".github-widget a", 
+            
+             post: ".article-entry a[href], .copyright a[href]", 
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
