@@ -1,3 +1,4 @@
+https://smallwenzi.github.io/2020/01/03/omcat-三种部署方式/
 https://smallwenzi.github.io/2019/11/22/bbitMq/
 https://smallwenzi.github.io/2019/11/22/pringSession源码（二）/
 https://smallwenzi.github.io/2019/11/21/SpringSession源码/
@@ -7,4 +8,3 @@ https://smallwenzi.github.io/2019/11/13/ring-session（1）/
 https://smallwenzi.github.io/2019/11/13/具集/
 https://smallwenzi.github.io/2019/11/13/ava-查看占用-CPU-最高的线程/
 https://smallwenzi.github.io/2019/05/29/ring-config-bus/
-https://smallwenzi.github.io/2019/05/29/pring-admin配置/

@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title><![CDATA[tomcat 三种部署方式]]></title>
+      <url>https://smallwenzi.github.io/2020/01/03/omcat-%E4%B8%89%E7%A7%8D%E9%83%A8%E7%BD%B2%E6%96%B9%E5%BC%8F/</url>
+      <content type="html"><![CDATA[<h1 id="一Tomcat自动部署："><a href="#一Tomcat自动部署：" class="headerlink" title="一Tomcat自动部署："></a>一Tomcat自动部署：</h1><p>只要将一个Web应用的WebContent级的AppName直接扔进%Tomcat_Home%\webapps文件夹下，系统会把该web应用直接部署到Tomcat中<br>因为:</p>
+<h1 id="二增加自定义的Web部署文件"><a href="#二增加自定义的Web部署文件" class="headerlink" title="二增加自定义的Web部署文件"></a>二增加自定义的Web部署文件</h1><p>我们需要在%Tomcat_Home%\conf路径下新建一个文件夹catalina——再在其中新建一个localhost文件夹——最后再新建一个XML文件，即增加两层目录并新增XML文件：%Tomcat_Home%\conf\Catalina\localhost\web应用配置文件.xml ，该文件就是部署Web应用的配置文件。例如，我们新建一个%Tomcat_Home%\conf\Catalina\localhost\XXX.xml，  该文件的内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Context path=&quot;/XXX&quot; reloadable=&quot;true&quot; docBase=&quot;D:\workspace\WebApp\AppName&quot; workDir=&quot;D:\workspace\WebApp\work&quot;/&gt;</span><br></pre></td></tr></table></figure></p>
+<h1 id="手动修改-Tomcat-Home-conf-server-xml文件来部署web应用"><a href="#手动修改-Tomcat-Home-conf-server-xml文件来部署web应用" class="headerlink" title="手动修改%Tomcat_Home%\conf\server.xml文件来部署web应用"></a>手动修改%Tomcat_Home%\conf\server.xml文件来部署web应用</h1><p>打开%Tomcat_Home%\conf\server.xml文件并在其中增加以下元素：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;Context docBase=&quot;D:\workspace\WebApp\AppName&quot; path=&quot;/XXX&quot; debug=&quot;0&quot; reloadable=&quot;false&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>总结：第一种和第二种：<br>tomcat服务器在运行状态下会监视在WEB-INF/classes和WEB-INF/lib目录下class文件的改动，如果监测到有class文件被更新的，服务器会自动重新加载Web应用</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> tomcat </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[RabbitMq]]></title>
       <url>https://smallwenzi.github.io/2019/11/22/bbitMq/</url>
       <content type="html"><![CDATA[<h1 id="思考问题：为什么要使用消息队列"><a href="#思考问题：为什么要使用消息队列" class="headerlink" title="思考问题：为什么要使用消息队列"></a>思考问题：为什么要使用消息队列</h1><p> 一个系统需要调用多个系统或者模块，互相之间调用很复杂，维护起来很麻烦。</p>

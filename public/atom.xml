@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://smallwenzi.github.io/"/>
-  <updated>2019-11-22T08:39:26.850Z</updated>
+  <updated>2020-01-03T02:38:51.049Z</updated>
   <id>https://smallwenzi.github.io/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>tomcat 三种部署方式</title>
+    <link href="https://smallwenzi.github.io/2020/01/03/omcat-%E4%B8%89%E7%A7%8D%E9%83%A8%E7%BD%B2%E6%96%B9%E5%BC%8F/"/>
+    <id>https://smallwenzi.github.io/2020/01/03/omcat-三种部署方式/</id>
+    <published>2020-01-03T02:26:00.000Z</published>
+    <updated>2020-01-03T02:38:51.049Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一Tomcat自动部署："><a href="#一Tomcat自动部署：" class="headerlink" title="一Tomcat自动部署："></a>一Tomcat自动部署：</h1><p>只要将一个Web应用的WebContent级的AppName直接扔进%Tomcat_Home%\webapps文件夹下，系统会把该web应用直接部署到Tomcat中<br>因为:</p>
+<h1 id="二增加自定义的Web部署文件"><a href="#二增加自定义的Web部署文件" class="headerlink" title="二增加自定义的Web部署文件"></a>二增加自定义的Web部署文件</h1><p>我们需要在%Tomcat_Home%\conf路径下新建一个文件夹catalina——再在其中新建一个localhost文件夹——最后再新建一个XML文件，即增加两层目录并新增XML文件：%Tomcat_Home%\conf\Catalina\localhost\web应用配置文件.xml ，该文件就是部署Web应用的配置文件。例如，我们新建一个%Tomcat_Home%\conf\Catalina\localhost\XXX.xml，  该文件的内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Context path=&quot;/XXX&quot; reloadable=&quot;true&quot; docBase=&quot;D:\workspace\WebApp\AppName&quot; workDir=&quot;D:\workspace\WebApp\work&quot;/&gt;</span><br></pre></td></tr></table></figure></p>
+<h1 id="手动修改-Tomcat-Home-conf-server-xml文件来部署web应用"><a href="#手动修改-Tomcat-Home-conf-server-xml文件来部署web应用" class="headerlink" title="手动修改%Tomcat_Home%\conf\server.xml文件来部署web应用"></a>手动修改%Tomcat_Home%\conf\server.xml文件来部署web应用</h1><p>打开%Tomcat_Home%\conf\server.xml文件并在其中增加以下元素：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;Context docBase=&quot;D:\workspace\WebApp\AppName&quot; path=&quot;/XXX&quot; debug=&quot;0&quot; reloadable=&quot;false&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>总结：第一种和第二种：<br>tomcat服务器在运行状态下会监视在WEB-INF/classes和WEB-INF/lib目录下class文件的改动，如果监测到有class文件被更新的，服务器会自动重新加载Web应用</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;一Tomcat自动部署：&quot;&gt;&lt;a href=&quot;#一Tomcat自动部署：&quot; class=&quot;headerlink&quot; title=&quot;一Tomcat自动部署：&quot;&gt;&lt;/a&gt;一Tomcat自动部署：&lt;/h1&gt;&lt;p&gt;只要将一个Web应用的WebContent级的AppName
+    
+    </summary>
+    
+    
+      <category term="tomcat" scheme="https://smallwenzi.github.io/tags/tomcat/"/>
+    
+  </entry>
   
   <entry>
     <title>RabbitMq</title>
@@ -905,38 +930,6 @@
       <category term="git" scheme="https://smallwenzi.github.io/tags/git/"/>
     
       <category term="jenkins" scheme="https://smallwenzi.github.io/tags/jenkins/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>十）jenkins 配置java和Maven环境</title>
-    <link href="https://smallwenzi.github.io/2018/05/11/enkinx-%E9%85%8D%E7%BD%AE%E4%BB%BB%E5%8A%A1/"/>
-    <id>https://smallwenzi.github.io/2018/05/11/enkinx-配置任务/</id>
-    <published>2018-05-11T15:01:00.000Z</published>
-    <updated>2018-05-11T15:27:28.001Z</updated>
-    
-    <content type="html"><![CDATA[<p>参考：<br><a href="/2018/05/11/九-linux配置java和maven/">linux配置java和maven</a><br><a href="2018/05/08/（六）docker安装本地仓库（root用户）/">docker安装本地仓库</a><br><a href="/2018/05/08/安装jenkins/">安装jenkins</a></p>
-<h1 id="一配置maven"><a href="#一配置maven" class="headerlink" title="一配置maven"></a>一配置maven</h1><p>/app/apache-maven-3.2.3/conf/settings.xml<br>库位置<br><img src="/2018/05/11/enkinx-配置任务/1.png" alt="logo"><br>以下是私有docker库 用户名密码）<br><img src="/2018/05/11/enkinx-配置任务/2.png" alt="logo"></p>
-<h1 id="二-jenkins-配置java和Maven环境"><a href="#二-jenkins-配置java和Maven环境" class="headerlink" title="二 jenkins 配置java和Maven环境"></a>二 jenkins 配置java和Maven环境</h1><p>2.1点击系统管理<br><img src="/2018/05/11/enkinx-配置任务/11278290-aab55082195f5c56.png" alt="logo"><br>2.2 点击 全局工具配置<br><img src="/2018/05/11/enkinx-配置任务/3.png" alt="logo"><br>2.3 如下图配置 java和maven.<br><img src="/2018/05/11/enkinx-配置任务/4.png" alt="logo"></p>
-<p><img src="/2018/05/11/enkinx-配置任务/5.png" alt="logo"><br>2.4 点击 保存 再次点击 系统设置<br><img src="/2018/05/11/enkinx-配置任务/6.png" alt="logo"><br>2.5 再次配置java和maven目录<br><img src="/2018/05/11/enkinx-配置任务/7.png" alt="logo"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;参考：&lt;br&gt;&lt;a href=&quot;/2018/05/11/九-linux配置java和maven/&quot;&gt;linux配置java和maven&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;2018/05/08/（六）docker安装本地仓库（root用户）/&quot;&gt;docker安装本地仓库&lt;/a&gt;
-    
-    </summary>
-    
-      <category term="jenkins" scheme="https://smallwenzi.github.io/categories/jenkins/"/>
-    
-    
-      <category term="docker" scheme="https://smallwenzi.github.io/tags/docker/"/>
-    
-      <category term="maven" scheme="https://smallwenzi.github.io/tags/maven/"/>
-    
-      <category term="jenkins" scheme="https://smallwenzi.github.io/tags/jenkins/"/>
-    
-      <category term="java" scheme="https://smallwenzi.github.io/tags/java/"/>
     
   </entry>
   
