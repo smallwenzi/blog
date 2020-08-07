@@ -30,7 +30,7 @@ Gi地址：https://github.com/spring-projects/spring-framework.git
   # 注意
   注意几点：
  * a，因为其他项目需要依赖spring-core和spring-oxm，所以我们导入后需要先编译这两个包 （在cmd 命令下执行gradle build -x test ）,需要
-  等候一定时间，保证网络稳定
+  等候一定时间(我这边花了1小时时间)，保证网络稳定
  ![gradle](spring源码编译/8.png)
   ![gradle](spring源码编译/9.png)
 
@@ -46,3 +46,69 @@ Gi地址：https://github.com/spring-projects/spring-framework.git
 * d) 以上工作完成之后，我们可以开始导入编辑编译配置了，如下图（需要注意的地方已在图中标注）
 
 # idea使用导入springframework项目
+ ![gradle](spring源码编译/11.png)
+ 点击 import project
+![gradle](spring源码编译/12.png)
+使用gradle导入项目
+![gradle](spring源码编译/13.png)
+最后点击finish （需要从gradle仓库下载所需依赖包 这个过程可能比较久 决定因素是 网络环境及机器环境 ）
+
+
+导入成功：
+![gradle](spring源码编译/15.png)
+
+# 常见问题：
+
+* 导入项目的时候还需要下载gradle 软件
+Setting--》gradle 选择gradle软件目录
+
+![gradle](spring源码编译/16.png)
+
+* 可能由于网络原因构建失败 在gradle窗口选择spring项目右击 菜单选择refreshGradle dependencies
+
+![gradle](spring源码编译/17.png)
+
+# 新建Model
+![gradle](spring源码编译/18.png)
+选择Gradle项目 next
+
+![gradle](spring源码编译/19.png)
+输入项目名称
+![gradle](spring源码编译/20.png)
+确认项目存储路径 最后点击finish
+![gradle](spring源码编译/21.png)
+新建完成：
+![gradle](spring源码编译/22.png)
+编辑build.gradle
+compile(project(":spring-context"))
+![gradle](spring源码编译/23.png)
+
+新增AppConfig.java和MemberService
+```
+package com.yanwen.springTest;
+
+import com.yanwen.springTest.service.MemberService;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Configuration;
+
+@ComponentScan("com.yanwen.springTest")
+@Configuration
+public class AppConfig {
+   public static void main(String[] args){
+      AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+      System.out.println(annotationConfigApplicationContext.getBean(MemberService.class));
+    }
+}
+
+package com.yanwen.springTest.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class MemberService {
+}
+
+```
+运行Appconfig main方法
+
+![gradle](spring源码编译/25.png)
