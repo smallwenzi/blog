@@ -109,7 +109,34 @@ GitHub Pages 本用于介绍托管在GitHub的项目，不过，由于他的空�
 
 在这里我创建了一个github repo叫做 smallwenzi.github.io. 创建完成之后，需要有一次提交(git commit)操作，然后就可以通过链接http://smallwenzi.github.io/ 访问了。
 
-参考：[配置SSH keys](http://www.jianshu.com/p/05289a4bc8b2)
+### 配置SSHKey
+我们如何让本地 git 项目与远程的 GitHub 建立联系呢？用 SSH keys。
+
+#### 检查 SSH keys的设置
+首先我们需要检查你电脑上现有的 ssh key：
+~/.ssh目录是否存在
+若不存在
+```
+ssh-keygen -t rsa -C "邮件地址@youremail.com"
+
+注意 1: 此处的邮箱地址，你可以输入自己的邮箱地址；
+注意2: 此处的「-C」的是大写的「C」
+然后系统会要你输入密码：
+Enter passphrase (empty for no passphrase):<输入加密串>
+Enter same passphrase again:<再次输入加密串>
+在回车中会提示你输入一个密码，这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。这个设置是防止别人往你的项目里提交内容。
+注意：输入密码的时候没有 * 字样的，你直接输入就可以了。
+
+最后看到这样的界面，就成功设置ssh key了：
+```
+ ![logo](hexo git/5.png)
+### 添加 SSH Key 到 GitHub
+在本机设置 SSH Key 之后，需要添加到 GitHub上，以完成 SSH 链接的设置。
+
+1、打开本地 id_rsa.pub 文件（ 参考地址 C:\Documents and Settings\Administrator.ssh\id_rsa.pub）。此文件里面内容为刚才生成的密钥。如果看不到这个文件，你需要设置显示隐藏文件。准确的复制这个文件的内容，才能保证设置的成功。
+
+2、登陆 GitHub 系统。点击右上角的 Account Settings--->SSH KEY AND GPG KEY  ---> new ssh key
+3、把你本地生成的密钥复制到里面（ key 文本框中）， 点击 add key 就ok了
 
 ## 部署Hexo到Github Pages
 
@@ -173,3 +200,23 @@ $ hexo server -d
 如下图：
 ![logo](hexo git/4.png)
 [参考](https://github.com/jaredly/hexo-admin)
+
+## github后台绑上自己的域名
+
+### 申请一个域名
+我用的新网买的域名，买好之后进入域名控制台可以看到自己买的域名。
+![logo](hexo git/7.png)
+设置域名解析记录，注意记录类型设置为CNAME，记录值为刚才github上仓库的名字，注意没有https://。
+![logo](hexo git/8.png)
+
+为了能够从别的域名跳转到github页面，还需要在github中进行设置：
+直接在setting中填写，会自动创建CNAME文件。
+![logo](hexo git/9.png)
+
+## 注意事项（避雷）
+* 创建.cn/.com等域名可能需要进行实名认证才能正确解析，这在域名控制器中会有提示，若域名解析成功，控制器中会显示DNS服务器地址表示正常服务：
+
+
+* 在设置完成后不会立刻生效，需要等待一段时间（10~15分钟），这期间尽量不要因为无法访问而反复更改设置，会因为设置生效有时延而变得更加混乱。
+
+* 要注意浏览器自动缓存问题，在第一次输入后，如果不清除缓存，就算做了更改，浏览器还是会用上一次的DNS解析结果尽管这可能是错误的，所以如果更改设置后还是和原来一样的错误结果，可以试试清除浏览器缓存。

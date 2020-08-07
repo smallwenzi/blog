@@ -108,7 +108,7 @@ baidusitemap:
   path: baidusitemap.xml
 baidu_url_submit:
   count: 10
-  host: https://smallwenzi.github.io
+  host: http://blog.yanwentan.xyz/
   token: rPfiazIClIO56OPC
   path: baidu_urls.txt
 
