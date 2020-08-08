@@ -204,14 +204,37 @@ $ hexo server -d
 ## github后台绑上自己的域名
 
 ### 申请一个域名
-我用的新网买的域名，买好之后进入域名控制台可以看到自己买的域名。
+我用的新网买的域名（yanwentan.xyz），买好之后进入域名控制台可以看到自己买的域名。
 ![logo](hexo git/7.png)
 设置域名解析记录，注意记录类型设置为CNAME，记录值为刚才github上仓库的名字，注意没有https://。
 ![logo](hexo git/8.png)
 
 为了能够从别的域名跳转到github页面，还需要在github中进行设置：
-直接在setting中填写，会自动创建CNAME文件。
-![logo](hexo git/9.png)
+在博客source目录新增CNAME 文件 
+文件内容 添加自己的域名：blog.yanwentan.xyz
+
+这样 通过hexo d -g 部署 就会 设置 域名 显示
+
+## 免费申请https
+https://dash.cloudflare.com 注册一个账号，注册成功后
+* 新增站点yanwentan.xyz
+![logo](hexo git/10.png)
+* 修改dns映射
+![logo](hexo git/12.png)
+NS	gemma.ns.cloudflare.com
+NS	henrik.ns.cloudflare.com
+生效时间24-48小时 
+* 添加cname记录
+添加 blog 映射：smallwenzi.github.io
+![logo](hexo git/11.png)
+设置完成使用 https://blog.yanwentan.xyz/ 访问
+* 点击上图ssl\TLS  设置您的 SSL/TLS 加密模式为 灵活
+![logo](hexo git/13.png)
+* 点击上图 边缘服务器 进行设置 https
+![logo](hexo git/15.png)
+* 点击 analytics 查看网站访问流量
+![logo](hexo git/16.png)
+
 
 ## 注意事项（避雷）
 * 创建.cn/.com等域名可能需要进行实名认证才能正确解析，这在域名控制器中会有提示，若域名解析成功，控制器中会显示DNS服务器地址表示正常服务：

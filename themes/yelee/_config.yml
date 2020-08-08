@@ -41,13 +41,13 @@ since: 2017
 
 subnav:
   Email: "mailto:beityw@hotmail.com"
-  新浪微博: "http://weibo.com/1762122412"
+  #新浪微博: "http://weibo.com/1762122412"
   GitHub: "https://github.com/smallwenzi/smallwenzi.github.io"
   #V2EX: "#"
   #RSS: "/atom.xml"
   #知乎: "zhihu"
   #豆瓣: "douban"
-  简书: "https://www.jianshu.com/u/1e0817ccc306"
+  #简书: "https://www.jianshu.com/u/1e0817ccc306"
   #SegmentFault: ""
   #博客园: "cnblogs"
   #CSDN: ""
@@ -254,15 +254,15 @@ share:
 
 # 百度、谷歌站长验证。填写 HTML 标签 content
 # Site Verification for Google and Baidu. HTML label content.
-baidu_site: d6a5WSV3It
-google_site: 
+baidu_site: Yi3nkSW723
+google_site: 4t79Vu6CdzrRM03i4dF4udzTUUenR2G_8HNofKjCf5g
 
 # Fill in Google Analytics tracking ID, #e.g. UA-XXXXX-X
-google_analytics: 
+google_analytics: UA-25768365-2
 
 # 百度统计 http://sitecenter.baidu.com/sc-web/
 # 查看代码，填入 //hm.baidu.com/hm.js? 之后的内容
-baidu_tongji: 54768e95527ea89b815041379f4d75dd
+baidu_tongji: f4cf750b6a14c0a2f6adcc0977b5309e
 
 # 不蒜子网站计数设置
 # http://ibruce.info/2015/04/04/busuanzi/

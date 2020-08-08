@@ -5,9 +5,9 @@
   <subtitle>tanyanwen的技术分享</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://smallwenzi.github.io/"/>
+  <link href="https://blog.yanwentan.xyz/"/>
   <updated>2020-08-08T01:59:28.961Z</updated>
-  <id>https://smallwenzi.github.io/</id>
+  <id>https://blog.yanwentan.xyz/</id>
   
   <author>
     <name>wen</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>spring源码编译</title>
-    <link href="https://smallwenzi.github.io/2020/08/07/spring%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/"/>
-    <id>https://smallwenzi.github.io/2020/08/07/spring源码编译/</id>
+    <link href="https://blog.yanwentan.xyz/2020/08/07/spring%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/"/>
+    <id>https://blog.yanwentan.xyz/2020/08/07/spring源码编译/</id>
     <published>2020-08-07T08:02:00.000Z</published>
     <updated>2020-08-08T01:59:28.961Z</updated>
     
@@ -34,17 +34,17 @@
     
     </summary>
     
-      <category term="spring" scheme="https://smallwenzi.github.io/categories/spring/"/>
+      <category term="spring" scheme="https://blog.yanwentan.xyz/categories/spring/"/>
     
     
-      <category term="源码" scheme="https://smallwenzi.github.io/tags/%E6%BA%90%E7%A0%81/"/>
+      <category term="源码" scheme="https://blog.yanwentan.xyz/tags/%E6%BA%90%E7%A0%81/"/>
     
   </entry>
   
   <entry>
     <title>tomcat 三种部署方式</title>
-    <link href="https://smallwenzi.github.io/2020/01/03/omcat-%E4%B8%89%E7%A7%8D%E9%83%A8%E7%BD%B2%E6%96%B9%E5%BC%8F/"/>
-    <id>https://smallwenzi.github.io/2020/01/03/omcat-三种部署方式/</id>
+    <link href="https://blog.yanwentan.xyz/2020/01/03/omcat-%E4%B8%89%E7%A7%8D%E9%83%A8%E7%BD%B2%E6%96%B9%E5%BC%8F/"/>
+    <id>https://blog.yanwentan.xyz/2020/01/03/omcat-三种部署方式/</id>
     <published>2020-01-03T02:26:00.000Z</published>
     <updated>2020-08-08T01:59:28.961Z</updated>
     
@@ -60,14 +60,14 @@
     </summary>
     
     
-      <category term="tomcat" scheme="https://smallwenzi.github.io/tags/tomcat/"/>
+      <category term="tomcat" scheme="https://blog.yanwentan.xyz/tags/tomcat/"/>
     
   </entry>
   
   <entry>
     <title>RabbitMq</title>
-    <link href="https://smallwenzi.github.io/2019/11/22/bbitMq/"/>
-    <id>https://smallwenzi.github.io/2019/11/22/bbitMq/</id>
+    <link href="https://blog.yanwentan.xyz/2019/11/22/bbitMq/"/>
+    <id>https://blog.yanwentan.xyz/2019/11/22/bbitMq/</id>
     <published>2019-11-22T08:13:00.000Z</published>
     <updated>2020-02-17T15:08:47.570Z</updated>
     
@@ -82,21 +82,21 @@
     
     </summary>
     
-      <category term="RabbitMq" scheme="https://smallwenzi.github.io/categories/RabbitMq/"/>
+      <category term="RabbitMq" scheme="https://blog.yanwentan.xyz/categories/RabbitMq/"/>
     
-      <category term="消息队列" scheme="https://smallwenzi.github.io/categories/RabbitMq/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+      <category term="消息队列" scheme="https://blog.yanwentan.xyz/categories/RabbitMq/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
     
     
-      <category term="RabbitMq" scheme="https://smallwenzi.github.io/tags/RabbitMq/"/>
+      <category term="RabbitMq" scheme="https://blog.yanwentan.xyz/tags/RabbitMq/"/>
     
-      <category term="消息队列" scheme="https://smallwenzi.github.io/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+      <category term="消息队列" scheme="https://blog.yanwentan.xyz/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
     
   </entry>
   
   <entry>
     <title>SpringSession源码（二）</title>
-    <link href="https://smallwenzi.github.io/2019/11/22/pringSession%E6%BA%90%E7%A0%81%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
-    <id>https://smallwenzi.github.io/2019/11/22/pringSession源码（二）/</id>
+    <link href="https://blog.yanwentan.xyz/2019/11/22/pringSession%E6%BA%90%E7%A0%81%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+    <id>https://blog.yanwentan.xyz/2019/11/22/pringSession源码（二）/</id>
     <published>2019-11-22T07:25:00.000Z</published>
     <updated>2020-02-17T15:08:47.570Z</updated>
     
@@ -111,17 +111,17 @@
     
     </summary>
     
-      <category term="springsession" scheme="https://smallwenzi.github.io/categories/springsession/"/>
+      <category term="springsession" scheme="https://blog.yanwentan.xyz/categories/springsession/"/>
     
     
-      <category term="springsession" scheme="https://smallwenzi.github.io/tags/springsession/"/>
+      <category term="springsession" scheme="https://blog.yanwentan.xyz/tags/springsession/"/>
     
   </entry>
   
   <entry>
     <title>SpringSession源码</title>
-    <link href="https://smallwenzi.github.io/2019/11/21/SpringSession%E6%BA%90%E7%A0%81/"/>
-    <id>https://smallwenzi.github.io/2019/11/21/SpringSession源码/</id>
+    <link href="https://blog.yanwentan.xyz/2019/11/21/SpringSession%E6%BA%90%E7%A0%81/"/>
+    <id>https://blog.yanwentan.xyz/2019/11/21/SpringSession源码/</id>
     <published>2019-11-21T08:34:00.000Z</published>
     <updated>2020-02-17T15:08:47.568Z</updated>
     
@@ -137,21 +137,21 @@
     
     </summary>
     
-      <category term="spring" scheme="https://smallwenzi.github.io/categories/spring/"/>
+      <category term="spring" scheme="https://blog.yanwentan.xyz/categories/spring/"/>
     
-      <category term="spring boot" scheme="https://smallwenzi.github.io/categories/spring/spring-boot/"/>
+      <category term="spring boot" scheme="https://blog.yanwentan.xyz/categories/spring/spring-boot/"/>
     
     
-      <category term="springsession" scheme="https://smallwenzi.github.io/tags/springsession/"/>
+      <category term="springsession" scheme="https://blog.yanwentan.xyz/tags/springsession/"/>
     
-      <category term="session" scheme="https://smallwenzi.github.io/tags/session/"/>
+      <category term="session" scheme="https://blog.yanwentan.xyz/tags/session/"/>
     
   </entry>
   
   <entry>
     <title>nutch 坑</title>
-    <link href="https://smallwenzi.github.io/2019/11/21/tch-%E5%9D%91/"/>
-    <id>https://smallwenzi.github.io/2019/11/21/tch-坑/</id>
+    <link href="https://blog.yanwentan.xyz/2019/11/21/tch-%E5%9D%91/"/>
+    <id>https://blog.yanwentan.xyz/2019/11/21/tch-坑/</id>
     <published>2019-11-21T02:05:00.000Z</published>
     <updated>2020-02-17T15:08:47.571Z</updated>
     
@@ -168,14 +168,14 @@
     </summary>
     
     
-      <category term="nutch" scheme="https://smallwenzi.github.io/tags/nutch/"/>
+      <category term="nutch" scheme="https://blog.yanwentan.xyz/tags/nutch/"/>
     
   </entry>
   
   <entry>
     <title>apacheHttpd日志说明</title>
-    <link href="https://smallwenzi.github.io/2019/11/21/acheHttpd%E6%97%A5%E5%BF%97%E8%AF%B4%E6%98%8E/"/>
-    <id>https://smallwenzi.github.io/2019/11/21/acheHttpd日志说明/</id>
+    <link href="https://blog.yanwentan.xyz/2019/11/21/acheHttpd%E6%97%A5%E5%BF%97%E8%AF%B4%E6%98%8E/"/>
+    <id>https://blog.yanwentan.xyz/2019/11/21/acheHttpd日志说明/</id>
     <published>2019-11-21T02:00:00.000Z</published>
     <updated>2020-02-17T15:08:47.569Z</updated>
     
@@ -192,17 +192,17 @@
     
     </summary>
     
-      <category term="apache" scheme="https://smallwenzi.github.io/categories/apache/"/>
+      <category term="apache" scheme="https://blog.yanwentan.xyz/categories/apache/"/>
     
     
-      <category term="httpd" scheme="https://smallwenzi.github.io/tags/httpd/"/>
+      <category term="httpd" scheme="https://blog.yanwentan.xyz/tags/httpd/"/>
     
   </entry>
   
   <entry>
     <title>spring session（1）</title>
-    <link href="https://smallwenzi.github.io/2019/11/13/ring-session%EF%BC%881%EF%BC%89/"/>
-    <id>https://smallwenzi.github.io/2019/11/13/ring-session（1）/</id>
+    <link href="https://blog.yanwentan.xyz/2019/11/13/ring-session%EF%BC%881%EF%BC%89/"/>
+    <id>https://blog.yanwentan.xyz/2019/11/13/ring-session（1）/</id>
     <published>2019-11-13T03:54:00.000Z</published>
     <updated>2020-02-17T15:08:47.571Z</updated>
     
@@ -219,21 +219,21 @@
     
     </summary>
     
-      <category term="Spring" scheme="https://smallwenzi.github.io/categories/Spring/"/>
+      <category term="Spring" scheme="https://blog.yanwentan.xyz/categories/Spring/"/>
     
-      <category term="Spring boot" scheme="https://smallwenzi.github.io/categories/Spring/Spring-boot/"/>
+      <category term="Spring boot" scheme="https://blog.yanwentan.xyz/categories/Spring/Spring-boot/"/>
     
     
-      <category term="session" scheme="https://smallwenzi.github.io/tags/session/"/>
+      <category term="session" scheme="https://blog.yanwentan.xyz/tags/session/"/>
     
-      <category term="spring" scheme="https://smallwenzi.github.io/tags/spring/"/>
+      <category term="spring" scheme="https://blog.yanwentan.xyz/tags/spring/"/>
     
   </entry>
   
   <entry>
     <title>工具集</title>
-    <link href="https://smallwenzi.github.io/2019/11/13/%E5%85%B7%E9%9B%86/"/>
-    <id>https://smallwenzi.github.io/2019/11/13/具集/</id>
+    <link href="https://blog.yanwentan.xyz/2019/11/13/%E5%85%B7%E9%9B%86/"/>
+    <id>https://blog.yanwentan.xyz/2019/11/13/具集/</id>
     <published>2019-11-13T03:31:00.000Z</published>
     <updated>2020-02-17T15:08:47.571Z</updated>
     
@@ -248,17 +248,17 @@
     
     </summary>
     
-      <category term="tools" scheme="https://smallwenzi.github.io/categories/tools/"/>
+      <category term="tools" scheme="https://blog.yanwentan.xyz/categories/tools/"/>
     
     
-      <category term="工具" scheme="https://smallwenzi.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="https://blog.yanwentan.xyz/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title>[Java] 查看占用 CPU 最高的线程</title>
-    <link href="https://smallwenzi.github.io/2019/11/13/ava-%E6%9F%A5%E7%9C%8B%E5%8D%A0%E7%94%A8-CPU-%E6%9C%80%E9%AB%98%E7%9A%84%E7%BA%BF%E7%A8%8B/"/>
-    <id>https://smallwenzi.github.io/2019/11/13/ava-查看占用-CPU-最高的线程/</id>
+    <link href="https://blog.yanwentan.xyz/2019/11/13/ava-%E6%9F%A5%E7%9C%8B%E5%8D%A0%E7%94%A8-CPU-%E6%9C%80%E9%AB%98%E7%9A%84%E7%BA%BF%E7%A8%8B/"/>
+    <id>https://blog.yanwentan.xyz/2019/11/13/ava-查看占用-CPU-最高的线程/</id>
     <published>2019-11-13T03:15:00.000Z</published>
     <updated>2020-02-17T15:08:47.570Z</updated>
     
@@ -275,17 +275,17 @@
     
     </summary>
     
-      <category term="java" scheme="https://smallwenzi.github.io/categories/java/"/>
+      <category term="java" scheme="https://blog.yanwentan.xyz/categories/java/"/>
     
     
-      <category term="java" scheme="https://smallwenzi.github.io/tags/java/"/>
+      <category term="java" scheme="https://blog.yanwentan.xyz/tags/java/"/>
     
   </entry>
   
   <entry>
     <title>spring config bus</title>
-    <link href="https://smallwenzi.github.io/2019/05/29/ring-config-bus/"/>
-    <id>https://smallwenzi.github.io/2019/05/29/ring-config-bus/</id>
+    <link href="https://blog.yanwentan.xyz/2019/05/29/ring-config-bus/"/>
+    <id>https://blog.yanwentan.xyz/2019/05/29/ring-config-bus/</id>
     <published>2019-05-29T09:06:00.000Z</published>
     <updated>2019-06-09T15:13:13.727Z</updated>
     
@@ -300,19 +300,19 @@
     
     </summary>
     
-      <category term="spring cloud" scheme="https://smallwenzi.github.io/categories/spring-cloud/"/>
+      <category term="spring cloud" scheme="https://blog.yanwentan.xyz/categories/spring-cloud/"/>
     
     
-      <category term="spring cloud" scheme="https://smallwenzi.github.io/tags/spring-cloud/"/>
+      <category term="spring cloud" scheme="https://blog.yanwentan.xyz/tags/spring-cloud/"/>
     
-      <category term="spring config" scheme="https://smallwenzi.github.io/tags/spring-config/"/>
+      <category term="spring config" scheme="https://blog.yanwentan.xyz/tags/spring-config/"/>
     
   </entry>
   
   <entry>
     <title>spring admin配置</title>
-    <link href="https://smallwenzi.github.io/2019/05/29/pring-admin%E9%85%8D%E7%BD%AE/"/>
-    <id>https://smallwenzi.github.io/2019/05/29/pring-admin配置/</id>
+    <link href="https://blog.yanwentan.xyz/2019/05/29/pring-admin%E9%85%8D%E7%BD%AE/"/>
+    <id>https://blog.yanwentan.xyz/2019/05/29/pring-admin配置/</id>
     <published>2019-05-29T08:54:00.000Z</published>
     <updated>2019-06-09T15:13:13.726Z</updated>
     
@@ -328,19 +328,19 @@
     
     </summary>
     
-      <category term="spring cloud" scheme="https://smallwenzi.github.io/categories/spring-cloud/"/>
+      <category term="spring cloud" scheme="https://blog.yanwentan.xyz/categories/spring-cloud/"/>
     
     
-      <category term="springAdmin" scheme="https://smallwenzi.github.io/tags/springAdmin/"/>
+      <category term="springAdmin" scheme="https://blog.yanwentan.xyz/tags/springAdmin/"/>
     
-      <category term="spring cloud" scheme="https://smallwenzi.github.io/tags/spring-cloud/"/>
+      <category term="spring cloud" scheme="https://blog.yanwentan.xyz/tags/spring-cloud/"/>
     
   </entry>
   
   <entry>
     <title>查询rabbitmq 队列信息</title>
-    <link href="https://smallwenzi.github.io/2019/05/29/rabbitmq-%E9%98%9F%E5%88%97%E4%BF%A1%E6%81%AF/"/>
-    <id>https://smallwenzi.github.io/2019/05/29/rabbitmq-队列信息/</id>
+    <link href="https://blog.yanwentan.xyz/2019/05/29/rabbitmq-%E9%98%9F%E5%88%97%E4%BF%A1%E6%81%AF/"/>
+    <id>https://blog.yanwentan.xyz/2019/05/29/rabbitmq-队列信息/</id>
     <published>2019-05-29T08:48:00.000Z</published>
     <updated>2019-06-09T15:13:13.726Z</updated>
     
@@ -356,19 +356,19 @@
     
     </summary>
     
-      <category term="spring cloud" scheme="https://smallwenzi.github.io/categories/spring-cloud/"/>
+      <category term="spring cloud" scheme="https://blog.yanwentan.xyz/categories/spring-cloud/"/>
     
     
-      <category term="spring cloud" scheme="https://smallwenzi.github.io/tags/spring-cloud/"/>
+      <category term="spring cloud" scheme="https://blog.yanwentan.xyz/tags/spring-cloud/"/>
     
-      <category term="rabbitMq" scheme="https://smallwenzi.github.io/tags/rabbitMq/"/>
+      <category term="rabbitMq" scheme="https://blog.yanwentan.xyz/tags/rabbitMq/"/>
     
   </entry>
   
   <entry>
     <title>resttemplate 问题</title>
-    <link href="https://smallwenzi.github.io/2019/05/29/sttemplate-%E9%97%AE%E9%A2%98/"/>
-    <id>https://smallwenzi.github.io/2019/05/29/sttemplate-问题/</id>
+    <link href="https://blog.yanwentan.xyz/2019/05/29/sttemplate-%E9%97%AE%E9%A2%98/"/>
+    <id>https://blog.yanwentan.xyz/2019/05/29/sttemplate-问题/</id>
     <published>2019-05-29T08:38:00.000Z</published>
     <updated>2019-06-09T15:13:13.727Z</updated>
     
@@ -384,19 +384,19 @@
     
     </summary>
     
-      <category term="spring cloud" scheme="https://smallwenzi.github.io/categories/spring-cloud/"/>
+      <category term="spring cloud" scheme="https://blog.yanwentan.xyz/categories/spring-cloud/"/>
     
     
-      <category term="spring cloud" scheme="https://smallwenzi.github.io/tags/spring-cloud/"/>
+      <category term="spring cloud" scheme="https://blog.yanwentan.xyz/tags/spring-cloud/"/>
     
-      <category term="resttemplate" scheme="https://smallwenzi.github.io/tags/resttemplate/"/>
+      <category term="resttemplate" scheme="https://blog.yanwentan.xyz/tags/resttemplate/"/>
     
   </entry>
   
   <entry>
     <title>底层代码构造sql忽略NUll条件</title>
-    <link href="https://smallwenzi.github.io/2019/05/06/A%E9%97%AE%E9%A2%98/"/>
-    <id>https://smallwenzi.github.io/2019/05/06/A问题/</id>
+    <link href="https://blog.yanwentan.xyz/2019/05/06/A%E9%97%AE%E9%A2%98/"/>
+    <id>https://blog.yanwentan.xyz/2019/05/06/A问题/</id>
     <published>2019-05-06T03:00:00.000Z</published>
     <updated>2019-06-09T15:13:13.726Z</updated>
     
@@ -412,17 +412,17 @@
     
     </summary>
     
-      <category term="spring cloud" scheme="https://smallwenzi.github.io/categories/spring-cloud/"/>
+      <category term="spring cloud" scheme="https://blog.yanwentan.xyz/categories/spring-cloud/"/>
     
     
-      <category term="jpa" scheme="https://smallwenzi.github.io/tags/jpa/"/>
+      <category term="jpa" scheme="https://blog.yanwentan.xyz/tags/jpa/"/>
     
   </entry>
   
   <entry>
     <title>在windows下atom上搭建PlantUML书写环境</title>
-    <link href="https://smallwenzi.github.io/2018/10/14/windows%E4%B8%8Batom%E4%B8%8A%E6%90%AD%E5%BB%BAPlantUML%E4%B9%A6%E5%86%99%E7%8E%AF%E5%A2%83/"/>
-    <id>https://smallwenzi.github.io/2018/10/14/windows下atom上搭建PlantUML书写环境/</id>
+    <link href="https://blog.yanwentan.xyz/2018/10/14/windows%E4%B8%8Batom%E4%B8%8A%E6%90%AD%E5%BB%BAPlantUML%E4%B9%A6%E5%86%99%E7%8E%AF%E5%A2%83/"/>
+    <id>https://blog.yanwentan.xyz/2018/10/14/windows下atom上搭建PlantUML书写环境/</id>
     <published>2018-10-14T07:36:00.000Z</published>
     <updated>2019-05-05T02:41:23.263Z</updated>
     
@@ -438,19 +438,19 @@
     
     </summary>
     
-      <category term="atom" scheme="https://smallwenzi.github.io/categories/atom/"/>
+      <category term="atom" scheme="https://blog.yanwentan.xyz/categories/atom/"/>
     
     
-      <category term="plantuml" scheme="https://smallwenzi.github.io/tags/plantuml/"/>
+      <category term="plantuml" scheme="https://blog.yanwentan.xyz/tags/plantuml/"/>
     
-      <category term="atom" scheme="https://smallwenzi.github.io/tags/atom/"/>
+      <category term="atom" scheme="https://blog.yanwentan.xyz/tags/atom/"/>
     
   </entry>
   
   <entry>
     <title>Solr的主从模式Master-Slave</title>
-    <link href="https://smallwenzi.github.io/2018/10/14/olr%E7%9A%84%E4%B8%BB%E4%BB%8E%E6%A8%A1%E5%BC%8FMaster-Slave/"/>
-    <id>https://smallwenzi.github.io/2018/10/14/olr的主从模式Master-Slave/</id>
+    <link href="https://blog.yanwentan.xyz/2018/10/14/olr%E7%9A%84%E4%B8%BB%E4%BB%8E%E6%A8%A1%E5%BC%8FMaster-Slave/"/>
+    <id>https://blog.yanwentan.xyz/2018/10/14/olr的主从模式Master-Slave/</id>
     <published>2018-10-14T07:25:00.000Z</published>
     <updated>2019-05-05T02:41:23.260Z</updated>
     
@@ -465,21 +465,21 @@
     
     </summary>
     
-      <category term="solr" scheme="https://smallwenzi.github.io/categories/solr/"/>
+      <category term="solr" scheme="https://blog.yanwentan.xyz/categories/solr/"/>
     
     
-      <category term="solr" scheme="https://smallwenzi.github.io/tags/solr/"/>
+      <category term="solr" scheme="https://blog.yanwentan.xyz/tags/solr/"/>
     
-      <category term="solr-master" scheme="https://smallwenzi.github.io/tags/solr-master/"/>
+      <category term="solr-master" scheme="https://blog.yanwentan.xyz/tags/solr-master/"/>
     
-      <category term="solr-slave" scheme="https://smallwenzi.github.io/tags/solr-slave/"/>
+      <category term="solr-slave" scheme="https://blog.yanwentan.xyz/tags/solr-slave/"/>
     
   </entry>
   
   <entry>
     <title>solr教程</title>
-    <link href="https://smallwenzi.github.io/2018/10/13/lr%E6%95%99%E7%A8%8B/"/>
-    <id>https://smallwenzi.github.io/2018/10/13/lr教程/</id>
+    <link href="https://blog.yanwentan.xyz/2018/10/13/lr%E6%95%99%E7%A8%8B/"/>
+    <id>https://blog.yanwentan.xyz/2018/10/13/lr教程/</id>
     <published>2018-10-13T05:50:00.000Z</published>
     <updated>2019-05-05T02:41:23.259Z</updated>
     
@@ -494,17 +494,17 @@
     
     </summary>
     
-      <category term="solr" scheme="https://smallwenzi.github.io/categories/solr/"/>
+      <category term="solr" scheme="https://blog.yanwentan.xyz/categories/solr/"/>
     
     
-      <category term="solr" scheme="https://smallwenzi.github.io/tags/solr/"/>
+      <category term="solr" scheme="https://blog.yanwentan.xyz/tags/solr/"/>
     
   </entry>
   
   <entry>
     <title>docker的使用</title>
-    <link href="https://smallwenzi.github.io/2018/06/11/docker%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>https://smallwenzi.github.io/2018/06/11/docker的使用/</id>
+    <link href="https://blog.yanwentan.xyz/2018/06/11/docker%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>https://blog.yanwentan.xyz/2018/06/11/docker的使用/</id>
     <published>2018-06-11T12:50:00.000Z</published>
     <updated>2019-05-05T02:41:23.257Z</updated>
     
@@ -519,17 +519,17 @@
     
     </summary>
     
-      <category term="docker" scheme="https://smallwenzi.github.io/categories/docker/"/>
+      <category term="docker" scheme="https://blog.yanwentan.xyz/categories/docker/"/>
     
     
-      <category term="docker" scheme="https://smallwenzi.github.io/tags/docker/"/>
+      <category term="docker" scheme="https://blog.yanwentan.xyz/tags/docker/"/>
     
   </entry>
   
   <entry>
     <title>十二 jenkins 配置maven打包git代码</title>
-    <link href="https://smallwenzi.github.io/2018/05/11/-jenkins-%E9%85%8D%E7%BD%AEmaven%E6%89%93%E5%8C%85git%E4%BB%A3%E7%A0%81/"/>
-    <id>https://smallwenzi.github.io/2018/05/11/-jenkins-配置maven打包git代码/</id>
+    <link href="https://blog.yanwentan.xyz/2018/05/11/-jenkins-%E9%85%8D%E7%BD%AEmaven%E6%89%93%E5%8C%85git%E4%BB%A3%E7%A0%81/"/>
+    <id>https://blog.yanwentan.xyz/2018/05/11/-jenkins-配置maven打包git代码/</id>
     <published>2018-05-11T15:36:00.000Z</published>
     <updated>2019-05-05T02:41:23.257Z</updated>
     
@@ -544,16 +544,16 @@
     
     </summary>
     
-      <category term="jenkins" scheme="https://smallwenzi.github.io/categories/jenkins/"/>
+      <category term="jenkins" scheme="https://blog.yanwentan.xyz/categories/jenkins/"/>
     
     
-      <category term="jenkins" scheme="https://smallwenzi.github.io/tags/jenkins/"/>
+      <category term="jenkins" scheme="https://blog.yanwentan.xyz/tags/jenkins/"/>
     
-      <category term="git" scheme="https://smallwenzi.github.io/tags/git/"/>
+      <category term="git" scheme="https://blog.yanwentan.xyz/tags/git/"/>
     
-      <category term="maven" scheme="https://smallwenzi.github.io/tags/maven/"/>
+      <category term="maven" scheme="https://blog.yanwentan.xyz/tags/maven/"/>
     
-      <category term="docker" scheme="https://smallwenzi.github.io/tags/docker/"/>
+      <category term="docker" scheme="https://blog.yanwentan.xyz/tags/docker/"/>
     
   </entry>
   

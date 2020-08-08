@@ -19,16 +19,16 @@
 <meta name="keywords" content="session,spring">
 <meta property="og:type" content="article">
 <meta property="og:title" content="spring session（1）">
-<meta property="og:url" content="https://smallwenzi.github.io/2019/11/13/ring-session（1）/index.html">
+<meta property="og:url" content="https://blog.yanwentan.xyz/2019/11/13/ring-session（1）/index.html">
 <meta property="og:site_name" content="wen blog">
 <meta property="og:description" content="前言在开始spring-session揭秘之前，先做下热脑（活动活动脑子）运动。主要从以下三个方面进行热脑：  为什么要spring-session 比较traditional-session方案和spring-session方案 JSR340规范与spring-session的透明继承一.为什么要spring-session在传统单机web应用中，一般使用tomcat/jetty等web容器时，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://smallwenzi.github.io/2019/11/13/ring-session（1）/1.png">
+<meta property="og:image" content="https://blog.yanwentan.xyz/2019/11/13/ring-session（1）/1.png">
 <meta property="og:updated_time" content="2020-02-17T15:08:47.571Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="spring session（1）">
 <meta name="twitter:description" content="前言在开始spring-session揭秘之前，先做下热脑（活动活动脑子）运动。主要从以下三个方面进行热脑：  为什么要spring-session 比较traditional-session方案和spring-session方案 JSR340规范与spring-session的透明继承一.为什么要spring-session在传统单机web应用中，一般使用tomcat/jetty等web容器时，">
-<meta name="twitter:image" content="https://smallwenzi.github.io/2019/11/13/ring-session（1）/1.png">
+<meta name="twitter:image" content="https://blog.yanwentan.xyz/2019/11/13/ring-session（1）/1.png">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -66,6 +66,20 @@
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
 
 <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
     var yiliaConfig = {
         fancybox: true,
         animate: true,
@@ -97,7 +111,7 @@
         var _hmt = _hmt || [];
         (function() {
             var hm = document.createElement("script");
-            hm.src = "//hm.baidu.com/hm.js?54768e95527ea89b815041379f4d75dd";
+            hm.src = "//hm.baidu.com/hm.js?f4cf750b6a14c0a2f6adcc0977b5309e";
             var s = document.getElementsByTagName("script")[0]; 
             s.parentNode.insertBefore(hm, s);
         })();
@@ -188,11 +202,7 @@
                             
                                 <a class="fa Email" href="mailto:beityw@hotmail.com" title="Email"></a>
                             
-                                <a class="fa 新浪微博" href="http://weibo.com/1762122412" title="新浪微博"></a>
-                            
                                 <a class="fa GitHub" href="https://github.com/smallwenzi/smallwenzi.github.io" title="GitHub"></a>
-                            
-                                <a class="fa 简书" href="https://www.jianshu.com/u/1e0817ccc306" title="简书"></a>
                             
                         </ul>
                     </nav>
@@ -260,11 +270,7 @@
                             
                                 <a class="fa Email" target="_blank" href="mailto:beityw@hotmail.com" title="Email"></a>
                             
-                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/1762122412" title="新浪微博"></a>
-                            
                                 <a class="fa GitHub" target="_blank" href="https://github.com/smallwenzi/smallwenzi.github.io" title="GitHub"></a>
-                            
-                                <a class="fa 简书" target="_blank" href="https://www.jianshu.com/u/1e0817ccc306" title="简书"></a>
                             
                         </ul>
             </nav>
@@ -379,8 +385,8 @@
         <p><span>发布时间:</span>2019-11-13, 11:54:00</p>
         <p><span>最后更新:</span>2020-02-17, 23:08:47</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/11/13/ring-session（1）/" title="spring session（1）">https://smallwenzi.github.io/2019/11/13/ring-session（1）/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://smallwenzi.github.io/2019/11/13/ring-session（1）/　　作者: wen" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/11/13/ring-session（1）/" title="spring session（1）">https://blog.yanwentan.xyz/2019/11/13/ring-session（1）/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://blog.yanwentan.xyz/2019/11/13/ring-session（1）/　　作者: wen" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -522,6 +528,19 @@
     </script>
 
 
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-25768365-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
 
 
 

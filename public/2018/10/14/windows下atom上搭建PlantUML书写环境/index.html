@@ -19,18 +19,18 @@
 <meta name="keywords" content="plantuml,atom">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在windows下atom上搭建PlantUML书写环境">
-<meta property="og:url" content="https://smallwenzi.github.io/2018/10/14/windows下atom上搭建PlantUML书写环境/index.html">
+<meta property="og:url" content="https://blog.yanwentan.xyz/2018/10/14/windows下atom上搭建PlantUML书写环境/index.html">
 <meta property="og:site_name" content="wen blog">
 <meta property="og:description" content="PlantUML是一款使用纯文本绘制UML图的开源软件。它的优点是能够帮助作者把精力集中到内容的书写上而不是格式的调整。本文介绍了一种在windows环境下atom编辑器上搭建PlantUML书写环境的方法。 工具准备 atom graphvizGraphviz是一款开源图形可视化软件。Atom的PlantUML插件使用graphviz将PlantUML语言绘制成相应的图形。插件安装github上">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://smallwenzi.github.io/2018/10/14/windows下atom上搭建PlantUML书写环境/plantuml_plugin.png">
-<meta property="og:image" content="https://smallwenzi.github.io/2018/10/14/windows下atom上搭建PlantUML书写环境/plantuml_viewer_setting.png">
-<meta property="og:image" content="https://smallwenzi.github.io/2018/10/14/windows下atom上搭建PlantUML书写环境/3.png">
+<meta property="og:image" content="https://blog.yanwentan.xyz/2018/10/14/windows下atom上搭建PlantUML书写环境/plantuml_plugin.png">
+<meta property="og:image" content="https://blog.yanwentan.xyz/2018/10/14/windows下atom上搭建PlantUML书写环境/plantuml_viewer_setting.png">
+<meta property="og:image" content="https://blog.yanwentan.xyz/2018/10/14/windows下atom上搭建PlantUML书写环境/3.png">
 <meta property="og:updated_time" content="2019-05-05T02:41:23.263Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在windows下atom上搭建PlantUML书写环境">
 <meta name="twitter:description" content="PlantUML是一款使用纯文本绘制UML图的开源软件。它的优点是能够帮助作者把精力集中到内容的书写上而不是格式的调整。本文介绍了一种在windows环境下atom编辑器上搭建PlantUML书写环境的方法。 工具准备 atom graphvizGraphviz是一款开源图形可视化软件。Atom的PlantUML插件使用graphviz将PlantUML语言绘制成相应的图形。插件安装github上">
-<meta name="twitter:image" content="https://smallwenzi.github.io/2018/10/14/windows下atom上搭建PlantUML书写环境/plantuml_plugin.png">
+<meta name="twitter:image" content="https://blog.yanwentan.xyz/2018/10/14/windows下atom上搭建PlantUML书写环境/plantuml_plugin.png">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -68,6 +68,20 @@
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
 
 <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
     var yiliaConfig = {
         fancybox: true,
         animate: true,
@@ -99,7 +113,7 @@
         var _hmt = _hmt || [];
         (function() {
             var hm = document.createElement("script");
-            hm.src = "//hm.baidu.com/hm.js?54768e95527ea89b815041379f4d75dd";
+            hm.src = "//hm.baidu.com/hm.js?f4cf750b6a14c0a2f6adcc0977b5309e";
             var s = document.getElementsByTagName("script")[0]; 
             s.parentNode.insertBefore(hm, s);
         })();
@@ -190,11 +204,7 @@
                             
                                 <a class="fa Email" href="mailto:beityw@hotmail.com" title="Email"></a>
                             
-                                <a class="fa 新浪微博" href="http://weibo.com/1762122412" title="新浪微博"></a>
-                            
                                 <a class="fa GitHub" href="https://github.com/smallwenzi/smallwenzi.github.io" title="GitHub"></a>
-                            
-                                <a class="fa 简书" href="https://www.jianshu.com/u/1e0817ccc306" title="简书"></a>
                             
                         </ul>
                     </nav>
@@ -262,11 +272,7 @@
                             
                                 <a class="fa Email" target="_blank" href="mailto:beityw@hotmail.com" title="Email"></a>
                             
-                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/1762122412" title="新浪微博"></a>
-                            
                                 <a class="fa GitHub" target="_blank" href="https://github.com/smallwenzi/smallwenzi.github.io" title="GitHub"></a>
-                            
-                                <a class="fa 简书" target="_blank" href="https://www.jianshu.com/u/1e0817ccc306" title="简书"></a>
                             
                         </ul>
             </nav>
@@ -348,8 +354,8 @@
         <p><span>发布时间:</span>2018-10-14, 15:36:00</p>
         <p><span>最后更新:</span>2019-05-05, 10:41:23</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/10/14/windows下atom上搭建PlantUML书写环境/" title="在windows下atom上搭建PlantUML书写环境">https://smallwenzi.github.io/2018/10/14/windows下atom上搭建PlantUML书写环境/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://smallwenzi.github.io/2018/10/14/windows下atom上搭建PlantUML书写环境/　　作者: wen" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/10/14/windows下atom上搭建PlantUML书写环境/" title="在windows下atom上搭建PlantUML书写环境">https://blog.yanwentan.xyz/2018/10/14/windows下atom上搭建PlantUML书写环境/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://blog.yanwentan.xyz/2018/10/14/windows下atom上搭建PlantUML书写环境/　　作者: wen" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -491,6 +497,19 @@
     </script>
 
 
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-25768365-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
 
 
 

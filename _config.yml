@@ -12,7 +12,7 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://smallwenzi.github.io
+url: https://blog.yanwentan.xyz/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -71,8 +71,7 @@ deploy:
   type: git
   repo: git@github.com:smallwenzi/smallwenzi.github.io.git
   branch: master
-  #type:baidu_url_submitter
-  
+  #type: baidu_url_submitter
 jsonContent:
   meta: false
   pages: false
@@ -108,7 +107,7 @@ baidusitemap:
   path: baidusitemap.xml
 baidu_url_submit:
   count: 10
-  host: http://smallwenzi.github.io
+  host: https://blog.yanwentan.xyz/
   token: rPfiazIClIO56OPC
   path: baidu_urls.txt
 
