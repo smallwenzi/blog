@@ -285,6 +285,66 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Spring体系结构" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/08/09/Spring体系结构/" class="article-date">
+      <time datetime="2020-08-09T08:13:00.000Z" itemprop="datePublished">2020-08-09</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/09/Spring体系结构/">Spring体系结构</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="官网："><a href="#官网：" class="headerlink" title="官网："></a>官网：</h1><p><a href="https://spring.io/" target="_blank" rel="noopener">https://spring.io/</a></p>
+<h1 id="spring-项目"><a href="#spring-项目" class="headerlink" title="spring 项目"></a>spring 项目</h1>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/spring/">spring</a>
+    </div>
+
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-spring源码编译" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1190,101 +1250,9 @@
 
 
   
-    <article id="post-ava-查看占用-CPU-最高的线程" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/11/13/ava-查看占用-CPU-最高的线程/" class="article-date">
-      <time datetime="2019-11-13T03:15:00.000Z" itemprop="datePublished">2019-11-13</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/13/ava-查看占用-CPU-最高的线程/">[Java] 查看占用 CPU 最高的线程</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><ul>
-<li>top 命令找出应用 pid-app</li>
-<li>top -Hp <pid-app> 命令找出线程 pid-thread</pid-app></li>
-<li>printf ‘%x\n’ <pid-thread> 命令将线程 pid 转换成 16 进制 pid-thread-hex</pid-thread></li>
-<li>jstack <pid-app> | grep ‘pid-thread-hex’ 命令查看线程信息<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1></pid-app></li>
-<li>1.top 命令找出应用 pid-app<br><img src="/2019/11/13/ava-查看占用-CPU-最高的线程/1.png" alt="logo"></li>
-</ul>
-<p>应用 pid 为8790</p>
-<ul>
-<li>top -Hp <pid-app> 命令找出线程 pid-thread<br><img src="/2019/11/13/ava-查看占用-CPU-最高的线程/2.png" alt="logo"></pid-app></li>
-</ul>
-<p>线程 pid 为9702</p>
-<ul>
-<li><p>printf ‘%x\n’ <pid-thread> 命令将线程 pid 转换成 16 进制 pid-thread-hex<br><img src="/2019/11/13/ava-查看占用-CPU-最高的线程/3.png" alt="logo"></pid-thread></p>
-</li>
-<li><p>jstack <pid-app> | grep ‘pid-thread-hex’ 命令查看线程信息</pid-app></p>
-</li>
-</ul>
-<p><img src="/2019/11/13/ava-查看占用-CPU-最高的线程/4.png" alt="logo"></p>
-<ul>
-<li><p>查看整个JVM内存状态<br>jmap -heap [pid]<br><img src="/2019/11/13/ava-查看占用-CPU-最高的线程/5.png" alt="logo"></p>
-</li>
-<li><p>导出整个JVM 中内存信息，可以利用其它工具打开dump文件分析，例如jdk自带的visualvm工具<br>jmap -dump:file=文件名.dump [pid]</p>
-</li>
-</ul>
-<p>使用MemoryAnalyzer.exe 分析dump<br><img src="/2019/11/13/ava-查看占用-CPU-最高的线程/6.png" alt="logo"></p>
-<ul>
-<li>打印java线程数<br>jcmd pid Thread.print&gt; thread.txt<br><img src="/2019/11/13/ava-查看占用-CPU-最高的线程/7.png" alt="logo"></li>
-</ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/java/">java</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 </div>
