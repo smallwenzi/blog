@@ -7,7 +7,60 @@
       <title><![CDATA[Spring体系结构]]></title>
       <url>https://blog.yanwentan.xyz/2020/08/09/Spring%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/</url>
       <content type="html"><![CDATA[<h1 id="官网："><a href="#官网：" class="headerlink" title="官网："></a>官网：</h1><p><a href="https://spring.io/" target="_blank" rel="noopener">https://spring.io/</a></p>
-<h1 id="spring-项目"><a href="#spring-项目" class="headerlink" title="spring 项目"></a>spring 项目</h1>]]></content>
+<h1 id="Spring简介"><a href="#Spring简介" class="headerlink" title="Spring简介"></a>Spring简介</h1><p>Spring是一个轻量级Java开发框架，最早有Rod Johnson创建，目的是为了解决企业级应用开发的业务逻辑层和其他各层的耦合问题。它是一个分层的JavaSE/JavaEE full-stack（一站式）轻量级开源框架，为开发Java应用程序提供全面的基础架构支持。Spring负责基础架构，因此Java开发者可以专注于应用程序的开发。</p>
+<h2 id="Spring优点："><a href="#Spring优点：" class="headerlink" title="Spring优点："></a>Spring优点：</h2><p>Spring的优点:</p>
+<ul>
+<li>（1）方便解耦，简化开发</li>
+</ul>
+<p>Spring就是一个大工厂，可以将所有对象创建和依赖的关系维护，交给Spring管理。</p>
+<ul>
+<li>（2）AOP编程的支持</li>
+</ul>
+<p>Spring提供面向切面编程，可以方便的实现对程序进行权限拦截、运行监控等功能。</p>
+<ul>
+<li>（3）声明式事务的支持</li>
+</ul>
+<p>只需要通过配置就可以完成对事务的管理，而无需手动编程。</p>
+<ul>
+<li>（4）方便程序的测试</li>
+</ul>
+<p>Spring对Junit4支持，可以通过注解方便的测试Spring程序。</p>
+<p>*（5）方便集成各种优秀框架</p>
+<p>Spring不排斥各种优秀的开源框架，其内部提供了对各种优秀框架的直接支持（如：Struts、Hibernate、MyBatis等）。</p>
+<p>*（6）降低JavaEE API的使用难度</p>
+<p>Spring对JavaEE开发中非常难用的一些API（JDBC、JavaMail、远程调用等），都提供了封装，使这些API应用难度大大降低。</p>
+<h1 id="spring-项目"><a href="#spring-项目" class="headerlink" title="spring 项目"></a>spring 项目</h1><p>在官网点击project 菜单 就见到spring很多项目<br><img src="/2020/08/09/Spring体系结构/1.png" alt="spring project"></p>
+<h2 id="springFramework"><a href="#springFramework" class="headerlink" title="springFramework"></a>springFramework</h2><p>这是一个Spring的基础框架，提供了Spring 的核心功能，比如依赖注入、事务管理、面向方面编程等等<br>体系结构<br><img src="/2020/08/09/Spring体系结构/3.png" alt="spring project"><br>Spring的核心容器是其他模块建立的基础，有Spring-core、Spring-beans、Spring-context、Spring-context-support和Spring-expression（String表达式语言）等模块组成。</p>
+<ul>
+<li>Spring-core模块：提供了框架的基本组成部分，包括控制反转（Inversion of Control，IOC）和依赖注入（Dependency Injection，DI）功能。</li>
+<li>Spring-beans模块：提供了BeanFactory，是工厂模式的一个经典实现，Spring将管理对象称为Bean。</li>
+<li>Spring-context模块：建立在Core和Beans模块的基础之上，提供一个框架式的对象访问方式，是访问定义和配置的任何对象的媒介。ApplicationContext接口是Context模块的焦点。</li>
+<li>Spring-context-support模块：支持整合第三方库到Spring应用程序上下文，特别是用于高速缓存（EhCache、JCache）和任务调度（CommonJ、Quartz）的支持。</li>
+<li>Spring-expression模块：提供了强大的表达式语言去支持运行时查询和操作对象图。这是对JSP2.1规范中规定的统一表达式语言（Unified EL）的扩展。该语言支持设置和获取属性值、属性分配、方法调用、访问数组、集合和索引器的内容、逻辑和算术运算、变量命名以及从Spring的IOC容器中以名称检索对象。它还支持列表投影、选择以及常用的列表聚合。</li>
+<li>Spring-aop模块：提供了一个符合AOP要求的面向切面的编程实现，允许定义方法拦截器和切入点，将代码按照功能进行分离，以便干净地解耦。</li>
+<li>Spring-aspects模块：提供了与AspectJ的集成功能，AspectJ是一个功能强大且成熟的AOP框架。</li>
+<li>Spring-jdbc模块：提供了一个JDBC的抽象层，消除了烦琐的JDBC编码和数据库厂商特有的错误代码解析。</li>
+<li>Spring-orm模块：为流行的对象关系映射（Object-Relational Mapping）API提供集成层，包括JPA和Hibernate。使用Spring-orm模块可以将这些O/R映射框架与Spring提供的所有其他功能结合使用，例如声明式事务管理功能。</li>
+<li>Spring-oxm模块：提供了一个支持对象/XML映射的抽象层实现，例如JAXB、Castor、JiBX和XStream。</li>
+<li>Spring-jms模块（Java Messaging Service）：指Java消息传递服务，包含用于生产和使用消息的功能。自Spring4.1以后，提供了与Spring-messaging模块的集成。</li>
+<li>Spring-tx模块（事务模块）：支持用于实现特殊接口和所有POJO（普通Java对象）类的编程和声明式事务管理</li>
+<li>Spring-web模块：提供了基本的Web开发集成功能，例如多文件上传功能、使用Servlet监听器初始化一个IOC容器以及Web应用上下文。</li>
+<li>Spring-webmvc模块：也称为Web-Servlet模块，包含用于web应用程序的Spring MVC和REST Web Services实现。Spring MVC框架提供了领域模型代码和Web表单之间的清晰分离，并与Spring Framework的所有其他功能集成。</li>
+<li>Spring-websocket模块：Spring4.0以后新增的模块，它提供了WebSocket和SocketJS的实现。</li>
+<li>Portlet模块：类似于Servlet模块的功能，提供了Portlet环境下的MVC实现</li>
+<li>Spring-test模块支持使用JUnit或TestNG对Spring组件进行单元测试和集成测试。</li>
+</ul>
+<h2 id="spring-boot"><a href="#spring-boot" class="headerlink" title="spring boot"></a>spring boot</h2><p>我们原来运行Spring程序，需要在Maven或者Gradle中添加一些Spring的依赖，然后再通过这些构建工具提供的服务器来运行程序。使用Spring Boot，则可以免去这些繁复的工作。Spring Boot提供了一系列功能可以自动搜索、配置Spring程序。Spring Boot会将项目打包为一个可执行的jar文件，内部包含有tomcat这样的服务器，让我们可以直接以命令行的方式运行Spring程序。Spring Boot官方介绍说，它可以让你尽可能快的运行起Spring程序</p>
+<h2 id="Springcloud"><a href="#Springcloud" class="headerlink" title="Springcloud"></a>Springcloud</h2><p>Spring Cloud是一系列框架的有序集合。它利用Spring Boot的开发便利性巧妙地简化了分布式系统基础设施的开发，如服务发现注册、配置中心、消息总线、负载均衡、断路器、数据监控等，都可以用Spring Boot的开发风格做到一键启动和部署。Spring Cloud并没有重复制造轮子，它只是将各家公司开发的比较成熟、经得起实际考验的服务框架组合起来，通过Spring Boot风格进行再封装屏蔽掉了复杂的配置和实现原理，最终给开发者留出了一套简单易懂、易部署和易维护的分布式系统开发工具包。</p>
+<ul>
+<li>Spring Cloud Netflix<br>　　是对Netflix开发的一套分布式服务框架的封装，包括服务的发现和注册，负载均衡、断路器、REST客户端、请求路由等。</li>
+<li>Spring Cloud Config<br>　　将配置信息中央化保存, 配置Spring Cloud Bus可以实现动态修改配置文件</li>
+<li>Spring Cloud Bus<br>　　分布式消息队列，是对Kafka, MQ的封装</li>
+<li>Spring Cloud Security<br>　　对Spring Security的封装，并能配合Netflix使用</li>
+<li>Spring Cloud Zookeeper<br>　　对Zookeeper的封装，使之能配置其它Spring Cloud的子项目使用</li>
+<li>Spring Cloud Eureka<br>Spring Cloud Eureka 是 Spring Cloud Netflix 微服务套件中的一部分，它基于Netflix Eureka 做了二次封装，主要负责完成微服务架构中的服务治理功能。<br>Spring Cloud对于中小型互联网公司来说是一种福音，因为这类公司往往没有实力或者没有足够的资金投入去开发自己的分布式系统基础设施，使用Spring Cloud一站式解决方案能在从容应对业务发展的同时大大减少开发成本。同时，随着近几年微服务架构和Docker容器概念的火爆，也会让Spring Cloud在未来越来越“云”化的软件开发风格中立有一席之地，尤其是在五花八门的分布式解决方案中提供了标准化的、全站式的技术方案，意义可能会堪比当年Servlet规范的诞生，有效推进服务端软件系统技术水平的进步。<h2 id="Spring-Data"><a href="#Spring-Data" class="headerlink" title="Spring Data"></a>Spring Data</h2>这是Spring关于处理数据的框架，其中包含了多个模块，可以让我们使用JPA操作数据、在Redis等非SQL数据库上存取数据等很多功能<h2 id="Spring-Security"><a href="#Spring-Security" class="headerlink" title="Spring Security"></a>Spring Security</h2>Spring的安全框架，支持在程序中设置安全权限，限制未授权的用户访问某些页面，也提供了一些加密功能方便地加密数据<h2 id="Spring-Session"><a href="#Spring-Session" class="headerlink" title="Spring Session"></a>Spring Session</h2>提供了一个Session的实现，帮助我们管理用户会话。<h2 id="Spring-Integration"><a href="#Spring-Integration" class="headerlink" title="Spring Integration"></a>Spring Integration</h2>这个框架用来将Spring和其他框架、协议、服务集成起来，这些服务包括但不限于控制总线、FTP服务器、Web服务，社交服务、套接字、消息队列、邮件系统……Spring Integration提供了一些适配器，可以方便的和这些服务进行集成。<h2 id="Spring-AMQP"><a href="#Spring-AMQP" class="headerlink" title="Spring AMQP"></a>Spring AMQP</h2>用于开发AMQP的解决方案</li>
+</ul>
+]]></content>
       
         <categories>
             
@@ -19,7 +72,134 @@
     </entry>
     
     <entry>
-      <title><![CDATA[spring源码编译]]></title>
+      <title><![CDATA[springFramework源码--IOC 容器]]></title>
+      <url>https://blog.yanwentan.xyz/2020/08/08/spring%E6%BA%90%E7%A0%81%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+      <content type="html"><![CDATA[<p>Spring framework是一个Spring的基础框架，提供了Spring 的核心功能，比如依赖注入、事务管理、面向方面编程等等</p>
+<p>IOC容器（ Inversion of Control ）是Spring Framework 最核心部分，它管理着Spring应用中bean的创建、 配置和管理，也叫依赖注入（dependency injection ）</p>
+<h1 id="什么是IOC容器"><a href="#什么是IOC容器" class="headerlink" title="什么是IOC容器"></a>什么是IOC容器</h1><h2 id="没有IOC容器"><a href="#没有IOC容器" class="headerlink" title="没有IOC容器"></a>没有IOC容器</h2><p>按照传统的做法，每个对象负责管理与自己相互协作的对象<br>（即它所依赖的对象）的引用，这将会导致高度耦合和难以测试的代 码。</p>
+<p>我们假定一个在线书店，通过BookService获取书籍：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class BookService &#123;</span><br><span class="line">    private HikariConfig config = new HikariConfig();</span><br><span class="line">    private DataSource dataSource = new HikariDataSource(config);</span><br><span class="line"></span><br><span class="line">    public Book getBook(long bookId) &#123;</span><br><span class="line">        try (Connection conn = dataSource.getConnection()) &#123;</span><br><span class="line">            ...</span><br><span class="line">            return book;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>这种方式使用new的方式创建对象，</li>
+<li><p>若测试BookService，是复杂的，因为必须要在真实的数据库环境下执行。</p>
+</li>
+<li><p>从上面的例子可以看出，如果一个系统有大量的组件，其生命周期和相互之间的依赖关系如果由组件自身来维护，不但大大增加了系统的复杂度，而且会导致组件之间极为紧密的耦合，继而给测试和维护带来了极大的困难。</p>
+</li>
+</ul>
+<h2 id="有IOC容器"><a href="#有IOC容器" class="headerlink" title="有IOC容器"></a>有IOC容器</h2><p>核心问题是：</p>
+<ul>
+<li>谁负责创建组件？</li>
+<li>谁负责根据依赖关系组装组件？</li>
+<li>销毁时，如何按依赖顺序正确销毁？<br>解决这一问题的核心方案就是IoC。</li>
+</ul>
+<p>传统的应用程序中，控制权在程序本身，程序的控制流程完全由开发者控制，例如：</p>
+<p>在创建BookService的过程中，又创建了DataSource组件。这种模式的缺点是，一个组件如果要使用另一个组件，必须先知道如何正确地创建它。</p>
+<p>在IoC模式下，控制权发生了反转，即从应用程序转移到了IoC容器，所有组件不再由应用程序自己创建和配置，而是由IoC容器负责，这样，应用程序只需要直接使用已经创建好并且配置好的组件。为了能让组件在IoC容器中被“装配”出来，需要某种“注入”机制，<br>例如，BookService自己并不会创建DataSource，而是等待外部通过setDataSource()方法来注入一个DataSource：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class BookService &#123; </span><br><span class="line">      private DataSource dataSource;</span><br><span class="line">    public BookService(DataSource dataSource)&#123;</span><br><span class="line">      this.DataSource=dataSource;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>不直接new一个DataSource，而是注入一个DataSource，这个小小的改动虽然简单，却带来了一系列好处：</p>
+<ul>
+<li>BookService不再关心如何创建DataSource，因此，不必编写读取数据库配置之类的代码；</li>
+<li>测试BookService更容易，因为注入的是DataSource，可以使用内存数据库，而不是真实的MySQL配置。</li>
+</ul>
+<p>因此，IoC又称为依赖注入（DI：Dependency Injection），它解决了一个最主要的问题：将组件的创建+配置与组件的使用相分离，并且，由IoC容器负责管理组件的生命周期。</p>
+<p>因为IoC容器要负责实例化所有的组件，因此，有必要告诉容器如何创建组件，以及各组件的依赖关系.<br>以下这种通过在JavaConfig中进行显式配置bean。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">public Class JavaBean&#123;</span><br><span class="line"></span><br><span class="line">@Bean</span><br><span class="line"> public HikariConfig hikariConfig()&#123;</span><br><span class="line">  return new HikariConfig();</span><br><span class="line"> &#125;</span><br><span class="line"> @Bean</span><br><span class="line"> public DataSource dataSource(HikariConfig config)&#123;</span><br><span class="line"> return new HikariDataSource(config);</span><br><span class="line"> &#125;</span><br><span class="line"> @Bean</span><br><span class="line"> public BookService bookService(DataSource dataSource)&#123;</span><br><span class="line"> return new BookService(dataSource);</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在Spring的IoC容器中，我们把所有组件统称为JavaBean，即配置一个组件就是配置一个Bean。</p>
+<h1 id="依赖注入的方式"><a href="#依赖注入的方式" class="headerlink" title="依赖注入的方式"></a>依赖注入的方式</h1><ul>
+<li>通过构造方法注入</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class BookService &#123; </span><br><span class="line">      private DataSource dataSource;</span><br><span class="line">      @Autowired</span><br><span class="line">    public BookService(DataSource dataSource)&#123;</span><br><span class="line">      this.DataSource=dataSource;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>通过方法注入</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class BookService &#123; </span><br><span class="line">      private DataSource dataSource;</span><br><span class="line">      @Autowired</span><br><span class="line">    public void setDataSource(DataSource dataSource)&#123;</span><br><span class="line">      this.DataSource=dataSource;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果没有匹配的bean，那么在应用上下文创建的时候，Spring会抛出<br>一个异常。为了避免异常的出现，你可以将@Autowired的<br>required属性设置为false：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class BookService &#123; </span><br><span class="line">      private DataSource dataSource;</span><br><span class="line">      @Autowired（required=false）</span><br><span class="line">    public void setDataSource(DataSource dataSource)&#123;</span><br><span class="line">      this.DataSource=dataSource;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>将required属性设置为false时，Spring会尝试执行自动装配，但<br>是如果没有匹配的bean的话，Spring将会让这个bean处于未装配的状<br>态。但是，把required属性设置为false时，你需要谨慎对待。如<br>果在你的代码中没有进行null检查的话，这个处于未装配状态的属性<br>有可能会出现NullPointerException。</p>
+<p>如果有多个bean都能满足依赖关系的话，Spring将会抛出一个异常，<br>表明没有明确指定要选择哪个bean进行自动装配</p>
+<ul>
+<li>接口注入</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public class BookService &#123; </span><br><span class="line"> @Autowired</span><br><span class="line">      private DataSource dataSource;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="spring容器"><a href="#spring容器" class="headerlink" title="spring容器"></a>spring容器</h1><h2 id="AnnotationConfigApplicationContext"><a href="#AnnotationConfigApplicationContext" class="headerlink" title="AnnotationConfigApplicationContext"></a>AnnotationConfigApplicationContext</h2><p>从一个或多个<br>基于Java的配置类中加载Spring应用上下文。<br>你想从Java配置中加载应用上下文，那么可以使<br>用AnnotationConfigApplicationContext<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public class AppConfig &#123;</span><br><span class="line">   public static void main(String[] args)&#123;</span><br><span class="line">      AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(AppConfig.class);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>应用上下文准备就绪之后，我们就可以调用上下文的getBean()方<br>法从Spring容器中获取bean。</p>
+<h2 id="AnnotationConfigWebApplicationContext"><a href="#AnnotationConfigWebApplicationContext" class="headerlink" title="AnnotationConfigWebApplicationContext"></a>AnnotationConfigWebApplicationContext</h2><p>从一个或<br>多个基于Java的配置类中加载Spring Web应用上下文。 </p>
+<h2 id="ClassPathXmlApplicationContext"><a href="#ClassPathXmlApplicationContext" class="headerlink" title="ClassPathXmlApplicationContext"></a>ClassPathXmlApplicationContext</h2><p>从类路径下的一个或<br>多个XML配置文件中加载上下文定义，把应用上下文的定义文件<br>作为类资源。 </p>
+<h2 id="FileSystemXmlapplicationcontext"><a href="#FileSystemXmlapplicationcontext" class="headerlink" title="FileSystemXmlapplicationcontext"></a>FileSystemXmlapplicationcontext</h2><p>从文件系统下的一<br>个或多个XML配置文件中加载上下文定义。 </p>
+<h2 id="XmlWebApplicationContext：从Web应用下的一个或多个"><a href="#XmlWebApplicationContext：从Web应用下的一个或多个" class="headerlink" title="XmlWebApplicationContext：从Web应用下的一个或多个"></a>XmlWebApplicationContext：从Web应用下的一个或多个</h2><p>XML配置文件中加载上下文定义。</p>
+<h1 id="javaConfig"><a href="#javaConfig" class="headerlink" title="javaConfig"></a>javaConfig</h1><p>java config是指基于java配置的spring。传统的Spring一般都是基本xml配置的，后来spring3.0新增了许多java config的注解，特别是spring boot，基本都是清一色的java config。<br>使用Annotation配合自动扫描能大幅简化Spring的配置</p>
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="@Configuration"></a>@Configuration</h2><p>在类上打上这一标签，表示这个类是配置类</p>
+<h2 id="ComponentScan"><a href="#ComponentScan" class="headerlink" title="@ComponentScan"></a>@ComponentScan</h2><p>该注解默认会扫描该类所在的包下所有的配置类，相当于之前的 <a href="context:component-scan" target="_blank" rel="noopener">context:component-scan</a>。</p>
+<ul>
+<li><p>指定包扫描,主要扫描该包下@Controller @Service @Respsitory @Component四个注解</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@ComponentScan(value=&quot;com.songzixian&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>指定排除要扫描的包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@ComponentScan(value=&quot;com.songzixian&quot;,excludeFilters =&#123;@ComponentScan.Filter (type= FilterType.ANNOTATION,classes =&#123;Component.class,Repository.class,Controller.class,Service.class&#125;)&#125; )</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>指定要扫描的包<br>useDefaultFilters = false默认是true,需要改为false该类才生效</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@ComponentScan(value=&quot;com.songzixian&quot;,includeFilters =&#123;@ComponentScan.Filter (type= FilterType.ANNOTATION,classes =&#123;Component.class,Repository.class,Controller.class,Service.class&#125;)&#125;,useDefaultFilters = false)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Bean"><a href="#Bean" class="headerlink" title="@Bean"></a>@Bean</h2><p>注解用于告诉方法，产生一个Bean对象，然后这个Bean对象交给Spring管理。产生这个Bean对象的方法Spring只会调用一次，随后这个Spring将会将这个Bean对象放在自己的IOC容器中</p>
+<h2 id="Autowired"><a href="#Autowired" class="headerlink" title="@Autowired"></a>@Autowired</h2><p> 注解对自动装配何时何处被实现提供了更多细粒度的控制</p>
+<h2 id="Qualifier"><a href="#Qualifier" class="headerlink" title="@Qualifier"></a>@Qualifier</h2><p>自动装配，如果容器中某个bean有多个实例，想要获取指定的的实例，可以用@Qualifier</p>
+<h2 id="scope"><a href="#scope" class="headerlink" title="@scope"></a>@scope</h2><p>  用来配置 spring bean 的作用域，它标识 bean 的作用域。默认值是单例</p>
+<ul>
+<li><p>1、singleton:单例模式,全局有且仅有一个实例</p>
+</li>
+<li><p>2、prototype:原型模式,每次获取Bean的时候会有一个新的实例</p>
+</li>
+<li><p>3、request:request表示该针对每一次HTTP请求都会产生一个新的bean，同时该bean仅在当前HTTP request内有效</p>
+</li>
+<li><p>4、session:session作用域表示该针对每一次HTTP请求都会产生一个新的bean，同时该bean仅在当前HTTP session内有效</p>
+</li>
+<li><p>5、global session:只在portal应用中有用，给每一个 global http session 新建一个Bean实例。</p>
+</li>
+</ul>
+<h2 id="Lazy"><a href="#Lazy" class="headerlink" title="@Lazy"></a>@Lazy</h2><p> 容器启动不创建对象，调用的时候创建对象</p>
+<h2 id="Conditional（-WindowConditional-class-）"><a href="#Conditional（-WindowConditional-class-）" class="headerlink" title="@Conditional（{WindowConditional.class}）"></a>@Conditional（{WindowConditional.class}）</h2><p>WindowConditional 实现condition接口，返回true</p>
+<h2 id="PostConstruct"><a href="#PostConstruct" class="headerlink" title="@PostConstruct"></a>@PostConstruct</h2><p>初始化 注解在初始化的方法上面</p>
+<h2 id="PreDestroy"><a href="#PreDestroy" class="headerlink" title="@PreDestroy"></a>@PreDestroy</h2><p>销毁 在容器销毁bean之前调用</p>
+<h2 id="Controller"><a href="#Controller" class="headerlink" title="@Controller"></a>@Controller</h2><p>标识一个该类是Spring MVC controller处理器，用来创建处理http请求的对象.</p>
+<h2 id="Service"><a href="#Service" class="headerlink" title="@Service"></a>@Service</h2><p>用于标注业务层组件，说白了就是加入你有一个用注解的方式把这个类注入到spring配置中</p>
+<h2 id="Resource"><a href="#Resource" class="headerlink" title="@Resource"></a>@Resource</h2><p>@Resource的作用相当于@Autowired<br>只不过@Autowired按byType自动注入，<br>而@Resource默认按 byName自动注入<br>@Resource有两个属性是比较重要的，分是name和type，Spring将@Resource注解的name属性解析为bean的名字，而type属性则解析为bean的类型。所以如果使用name属性，则使用byName的自动注入策略，而使用type属性时则使用byType自动注入策略。如果既不指定name也不指定type属性，这时将通过反射机制使用byName自动注入策略</p>
+<h2 id="Component"><a href="#Component" class="headerlink" title="@Component"></a>@Component</h2><p>泛指组件，当组件不好归类的时候，我们可以使用这个注解进行标注</p>
+<h2 id="RestController"><a href="#RestController" class="headerlink" title="@RestController"></a>@RestController</h2><p>Spring4之后加入的注解，原来在@Controller中返回json需要@ResponseBody来配合，如果直接用@RestController替代@Controller就不需要再配置@ResponseBody，默认返回json格式。</p>
+<h2 id="RequestMapping"><a href="#RequestMapping" class="headerlink" title="@RequestMapping"></a>@RequestMapping</h2><p>类定义处: 提供初步的请求映射信息，相对于 WEB 应用的根目录。<br>方法处: 提供进一步的细分映射信息，相对于类定义处的 URL。</p>
+<h2 id="RequestParam"><a href="#RequestParam" class="headerlink" title="@RequestParam"></a>@RequestParam</h2><p>用于将请求参数区数据映射到功能处理方法的参数上</p>
+<h2 id="Repository"><a href="#Repository" class="headerlink" title="@Repository"></a>@Repository</h2><p>用于标注数据访问组件，即DAO组件</p>
+<h2 id="Required"><a href="#Required" class="headerlink" title="@Required"></a>@Required</h2><p>适用于bean属性setter方法，并表示受影响的bean属性必须在XML配置文件在配置时进行填充。否则，容器会抛出一个BeanInitializationException异常。</p>
+<h1 id="无侵入容器"><a href="#无侵入容器" class="headerlink" title="无侵入容器"></a>无侵入容器</h1><p>在设计上，Spring的IoC容器是一个高度可扩展的无侵入容器。所谓无侵入，是指应用程序的组件无需实现Spring的特定接口，或者说，组件根本不知道自己在Spring的容器中运行。这种无侵入的设计有以下好处：</p>
+<ul>
+<li>应用程序组件既可以在Spring的IoC容器中运行，也可以自己编写代码自行组装配置；</li>
+<li>测试的时候并不依赖Spring容器，可单独进行测试，大大提高了开发效率。</li>
+</ul>
+<h1 id="官方文档："><a href="#官方文档：" class="headerlink" title="官方文档："></a>官方文档：</h1><p><a href="https://docs.spring.io/spring/docs/5.0.18.RELEASE/spring-framework-reference/core.html#spring-core" target="_blank" rel="noopener">https://docs.spring.io/spring/docs/5.0.18.RELEASE/spring-framework-reference/core.html#spring-core</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> spring </category>
+            
+            <category> SpringFramework </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> IOC容器 </tag>
+            
+            <tag> 依赖注入 </tag>
+            
+            <tag> DI </tag>
+            
+            <tag> Inversion of Control </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[springFramework源码编译]]></title>
       <url>https://blog.yanwentan.xyz/2020/08/07/spring%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/</url>
       <content type="html"><![CDATA[<h1 id="安装环境配套"><a href="#安装环境配套" class="headerlink" title="安装环境配套"></a>安装环境配套</h1><p>Gradle 5.6.2 +java version “1.8.0_251”+idea+spring framework5.1.x</p>
 <ul>
@@ -62,6 +242,8 @@
         <categories>
             
             <category> spring </category>
+            
+            <category> springFramework </category>
             
         </categories>
         

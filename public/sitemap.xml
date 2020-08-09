@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.yanwentan.xyz/2020/08/08/spring%E6%BA%90%E7%A0%81%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
+    
+    <lastmod>2020-08-09</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.yanwentan.xyz/2020/08/07/spring%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/</loc>
+    
+    <lastmod>2020-08-09</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.yanwentan.xyz/2020/08/09/Spring%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/</loc>
     
     <lastmod>2020-08-09</lastmod>
@@ -31,13 +45,6 @@
   
   <url>
     <loc>https://blog.yanwentan.xyz/2020/01/03/omcat-%E4%B8%89%E7%A7%8D%E9%83%A8%E7%BD%B2%E6%96%B9%E5%BC%8F/</loc>
-    
-    <lastmod>2020-08-08</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.yanwentan.xyz/2020/08/07/spring%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/</loc>
     
     <lastmod>2020-08-08</lastmod>
     
@@ -647,6 +654,34 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://blog.yanwentan.xyz/tags/IOC%E5%AE%B9%E5%99%A8/</loc>
+    <lastmod>2020-08-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.yanwentan.xyz/tags/%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/</loc>
+    <lastmod>2020-08-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.yanwentan.xyz/tags/DI/</loc>
+    <lastmod>2020-08-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.yanwentan.xyz/tags/Inversion-of-Control/</loc>
+    <lastmod>2020-08-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -791,6 +826,20 @@
   
   <url>
     <loc>https://blog.yanwentan.xyz/categories/Spring/Spring-boot/</loc>
+    <lastmod>2020-08-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.yanwentan.xyz/categories/spring/SpringFramework/</loc>
+    <lastmod>2020-08-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.yanwentan.xyz/categories/spring/springFramework/</loc>
     <lastmod>2020-08-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
