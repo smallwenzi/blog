@@ -285,6 +285,119 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-ring-session（1）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/11/13/ring-session（1）/" class="article-date">
+      <time datetime="2019-11-13T03:54:00.000Z" itemprop="datePublished">2019-11-13</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/13/ring-session（1）/">spring session（1）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在开始spring-session揭秘之前，先做下热脑（活动活动脑子）运动。主要从以下三个方面进行热脑：</p>
+<ul>
+<li>为什么要spring-session</li>
+<li>比较traditional-session方案和spring-session方案</li>
+<li>JSR340规范与spring-session的透明继承<h1 id="一-为什么要spring-session"><a href="#一-为什么要spring-session" class="headerlink" title="一.为什么要spring-session"></a>一.为什么要spring-session</h1>在传统单机web应用中，一般使用tomcat/jetty等web容器时，用户的session都是由容器管理。浏览器使用cookie中记录sessionId，容器根据sessionId判断用户是否存在会话session。这里的限制是，session存储在web容器中，被单台服务器容器管理。</li>
+</ul>
+<p>但是网站主键演变，分布式应用和集群是趋势（提高性能）。此时用户的请求可能被负载分发至不同的服务器，此时传统的web容器管理用户会话session的方式即行不通。除非集群或者分布式web应用能够共享session，尽管tomcat等支持这样做。但是这样存在以下两点问题：</p>
+<ul>
+<li>需要侵入web容器，提高问题的复杂</li>
+<li>web容器之间共享session，集群机器之间势必要交互耦合<br>基于这些，必须提供新的可靠的集群分布式/集群session的解决方案，突破traditional-session单机限制（即web容器session方式，下面简称traditional-session），spring-session应用而生。</li>
+</ul>
+<h1 id="二-比较traditional-session方案和spring-session方案"><a href="#二-比较traditional-session方案和spring-session方案" class="headerlink" title="二.比较traditional-session方案和spring-session方案"></a>二.比较traditional-session方案和spring-session方案</h1><p>下图展示了traditional-session和spring-session的区别</p>
+<p><img src="/2019/11/13/ring-session（1）/1.png" alt="logo"><br>传统模式中，当request进入web容器，根据reqest获取session时，如果web容器中存在session则返回，如果不存在，web容器则创建一个session。然后返回response时，将sessonId作为response的head一并返回给客户端或者浏览器。</p>
+<p>但是上节中说明了traditional-session的局限性在于：单机session。在此限制的相反面，即将session从web容器中抽出来，形成独立的模块，以便分布式应用或者集群都能共享，即能解决。</p>
+<p>spring-session的核心思想在于此：将session从web容器中剥离，存储在独立的存储服务器中。目前支持多种形式的session存储器：Redis、Database、MogonDB等。session的管理责任委托给spring-session承担。当request进入web容器，根据request获取session时，由spring-session负责存存储器中获取session，如果存在则返回，如果不存在则创建并持久化至存储器中。</p>
+<h1 id="JSR340规范与spring-session的透明继承"><a href="#JSR340规范与spring-session的透明继承" class="headerlink" title="JSR340规范与spring-session的透明继承"></a>JSR340规范与spring-session的透明继承</h1><p>JSR340是Java Servlet 3.1的规范提案，其中定义了大量的api，包括：servlet、servletRequest/HttpServletRequest/HttpServletRequestWrapper、servletResponse/HttpServletResponse/HttpServletResponseWrapper、Filter、Session等，是标准的web容器需要遵循的规约，如tomcat/jetty/weblogic等等。</p>
+<p>在日常的应用开发中，develpers也在频繁的使用servlet-api，比如：</p>
+<p>以下的方式获取请求的session：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HttpServletRequest request = ...</span><br><span class="line">HttpSession session = request.getSession(false);</span><br></pre></td></tr></table></figure></p>
+<p>其中HttpServletRequest和HttpSession都是servlet规范中定义的接口，web容器实现的标准。那如果引入spring-session，要如何获取session？</p>
+<ul>
+<li>遵循servlet规范，同样方式获取session，对应用代码无侵入且对于developers透明化</li>
+<li>全新实现一套session规范，定义一套新的api和session管理机制<br>两种方案都可以实现，但是显然第一种更友好，且具有兼容性。spring-session正是第一种方案的实现。</li>
+</ul>
+<p>实现第一种方案的关键点在于做到透明和兼容</p>
+<p>接口适配：仍然使用HttpServletRequest获取session，获取到的session仍然是HttpSession类型——适配器模式<br>类型包装增强：Session不能存储在web容器内，要外化存储——装饰模式<br>让人兴奋的是，以上的需求在Servlet规范中的扩展性都是予以支持！Servlet规范中定义一系列的接口都是支持扩展，同时提供Filter支撑扩展点。</p>
+<h1 id="spring-session入门"><a href="#spring-session入门" class="headerlink" title="spring session入门"></a>spring session入门</h1><p>主要从以下两个方面来说spring-session：</p>
+<ul>
+<li>特点</li>
+<li><p>工作原理</p>
+<h2 id="一-特点"><a href="#一-特点" class="headerlink" title="一.特点"></a>一.特点</h2><p>spring-session在无需绑定web容器的情况下提供对集群session的支持。并提供对以下情况的透明集成：</p>
+</li>
+<li><p>HttpSession：容许替换web容器的HttpSession</p>
+</li>
+<li>WebSocket：使用WebSocket通信时，提供Session的活跃</li>
+<li>WebSession：容许以应用中立的方式替换webflux的webSession</li>
+</ul>
+<p>下面以项目接入spring session redis为例</p>
+<h1 id="spring-项目"><a href="#spring-项目" class="headerlink" title="spring 项目"></a>spring 项目</h1><p>引入spring session的jar<br>代码：<a href="https://github.com/smallwenzi/testSpringSession" target="_blank" rel="noopener">https://github.com/smallwenzi/testSpringSession</a></p>
+<h2 id="引入"><a href="#引入" class="headerlink" title="引入:"></a>引入:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    	&lt;groupId&gt;org.springframework.session&lt;/groupId&gt;</span><br><span class="line">    	&lt;artifactId&gt;spring-session&lt;/artifactId&gt;</span><br><span class="line">    	&lt;version&gt;1.3.0.RELEASE&lt;/version&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line">         &lt;dependency&gt;</span><br><span class="line">    	&lt;groupId&gt;org.springframework.session&lt;/groupId&gt;</span><br><span class="line">    	&lt;artifactId&gt;spring-session&lt;/artifactId&gt;</span><br><span class="line">    	&lt;version&gt;1.3.0.RELEASE&lt;/version&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;!-- Spring session redis 依赖start --&gt;</span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line">		&lt;groupId&gt;org.springframework.session&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;spring-session-data-redis&lt;/artifactId&gt;</span><br><span class="line">		&lt;version&gt;1.2.0.RELEASE&lt;/version&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line">	    &lt;groupId&gt;org.springframework.data&lt;/groupId&gt;</span><br><span class="line">	    &lt;artifactId&gt;spring-data-redis&lt;/artifactId&gt;</span><br><span class="line">	    &lt;version&gt;1.6.0.RELEASE&lt;/version&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line">	    &lt;groupId&gt;redis.clients&lt;/groupId&gt;</span><br><span class="line">	    &lt;artifactId&gt;jedis&lt;/artifactId&gt;</span><br><span class="line">	    &lt;version&gt;2.9.0&lt;/version&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="配置redis"><a href="#配置redis" class="headerlink" title="配置redis"></a>配置redis</h2><p>applicationContext.xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=&quot;redisTemplate&quot; class=&quot;org.springframework.data.redis.core.StringRedisTemplate&quot;&gt;</span><br><span class="line">    &lt;property name=&quot;connectionFactory&quot; ref=&quot;jedisConnectionFactory&quot; /&gt;</span><br><span class="line">&lt;/bean&gt;   </span><br><span class="line"> &lt;bean id=&quot;jedisConnectionFactory&quot; class=&quot;org.springframework.data.redis.connection.jedis.JedisConnectionFactory&quot;&gt;</span><br><span class="line">     &lt;property name=&quot;hostName&quot; value=&quot;$&#123;redis.hostName&#125;&quot; /&gt;</span><br><span class="line">     &lt;property name=&quot;port&quot; value=&quot;$&#123;redis.port&#125;&quot; /&gt;</span><br><span class="line">     &lt;property name=&quot;password&quot; value=&quot;$&#123;redis.password&#125;&quot; /&gt;</span><br><span class="line">     &lt;property name=&quot;usePool&quot; value=&quot;$&#123;redis.usePool&#125;&quot; /&gt;</span><br><span class="line">     &lt;property name=&quot;timeout&quot; value=&quot;$&#123;redis.timeout&#125;&quot; /&gt;</span><br><span class="line"> &lt;/bean&gt;</span><br></pre></td></tr></table></figure></p>
+<p>redis.properties（自行更改redis 配置）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">redis.hostName=localhost</span><br><span class="line">redis.port=6379</span><br><span class="line">redis.password=</span><br><span class="line">redis.usePool=true</span><br><span class="line">redis.timeout=10000</span><br></pre></td></tr></table></figure></p>
+<h2 id="开启spring-session"><a href="#开启spring-session" class="headerlink" title="开启spring session"></a>开启spring session</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">//redisNamespace区分每个项目spring session key唯一</span><br><span class="line">@EnableRedisHttpSession(redisNamespace = &quot;testSpringSession&quot;)</span><br><span class="line">public class SpringSessionHttpConfig &#123;</span><br><span class="line"></span><br><span class="line">    private static final Logger logger = LoggerFactory.getLogger(SpringSessionHttpConfig.class);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.corepoolsize&#125;&quot;)</span><br><span class="line">    private String corepoolsize;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.maxpoolsize&#125;&quot;)</span><br><span class="line">    private String maxpoolsize;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.keepaliveseconds&#125;&quot;)</span><br><span class="line">    private String keepaliveseconds;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.queuecapacity&#125;&quot;)</span><br><span class="line">    private String queuecapacity;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.threadnameprefix&#125;&quot;)</span><br><span class="line">    private String threadnameprefix;</span><br><span class="line"></span><br><span class="line">//控制springsession 线程池 否则线程会无限制创建 导致oom 线程配置详细看看项目里test.properties</span><br><span class="line">    @Bean</span><br><span class="line">    public ThreadPoolTaskExecutor springSessionRedisTaskExecutor() &#123;</span><br><span class="line">        logger.info(&quot;JedisPool注入成功！！&quot;);</span><br><span class="line">        ThreadPoolTaskExecutor springSessionRedisTaskExecutor = new ThreadPoolTaskExecutor();</span><br><span class="line">        springSessionRedisTaskExecutor.setCorePoolSize(getRedisTaskexecutorStrToInt(this.corepoolsize, 16));</span><br><span class="line">        springSessionRedisTaskExecutor.setMaxPoolSize(getRedisTaskexecutorStrToInt(this.maxpoolsize, 300));</span><br><span class="line">        springSessionRedisTaskExecutor.setKeepAliveSeconds(getRedisTaskexecutorStrToInt(this.keepaliveseconds, 30));</span><br><span class="line">        springSessionRedisTaskExecutor.setQueueCapacity(getRedisTaskexecutorStrToInt(this.queuecapacity, 500));</span><br><span class="line">        springSessionRedisTaskExecutor.setThreadNamePrefix(this.threadnameprefix);</span><br><span class="line">        return springSessionRedisTaskExecutor;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private int getRedisTaskexecutorStrToInt(String size, int defaultSize) &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            int sizeInt = Integer.parseInt(size);</span><br><span class="line">            return sizeInt;</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            return defaultSize;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="web-xml"><a href="#web-xml" class="headerlink" title="web.xml"></a>web.xml</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> &lt;filter&gt;</span><br><span class="line"> &lt;!-- 必须这样命名 SpringHttpSessionConfiguration类中定义了springSessionRepositoryFilter类 --&gt;</span><br><span class="line">&lt;filter-name&gt;springSessionRepositoryFilter&lt;/filter-name&gt;</span><br><span class="line">&lt;filter-class&gt;org.springframework.web.filter.DelegatingFilterProxy&lt;/filter-class&gt;	</span><br><span class="line"> &lt;/filter&gt;</span><br><span class="line"> &lt;filter-mapping&gt;</span><br><span class="line">&lt;filter-name&gt;springSessionRepositoryFilter&lt;/filter-name&gt;</span><br><span class="line">   &lt;!-- 需要spring session的访问路径 --&gt;</span><br><span class="line">&lt;url-pattern&gt;/*&lt;/url-pattern&gt; </span><br><span class="line"> &lt;/filter-mapping&gt;</span><br></pre></td></tr></table></figure>
+<p>本地分别部署tomcat 进行测试<a href="http://localhost:8082/testSpringSession/testSession.do" target="_blank" rel="noopener">http://localhost:8082/testSpringSession/testSession.do</a><br><a href="http://localhost:8080/testSpringSession/testSession.do" target="_blank" rel="noopener">http://localhost:8080/testSpringSession/testSession.do</a><br>输出的session id是否一致<br>若一致则spring session成功</p>
+<h1 id="spring-boot项目"><a href="#spring-boot项目" class="headerlink" title="spring boot项目"></a>spring boot项目</h1><p>项目：<a href="https://github.com/smallwenzi/testSpringBootSession" target="_blank" rel="noopener">https://github.com/smallwenzi/testSpringBootSession</a></p>
+<h2 id="引入jar"><a href="#引入jar" class="headerlink" title="引入jar"></a>引入jar</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">          &lt;dependency&gt;</span><br><span class="line">   &lt;groupId&gt;org.springframework.session&lt;/groupId&gt;</span><br><span class="line">   &lt;artifactId&gt;spring-session&lt;/artifactId&gt;</span><br><span class="line">  &lt;/dependency&gt;</span><br><span class="line">  	&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;/dependencies&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="开启springsession"><a href="#开启springsession" class="headerlink" title="开启springsession"></a>开启springsession</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">//redisNamespace区分每个项目spring session key唯一</span><br><span class="line">@EnableRedisHttpSession(redisNamespace = &quot;testSpringBootSession&quot;)</span><br><span class="line">public class SpringSessionHttpConfig &#123;</span><br><span class="line">    private static final Logger logger = LoggerFactory.getLogger(SpringSessionHttpConfig.class);</span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.corepoolsize&#125;&quot;)</span><br><span class="line">    private String corepoolsize;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.maxpoolsize&#125;&quot;)</span><br><span class="line">    private String maxpoolsize;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.keepaliveseconds&#125;&quot;)</span><br><span class="line">    private String keepaliveseconds;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.queuecapacity&#125;&quot;)</span><br><span class="line">    private String queuecapacity;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.threadnameprefix&#125;&quot;)</span><br><span class="line">    private String threadnameprefix;</span><br><span class="line"></span><br><span class="line">//控制springsession 线程池 否则线程会无限制创建 导致oom 线程配置详细看看项目里application.properties</span><br><span class="line">    @Bean</span><br><span class="line">    public ThreadPoolTaskExecutor springSessionRedisTaskExecutor() &#123;</span><br><span class="line">        logger.info(&quot;JedisPool注入成功！！&quot;);</span><br><span class="line">        ThreadPoolTaskExecutor springSessionRedisTaskExecutor = new ThreadPoolTaskExecutor();</span><br><span class="line">        springSessionRedisTaskExecutor.setCorePoolSize(getRedisTaskexecutorStrToInt(this.corepoolsize, 16));</span><br><span class="line">        springSessionRedisTaskExecutor.setMaxPoolSize(getRedisTaskexecutorStrToInt(this.maxpoolsize, 300));</span><br><span class="line">        springSessionRedisTaskExecutor.setKeepAliveSeconds(getRedisTaskexecutorStrToInt(this.keepaliveseconds, 30));</span><br><span class="line">        springSessionRedisTaskExecutor.setQueueCapacity(getRedisTaskexecutorStrToInt(this.queuecapacity, 500));</span><br><span class="line">        springSessionRedisTaskExecutor.setThreadNamePrefix(this.threadnameprefix);</span><br><span class="line">        return springSessionRedisTaskExecutor;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private int getRedisTaskexecutorStrToInt(String size, int defaultSize) &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            int sizeInt = Integer.parseInt(size);</span><br><span class="line">            return sizeInt;</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            return defaultSize;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="application-properties"><a href="#application-properties" class="headerlink" title="application.properties"></a>application.properties</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#本地测试设置随机端口 （自行更改redis 配置）</span><br><span class="line">server.port=0</span><br><span class="line"># redis start</span><br><span class="line">#spring.redis.database=0</span><br><span class="line">spring.redis.password=</span><br><span class="line">spring.redis.pool.max-idle=10</span><br><span class="line">spring.redis.pool.min-idle=0</span><br><span class="line">spring.redis.pool.max-active=100</span><br><span class="line">spring.redis.pool.max-wait=1000</span><br><span class="line">spring.redis.database=0</span><br><span class="line"># Redis\u670D\u52A1\u5668\u5730\u5740</span><br><span class="line">spring.redis.host=localhost</span><br><span class="line"># Redis\u670D\u52A1\u5668\u8FDE\u63A5\u7AEF\u53E3</span><br><span class="line">spring.redis.port=6379</span><br><span class="line"></span><br><span class="line"># redis end</span><br><span class="line">#spring session\u4f7f\u7528\u5b58\u50a8\u7c7b\u578b</span><br><span class="line">spring.session.store-type=redis</span><br><span class="line"></span><br><span class="line">##spring-session redis \u7ebf\u7a0b\u6c60\u914d\u7f6e</span><br><span class="line">redis.taskexecutor.corepoolsize=16</span><br><span class="line">redis.taskexecutor.maxpoolsize=300</span><br><span class="line">redis.taskexecutor.keepaliveseconds=30</span><br><span class="line">redis.taskexecutor.queuecapacity=500</span><br><span class="line">redis.taskexecutor.threadnameprefix=testSpringBootSession-spring-session-redis-executor-thread:</span><br></pre></td></tr></table></figure>
+<p>本地分别启动 WebApplication进行测试<a href="http://localhost:port/testSession" target="_blank" rel="noopener">http://localhost:port/testSession</a><br><a href="http://localhost:port/" target="_blank" rel="noopener">http://localhost:port/</a><br>testSession<br>输出的session id是否一致<br>若一致则spring session成功</p>
+<p>有兴趣可以读<a href="https://smallwenzi.github.io/2019/11/21/SpringSession%E6%BA%90%E7%A0%81/" title="《spring sesson源码》">《spring sesson源码》</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Spring/">Spring</a><a class="article-category-link" href="/categories/Spring/Spring-boot/">Spring boot</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/session/">session</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-具集" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -917,97 +1030,6 @@
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/solr/">solr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/solr-master/">solr-master</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/solr-slave/">solr-slave</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-lr教程" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/10/13/lr教程/" class="article-date">
-      <time datetime="2018-10-13T05:50:00.000Z" itemprop="datePublished">2018-10-13</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/13/lr教程/">solr教程</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="1-为什么选择Apache-Solr"><a href="#1-为什么选择Apache-Solr" class="headerlink" title="1.为什么选择Apache Solr"></a>1.为什么选择Apache Solr</h1><p>Apache Solr是一个功能强大的搜索服务器，它支持REST风格API。Solr是基于Lucene的，Lucene 支持强大的匹配能力，如短语，通配符，连接，分组和更多不同的数据类型。它使用 Apache Zookeeper特别针对高流量进行优化。Apache Solr提供各式各样的功能，我们列出了部分最主要的功能。</p>
-<ul>
-<li>先进的全文搜索功能。</li>
-<li>XML，JSON和HTTP - 基于开放接口标准。</li>
-<li>高度可扩展和容错。</li>
-<li>同时支持模式和无模式配置。</li>
-<li>分页搜索和过滤。</li>
-<li>支持像英语，德语，中国，日本，法国和许多主要语言</li>
-<li>丰富的文档分析。</li>
-</ul>
-<h1 id="安装solr"><a href="#安装solr" class="headerlink" title="安装solr"></a>安装solr</h1><p>要首先让从以下位置下载最新版本的Apache Solr：<br><a href="http://lucene.apache.org/solr/downloads.html" target="_blank" rel="noopener">http://lucene.apache.org/solr/downloads.html</a><br>在撰写本文时，可用的稳定版本是7.4.0。<br>一旦Solr的zip文件下载将它解压缩到一个文件夹。提取的文件夹看起来像下面。<br><img src="/2018/10/13/lr教程/1.png" alt="logo"><br>Solr的文件夹</p>
-<p>bin文件夹中包含用来启动和停止服务器的脚本。example 文件夹包含几个示例文件。我们将使用其中的一种，以说明Solr如何索引数据。server 文件夹包含logs 文件夹，所有的Solr的日志都写入该文件夹。这将有助于索引过程来检查任何错误日志。在sever文件夹下的Solr文件夹包含不同的集合或核心（core/collection）。对于各集合或核心的配置和数据都存储在相应的集合或核心文件夹。<br>Apache Solr带有一个内置的Jetty服务器。但在我们开始之前，我们必须验证JAVA_HOME已经配置。<br>我们可以使用命令行脚本启动服务器。让我们去solr的bin目录，从命令提示符输入出以下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">solr start</span><br></pre></td></tr></table></figure></p>
-<p>这将启动下的默认端口8983 Solr的服务器。</p>
-<p>现在，我们可以在浏览器中打开以下网址和验证，我们的Solr的实例正在运行。solr的管理工具的细节超出了示例的范围。</p>
-<p><a href="http://localhost:8983/Solr/" target="_blank" rel="noopener">http://localhost:8983/Solr/</a><br><img src="/2018/10/13/lr教程/2.png" alt="logo"></p>
-<h1 id="配置Apache-Solr"><a href="#配置Apache-Solr" class="headerlink" title="配置Apache Solr"></a>配置Apache Solr</h1><p>在本节中，我们将告诉你如何配置的核心/集合作为Solr实例，以及如何定义的字段。Apache Solr附带称为无模式模式的选项。这个选项允许用户构建有效的架构，而无需手动编辑模式文件。但是，在这个例子中，我们将使用架构配置理解Solr的内部。</p>
-<h2 id="建立核心（core）"><a href="#建立核心（core）" class="headerlink" title="建立核心（core）"></a>建立核心（core）</h2><p>当Solr的服务器在独立模式下启动的配置称为核心，当它在SolrCloud模式启动的配置称为集合。在这个例子中，我们将有关独立服务器和核心讨论。我们将在以后再讨论SolrCloud。首先，我们需要创建一个核心的索引数据。Solr的创建命令有以下选项：</p>
-<p>-c <name> -要创建的核心或集合的名称（必需）。<br>-d <confdir> -配置目录，在SolrCloud模式非常有用。<br>-n <configname> -配置名称。这将默认为核心或集合的名称。<br>-p <port> -本地Solr的实例的端口发送create命令; 默认脚本试图通过寻找运行Solr的实例来检测端口。<br>-s <shards> -Number of shards to split a collection into, default is 1.<br>-rf <replicas> -集合中的每个文件的份数。默认值是1。<br>在这个例子中，我们将使用的核心名称和配置目录-d参数-c参数。对于所有其它参数我们使用默认设置。</replicas></shards></port></configname></confdir></name></p>
-<p>现在在命令窗口浏览 solr-7.4.0\bin文件夹，并发出以下命令。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">solr create -c jcg</span><br></pre></td></tr></table></figure></p>
-<p>我们可以看到在命令窗口中下面的输出。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Creating new core &apos;jcg&apos; using command:</span><br><span class="line">http://localhost:8983/solr/admin/cores?action=CREATE&amp;name=jcg&amp;instanceDir=jcg</span><br><span class="line"> &#123;</span><br><span class="line"> &quot;responseHeader&quot;:&#123;</span><br><span class="line"> &quot;status&quot;:0,</span><br><span class="line"> &quot;QTime&quot;:663&#125;,</span><br><span class="line"> &quot;core&quot;:&quot;jcg&quot;&#125;</span><br><span class="line"> ``` </span><br><span class="line">现在我们导航到以下网址，我们可以看到JCG核心被填充在核心选择器上。还可以看到核心的统计信息。</span><br><span class="line">http://localhost:8983/Solr</span><br><span class="line">![logo](lr教程/3.png)</span><br><span class="line"></span><br><span class="line">## 修改Schema.xml文件</span><br><span class="line">我们需要修改schema.xml中文件的文件夹下，server\solr\jcg\conf包含的字段。我们将使用随Solr的安装索引附带的示例文件“books.csv”之一。该文件所在的文件夹下  的solr-7.4.0\example\exampledocs</span><br><span class="line"></span><br><span class="line">现在，我们定位到该文件夹  server\solr目录。你会看到一个名为JCG的文件夹被创建。子文件夹conf和data分别拥有核心的配置和索引的数据。</span><br><span class="line">现在编辑\server\solr\jcg\conf\server\solr\jcg\conf\schema.xml文件，设置唯一元素后添加以下内容。</span><br><span class="line">我们已经设置了属性索引为true。这指定字段用于索引和记录可以使用索引进行检索。该值设置为false将只存储领域，但不能进行查询。</span><br><span class="line">另外请注意另一个属性stored并将其设置为true。这指定字段被存储，并且可以在输出被返回。将此字段设置为假将使字段唯一索引，并且不能在输出进行检索。</span><br><span class="line">我们已经分配给存在于此处的“books.csv”文件中的字段的类型。在CSV文件“ID”第一场由索引Schema.xml文件的唯一键自动元素的照顾。如果你注意，我们已经略过字段series_t，sequence_i和genre_s未做任何条目。但是，当我们执行索引时，所有这些字段都被索引且没有任何问题。如果你想知道这种情况需要在Schema.xml文件的dynamicField部分一探究竟。</span><br><span class="line">[schema.xml](schema.xml)</span><br><span class="line"></span><br><span class="line">既然我们已经修改了配置，我们必须停止和启动服务器。要做到这一点，我们需要通过命令行发出从bin目录下面的命令。</span><br></pre></td></tr></table></figure></p>
-<p>Solr  stop -all<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">服务器将停止现在。现在启动服务器问题从bin目录中通过命令行运行以下命令。</span><br></pre></td></tr></table></figure></p>
-<p>Solr start<br><code>`</code></p>
-<h1 id="导入数据"><a href="#导入数据" class="headerlink" title="导入数据"></a>导入数据</h1><p>Apache Solr带有一个叫做SimplePostTool独立的Java程序。这个程序被打包成JAR,在安装目录下 example\exampledocs可看到。<br>现在，我们在命令行定位到example\exampledocs文件夹，然后键入以下命令。你会看到一堆选项，使用的工具。<br><img src="/2018/10/13/lr教程/4.png" alt="logo"><br>正如我们前面所说，我们将索引“books.csv”文件中的数据。我们将导航到solr-7.4.0\example\exampledocs在命令提示符并发出以下命令。<br><img src="/2018/10/13/lr教程/5.png" alt="logo"><br>现在我们导航到以下网址并选择核心JCG。<br><a href="http://localhost:8983/solr" target="_blank" rel="noopener">http://localhost:8983/solr</a><br><img src="/2018/10/13/lr教程/6.png" alt="logo"><br>Solr的JCG核心数据<br>就拿在统计部分仔细一看，该民文档参数将显示索引的行数。</p>
-<h1 id="访问索引的文档"><a href="#访问索引的文档" class="headerlink" title="访问索引的文档"></a>访问索引的文档</h1><p>Apache Solr提供了一种基于REST API来访问的数据，并还提供了不同的参数，以检索数据。我们将向您展示一些基于场景的查询。</p>
-<h2 id="按名称搜索"><a href="#按名称搜索" class="headerlink" title="按名称搜索"></a>按名称搜索</h2><p>我们将用它的名字检索书的细节。要做到这一点，我们将使用下面的语法。URL中的参数“Q”是查询事件。<br>打开浏览器下列URL。<br><a href="http://localhost:8983/solr/jcg/select?q=name:&quot;A" target="_blank" rel="noopener">http://localhost:8983/solr/jcg/select?q=name:&quot;A</a> Clash of Kings”<br>输出将在下面，如图所示。<br><img src="/2018/10/13/lr教程/7.png" alt="logo"></p>
-<h2 id="首字母搜索"><a href="#首字母搜索" class="headerlink" title="首字母搜索"></a>首字母搜索</h2><p>现在我们将告诉你如何搜索记录，如果我们只知道起始字母或单词，不记得完整的标题。我们可以用下面的查询检索结果。<br><a href="http://localhost:8983/solr/jcg/select?q=name:&quot;A&quot;" target="_blank" rel="noopener">http://localhost:8983/solr/jcg/select?q=name:&quot;A&quot;</a><br>输出将列出所有的书籍字母A盯着<br><img src="/2018/10/13/lr教程/8.png" alt="logo"></p>
-<h2 id="搜索使用通配符"><a href="#搜索使用通配符" class="headerlink" title="搜索使用通配符"></a>搜索使用通配符</h2><p>Solr的支持通配符搜索。我们将下面的展示如何检索所有书名包含“of”的书。<br><a href="http://localhost:8983/solr/jcg/select?q=name:&quot;*of&quot;" target="_blank" rel="noopener">http://localhost:8983/solr/jcg/select?q=name:&quot;*of&quot;</a><br><img src="/2018/10/13/lr教程/9.png" alt="logo"></p>
-<h2 id="搜索使用的条件"><a href="#搜索使用的条件" class="headerlink" title="搜索使用的条件"></a>搜索使用的条件</h2><p>Solr的支持条件的搜索。我们可以设置条件，我们的查询提供了“FQ”参数。在下面我们将告诉你如何查询价格低于￥6的书。<br><a href="http://localhost:8983/solr/jcg/select?q=*&amp;fq=price:[0" target="_blank" rel="noopener">http://localhost:8983/solr/jcg/select?q=*&amp;fq=price:[0</a> TO 6]<br>输出将只列出这是低于$ 6的书籍。<br><img src="/2018/10/13/lr教程/10.png" alt="logo"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/solr/">solr</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/solr/">solr</a></li></ul>
     </div>
 
       

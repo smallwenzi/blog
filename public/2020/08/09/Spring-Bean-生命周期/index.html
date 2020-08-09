@@ -15,33 +15,17 @@
 
 
 
-<meta name="description" content="这是一篇很详尽的独立博客搭建教程 里面介绍了github、Hexo和hexo-admin设置等过程">
-<meta name="keywords" content="hexo,githubpage,hexo-admin">
+<meta name="description" content="spring IOC容器spring源码编译12345678910111213141516171819202122package com.yanwen.springTest;import com.yanwen.springTest.service.MemberService;import org.springframework.context.annotation.AnnotationConfig">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo搭建githubpage博客">
-<meta property="og:url" content="https://blog.yanwentan.xyz/2017/02/20/hexo git/index.html">
+<meta property="og:title" content="Spring Bean 生命周期">
+<meta property="og:url" content="https://blog.yanwentan.xyz/2020/08/09/Spring-Bean-生命周期/index.html">
 <meta property="og:site_name" content="wen blog">
-<meta property="og:description" content="这是一篇很详尽的独立博客搭建教程 里面介绍了github、Hexo和hexo-admin设置等过程">
+<meta property="og:description" content="spring IOC容器spring源码编译12345678910111213141516171819202122package com.yanwen.springTest;import com.yanwen.springTest.service.MemberService;import org.springframework.context.annotation.AnnotationConfig">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://blog.yanwentan.xyz/2017/02/20/hexo%20git/1.jpeg">
-<meta property="og:image" content="https://blog.yanwentan.xyz/2017/02/20/hexo%20git/1.jpeg">
-<meta property="og:image" content="https://blog.yanwentan.xyz/2017/02/20/hexo%20git/5.png">
-<meta property="og:image" content="https://blog.yanwentan.xyz/2017/02/20/hexo%20git/2.png">
-<meta property="og:image" content="https://blog.yanwentan.xyz/2017/02/20/hexo%20git/3.png">
-<meta property="og:image" content="https://blog.yanwentan.xyz/2017/02/20/hexo%20git/4.png">
-<meta property="og:image" content="https://blog.yanwentan.xyz/2017/02/20/hexo%20git/7.png">
-<meta property="og:image" content="https://blog.yanwentan.xyz/2017/02/20/hexo%20git/8.png">
-<meta property="og:image" content="https://blog.yanwentan.xyz/2017/02/20/hexo%20git/10.png">
-<meta property="og:image" content="https://blog.yanwentan.xyz/2017/02/20/hexo%20git/12.png">
-<meta property="og:image" content="https://blog.yanwentan.xyz/2017/02/20/hexo%20git/11.png">
-<meta property="og:image" content="https://blog.yanwentan.xyz/2017/02/20/hexo%20git/13.png">
-<meta property="og:image" content="https://blog.yanwentan.xyz/2017/02/20/hexo%20git/15.png">
-<meta property="og:image" content="https://blog.yanwentan.xyz/2017/02/20/hexo%20git/16.png">
-<meta property="og:updated_time" content="2020-08-08T05:06:13.446Z">
+<meta property="og:updated_time" content="2020-08-09T13:14:07.507Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo搭建githubpage博客">
-<meta name="twitter:description" content="这是一篇很详尽的独立博客搭建教程 里面介绍了github、Hexo和hexo-admin设置等过程">
-<meta name="twitter:image" content="https://blog.yanwentan.xyz/2017/02/20/hexo%20git/1.jpeg">
+<meta name="twitter:title" content="Spring Bean 生命周期">
+<meta name="twitter:description" content="spring IOC容器spring源码编译12345678910111213141516171819202122package com.yanwen.springTest;import com.yanwen.springTest.service.MemberService;import org.springframework.context.annotation.AnnotationConfig">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -73,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Hexo搭建githubpage博客 | wen blog</title>
+<title>Spring Bean 生命周期 | wen blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -291,11 +275,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-hexo git" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Spring-Bean-生命周期" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/02/20/hexo git/" class="article-date">
-      <time datetime="2017-02-20T02:01:00.000Z" itemprop="datePublished">2017-02-20</time>
+      <a href="/2020/08/09/Spring-Bean-生命周期/" class="article-date">
+      <time datetime="2020-08-09T12:38:00.000Z" itemprop="datePublished">2020-08-09</time>
 </a>
 
 
@@ -310,7 +294,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hexo搭建githubpage博客
+      Spring Bean 生命周期
     </h1>
   
 
@@ -319,15 +303,11 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/hexo/">hexo</a>
+    <a class="article-category-link" href="/categories/Spring/">Spring</a><a class="article-category-link" href="/categories/Spring/SpringFramework/">SpringFramework</a>
     </div>
 
 
         
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/githubpage/">githubpage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo-admin/">hexo-admin</a></li></ul>
-    </div>
-
         <div class="clearfix"></div>
       </div>
       
@@ -335,72 +315,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><excerpt in index | 首页摘要><br>这是一篇很详尽的独立博客搭建教程 里面介绍了github、Hexo和hexo-admin设置等过程<a id="more"></a></excerpt></p>
-<p><the rest of contents | 余下全文></the></p>
-<h2 id="系统环境配置"><a href="#系统环境配置" class="headerlink" title="系统环境配置"></a>系统环境配置</h2><p>要使用Hexo，需要在你的系统中支持Nodejs以及Git，如果还没有，那就开始安装吧！</p>
-<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>下载:<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a><br>参考地址：<a href="http://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="noopener">安装Node.js</a></p>
-<h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><p>下载地址：<a href="http://git-scm.com/download/" target="_blank" rel="noopener">git</a></p>
-<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> d:/hexo</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init blog</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> blog</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s -g <span class="comment">#生成预览</span></span><br></pre></td></tr></table></figure>
-<p>$ hexo g == hexo generate  生成静态文件，会在当前目录下生成一个新的叫做public的文件夹<br>$ hexo s == hexo server 启动本地web服务，用于博客的预览<br>$ hexo d == hexo deploy 部署播客到远端（比如github, heroku等平台）</p>
-<p>现在我们打开<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 已经可以看到一篇内置的blog了。<br><img src="/2017/02/20/hexo git/1.jpeg" alt="logo"></p>
-<p>目前我安装所用的本地环境如下：(可以通过hexo -v查看)<br>hexo-cli: 1.0.2<br>os: Windows_NT 6.1.7601 win32 x64<br>http_parser: 2.7.0<br>node: 7.5.0<br>v8: 5.4.500.48<br>uv: 1.10.2<br>zlib: 1.2.8<br>ares: 1.10.1-DEV<br>modules: 51<br>openssl: 1.0.2k<br>icu: 58.2<br>unicode: 9.0<br>cldr: 30.0.3<br>tz: 2016j</p>
-<h2 id="Hexo主题设置"><a href="#Hexo主题设置" class="headerlink" title="Hexo主题设置"></a>Hexo主题设置</h2><p>这里以主题yilia为例进行说明。</p>
-<h3 id="安装主题-在blog目录下"><a href="#安装主题-在blog目录下" class="headerlink" title="安装主题 (在blog目录下)"></a>安装主题 (在blog目录下)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/litten/hexo-theme-yilia.git themes/yilia</span><br></pre></td></tr></table></figure>
-<h3 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h3><p>修改Hexo目录下的_config.yml配置文件中的theme属性，将其设置为yilia。</p>
-<h3 id="更新主题"><a href="#更新主题" class="headerlink" title="更新主题"></a>更新主题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> themes/yilia</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git pull</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s -g</span><br></pre></td></tr></table></figure>
-<p>现在打开<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> ，会看到我们已经应用了一个新的主题。<br><img src="/2017/02/20/hexo git/1.jpeg" alt="logo"></p>
-<h2 id="Github-Pages设置"><a href="#Github-Pages设置" class="headerlink" title="Github Pages设置"></a>Github Pages设置</h2><h3 id="什么是Github-Pages"><a href="#什么是Github-Pages" class="headerlink" title="什么是Github Pages"></a>什么是Github Pages</h3><p>GitHub Pages 本用于介绍托管在GitHub的项目，不过，由于他的空间免费稳定，用来做搭建一个博客再好不过了。<br>每个帐号只能有一个仓库来存放个人主页，而且仓库的名字必须是username/username.github.io，这是特殊的命名约定。你可以通过<a href="http://username.github.io" target="_blank" rel="noopener">http://username.github.io</a> 来访问你的个人主页。<br>这里特别提醒一下，需要注意的个人主页的网站内容是在master分支下的。</p>
-<p>在这里我创建了一个github repo叫做 smallwenzi.github.io. 创建完成之后，需要有一次提交(git commit)操作，然后就可以通过链接<a href="http://smallwenzi.github.io/" target="_blank" rel="noopener">http://smallwenzi.github.io/</a> 访问了。</p>
-<h3 id="配置SSHKey"><a href="#配置SSHKey" class="headerlink" title="配置SSHKey"></a>配置SSHKey</h3><p>我们如何让本地 git 项目与远程的 GitHub 建立联系呢？用 SSH keys。</p>
-<h4 id="检查-SSH-keys的设置"><a href="#检查-SSH-keys的设置" class="headerlink" title="检查 SSH keys的设置"></a>检查 SSH keys的设置</h4><p>首先我们需要检查你电脑上现有的 ssh key：<br>~/.ssh目录是否存在<br>若不存在<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;邮件地址@youremail.com&quot;</span><br><span class="line"></span><br><span class="line">注意 1: 此处的邮箱地址，你可以输入自己的邮箱地址；</span><br><span class="line">注意2: 此处的「-C」的是大写的「C」</span><br><span class="line">然后系统会要你输入密码：</span><br><span class="line">Enter passphrase (empty for no passphrase):&lt;输入加密串&gt;</span><br><span class="line">Enter same passphrase again:&lt;再次输入加密串&gt;</span><br><span class="line">在回车中会提示你输入一个密码，这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。这个设置是防止别人往你的项目里提交内容。</span><br><span class="line">注意：输入密码的时候没有 * 字样的，你直接输入就可以了。</span><br><span class="line"></span><br><span class="line">最后看到这样的界面，就成功设置ssh key了：</span><br></pre></td></tr></table></figure></p>
-<p> <img src="/2017/02/20/hexo git/5.png" alt="logo"></p>
-<h3 id="添加-SSH-Key-到-GitHub"><a href="#添加-SSH-Key-到-GitHub" class="headerlink" title="添加 SSH Key 到 GitHub"></a>添加 SSH Key 到 GitHub</h3><p>在本机设置 SSH Key 之后，需要添加到 GitHub上，以完成 SSH 链接的设置。</p>
-<p>1、打开本地 id_rsa.pub 文件（ 参考地址 C:\Documents and Settings\Administrator.ssh\id_rsa.pub）。此文件里面内容为刚才生成的密钥。如果看不到这个文件，你需要设置显示隐藏文件。准确的复制这个文件的内容，才能保证设置的成功。</p>
-<p>2、登陆 GitHub 系统。点击右上角的 Account Settings—&gt;SSH KEY AND GPG KEY  —&gt; new ssh key<br>3、把你本地生成的密钥复制到里面（ key 文本框中）， 点击 add key 就ok了</p>
-<h2 id="部署Hexo到Github-Pages"><a href="#部署Hexo到Github-Pages" class="headerlink" title="部署Hexo到Github Pages"></a>部署Hexo到Github Pages</h2><p>这一步恐怕是最关键的一步了，让我们把在本地web环境下预览到的博客部署到github上，然后就可以直接通过<a href="http://smallwenzi.github.io/访问了。" target="_blank" rel="noopener">http://smallwenzi.github.io/访问了。</a><br>首先需要明白所谓部署到github的原理。<br>1之前步骤中在Github上创建的那个特别的repo（smallwenzi.github.io）一个最大的特点就是其master中的html静态文件，可以通过链接<a href="http://smallwenzi.github.io来直接访问。" target="_blank" rel="noopener">http://smallwenzi.github.io来直接访问。</a><br>2Hexo -g 会生成一个静态网站（第一次会生成一个public目录），这个静态文件可以直接访问。<br>3需要将hexo生成的静态网站，提交(git commit)到github上。<br>明白了原理，怎么做自然就清晰了。</p>
-<h3 id="使用hexo-deploy部署"><a href="#使用hexo-deploy部署" class="headerlink" title="使用hexo deploy部署"></a>使用hexo deploy部署</h3><p>hexo deploy可以部署到很多平台，具体可以参考这个<a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">链接</a>. 如果部署到github，需要在配置文件_config.xml中作如下修改：<br>deploy:<br>  type: git<br>  repo: <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:smallwenzi/smallwenzi.github.io.git<br>  branch: master</p>
-<p> <img src="/2017/02/20/hexo git/2.png" alt="logo"><br>然后在命令行中执行 (在blog目录下)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure>
-<p>即可完成部署。现在打开<a href="https://smallwenzi.github.io/" target="_blank" rel="noopener">https://smallwenzi.github.io/</a> ，</p>
-<p>简单解释一下，hexo generate生成public文件夹下的新内容，然后将其拷贝至smallwenzi.github.io的git目录下，然后使用git commit命令提交代码到smallwenzi.github.io这个repo的master branch上。</p>
-<h3 id="Hexo-主题配置"><a href="#Hexo-主题配置" class="headerlink" title="Hexo 主题配置"></a>Hexo 主题配置</h3><p>每个不同的主题会需要不同的配置，主题配置文件在主题目录下的_config.yml。<br>以我们使用的yilia主题为例，其提供如下的配置项（theme\yilia_config.yml）：<br><a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">参考</a>.</p>
-<h2 id="Hexo-使用本地图片"><a href="#Hexo-使用本地图片" class="headerlink" title="Hexo 使用本地图片"></a>Hexo 使用本地图片</h2><p>首先确认 _config.yml 中有 post_asset_folder:true 。<br>在 hexo 目录，执行</p>
-<p>npm install <a href="https://github.com/CodeFalling/hexo-asset-image" target="_blank" rel="noopener">https://github.com/CodeFalling/hexo-asset-image</a> –save<br>假设在</p>
-<p>MacGesture2-Publish<br>├── apppicker.jpg<br>├── logo.jpg<br>└── rules.jpg<br>MacGesture2-Publish.md</p>
-<p><img src="/2017/02/20/hexo git/3.png" alt="logo"></p>
-<h2 id="Hexo-后台管理配置"><a href="#Hexo-后台管理配置" class="headerlink" title="Hexo 后台管理配置"></a>Hexo 后台管理配置</h2><p>在blog 跟目录下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save hexo-admin</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server -d</span><br></pre></td></tr></table></figure>
-<p>如下图：<br><img src="/2017/02/20/hexo git/4.png" alt="logo"><br><a href="https://github.com/jaredly/hexo-admin" target="_blank" rel="noopener">参考</a></p>
-<h2 id="github后台绑上自己的域名"><a href="#github后台绑上自己的域名" class="headerlink" title="github后台绑上自己的域名"></a>github后台绑上自己的域名</h2><h3 id="申请一个域名"><a href="#申请一个域名" class="headerlink" title="申请一个域名"></a>申请一个域名</h3><p>我用的新网买的域名（yanwentan.xyz），买好之后进入域名控制台可以看到自己买的域名。<br><img src="/2017/02/20/hexo git/7.png" alt="logo"><br>设置域名解析记录，注意记录类型设置为CNAME，记录值为刚才github上仓库的名字，注意没有https://。<br><img src="/2017/02/20/hexo git/8.png" alt="logo"></p>
-<p>为了能够从别的域名跳转到github页面，还需要在github中进行设置：<br>在博客source目录新增CNAME 文件<br>文件内容 添加自己的域名：blog.yanwentan.xyz</p>
-<p>这样 通过hexo d -g 部署 就会 设置 域名 显示</p>
-<h2 id="免费申请https"><a href="#免费申请https" class="headerlink" title="免费申请https"></a>免费申请https</h2><p><a href="https://dash.cloudflare.com" target="_blank" rel="noopener">https://dash.cloudflare.com</a> 注册一个账号，注册成功后</p>
-<ul>
-<li>新增站点yanwentan.xyz<br><img src="/2017/02/20/hexo git/10.png" alt="logo"></li>
-<li>修改dns映射<br><img src="/2017/02/20/hexo git/12.png" alt="logo"><br>NS    gemma.ns.cloudflare.com<br>NS    henrik.ns.cloudflare.com<br>生效时间24-48小时 </li>
-<li>添加cname记录<br>添加 blog 映射：smallwenzi.github.io<br><img src="/2017/02/20/hexo git/11.png" alt="logo"><br>设置完成使用 <a href="https://blog.yanwentan.xyz/">https://blog.yanwentan.xyz/</a> 访问</li>
-<li>点击上图ssl\TLS  设置您的 SSL/TLS 加密模式为 灵活<br><img src="/2017/02/20/hexo git/13.png" alt="logo"></li>
-<li>点击上图 边缘服务器 进行设置 https<br><img src="/2017/02/20/hexo git/15.png" alt="logo"></li>
-<li>点击 analytics 查看网站访问流量<br><img src="/2017/02/20/hexo git/16.png" alt="logo"></li>
-</ul>
-<h2 id="注意事项（避雷）"><a href="#注意事项（避雷）" class="headerlink" title="注意事项（避雷）"></a>注意事项（避雷）</h2><ul>
-<li>创建.cn/.com等域名可能需要进行实名认证才能正确解析，这在域名控制器中会有提示，若域名解析成功，控制器中会显示DNS服务器地址表示正常服务：</li>
-</ul>
-<ul>
-<li><p>在设置完成后不会立刻生效，需要等待一段时间（10~15分钟），这期间尽量不要因为无法访问而反复更改设置，会因为设置生效有时延而变得更加混乱。</p>
-</li>
-<li><p>要注意浏览器自动缓存问题，在第一次输入后，如果不清除缓存，就算做了更改，浏览器还是会用上一次的DNS解析结果尽管这可能是错误的，所以如果更改设置后还是和原来一样的错误结果，可以试试清除浏览器缓存。</p>
-</li>
-</ul>
-
+        <h1 id="spring-IOC容器"><a href="#spring-IOC容器" class="headerlink" title="spring IOC容器"></a><a href="/2020/08/08/spring源码（一）/">spring IOC容器</a></h1><h1 id="spring源码编译"><a href="#spring源码编译" class="headerlink" title="spring源码编译"></a><a href="/2020/08/07/spring源码编译/">spring源码编译</a></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">package com.yanwen.springTest;</span><br><span class="line"></span><br><span class="line">import com.yanwen.springTest.service.MemberService;</span><br><span class="line">import org.springframework.context.annotation.AnnotationConfigApplicationContext;</span><br><span class="line">import org.springframework.context.annotation.Configuration;</span><br><span class="line"></span><br><span class="line">@ComponentScan(&quot;com.yanwen.springTest&quot;)</span><br><span class="line">@Configuration</span><br><span class="line">public class AppConfig &#123;</span><br><span class="line">   public static void main(String[] args)&#123;</span><br><span class="line">      AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(AppConfig.class);</span><br><span class="line">      System.out.println(annotationConfigApplicationContext.getBean(MemberService.class));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">package com.yanwen.springTest.service;</span><br><span class="line"></span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line">@Service</span><br><span class="line">public class MemberService &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="ApplicationContext"><a href="#ApplicationContext" class="headerlink" title="ApplicationContext"></a>ApplicationContext</h1><h1 id="如何产生bean"><a href="#如何产生bean" class="headerlink" title="如何产生bean"></a>如何产生bean</h1><p>AnnotationConfigApplicationContext:从一个或多个<br>基于Java的配置类中加载Spring应用上下文。</p>
+<h2 id="循环依赖"><a href="#循环依赖" class="headerlink" title="循环依赖"></a>循环依赖</h2>
       
     </div>
     
@@ -408,13 +325,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/02/20/hexo git/">Hexo搭建githubpage博客</a></p>
+        <p><span>本文标题:</span><a href="/2020/08/09/Spring-Bean-生命周期/">Spring Bean 生命周期</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">wen</a></p>
-        <p><span>发布时间:</span>2017-02-20, 10:01:00</p>
-        <p><span>最后更新:</span>2020-08-08, 13:06:13</p>
+        <p><span>发布时间:</span>2020-08-09, 20:38:00</p>
+        <p><span>最后更新:</span>2020-08-09, 21:14:07</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/02/20/hexo git/" title="Hexo搭建githubpage博客">https://blog.yanwentan.xyz/2017/02/20/hexo git/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://blog.yanwentan.xyz/2017/02/20/hexo git/　　作者: wen" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/08/09/Spring-Bean-生命周期/" title="Spring Bean 生命周期">https://blog.yanwentan.xyz/2020/08/09/Spring-Bean-生命周期/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://blog.yanwentan.xyz/2020/08/09/Spring-Bean-生命周期/　　作者: wen" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -426,12 +343,12 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/02/20/Singleton/">
-                    java 单例模式
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2020/08/09/Spring体系结构/">
+                    Spring体系结构
                 </a>
             </div>
-        
         
     </nav>
 
@@ -441,7 +358,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#系统环境配置"><span class="toc-number">1.</span> <span class="toc-text">系统环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Node-js"><span class="toc-number">1.1.</span> <span class="toc-text">安装Node.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Git"><span class="toc-number">1.2.</span> <span class="toc-text">安装Git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装hexo"><span class="toc-number">1.3.</span> <span class="toc-text">安装hexo</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo主题设置"><span class="toc-number">2.</span> <span class="toc-text">Hexo主题设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装主题-在blog目录下"><span class="toc-number">2.1.</span> <span class="toc-text">安装主题 (在blog目录下)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启用主题"><span class="toc-number">2.2.</span> <span class="toc-text">启用主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更新主题"><span class="toc-number">2.3.</span> <span class="toc-text">更新主题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Github-Pages设置"><span class="toc-number">3.</span> <span class="toc-text">Github Pages设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是Github-Pages"><span class="toc-number">3.1.</span> <span class="toc-text">什么是Github Pages</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置SSHKey"><span class="toc-number">3.2.</span> <span class="toc-text">配置SSHKey</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#检查-SSH-keys的设置"><span class="toc-number">3.2.1.</span> <span class="toc-text">检查 SSH keys的设置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加-SSH-Key-到-GitHub"><span class="toc-number">3.3.</span> <span class="toc-text">添加 SSH Key 到 GitHub</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部署Hexo到Github-Pages"><span class="toc-number">4.</span> <span class="toc-text">部署Hexo到Github Pages</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用hexo-deploy部署"><span class="toc-number">4.1.</span> <span class="toc-text">使用hexo deploy部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo-主题配置"><span class="toc-number">4.2.</span> <span class="toc-text">Hexo 主题配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo-使用本地图片"><span class="toc-number">5.</span> <span class="toc-text">Hexo 使用本地图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo-后台管理配置"><span class="toc-number">6.</span> <span class="toc-text">Hexo 后台管理配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#github后台绑上自己的域名"><span class="toc-number">7.</span> <span class="toc-text">github后台绑上自己的域名</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#申请一个域名"><span class="toc-number">7.1.</span> <span class="toc-text">申请一个域名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#免费申请https"><span class="toc-number">8.</span> <span class="toc-text">免费申请https</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注意事项（避雷）"><span class="toc-number">9.</span> <span class="toc-text">注意事项（避雷）</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#spring-IOC容器"><span class="toc-number">1.</span> <span class="toc-text">spring IOC容器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#spring源码编译"><span class="toc-number">2.</span> <span class="toc-text">spring源码编译</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ApplicationContext"><span class="toc-number">3.</span> <span class="toc-text">ApplicationContext</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#如何产生bean"><span class="toc-number">4.</span> <span class="toc-text">如何产生bean</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#循环依赖"><span class="toc-number">4.1.</span> <span class="toc-text">循环依赖</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -472,15 +389,15 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/02/20/Singleton/" title="上一篇: java 单例模式">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2020/08/09/Spring体系结构/" title="下一篇: Spring体系结构">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
 

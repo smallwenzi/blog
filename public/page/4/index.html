@@ -285,6 +285,85 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-（六）docker安装本地仓库（root用户）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/05/08/（六）docker安装本地仓库（root用户）/" class="article-date">
+      <time datetime="2018-05-08T09:09:00.000Z" itemprop="datePublished">2018-05-08</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/08/（六）docker安装本地仓库（root用户）/">（六）docker安装本地仓库（root用户）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>参考：<br><a href="/2018/05/08/（四）安装docker（root用户）/">安装docker</a></p>
+<p>创建使用仓库，并设置https 及安全访问</p>
+<h1 id="1下载镜像"><a href="#1下载镜像" class="headerlink" title="1下载镜像"></a>1下载镜像</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; docker pull registry</span><br></pre></td></tr></table></figure>
+<h1 id="2-创建目录"><a href="#2-创建目录" class="headerlink" title="2 创建目录"></a>2 创建目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; mkdir -p ~/certs</span><br></pre></td></tr></table></figure>
+<h1 id="3-进入目录"><a href="#3-进入目录" class="headerlink" title="3 进入目录"></a>3 进入目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; cd ~/certs</span><br></pre></td></tr></table></figure>
+<h1 id="4-创建域名证书"><a href="#4-创建域名证书" class="headerlink" title="4 创建域名证书"></a>4 创建域名证书</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; openssl genrsa -out rep.itmuch.com.key 2048</span><br></pre></td></tr></table></figure>
+<h1 id="5-创建证书"><a href="#5-创建证书" class="headerlink" title="5 创建证书"></a>5 创建证书</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&gt; openssl req -newkey rsa:4096 -nodes -sha256 -keyout \ rep.itmuch.com.key -x509 -days 365 -out \ rep.itmuch.com.crt  </span><br><span class="line"></span><br><span class="line">Country Name (2 letter code) [XX]:       # 你的国家名称</span><br><span class="line"></span><br><span class="line">CN State or Province Name (full name) []:GD    # 省份</span><br><span class="line"></span><br><span class="line">Locality Name (eg, city) [Default City]:GZ      # 所在城市</span><br><span class="line"></span><br><span class="line">Organization Name (eg, company) [DefaultCompany Ltd]:test     # 组织名称</span><br><span class="line"></span><br><span class="line">Organizational Unit Name (eg, section)[]:test      # 组织单元名称</span><br><span class="line"></span><br><span class="line">Common Name (eg, your name or your server&apos;shostname) []:rep.itmuch.com    # 域名</span><br><span class="line"></span><br><span class="line">Email Address []:     # 邮箱</span><br></pre></td></tr></table></figure>
+<h1 id="3-复制证书至docker"><a href="#3-复制证书至docker" class="headerlink" title="3 复制证书至docker"></a>3 复制证书至docker</h1><h2 id="3-1创建目录"><a href="#3-1创建目录" class="headerlink" title="3.1创建目录"></a>3.1创建目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; mkdir -p /etc/docker/certs.d/rep.itmuch.com</span><br></pre></td></tr></table></figure>
+<h2 id="3-2-复制证书至docker目录"><a href="#3-2-复制证书至docker目录" class="headerlink" title="3.2 复制证书至docker目录"></a>3.2 复制证书至docker目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; cp ~/certs/rep.itmuch.com.crt /etc/docker/certs.d/rep.itmuch.com/</span><br></pre></td></tr></table></figure>
+<h2 id="3-3-重启docker"><a href="#3-3-重启docker" class="headerlink" title="3.3 重启docker"></a>3.3 重启docker</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; systemctl restart docker</span><br></pre></td></tr></table></figure>
+<h1 id="4-设置用户名和密码"><a href="#4-设置用户名和密码" class="headerlink" title="4 设置用户名和密码"></a>4 设置用户名和密码</h1><h2 id="4-1-安装-httpd-tools"><a href="#4-1-安装-httpd-tools" class="headerlink" title="4.1 安装 httpd-tools"></a>4.1 安装 httpd-tools</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; yum install httpd-tools</span><br></pre></td></tr></table></figure>
+<h2 id="4-2-当前登录用户"><a href="#4-2-当前登录用户" class="headerlink" title="4.2 当前登录用户"></a>4.2 当前登录用户</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; cd~</span><br></pre></td></tr></table></figure>
+<h2 id="4-3-创建目录"><a href="#4-3-创建目录" class="headerlink" title="4.3 创建目录"></a>4.3 创建目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;mkdir auth</span><br></pre></td></tr></table></figure>
+<h2 id="4-4创建用户名和密码"><a href="#4-4创建用户名和密码" class="headerlink" title="4.4创建用户名和密码"></a>4.4创建用户名和密码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">htpasswd -Bbn testuser testpassword &gt; auth/htpasswd</span><br></pre></td></tr></table></figure>
+<h2 id="5-运行"><a href="#5-运行" class="headerlink" title="5 运行"></a>5 运行</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 443:5000   \-v /root/certs:/certs \ -v/root/auth:/auth \-v /opt/docker-image:/var/lib/registry \-e STORAGE_PATH=/opt/docker-image \-e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/rep.itmuch.com.crt\-e REGISTRY_HTTP_TLS_KEY=/certs/rep.itmuch.com.key\ -e&quot;REGISTRY_AUTH=htpasswd&quot; \  -e&quot;REGISTRY_AUTH_HTPASSWD_REALM=Registry Realm&quot; \  -eREGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd \registry</span><br></pre></td></tr></table></figure>
+<h1 id="host主机名"><a href="#host主机名" class="headerlink" title="host主机名"></a>host主机名</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &apos;192.168.137.8 rep.itmuch.com&apos;&gt;&gt; /etc/hosts</span><br></pre></td></tr></table></figure>
+<h1 id="登录私有库"><a href="#登录私有库" class="headerlink" title="登录私有库"></a>登录私有库</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker login rep.itmuch.com</span><br></pre></td></tr></table></figure>
+<p>push或pull需要登录否则不能报错</p>
+<h1 id="push到私有库"><a href="#push到私有库" class="headerlink" title="push到私有库"></a>push到私有库</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker tag alpine rep.itmuch.com/alpine</span><br><span class="line"></span><br><span class="line">docker push rep.itmuch.com/alpine</span><br></pre></td></tr></table></figure>
+<h1 id="查看镜像目录"><a href="#查看镜像目录" class="headerlink" title="查看镜像目录"></a>查看镜像目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://rep.itmuch.com/v2/_catalog</span><br></pre></td></tr></table></figure>
+<h1 id="查看镜像-版本列表"><a href="#查看镜像-版本列表" class="headerlink" title="查看镜像 版本列表"></a>查看镜像 版本列表</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://rep.itmuch.com/v2/alpine/tags/list</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-）更新docker-版本（root用户）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1033,74 +1112,6 @@
       
         <p class="article-more-link">
           <a href="/2017/03/06/tepad-compare/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-gtmetix" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/02/28/gtmetix/" class="article-date">
-      <time datetime="2017-02-28T06:57:00.000Z" itemprop="datePublished">2017-02-28</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/28/gtmetix/">用GTmetrix来优化你的网页（集成了YSlow、FireBug的功能）</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><excerpt in index | 首页摘要><br>网址是：<a href="http://gtmetrix.com/" target="_blank" rel="noopener">http://gtmetrix.com/</a> ，输入自己需要分析的链接，稍微等会儿，有两个得分，一是YSlow的分析得分，二是PageSpeed的分析得分。<br></excerpt></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/性能优化/">性能优化</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/性能优化/">性能优化</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2017/02/28/gtmetix/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>

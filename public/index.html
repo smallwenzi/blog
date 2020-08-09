@@ -285,6 +285,67 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Spring-Bean-生命周期" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/08/09/Spring-Bean-生命周期/" class="article-date">
+      <time datetime="2020-08-09T12:38:00.000Z" itemprop="datePublished">2020-08-09</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/09/Spring-Bean-生命周期/">Spring Bean 生命周期</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="spring-IOC容器"><a href="#spring-IOC容器" class="headerlink" title="spring IOC容器"></a><a href="/2020/08/08/spring源码（一）/">spring IOC容器</a></h1><h1 id="spring源码编译"><a href="#spring源码编译" class="headerlink" title="spring源码编译"></a><a href="/2020/08/07/spring源码编译/">spring源码编译</a></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">package com.yanwen.springTest;</span><br><span class="line"></span><br><span class="line">import com.yanwen.springTest.service.MemberService;</span><br><span class="line">import org.springframework.context.annotation.AnnotationConfigApplicationContext;</span><br><span class="line">import org.springframework.context.annotation.Configuration;</span><br><span class="line"></span><br><span class="line">@ComponentScan(&quot;com.yanwen.springTest&quot;)</span><br><span class="line">@Configuration</span><br><span class="line">public class AppConfig &#123;</span><br><span class="line">   public static void main(String[] args)&#123;</span><br><span class="line">      AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(AppConfig.class);</span><br><span class="line">      System.out.println(annotationConfigApplicationContext.getBean(MemberService.class));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">package com.yanwen.springTest.service;</span><br><span class="line"></span><br><span class="line">import org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line">@Service</span><br><span class="line">public class MemberService &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="ApplicationContext"><a href="#ApplicationContext" class="headerlink" title="ApplicationContext"></a>ApplicationContext</h1><h1 id="如何产生bean"><a href="#如何产生bean" class="headerlink" title="如何产生bean"></a>如何产生bean</h1><p>AnnotationConfigApplicationContext:从一个或多个<br>基于Java的配置类中加载Spring应用上下文。</p>
+<h2 id="循环依赖"><a href="#循环依赖" class="headerlink" title="循环依赖"></a>循环依赖</h2>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Spring/">Spring</a><a class="article-category-link" href="/categories/Spring/SpringFramework/">SpringFramework</a>
+    </div>
+
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Spring体系结构" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -479,7 +540,7 @@
 <h2 id="XmlWebApplicationContext：从Web应用下的一个或多个"><a href="#XmlWebApplicationContext：从Web应用下的一个或多个" class="headerlink" title="XmlWebApplicationContext：从Web应用下的一个或多个"></a>XmlWebApplicationContext：从Web应用下的一个或多个</h2><p>XML配置文件中加载上下文定义。</p>
 <h1 id="javaConfig"><a href="#javaConfig" class="headerlink" title="javaConfig"></a>javaConfig</h1><p>java config是指基于java配置的spring。传统的Spring一般都是基本xml配置的，后来spring3.0新增了许多java config的注解，特别是spring boot，基本都是清一色的java config。<br>使用Annotation配合自动扫描能大幅简化Spring的配置</p>
 <h2 id="Configuration"><a href="#Configuration" class="headerlink" title="@Configuration"></a>@Configuration</h2><p>在类上打上这一标签，表示这个类是配置类</p>
-<h2 id="ComponentScan"><a href="#ComponentScan" class="headerlink" title="@ComponentScan"></a>@ComponentScan</h2><p>该注解默认会扫描该类所在的包下所有的配置类，相当于之前的 <a href="context:component-scan" target="_blank" rel="noopener">context:component-scan</a>。</p>
+<h1 id="常用注解"><a href="#常用注解" class="headerlink" title="常用注解"></a>常用注解</h1><h2 id="ComponentScan"><a href="#ComponentScan" class="headerlink" title="@ComponentScan"></a>@ComponentScan</h2><p>该注解默认会扫描该类所在的包下所有的配置类，相当于之前的 <a href="context:component-scan" target="_blank" rel="noopener">context:component-scan</a>。</p>
 <ul>
 <li><p>指定包扫描,主要扫描该包下@Controller @Service @Respsitory @Component四个注解</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@ComponentScan(value=&quot;com.songzixian&quot;)</span><br></pre></td></tr></table></figure>
@@ -517,9 +578,37 @@
 <h2 id="Component"><a href="#Component" class="headerlink" title="@Component"></a>@Component</h2><p>泛指组件，当组件不好归类的时候，我们可以使用这个注解进行标注</p>
 <h2 id="RestController"><a href="#RestController" class="headerlink" title="@RestController"></a>@RestController</h2><p>Spring4之后加入的注解，原来在@Controller中返回json需要@ResponseBody来配合，如果直接用@RestController替代@Controller就不需要再配置@ResponseBody，默认返回json格式。</p>
 <h2 id="RequestMapping"><a href="#RequestMapping" class="headerlink" title="@RequestMapping"></a>@RequestMapping</h2><p>类定义处: 提供初步的请求映射信息，相对于 WEB 应用的根目录。<br>方法处: 提供进一步的细分映射信息，相对于类定义处的 URL。</p>
-<h2 id="RequestParam"><a href="#RequestParam" class="headerlink" title="@RequestParam"></a>@RequestParam</h2><p>用于将请求参数区数据映射到功能处理方法的参数上</p>
+<h2 id="RequestParam"><a href="#RequestParam" class="headerlink" title="@RequestParam"></a>@RequestParam</h2><p>用于将请求参数区数据映射到功能处理方法的参数上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(value=&quot;&quot;, method=RequestMethod.POST)</span><br><span class="line">    public String postUser(@RequestParam(value=&quot;phoneNum&quot;, required=true) String phoneNum ) String userName) &#123;</span><br><span class="line">        userService.create(phoneNum, userName);</span><br><span class="line">        return &quot;success&quot;;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="Repository"><a href="#Repository" class="headerlink" title="@Repository"></a>@Repository</h2><p>用于标注数据访问组件，即DAO组件</p>
 <h2 id="Required"><a href="#Required" class="headerlink" title="@Required"></a>@Required</h2><p>适用于bean属性setter方法，并表示受影响的bean属性必须在XML配置文件在配置时进行填充。否则，容器会抛出一个BeanInitializationException异常。</p>
+<h2 id="import"><a href="#import" class="headerlink" title="import"></a>import</h2><p>  ，@Import通过快速导入的方式实现把实例加入spring的IOC容器中</p>
+<ul>
+<li><p>1、直接填class数组方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  @Import(&#123; 类名.class , 类名.class... &#125;)</span><br><span class="line">public class TestDemo &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="PathVariable"><a href="#PathVariable" class="headerlink" title="@PathVariable"></a>@PathVariable</h2><p>映射 URL 绑定的占位符<br>通过 @PathVariable 可以将 URL 中占位符参数绑定到控制器处理方法的入参中:URL 中的 {xxx} 占位符可以通过</p>
+</li>
+</ul>
+<p>@PathVariable(“xxx”) 绑定到操作方法的入参中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@GetMapping(&quot;/users/&#123;username&#125;&quot;)</span><br><span class="line">public String userProfile(@PathVariable(&quot;username&quot;) String user) &#123;</span><br><span class="line">    return String.format(&quot;user %s&quot;, user);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p> @PathVariable和@RequestParam的区别就在于：@RequestParam用来获得静态的URL请求参数；@PathVariable用来获得动态的URL请求入参</p>
+<h2 id="ResponseBody"><a href="#ResponseBody" class="headerlink" title="@ResponseBody"></a>@ResponseBody</h2><p> 的作用其实是将java对象转为json格式的数据。<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> @RequestMapping(&quot;/login.do&quot;)</span><br><span class="line">@ResponseBody</span><br><span class="line">public Object login(String name, String password, HttpSession session) &#123;</span><br><span class="line">	user = userService.checkLogin(name, password);</span><br><span class="line">	session.setAttribute(&quot;user&quot;, user);</span><br><span class="line">	return new JsonResult(user);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="RequestBody"><a href="#RequestBody" class="headerlink" title="@RequestBody"></a>@RequestBody</h2><p> 是作用在形参列表上，用于将前台发送过来固定格式的数据【xml格式 或者 json等】封装为对应的 JavaBean 对象，<br>封装时使用到的一个对象是系统默认配置的 HttpMessageConverter进行解析，然后封装到形参上。<br>如上面的登录后台代码可以改为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(&quot;/login.do&quot;)</span><br><span class="line">@ResponseBody</span><br><span class="line">public Object login(@RequestBody User loginUuser, HttpSession session) &#123;</span><br><span class="line">	user = userService.checkLogin(loginUser);</span><br><span class="line">	session.setAttribute(&quot;user&quot;, user);</span><br><span class="line">	return new JsonResult(user);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="PropertySource"><a href="#PropertySource" class="headerlink" title="@PropertySource"></a>@PropertySource</h2><p>目的是加载指定的属性文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">@PropertySource(value = &#123;&quot;classpath:people.properties&quot;&#125;,ignoreResourceNotFound = false,encoding = &quot;UTF-8&quot;,name = &quot;people.properties&quot;)</span><br><span class="line">public class PeopleProperties &#123;</span><br><span class="line"> </span><br><span class="line">    private String name;</span><br><span class="line"> </span><br><span class="line">    private int age;</span><br><span class="line">     public String getName() &#123;</span><br><span class="line">        return name;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    public void setName(String name) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    public int getAge() &#123;</span><br><span class="line">        return age;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    public void setAge(int age) &#123;</span><br><span class="line">        this.age = age;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>people.properties内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">age=10</span><br><span class="line">name=xiaohua</span><br><span class="line">history=beijing</span><br></pre></td></tr></table></figure></p>
+<p>##ConfigurationProperties<br>是类级别的注解<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">@PropertySource(value = &#123;&quot;classpath:people.properties&quot;&#125;,ignoreResourceNotFound = false,encoding = &quot;UTF-8&quot;,name = &quot;people.properties&quot;)</span><br><span class="line">@ConfigurationProperties(prefix = &quot;female&quot;,ignoreUnknownFields=true,ignoreInvalidFields=true)</span><br><span class="line">public class PeopleProperties &#123;</span><br><span class="line"> </span><br><span class="line">    private String name;</span><br><span class="line"> </span><br><span class="line">    private int age;</span><br><span class="line">     public String getName() &#123;</span><br><span class="line">        return name;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    public void setName(String name) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    public int getAge() &#123;</span><br><span class="line">        return age;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    public void setAge(int age) &#123;</span><br><span class="line">        this.age = age;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在PeopleProperties类中增加了ConfigurationProperties注解，并且指明了属性的前缀为female。这样Springboot在处理的时候，会去扫描当前类中的所有字段并进行属性的查找以及组装。比如我们配置的prefix = “female”，PeopleProperties类中有一个name字段，则female字段需要匹配的属性是prefix+字段=female.name。</p>
+<p>@ConfigurationProperties(prefix = “female”,ignoreUnknownFields=true,ignoreInvalidFields=true)</p>
+<ul>
+<li><p>ignoreUnknownFields：忽略未知的字段。</p>
+</li>
+<li><p>ignoreInvalidFields：是否忽略验证失败的字段。这个怎么理解呢？比如我们在配置文件中配置了一个字符串类型的变量，类中的字段是int类型，那肯定会报错的。如果出现这种情况我们可以容忍，则需要配置该属性值为true。该参数值默认为false。<br>注意使用该注解，bean一定有Set与Get方法，否则取不出对应的属性值。<br>people.properties内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">female.age=10</span><br><span class="line">female.name=xiaohua</span><br><span class="line">female.history=beijing</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Value"><a href="#Value" class="headerlink" title="@Value"></a>@Value</h2><p>通过@Value将外部配置文件的值动态注入到Bean中。配置文件主要有两类：</p>
+<ul>
+<li>application.properties。application.properties在spring boot启动时默认加载此文件<br>自定义属性文件。自定义属性文件通过@PropertySource加载。* @PropertySource可以同时加载多个文件，也可以加载单个文件。如果相同第一个属性文件和第二属性文件存在相同key，则最后一个属性文件里的key启作用。加载文件的路径也可以配置变量，如下文的${anotherfile.configinject}，此值定义在第一个属性文件config.properties<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@Value(&quot;$&#123;app.name&#125;&quot;)</span><br><span class="line">    private String appName; // 这里的值来自application.properties，spring boot启动时默认加载此文件</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <h1 id="无侵入容器"><a href="#无侵入容器" class="headerlink" title="无侵入容器"></a>无侵入容器</h1><p>在设计上，Spring的IoC容器是一个高度可扩展的无侵入容器。所谓无侵入，是指应用程序的组件无需实现Spring的特定接口，或者说，组件根本不知道自己在Spring的容器中运行。这种无侵入的设计有以下好处：</p>
 <ul>
 <li>应用程序组件既可以在Spring的IoC容器中运行，也可以自己编写代码自行组装配置；</li>
@@ -1267,119 +1356,6 @@
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/httpd/">httpd</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-ring-session（1）" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/11/13/ring-session（1）/" class="article-date">
-      <time datetime="2019-11-13T03:54:00.000Z" itemprop="datePublished">2019-11-13</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/13/ring-session（1）/">spring session（1）</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在开始spring-session揭秘之前，先做下热脑（活动活动脑子）运动。主要从以下三个方面进行热脑：</p>
-<ul>
-<li>为什么要spring-session</li>
-<li>比较traditional-session方案和spring-session方案</li>
-<li>JSR340规范与spring-session的透明继承<h1 id="一-为什么要spring-session"><a href="#一-为什么要spring-session" class="headerlink" title="一.为什么要spring-session"></a>一.为什么要spring-session</h1>在传统单机web应用中，一般使用tomcat/jetty等web容器时，用户的session都是由容器管理。浏览器使用cookie中记录sessionId，容器根据sessionId判断用户是否存在会话session。这里的限制是，session存储在web容器中，被单台服务器容器管理。</li>
-</ul>
-<p>但是网站主键演变，分布式应用和集群是趋势（提高性能）。此时用户的请求可能被负载分发至不同的服务器，此时传统的web容器管理用户会话session的方式即行不通。除非集群或者分布式web应用能够共享session，尽管tomcat等支持这样做。但是这样存在以下两点问题：</p>
-<ul>
-<li>需要侵入web容器，提高问题的复杂</li>
-<li>web容器之间共享session，集群机器之间势必要交互耦合<br>基于这些，必须提供新的可靠的集群分布式/集群session的解决方案，突破traditional-session单机限制（即web容器session方式，下面简称traditional-session），spring-session应用而生。</li>
-</ul>
-<h1 id="二-比较traditional-session方案和spring-session方案"><a href="#二-比较traditional-session方案和spring-session方案" class="headerlink" title="二.比较traditional-session方案和spring-session方案"></a>二.比较traditional-session方案和spring-session方案</h1><p>下图展示了traditional-session和spring-session的区别</p>
-<p><img src="/2019/11/13/ring-session（1）/1.png" alt="logo"><br>传统模式中，当request进入web容器，根据reqest获取session时，如果web容器中存在session则返回，如果不存在，web容器则创建一个session。然后返回response时，将sessonId作为response的head一并返回给客户端或者浏览器。</p>
-<p>但是上节中说明了traditional-session的局限性在于：单机session。在此限制的相反面，即将session从web容器中抽出来，形成独立的模块，以便分布式应用或者集群都能共享，即能解决。</p>
-<p>spring-session的核心思想在于此：将session从web容器中剥离，存储在独立的存储服务器中。目前支持多种形式的session存储器：Redis、Database、MogonDB等。session的管理责任委托给spring-session承担。当request进入web容器，根据request获取session时，由spring-session负责存存储器中获取session，如果存在则返回，如果不存在则创建并持久化至存储器中。</p>
-<h1 id="JSR340规范与spring-session的透明继承"><a href="#JSR340规范与spring-session的透明继承" class="headerlink" title="JSR340规范与spring-session的透明继承"></a>JSR340规范与spring-session的透明继承</h1><p>JSR340是Java Servlet 3.1的规范提案，其中定义了大量的api，包括：servlet、servletRequest/HttpServletRequest/HttpServletRequestWrapper、servletResponse/HttpServletResponse/HttpServletResponseWrapper、Filter、Session等，是标准的web容器需要遵循的规约，如tomcat/jetty/weblogic等等。</p>
-<p>在日常的应用开发中，develpers也在频繁的使用servlet-api，比如：</p>
-<p>以下的方式获取请求的session：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HttpServletRequest request = ...</span><br><span class="line">HttpSession session = request.getSession(false);</span><br></pre></td></tr></table></figure></p>
-<p>其中HttpServletRequest和HttpSession都是servlet规范中定义的接口，web容器实现的标准。那如果引入spring-session，要如何获取session？</p>
-<ul>
-<li>遵循servlet规范，同样方式获取session，对应用代码无侵入且对于developers透明化</li>
-<li>全新实现一套session规范，定义一套新的api和session管理机制<br>两种方案都可以实现，但是显然第一种更友好，且具有兼容性。spring-session正是第一种方案的实现。</li>
-</ul>
-<p>实现第一种方案的关键点在于做到透明和兼容</p>
-<p>接口适配：仍然使用HttpServletRequest获取session，获取到的session仍然是HttpSession类型——适配器模式<br>类型包装增强：Session不能存储在web容器内，要外化存储——装饰模式<br>让人兴奋的是，以上的需求在Servlet规范中的扩展性都是予以支持！Servlet规范中定义一系列的接口都是支持扩展，同时提供Filter支撑扩展点。</p>
-<h1 id="spring-session入门"><a href="#spring-session入门" class="headerlink" title="spring session入门"></a>spring session入门</h1><p>主要从以下两个方面来说spring-session：</p>
-<ul>
-<li>特点</li>
-<li><p>工作原理</p>
-<h2 id="一-特点"><a href="#一-特点" class="headerlink" title="一.特点"></a>一.特点</h2><p>spring-session在无需绑定web容器的情况下提供对集群session的支持。并提供对以下情况的透明集成：</p>
-</li>
-<li><p>HttpSession：容许替换web容器的HttpSession</p>
-</li>
-<li>WebSocket：使用WebSocket通信时，提供Session的活跃</li>
-<li>WebSession：容许以应用中立的方式替换webflux的webSession</li>
-</ul>
-<p>下面以项目接入spring session redis为例</p>
-<h1 id="spring-项目"><a href="#spring-项目" class="headerlink" title="spring 项目"></a>spring 项目</h1><p>引入spring session的jar<br>代码：<a href="https://github.com/smallwenzi/testSpringSession" target="_blank" rel="noopener">https://github.com/smallwenzi/testSpringSession</a></p>
-<h2 id="引入"><a href="#引入" class="headerlink" title="引入:"></a>引入:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    	&lt;groupId&gt;org.springframework.session&lt;/groupId&gt;</span><br><span class="line">    	&lt;artifactId&gt;spring-session&lt;/artifactId&gt;</span><br><span class="line">    	&lt;version&gt;1.3.0.RELEASE&lt;/version&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line">         &lt;dependency&gt;</span><br><span class="line">    	&lt;groupId&gt;org.springframework.session&lt;/groupId&gt;</span><br><span class="line">    	&lt;artifactId&gt;spring-session&lt;/artifactId&gt;</span><br><span class="line">    	&lt;version&gt;1.3.0.RELEASE&lt;/version&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;!-- Spring session redis 依赖start --&gt;</span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line">		&lt;groupId&gt;org.springframework.session&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;spring-session-data-redis&lt;/artifactId&gt;</span><br><span class="line">		&lt;version&gt;1.2.0.RELEASE&lt;/version&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line">	    &lt;groupId&gt;org.springframework.data&lt;/groupId&gt;</span><br><span class="line">	    &lt;artifactId&gt;spring-data-redis&lt;/artifactId&gt;</span><br><span class="line">	    &lt;version&gt;1.6.0.RELEASE&lt;/version&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line">	    &lt;groupId&gt;redis.clients&lt;/groupId&gt;</span><br><span class="line">	    &lt;artifactId&gt;jedis&lt;/artifactId&gt;</span><br><span class="line">	    &lt;version&gt;2.9.0&lt;/version&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="配置redis"><a href="#配置redis" class="headerlink" title="配置redis"></a>配置redis</h2><p>applicationContext.xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=&quot;redisTemplate&quot; class=&quot;org.springframework.data.redis.core.StringRedisTemplate&quot;&gt;</span><br><span class="line">    &lt;property name=&quot;connectionFactory&quot; ref=&quot;jedisConnectionFactory&quot; /&gt;</span><br><span class="line">&lt;/bean&gt;   </span><br><span class="line"> &lt;bean id=&quot;jedisConnectionFactory&quot; class=&quot;org.springframework.data.redis.connection.jedis.JedisConnectionFactory&quot;&gt;</span><br><span class="line">     &lt;property name=&quot;hostName&quot; value=&quot;$&#123;redis.hostName&#125;&quot; /&gt;</span><br><span class="line">     &lt;property name=&quot;port&quot; value=&quot;$&#123;redis.port&#125;&quot; /&gt;</span><br><span class="line">     &lt;property name=&quot;password&quot; value=&quot;$&#123;redis.password&#125;&quot; /&gt;</span><br><span class="line">     &lt;property name=&quot;usePool&quot; value=&quot;$&#123;redis.usePool&#125;&quot; /&gt;</span><br><span class="line">     &lt;property name=&quot;timeout&quot; value=&quot;$&#123;redis.timeout&#125;&quot; /&gt;</span><br><span class="line"> &lt;/bean&gt;</span><br></pre></td></tr></table></figure></p>
-<p>redis.properties（自行更改redis 配置）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">redis.hostName=localhost</span><br><span class="line">redis.port=6379</span><br><span class="line">redis.password=</span><br><span class="line">redis.usePool=true</span><br><span class="line">redis.timeout=10000</span><br></pre></td></tr></table></figure></p>
-<h2 id="开启spring-session"><a href="#开启spring-session" class="headerlink" title="开启spring session"></a>开启spring session</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">//redisNamespace区分每个项目spring session key唯一</span><br><span class="line">@EnableRedisHttpSession(redisNamespace = &quot;testSpringSession&quot;)</span><br><span class="line">public class SpringSessionHttpConfig &#123;</span><br><span class="line"></span><br><span class="line">    private static final Logger logger = LoggerFactory.getLogger(SpringSessionHttpConfig.class);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.corepoolsize&#125;&quot;)</span><br><span class="line">    private String corepoolsize;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.maxpoolsize&#125;&quot;)</span><br><span class="line">    private String maxpoolsize;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.keepaliveseconds&#125;&quot;)</span><br><span class="line">    private String keepaliveseconds;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.queuecapacity&#125;&quot;)</span><br><span class="line">    private String queuecapacity;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.threadnameprefix&#125;&quot;)</span><br><span class="line">    private String threadnameprefix;</span><br><span class="line"></span><br><span class="line">//控制springsession 线程池 否则线程会无限制创建 导致oom 线程配置详细看看项目里test.properties</span><br><span class="line">    @Bean</span><br><span class="line">    public ThreadPoolTaskExecutor springSessionRedisTaskExecutor() &#123;</span><br><span class="line">        logger.info(&quot;JedisPool注入成功！！&quot;);</span><br><span class="line">        ThreadPoolTaskExecutor springSessionRedisTaskExecutor = new ThreadPoolTaskExecutor();</span><br><span class="line">        springSessionRedisTaskExecutor.setCorePoolSize(getRedisTaskexecutorStrToInt(this.corepoolsize, 16));</span><br><span class="line">        springSessionRedisTaskExecutor.setMaxPoolSize(getRedisTaskexecutorStrToInt(this.maxpoolsize, 300));</span><br><span class="line">        springSessionRedisTaskExecutor.setKeepAliveSeconds(getRedisTaskexecutorStrToInt(this.keepaliveseconds, 30));</span><br><span class="line">        springSessionRedisTaskExecutor.setQueueCapacity(getRedisTaskexecutorStrToInt(this.queuecapacity, 500));</span><br><span class="line">        springSessionRedisTaskExecutor.setThreadNamePrefix(this.threadnameprefix);</span><br><span class="line">        return springSessionRedisTaskExecutor;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private int getRedisTaskexecutorStrToInt(String size, int defaultSize) &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            int sizeInt = Integer.parseInt(size);</span><br><span class="line">            return sizeInt;</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            return defaultSize;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="web-xml"><a href="#web-xml" class="headerlink" title="web.xml"></a>web.xml</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> &lt;filter&gt;</span><br><span class="line"> &lt;!-- 必须这样命名 SpringHttpSessionConfiguration类中定义了springSessionRepositoryFilter类 --&gt;</span><br><span class="line">&lt;filter-name&gt;springSessionRepositoryFilter&lt;/filter-name&gt;</span><br><span class="line">&lt;filter-class&gt;org.springframework.web.filter.DelegatingFilterProxy&lt;/filter-class&gt;	</span><br><span class="line"> &lt;/filter&gt;</span><br><span class="line"> &lt;filter-mapping&gt;</span><br><span class="line">&lt;filter-name&gt;springSessionRepositoryFilter&lt;/filter-name&gt;</span><br><span class="line">   &lt;!-- 需要spring session的访问路径 --&gt;</span><br><span class="line">&lt;url-pattern&gt;/*&lt;/url-pattern&gt; </span><br><span class="line"> &lt;/filter-mapping&gt;</span><br></pre></td></tr></table></figure>
-<p>本地分别部署tomcat 进行测试<a href="http://localhost:8082/testSpringSession/testSession.do" target="_blank" rel="noopener">http://localhost:8082/testSpringSession/testSession.do</a><br><a href="http://localhost:8080/testSpringSession/testSession.do" target="_blank" rel="noopener">http://localhost:8080/testSpringSession/testSession.do</a><br>输出的session id是否一致<br>若一致则spring session成功</p>
-<h1 id="spring-boot项目"><a href="#spring-boot项目" class="headerlink" title="spring boot项目"></a>spring boot项目</h1><p>项目：<a href="https://github.com/smallwenzi/testSpringBootSession" target="_blank" rel="noopener">https://github.com/smallwenzi/testSpringBootSession</a></p>
-<h2 id="引入jar"><a href="#引入jar" class="headerlink" title="引入jar"></a>引入jar</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">          &lt;dependency&gt;</span><br><span class="line">   &lt;groupId&gt;org.springframework.session&lt;/groupId&gt;</span><br><span class="line">   &lt;artifactId&gt;spring-session&lt;/artifactId&gt;</span><br><span class="line">  &lt;/dependency&gt;</span><br><span class="line">  	&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;/dependencies&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="开启springsession"><a href="#开启springsession" class="headerlink" title="开启springsession"></a>开启springsession</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">//redisNamespace区分每个项目spring session key唯一</span><br><span class="line">@EnableRedisHttpSession(redisNamespace = &quot;testSpringBootSession&quot;)</span><br><span class="line">public class SpringSessionHttpConfig &#123;</span><br><span class="line">    private static final Logger logger = LoggerFactory.getLogger(SpringSessionHttpConfig.class);</span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.corepoolsize&#125;&quot;)</span><br><span class="line">    private String corepoolsize;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.maxpoolsize&#125;&quot;)</span><br><span class="line">    private String maxpoolsize;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.keepaliveseconds&#125;&quot;)</span><br><span class="line">    private String keepaliveseconds;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.queuecapacity&#125;&quot;)</span><br><span class="line">    private String queuecapacity;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.threadnameprefix&#125;&quot;)</span><br><span class="line">    private String threadnameprefix;</span><br><span class="line"></span><br><span class="line">//控制springsession 线程池 否则线程会无限制创建 导致oom 线程配置详细看看项目里application.properties</span><br><span class="line">    @Bean</span><br><span class="line">    public ThreadPoolTaskExecutor springSessionRedisTaskExecutor() &#123;</span><br><span class="line">        logger.info(&quot;JedisPool注入成功！！&quot;);</span><br><span class="line">        ThreadPoolTaskExecutor springSessionRedisTaskExecutor = new ThreadPoolTaskExecutor();</span><br><span class="line">        springSessionRedisTaskExecutor.setCorePoolSize(getRedisTaskexecutorStrToInt(this.corepoolsize, 16));</span><br><span class="line">        springSessionRedisTaskExecutor.setMaxPoolSize(getRedisTaskexecutorStrToInt(this.maxpoolsize, 300));</span><br><span class="line">        springSessionRedisTaskExecutor.setKeepAliveSeconds(getRedisTaskexecutorStrToInt(this.keepaliveseconds, 30));</span><br><span class="line">        springSessionRedisTaskExecutor.setQueueCapacity(getRedisTaskexecutorStrToInt(this.queuecapacity, 500));</span><br><span class="line">        springSessionRedisTaskExecutor.setThreadNamePrefix(this.threadnameprefix);</span><br><span class="line">        return springSessionRedisTaskExecutor;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private int getRedisTaskexecutorStrToInt(String size, int defaultSize) &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            int sizeInt = Integer.parseInt(size);</span><br><span class="line">            return sizeInt;</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            return defaultSize;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="application-properties"><a href="#application-properties" class="headerlink" title="application.properties"></a>application.properties</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#本地测试设置随机端口 （自行更改redis 配置）</span><br><span class="line">server.port=0</span><br><span class="line"># redis start</span><br><span class="line">#spring.redis.database=0</span><br><span class="line">spring.redis.password=</span><br><span class="line">spring.redis.pool.max-idle=10</span><br><span class="line">spring.redis.pool.min-idle=0</span><br><span class="line">spring.redis.pool.max-active=100</span><br><span class="line">spring.redis.pool.max-wait=1000</span><br><span class="line">spring.redis.database=0</span><br><span class="line"># Redis\u670D\u52A1\u5668\u5730\u5740</span><br><span class="line">spring.redis.host=localhost</span><br><span class="line"># Redis\u670D\u52A1\u5668\u8FDE\u63A5\u7AEF\u53E3</span><br><span class="line">spring.redis.port=6379</span><br><span class="line"></span><br><span class="line"># redis end</span><br><span class="line">#spring session\u4f7f\u7528\u5b58\u50a8\u7c7b\u578b</span><br><span class="line">spring.session.store-type=redis</span><br><span class="line"></span><br><span class="line">##spring-session redis \u7ebf\u7a0b\u6c60\u914d\u7f6e</span><br><span class="line">redis.taskexecutor.corepoolsize=16</span><br><span class="line">redis.taskexecutor.maxpoolsize=300</span><br><span class="line">redis.taskexecutor.keepaliveseconds=30</span><br><span class="line">redis.taskexecutor.queuecapacity=500</span><br><span class="line">redis.taskexecutor.threadnameprefix=testSpringBootSession-spring-session-redis-executor-thread:</span><br></pre></td></tr></table></figure>
-<p>本地分别启动 WebApplication进行测试<a href="http://localhost:port/testSession" target="_blank" rel="noopener">http://localhost:port/testSession</a><br><a href="http://localhost:port/" target="_blank" rel="noopener">http://localhost:port/</a><br>testSession<br>输出的session id是否一致<br>若一致则spring session成功</p>
-<p>有兴趣可以读<a href="https://smallwenzi.github.io/2019/11/21/SpringSession%E6%BA%90%E7%A0%81/" title="《spring sesson源码》">《spring sesson源码》</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Spring/">Spring</a><a class="article-category-link" href="/categories/Spring/Spring-boot/">Spring boot</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/session/">session</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
     </div>
 
       

@@ -140,7 +140,7 @@ public class BookService {
 如果有多个bean都能满足依赖关系的话，Spring将会抛出一个异常， 
 表明没有明确指定要选择哪个bean进行自动装配
 
-* 接口注入
+* 属性注入
 
 ```
 public class BookService { 
@@ -184,7 +184,9 @@ java config是指基于java配置的spring。传统的Spring一般都是基本xm
 使用Annotation配合自动扫描能大幅简化Spring的配置
 ## @Configuration
 在类上打上这一标签，表示这个类是配置类
-    
+
+# 常用注解
+
 ## @ComponentScan
 该注解默认会扫描该类所在的包下所有的配置类，相当于之前的 <context:component-scan>。
 
@@ -261,13 +263,148 @@ Spring4之后加入的注解，原来在@Controller中返回json需要@ResponseB
 
 ## @RequestParam
 用于将请求参数区数据映射到功能处理方法的参数上
-
+```
+@RequestMapping(value="", method=RequestMethod.POST)
+    public String postUser(@RequestParam(value="phoneNum", required=true) String phoneNum ) String userName) {
+        userService.create(phoneNum, userName);
+        return "success";
+    }
+```
 ## @Repository
 用于标注数据访问组件，即DAO组件
 
 ## @Required
 适用于bean属性setter方法，并表示受影响的bean属性必须在XML配置文件在配置时进行填充。否则，容器会抛出一个BeanInitializationException异常。
  
+ ## import
+  ，@Import通过快速导入的方式实现把实例加入spring的IOC容器中
+  * 1、直接填class数组方式
+  ```
+  @Import({ 类名.class , 类名.class... })
+public class TestDemo {
+
+}
+  ```
+  ## @PathVariable
+  映射 URL 绑定的占位符
+通过 @PathVariable 可以将 URL 中占位符参数绑定到控制器处理方法的入参中:URL 中的 {xxx} 占位符可以通过
+
+@PathVariable("xxx") 绑定到操作方法的入参中
+```
+@GetMapping("/users/{username}")
+public String userProfile(@PathVariable("username") String user) {
+    return String.format("user %s", user);
+}
+```
+ @PathVariable和@RequestParam的区别就在于：@RequestParam用来获得静态的URL请求参数；@PathVariable用来获得动态的URL请求入参
+ 
+ ## @ResponseBody
+ 的作用其实是将java对象转为json格式的数据。
+ ```
+ @RequestMapping("/login.do")
+@ResponseBody
+public Object login(String name, String password, HttpSession session) {
+	user = userService.checkLogin(name, password);
+	session.setAttribute("user", user);
+	return new JsonResult(user);
+}
+ ```
+ ## @RequestBody
+ 是作用在形参列表上，用于将前台发送过来固定格式的数据【xml格式 或者 json等】封装为对应的 JavaBean 对象，
+封装时使用到的一个对象是系统默认配置的 HttpMessageConverter进行解析，然后封装到形参上。
+如上面的登录后台代码可以改为：
+```
+@RequestMapping("/login.do")
+@ResponseBody
+public Object login(@RequestBody User loginUuser, HttpSession session) {
+	user = userService.checkLogin(loginUser);
+	session.setAttribute("user", user);
+	return new JsonResult(user);
+}
+```
+## @PropertySource
+目的是加载指定的属性文件
+```
+@PropertySource(value = {"classpath:people.properties"},ignoreResourceNotFound = false,encoding = "UTF-8",name = "people.properties")
+public class PeopleProperties {
+ 
+    private String name;
+ 
+    private int age;
+     public String getName() {
+        return name;
+    }
+ 
+    public void setName(String name) {
+        this.name = name;
+    }
+ 
+    public int getAge() {
+        return age;
+    }
+ 
+    public void setAge(int age) {
+        this.age = age;
+
+
+}
+```
+people.properties内容如下：
+```
+age=10
+name=xiaohua
+history=beijing
+```
+##ConfigurationProperties
+是类级别的注解
+```
+@PropertySource(value = {"classpath:people.properties"},ignoreResourceNotFound = false,encoding = "UTF-8",name = "people.properties")
+@ConfigurationProperties(prefix = "female",ignoreUnknownFields=true,ignoreInvalidFields=true)
+public class PeopleProperties {
+ 
+    private String name;
+ 
+    private int age;
+     public String getName() {
+        return name;
+    }
+ 
+    public void setName(String name) {
+        this.name = name;
+    }
+ 
+    public int getAge() {
+        return age;
+    }
+ 
+    public void setAge(int age) {
+        this.age = age;
+
+}
+```
+在PeopleProperties类中增加了ConfigurationProperties注解，并且指明了属性的前缀为female。这样Springboot在处理的时候，会去扫描当前类中的所有字段并进行属性的查找以及组装。比如我们配置的prefix = "female"，PeopleProperties类中有一个name字段，则female字段需要匹配的属性是prefix+字段=female.name。
+
+@ConfigurationProperties(prefix = "female",ignoreUnknownFields=true,ignoreInvalidFields=true)
+* ignoreUnknownFields：忽略未知的字段。
+
+* ignoreInvalidFields：是否忽略验证失败的字段。这个怎么理解呢？比如我们在配置文件中配置了一个字符串类型的变量，类中的字段是int类型，那肯定会报错的。如果出现这种情况我们可以容忍，则需要配置该属性值为true。该参数值默认为false。
+注意使用该注解，bean一定有Set与Get方法，否则取不出对应的属性值。
+people.properties内容如下：
+```
+female.age=10
+female.name=xiaohua
+female.history=beijing
+```
+## @Value
+通过@Value将外部配置文件的值动态注入到Bean中。配置文件主要有两类：
+
+* application.properties。application.properties在spring boot启动时默认加载此文件
+自定义属性文件。自定义属性文件通过@PropertySource加载。* @PropertySource可以同时加载多个文件，也可以加载单个文件。如果相同第一个属性文件和第二属性文件存在相同key，则最后一个属性文件里的key启作用。加载文件的路径也可以配置变量，如下文的${anotherfile.configinject}，此值定义在第一个属性文件config.properties
+```
+@Value("${app.name}")
+    private String appName; // 这里的值来自application.properties，spring boot启动时默认加载此文件
+```
+
 
 # 无侵入容器
 在设计上，Spring的IoC容器是一个高度可扩展的无侵入容器。所谓无侵入，是指应用程序的组件无需实现Spring的特定接口，或者说，组件根本不知道自己在Spring的容器中运行。这种无侵入的设计有以下好处：
@@ -277,4 +414,3 @@ Spring4之后加入的注解，原来在@Controller中返回json需要@ResponseB
 
 # 官方文档：
 https://docs.spring.io/spring/docs/5.0.18.RELEASE/spring-framework-reference/core.html#spring-core
-
