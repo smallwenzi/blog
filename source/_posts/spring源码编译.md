@@ -30,7 +30,7 @@ Gi地址：https://github.com/spring-projects/spring-framework.git
   
   # 注意
   注意几点：
- * a，因为其他项目需要依赖spring-core和spring-oxm，所以我们导入后需要先编译这两个包 （在cmd 命令下执行gradle build -x test ）,需要
+ * a，因为其他项目需要依赖spring-core和spring-orm，所以我们导入后需要先编译这两个包 （在cmd 命令下执行gradle build -x test ）,需要
   等候一定时间(我这边花了1小时时间)，保证网络稳定
  ![gradle](spring源码编译/8.png)
   ![gradle](spring源码编译/9.png)
