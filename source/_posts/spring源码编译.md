@@ -28,6 +28,16 @@ Gi地址：https://github.com/spring-projects/spring-framework.git
   在import-into-idea.md 你编译spring work源码之前你需要spring-core和spring-oxm
   ![gradle](spring源码编译/7.png)
   
+ gradle 添加aliyun maven仓库(根目录的build.gradle)
+ ```
+ 在文件中找到以下（）
+ repositories {
+		    maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+			mavenCentral()
+			maven { url "https://repo.spring.io/libs-spring-framework-build" }
+			maven { url "https://repo.spring.io/snapshot" }  // Reactor Dysprosium snapshots
+		}
+ ```
   # 注意
   注意几点：
  * a，因为其他项目需要依赖spring-core和spring-orm，所以我们导入后需要先编译这两个包 （在cmd 命令下执行gradle build -x test ）,需要
