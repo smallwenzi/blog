@@ -46,7 +46,7 @@
 <meta property="og:image" content="https://blog.yanwentan.xyz/2020/08/07/spring源码编译/22.png">
 <meta property="og:image" content="https://blog.yanwentan.xyz/2020/08/07/spring源码编译/23.png">
 <meta property="og:image" content="https://blog.yanwentan.xyz/2020/08/07/spring源码编译/25.png">
-<meta property="og:updated_time" content="2020-08-09T09:21:35.360Z">
+<meta property="og:updated_time" content="2020-08-18T02:55:01.997Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="springFramework源码编译">
 <meta name="twitter:description" content="安装环境配套Gradle 5.6.2 +java version “1.8.0_251”+idea+spring framework5.1.x  Spring framework下载：https://github.com/spring-projects/spring-framework/tree/5.1.x Gradle 6.5.1下载:https://gradle.org/next-steps/">
@@ -351,9 +351,10 @@
 </ul>
 <h1 id="配置gradle环境"><a href="#配置gradle环境" class="headerlink" title="配置gradle环境"></a>配置gradle环境</h1><p>  配置gradle环境变量 新建GRADLE_HOME，path中增加%GRADLE_HOME%/bin;即可<br>  <img src="/2020/08/07/spring源码编译/1.png" alt="gradle"><br>  <img src="/2020/08/07/spring源码编译/2.png" alt="gradle"><br>  配置完成以后win+r，输入cmd进入dos界面，键入命令gradle -v，若如下图正确输出版本信息即可<br>    <img src="/2020/08/07/spring源码编译/3.png" alt="gradle"><br>  配置gradle默认的本地仓库，gradle和maven类似，工作时也需要一个本地仓库，管理工程jar包，可做如下配置，新增GRADLE_USER_HOME<br>     <img src="/2020/08/07/spring源码编译/4.png" alt="gradle"></p>
 <h1 id="Git-下载代码"><a href="#Git-下载代码" class="headerlink" title="Git 下载代码"></a>Git 下载代码</h1><p>Gi地址：<a href="https://github.com/spring-projects/spring-framework.git" target="_blank" rel="noopener">https://github.com/spring-projects/spring-framework.git</a><br> <img src="/2020/08/07/spring源码编译/5.png" alt="gradle"><br> 下载完成切换分支5.1.x<br>  <img src="/2020/08/07/spring源码编译/6.png" alt="gradle"><br>  在import-into-idea.md 你编译spring work源码之前你需要spring-core和spring-oxm<br>  <img src="/2020/08/07/spring源码编译/7.png" alt="gradle"></p>
+<p> gradle 添加aliyun maven仓库(根目录的build.gradle)<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">在文件中找到以下（）</span><br><span class="line">repositories &#123;</span><br><span class="line">	    maven &#123; url &quot;http://maven.aliyun.com/nexus/content/groups/public/&quot; &#125;</span><br><span class="line">		mavenCentral()</span><br><span class="line">		maven &#123; url &quot;https://repo.spring.io/libs-spring-framework-build&quot; &#125;</span><br><span class="line">		maven &#123; url &quot;https://repo.spring.io/snapshot&quot; &#125;  // Reactor Dysprosium snapshots</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
 <h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p>  注意几点：</p>
 <ul>
-<li>a，因为其他项目需要依赖spring-core和spring-oxm，所以我们导入后需要先编译这两个包 （在cmd 命令下执行gradle build -x test ）,需要<br>等候一定时间(我这边花了1小时时间)，保证网络稳定<br><img src="/2020/08/07/spring源码编译/8.png" alt="gradle"><br><img src="/2020/08/07/spring源码编译/9.png" alt="gradle"></li>
+<li>a，因为其他项目需要依赖spring-core和spring-orm，所以我们导入后需要先编译这两个包 （在cmd 命令下执行gradle build -x test ）,需要<br>等候一定时间(我这边花了1小时时间)，保证网络稳定<br><img src="/2020/08/07/spring源码编译/8.png" alt="gradle"><br><img src="/2020/08/07/spring源码编译/9.png" alt="gradle"></li>
 </ul>
 <p>成功截图： 显示Build successful<br> <img src="/2020/08/07/spring源码编译/10.png" alt="gradle"></p>
 <ul>
@@ -391,7 +392,7 @@
         <p><span>本文标题:</span><a href="/2020/08/07/spring源码编译/">springFramework源码编译</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">wen</a></p>
         <p><span>发布时间:</span>2020-08-07, 16:02:00</p>
-        <p><span>最后更新:</span>2020-08-09, 17:21:35</p>
+        <p><span>最后更新:</span>2020-08-18, 10:55:01</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2020/08/07/spring源码编译/" title="springFramework源码编译">https://blog.yanwentan.xyz/2020/08/07/spring源码编译/</a>
             <span class="copy-path" data-clipboard-text="原文: https://blog.yanwentan.xyz/2020/08/07/spring源码编译/　　作者: wen" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -435,8 +436,8 @@
         .left-col .switch-area {
             display: none;
         }
-        .toc-level-3 i,
-        .toc-level-3 ol {
+        .toc-level-6 i,
+        .toc-level-6 ol {
             display: none !important;
         }
     </style>
