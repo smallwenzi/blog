@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="wen">
+
+
+     
+        <meta name="baidu-site-verification" content="Yi3nkSW723">
+    
+     
+        <meta name="google-site-verification" content="4t79Vu6CdzrRM03i4dF4udzTUUenR2G_8HNofKjCf5g">
+    
+
+
+<meta name="description" content="tanyanwen的技术分享">
+<meta property="og:type" content="website">
+<meta property="og:title" content="wen blog">
+<meta property="og:url" content="https://blog.yanwentan.xyz/page/2/index.html">
+<meta property="og:site_name" content="wen blog">
+<meta property="og:description" content="tanyanwen的技术分享">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="wen blog">
+<meta name="twitter:description" content="tanyanwen的技术分享">
+
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="wen blog" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/img/head.jpg">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <style> .article { opacity: 0;} </style>
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>wen blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: true,
+        isPost: false,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?f4cf750b6a14c0a2f6adcc0977b5309e";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+</head></html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/head.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">wen</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">tanyanwen的技术分享</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:beityw@hotmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/smallwenzi/smallwenzi.github.io" title="GitHub"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DI/">DI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IOC容器/">IOC容器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Inversion-of-Control/">Inversion of Control</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RabbitMq/">RabbitMq</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/">atom</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/githubpage/">githubpage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-admin/">hexo-admin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/httpd/">httpd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jenkins/">jenkins</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jpa/">jpa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/notepad/">notepad</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nutch/">nutch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plantuml/">plantuml</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rabbitMq/">rabbitMq</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/red-hat-Linux/">red hat Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/resttemplate/">resttemplate</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rpm/">rpm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/session/">session</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/solr/">solr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/solr-master/">solr-master</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/solr-slave/">solr-slave</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring-cloud/">spring cloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring-config/">spring config</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springAdmin/">springAdmin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springsession/">springsession</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thymeleaf/">thymeleaf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tomcat/">tomcat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work/">work</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yum/">yum</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/依赖注入/">依赖注入</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单例模式/">单例模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工作/">工作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工作效率/">工作效率</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能优化/">性能优化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/消息队列/">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/源码/">源码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线程/">线程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">wen</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/head.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">wen</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">tanyanwen的技术分享</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:beityw@hotmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/smallwenzi/smallwenzi.github.io" title="GitHub"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-ring-session（1）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/11/13/ring-session（1）/" class="article-date">
+      <time datetime="2019-11-13T03:54:00.000Z" itemprop="datePublished">2019-11-13</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/13/ring-session（1）/">spring session（1）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在开始spring-session揭秘之前，先做下热脑（活动活动脑子）运动。主要从以下三个方面进行热脑：</p>
+<ul>
+<li>为什么要spring-session</li>
+<li>比较traditional-session方案和spring-session方案</li>
+<li>JSR340规范与spring-session的透明继承<h1 id="一-为什么要spring-session"><a href="#一-为什么要spring-session" class="headerlink" title="一.为什么要spring-session"></a>一.为什么要spring-session</h1>在传统单机web应用中，一般使用tomcat/jetty等web容器时，用户的session都是由容器管理。浏览器使用cookie中记录sessionId，容器根据sessionId判断用户是否存在会话session。这里的限制是，session存储在web容器中，被单台服务器容器管理。</li>
+</ul>
+<p>但是网站主键演变，分布式应用和集群是趋势（提高性能）。此时用户的请求可能被负载分发至不同的服务器，此时传统的web容器管理用户会话session的方式即行不通。除非集群或者分布式web应用能够共享session，尽管tomcat等支持这样做。但是这样存在以下两点问题：</p>
+<ul>
+<li>需要侵入web容器，提高问题的复杂</li>
+<li>web容器之间共享session，集群机器之间势必要交互耦合<br>基于这些，必须提供新的可靠的集群分布式/集群session的解决方案，突破traditional-session单机限制（即web容器session方式，下面简称traditional-session），spring-session应用而生。</li>
+</ul>
+<h1 id="二-比较traditional-session方案和spring-session方案"><a href="#二-比较traditional-session方案和spring-session方案" class="headerlink" title="二.比较traditional-session方案和spring-session方案"></a>二.比较traditional-session方案和spring-session方案</h1><p>下图展示了traditional-session和spring-session的区别</p>
+<p><img src="/2019/11/13/ring-session（1）/1.png" alt="logo"><br>传统模式中，当request进入web容器，根据reqest获取session时，如果web容器中存在session则返回，如果不存在，web容器则创建一个session。然后返回response时，将sessonId作为response的head一并返回给客户端或者浏览器。</p>
+<p>但是上节中说明了traditional-session的局限性在于：单机session。在此限制的相反面，即将session从web容器中抽出来，形成独立的模块，以便分布式应用或者集群都能共享，即能解决。</p>
+<p>spring-session的核心思想在于此：将session从web容器中剥离，存储在独立的存储服务器中。目前支持多种形式的session存储器：Redis、Database、MogonDB等。session的管理责任委托给spring-session承担。当request进入web容器，根据request获取session时，由spring-session负责存存储器中获取session，如果存在则返回，如果不存在则创建并持久化至存储器中。</p>
+<h1 id="JSR340规范与spring-session的透明继承"><a href="#JSR340规范与spring-session的透明继承" class="headerlink" title="JSR340规范与spring-session的透明继承"></a>JSR340规范与spring-session的透明继承</h1><p>JSR340是Java Servlet 3.1的规范提案，其中定义了大量的api，包括：servlet、servletRequest/HttpServletRequest/HttpServletRequestWrapper、servletResponse/HttpServletResponse/HttpServletResponseWrapper、Filter、Session等，是标准的web容器需要遵循的规约，如tomcat/jetty/weblogic等等。</p>
+<p>在日常的应用开发中，develpers也在频繁的使用servlet-api，比如：</p>
+<p>以下的方式获取请求的session：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HttpServletRequest request = ...</span><br><span class="line">HttpSession session = request.getSession(false);</span><br></pre></td></tr></table></figure></p>
+<p>其中HttpServletRequest和HttpSession都是servlet规范中定义的接口，web容器实现的标准。那如果引入spring-session，要如何获取session？</p>
+<ul>
+<li>遵循servlet规范，同样方式获取session，对应用代码无侵入且对于developers透明化</li>
+<li>全新实现一套session规范，定义一套新的api和session管理机制<br>两种方案都可以实现，但是显然第一种更友好，且具有兼容性。spring-session正是第一种方案的实现。</li>
+</ul>
+<p>实现第一种方案的关键点在于做到透明和兼容</p>
+<p>接口适配：仍然使用HttpServletRequest获取session，获取到的session仍然是HttpSession类型——适配器模式<br>类型包装增强：Session不能存储在web容器内，要外化存储——装饰模式<br>让人兴奋的是，以上的需求在Servlet规范中的扩展性都是予以支持！Servlet规范中定义一系列的接口都是支持扩展，同时提供Filter支撑扩展点。</p>
+<h1 id="spring-session入门"><a href="#spring-session入门" class="headerlink" title="spring session入门"></a>spring session入门</h1><p>主要从以下两个方面来说spring-session：</p>
+<ul>
+<li>特点</li>
+<li><p>工作原理</p>
+<h2 id="一-特点"><a href="#一-特点" class="headerlink" title="一.特点"></a>一.特点</h2><p>spring-session在无需绑定web容器的情况下提供对集群session的支持。并提供对以下情况的透明集成：</p>
+</li>
+<li><p>HttpSession：容许替换web容器的HttpSession</p>
+</li>
+<li>WebSocket：使用WebSocket通信时，提供Session的活跃</li>
+<li>WebSession：容许以应用中立的方式替换webflux的webSession</li>
+</ul>
+<p>下面以项目接入spring session redis为例</p>
+<h1 id="spring-项目"><a href="#spring-项目" class="headerlink" title="spring 项目"></a>spring 项目</h1><p>引入spring session的jar<br>代码：<a href="https://github.com/smallwenzi/testSpringSession" target="_blank" rel="noopener">https://github.com/smallwenzi/testSpringSession</a></p>
+<h2 id="引入"><a href="#引入" class="headerlink" title="引入:"></a>引入:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    	&lt;groupId&gt;org.springframework.session&lt;/groupId&gt;</span><br><span class="line">    	&lt;artifactId&gt;spring-session&lt;/artifactId&gt;</span><br><span class="line">    	&lt;version&gt;1.3.0.RELEASE&lt;/version&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line">         &lt;dependency&gt;</span><br><span class="line">    	&lt;groupId&gt;org.springframework.session&lt;/groupId&gt;</span><br><span class="line">    	&lt;artifactId&gt;spring-session&lt;/artifactId&gt;</span><br><span class="line">    	&lt;version&gt;1.3.0.RELEASE&lt;/version&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;!-- Spring session redis 依赖start --&gt;</span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line">		&lt;groupId&gt;org.springframework.session&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;spring-session-data-redis&lt;/artifactId&gt;</span><br><span class="line">		&lt;version&gt;1.2.0.RELEASE&lt;/version&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line">	    &lt;groupId&gt;org.springframework.data&lt;/groupId&gt;</span><br><span class="line">	    &lt;artifactId&gt;spring-data-redis&lt;/artifactId&gt;</span><br><span class="line">	    &lt;version&gt;1.6.0.RELEASE&lt;/version&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line">	    &lt;groupId&gt;redis.clients&lt;/groupId&gt;</span><br><span class="line">	    &lt;artifactId&gt;jedis&lt;/artifactId&gt;</span><br><span class="line">	    &lt;version&gt;2.9.0&lt;/version&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="配置redis"><a href="#配置redis" class="headerlink" title="配置redis"></a>配置redis</h2><p>applicationContext.xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=&quot;redisTemplate&quot; class=&quot;org.springframework.data.redis.core.StringRedisTemplate&quot;&gt;</span><br><span class="line">    &lt;property name=&quot;connectionFactory&quot; ref=&quot;jedisConnectionFactory&quot; /&gt;</span><br><span class="line">&lt;/bean&gt;   </span><br><span class="line"> &lt;bean id=&quot;jedisConnectionFactory&quot; class=&quot;org.springframework.data.redis.connection.jedis.JedisConnectionFactory&quot;&gt;</span><br><span class="line">     &lt;property name=&quot;hostName&quot; value=&quot;$&#123;redis.hostName&#125;&quot; /&gt;</span><br><span class="line">     &lt;property name=&quot;port&quot; value=&quot;$&#123;redis.port&#125;&quot; /&gt;</span><br><span class="line">     &lt;property name=&quot;password&quot; value=&quot;$&#123;redis.password&#125;&quot; /&gt;</span><br><span class="line">     &lt;property name=&quot;usePool&quot; value=&quot;$&#123;redis.usePool&#125;&quot; /&gt;</span><br><span class="line">     &lt;property name=&quot;timeout&quot; value=&quot;$&#123;redis.timeout&#125;&quot; /&gt;</span><br><span class="line"> &lt;/bean&gt;</span><br></pre></td></tr></table></figure></p>
+<p>redis.properties（自行更改redis 配置）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">redis.hostName=localhost</span><br><span class="line">redis.port=6379</span><br><span class="line">redis.password=</span><br><span class="line">redis.usePool=true</span><br><span class="line">redis.timeout=10000</span><br></pre></td></tr></table></figure></p>
+<h2 id="开启spring-session"><a href="#开启spring-session" class="headerlink" title="开启spring session"></a>开启spring session</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">//redisNamespace区分每个项目spring session key唯一</span><br><span class="line">@EnableRedisHttpSession(redisNamespace = &quot;testSpringSession&quot;)</span><br><span class="line">public class SpringSessionHttpConfig &#123;</span><br><span class="line"></span><br><span class="line">    private static final Logger logger = LoggerFactory.getLogger(SpringSessionHttpConfig.class);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.corepoolsize&#125;&quot;)</span><br><span class="line">    private String corepoolsize;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.maxpoolsize&#125;&quot;)</span><br><span class="line">    private String maxpoolsize;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.keepaliveseconds&#125;&quot;)</span><br><span class="line">    private String keepaliveseconds;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.queuecapacity&#125;&quot;)</span><br><span class="line">    private String queuecapacity;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.threadnameprefix&#125;&quot;)</span><br><span class="line">    private String threadnameprefix;</span><br><span class="line"></span><br><span class="line">//控制springsession 线程池 否则线程会无限制创建 导致oom 线程配置详细看看项目里test.properties</span><br><span class="line">    @Bean</span><br><span class="line">    public ThreadPoolTaskExecutor springSessionRedisTaskExecutor() &#123;</span><br><span class="line">        logger.info(&quot;JedisPool注入成功！！&quot;);</span><br><span class="line">        ThreadPoolTaskExecutor springSessionRedisTaskExecutor = new ThreadPoolTaskExecutor();</span><br><span class="line">        springSessionRedisTaskExecutor.setCorePoolSize(getRedisTaskexecutorStrToInt(this.corepoolsize, 16));</span><br><span class="line">        springSessionRedisTaskExecutor.setMaxPoolSize(getRedisTaskexecutorStrToInt(this.maxpoolsize, 300));</span><br><span class="line">        springSessionRedisTaskExecutor.setKeepAliveSeconds(getRedisTaskexecutorStrToInt(this.keepaliveseconds, 30));</span><br><span class="line">        springSessionRedisTaskExecutor.setQueueCapacity(getRedisTaskexecutorStrToInt(this.queuecapacity, 500));</span><br><span class="line">        springSessionRedisTaskExecutor.setThreadNamePrefix(this.threadnameprefix);</span><br><span class="line">        return springSessionRedisTaskExecutor;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private int getRedisTaskexecutorStrToInt(String size, int defaultSize) &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            int sizeInt = Integer.parseInt(size);</span><br><span class="line">            return sizeInt;</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            return defaultSize;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="web-xml"><a href="#web-xml" class="headerlink" title="web.xml"></a>web.xml</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> &lt;filter&gt;</span><br><span class="line"> &lt;!-- 必须这样命名 SpringHttpSessionConfiguration类中定义了springSessionRepositoryFilter类 --&gt;</span><br><span class="line">&lt;filter-name&gt;springSessionRepositoryFilter&lt;/filter-name&gt;</span><br><span class="line">&lt;filter-class&gt;org.springframework.web.filter.DelegatingFilterProxy&lt;/filter-class&gt;	</span><br><span class="line"> &lt;/filter&gt;</span><br><span class="line"> &lt;filter-mapping&gt;</span><br><span class="line">&lt;filter-name&gt;springSessionRepositoryFilter&lt;/filter-name&gt;</span><br><span class="line">   &lt;!-- 需要spring session的访问路径 --&gt;</span><br><span class="line">&lt;url-pattern&gt;/*&lt;/url-pattern&gt; </span><br><span class="line"> &lt;/filter-mapping&gt;</span><br></pre></td></tr></table></figure>
+<p>本地分别部署tomcat 进行测试<a href="http://localhost:8082/testSpringSession/testSession.do" target="_blank" rel="noopener">http://localhost:8082/testSpringSession/testSession.do</a><br><a href="http://localhost:8080/testSpringSession/testSession.do" target="_blank" rel="noopener">http://localhost:8080/testSpringSession/testSession.do</a><br>输出的session id是否一致<br>若一致则spring session成功</p>
+<h1 id="spring-boot项目"><a href="#spring-boot项目" class="headerlink" title="spring boot项目"></a>spring boot项目</h1><p>项目：<a href="https://github.com/smallwenzi/testSpringBootSession" target="_blank" rel="noopener">https://github.com/smallwenzi/testSpringBootSession</a></p>
+<h2 id="引入jar"><a href="#引入jar" class="headerlink" title="引入jar"></a>引入jar</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">          &lt;dependency&gt;</span><br><span class="line">   &lt;groupId&gt;org.springframework.session&lt;/groupId&gt;</span><br><span class="line">   &lt;artifactId&gt;spring-session&lt;/artifactId&gt;</span><br><span class="line">  &lt;/dependency&gt;</span><br><span class="line">  	&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;/dependencies&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="开启springsession"><a href="#开启springsession" class="headerlink" title="开启springsession"></a>开启springsession</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">//redisNamespace区分每个项目spring session key唯一</span><br><span class="line">@EnableRedisHttpSession(redisNamespace = &quot;testSpringBootSession&quot;)</span><br><span class="line">public class SpringSessionHttpConfig &#123;</span><br><span class="line">    private static final Logger logger = LoggerFactory.getLogger(SpringSessionHttpConfig.class);</span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.corepoolsize&#125;&quot;)</span><br><span class="line">    private String corepoolsize;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.maxpoolsize&#125;&quot;)</span><br><span class="line">    private String maxpoolsize;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.keepaliveseconds&#125;&quot;)</span><br><span class="line">    private String keepaliveseconds;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.queuecapacity&#125;&quot;)</span><br><span class="line">    private String queuecapacity;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;redis.taskexecutor.threadnameprefix&#125;&quot;)</span><br><span class="line">    private String threadnameprefix;</span><br><span class="line"></span><br><span class="line">//控制springsession 线程池 否则线程会无限制创建 导致oom 线程配置详细看看项目里application.properties</span><br><span class="line">    @Bean</span><br><span class="line">    public ThreadPoolTaskExecutor springSessionRedisTaskExecutor() &#123;</span><br><span class="line">        logger.info(&quot;JedisPool注入成功！！&quot;);</span><br><span class="line">        ThreadPoolTaskExecutor springSessionRedisTaskExecutor = new ThreadPoolTaskExecutor();</span><br><span class="line">        springSessionRedisTaskExecutor.setCorePoolSize(getRedisTaskexecutorStrToInt(this.corepoolsize, 16));</span><br><span class="line">        springSessionRedisTaskExecutor.setMaxPoolSize(getRedisTaskexecutorStrToInt(this.maxpoolsize, 300));</span><br><span class="line">        springSessionRedisTaskExecutor.setKeepAliveSeconds(getRedisTaskexecutorStrToInt(this.keepaliveseconds, 30));</span><br><span class="line">        springSessionRedisTaskExecutor.setQueueCapacity(getRedisTaskexecutorStrToInt(this.queuecapacity, 500));</span><br><span class="line">        springSessionRedisTaskExecutor.setThreadNamePrefix(this.threadnameprefix);</span><br><span class="line">        return springSessionRedisTaskExecutor;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private int getRedisTaskexecutorStrToInt(String size, int defaultSize) &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            int sizeInt = Integer.parseInt(size);</span><br><span class="line">            return sizeInt;</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            return defaultSize;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="application-properties"><a href="#application-properties" class="headerlink" title="application.properties"></a>application.properties</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#本地测试设置随机端口 （自行更改redis 配置）</span><br><span class="line">server.port=0</span><br><span class="line"># redis start</span><br><span class="line">#spring.redis.database=0</span><br><span class="line">spring.redis.password=</span><br><span class="line">spring.redis.pool.max-idle=10</span><br><span class="line">spring.redis.pool.min-idle=0</span><br><span class="line">spring.redis.pool.max-active=100</span><br><span class="line">spring.redis.pool.max-wait=1000</span><br><span class="line">spring.redis.database=0</span><br><span class="line"># Redis\u670D\u52A1\u5668\u5730\u5740</span><br><span class="line">spring.redis.host=localhost</span><br><span class="line"># Redis\u670D\u52A1\u5668\u8FDE\u63A5\u7AEF\u53E3</span><br><span class="line">spring.redis.port=6379</span><br><span class="line"></span><br><span class="line"># redis end</span><br><span class="line">#spring session\u4f7f\u7528\u5b58\u50a8\u7c7b\u578b</span><br><span class="line">spring.session.store-type=redis</span><br><span class="line"></span><br><span class="line">##spring-session redis \u7ebf\u7a0b\u6c60\u914d\u7f6e</span><br><span class="line">redis.taskexecutor.corepoolsize=16</span><br><span class="line">redis.taskexecutor.maxpoolsize=300</span><br><span class="line">redis.taskexecutor.keepaliveseconds=30</span><br><span class="line">redis.taskexecutor.queuecapacity=500</span><br><span class="line">redis.taskexecutor.threadnameprefix=testSpringBootSession-spring-session-redis-executor-thread:</span><br></pre></td></tr></table></figure>
+<p>本地分别启动 WebApplication进行测试<a href="http://localhost:port/testSession" target="_blank" rel="noopener">http://localhost:port/testSession</a><br><a href="http://localhost:port/" target="_blank" rel="noopener">http://localhost:port/</a><br>testSession<br>输出的session id是否一致<br>若一致则spring session成功</p>
+<p>有兴趣可以读<a href="https://smallwenzi.github.io/2019/11/21/SpringSession%E6%BA%90%E7%A0%81/" title="《spring sesson源码》" target="_blank" rel="noopener">《spring sesson源码》</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Spring/">Spring</a><a class="article-category-link" href="/categories/Spring/Spring-boot/">Spring boot</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/session/">session</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-具集" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/11/13/具集/" class="article-date">
+      <time datetime="2019-11-13T03:31:00.000Z" itemprop="datePublished">2019-11-13</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/13/具集/">工具集</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="GC分析工具"><a href="#GC分析工具" class="headerlink" title="GC分析工具"></a>GC分析工具</h1><p><a href="https://gceasy.io/" target="_blank" rel="noopener">https://gceasy.io/</a><br>上传java gc文件，进行分析<br><img src="/2019/11/13/具集/2.png" alt="logo"></p>
+<h1 id="json转换"><a href="#json转换" class="headerlink" title="json转换"></a>json转换</h1><p><a href="http://www.bejson.com/jsonviewernew/" target="_blank" rel="noopener">http://www.bejson.com/jsonviewernew/</a><br><img src="/2019/11/13/具集/1.png" alt="logo"></p>
+<h1 id="MemoryAnalyzer"><a href="#MemoryAnalyzer" class="headerlink" title="MemoryAnalyzer"></a>MemoryAnalyzer</h1><p><a href="https://www.eclipse.org/mat/" target="_blank" rel="noopener">https://www.eclipse.org/mat/</a><br>分析java dump<br><img src="/2019/11/13/具集/3.png" alt="logo"></p>
+<h1 id="性能测试jmeter"><a href="#性能测试jmeter" class="headerlink" title="性能测试jmeter"></a>性能测试jmeter</h1>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/tools/">tools</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-ava-查看占用-CPU-最高的线程" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/11/13/ava-查看占用-CPU-最高的线程/" class="article-date">
+      <time datetime="2019-11-13T03:15:00.000Z" itemprop="datePublished">2019-11-13</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/13/ava-查看占用-CPU-最高的线程/">[Java] 查看占用 CPU 最高的线程</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><ul>
+<li>top 命令找出应用 pid-app</li>
+<li>top -Hp <pid-app> 命令找出线程 pid-thread</pid-app></li>
+<li>printf ‘%x\n’ <pid-thread> 命令将线程 pid 转换成 16 进制 pid-thread-hex</pid-thread></li>
+<li>jstack <pid-app> | grep ‘pid-thread-hex’ 命令查看线程信息<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1></pid-app></li>
+<li>1.top 命令找出应用 pid-app<br><img src="/2019/11/13/ava-查看占用-CPU-最高的线程/1.png" alt="logo"></li>
+</ul>
+<p>应用 pid 为8790</p>
+<ul>
+<li>top -Hp <pid-app> 命令找出线程 pid-thread<br><img src="/2019/11/13/ava-查看占用-CPU-最高的线程/2.png" alt="logo"></pid-app></li>
+</ul>
+<p>线程 pid 为9702</p>
+<ul>
+<li><p>printf ‘%x\n’ <pid-thread> 命令将线程 pid 转换成 16 进制 pid-thread-hex<br><img src="/2019/11/13/ava-查看占用-CPU-最高的线程/3.png" alt="logo"></pid-thread></p>
+</li>
+<li><p>jstack <pid-app> | grep ‘pid-thread-hex’ 命令查看线程信息</pid-app></p>
+</li>
+</ul>
+<p><img src="/2019/11/13/ava-查看占用-CPU-最高的线程/4.png" alt="logo"></p>
+<ul>
+<li><p>查看整个JVM内存状态<br>jmap -heap [pid]<br><img src="/2019/11/13/ava-查看占用-CPU-最高的线程/5.png" alt="logo"></p>
+</li>
+<li><p>导出整个JVM 中内存信息，可以利用其它工具打开dump文件分析，例如jdk自带的visualvm工具<br>jmap -dump:file=文件名.dump [pid]</p>
+</li>
+</ul>
+<p>使用MemoryAnalyzer.exe 分析dump<br><img src="/2019/11/13/ava-查看占用-CPU-最高的线程/6.png" alt="logo"></p>
+<ul>
+<li>打印java线程数<br>jcmd pid Thread.print&gt; thread.txt<br><img src="/2019/11/13/ava-查看占用-CPU-最高的线程/7.png" alt="logo"></li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/java/">java</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-ring-config-bus" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/29/ring-config-bus/" class="article-date">
+      <time datetime="2019-05-29T09:06:00.000Z" itemprop="datePublished">2019-05-29</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/29/ring-config-bus/">spring config bus</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>config pom.xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-cloud-starter-bus-amqp&lt;/artifactId&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line">       &lt;dependency&gt;</span><br></pre></td></tr></table></figure></p>
+<p>/configuration/src/main/resources/application-native.properties<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">spring.cloud.bus.enabled=true</span><br><span class="line">spring.cloud.bus.trace.enabled=true</span><br><span class="line">spring.rabbitmq.addresses=$&#123;RABBITMQ_ADDRESS&#125;</span><br><span class="line">spring.rabbitmq.username=$&#123;RABBITMQ_USERNAME&#125;</span><br><span class="line">spring.rabbitmq.password=$&#123;RABBITMQ_PASSWORD&#125;</span><br><span class="line">spring.rabbitmq.virtual-host=$&#123;RABBITMQ_VIRTUAL_HOST&#125;</span><br><span class="line">## \u5237\u65B0\u65F6\uFF0C\u5173\u95ED\u5B89\u5168\u9A8C\u8BC1</span><br><span class="line">management.security.enabled=false</span><br><span class="line">management.endpoints.web.exposure.include=bus-refresh</span><br></pre></td></tr></table></figure></p>
+<p>刷新链接：<br><a href="http://ip:6081/actuator/bus-refresh" target="_blank" rel="noopener">http://ip:6081/actuator/bus-refresh</a></p>
+<p>客户端<br>pom.xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">				&lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">				&lt;artifactId&gt;spring-cloud-starter-bus-amqp&lt;/artifactId&gt;&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></p>
+<p>HelloController<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@RestController</span><br><span class="line">@RefreshScope</span><br><span class="line">// 使用该注解的类，会在接到SpringCloud配置中心配置刷新的时候，自动将新的配置更新到该类对应的字段中。</span><br><span class="line">class HelloController &#123;</span><br><span class="line"></span><br><span class="line">    @Value(&quot;$&#123;business.wx.appid&#125;&quot;)</span><br><span class="line">    private String hello;</span><br><span class="line"></span><br><span class="line">    @RequestMapping(&quot;/hello&quot;)</span><br><span class="line">    public String from() &#123;</span><br><span class="line">        return this.hello;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">######## bus-amqp</span><br><span class="line">## 刷新时，关闭安全验证</span><br><span class="line">management.security.enabled=false</span><br><span class="line">management.endpoints.web.exposure.include=bus-refresh</span><br><span class="line">## 开启消息跟踪</span><br><span class="line">spring.cloud.bus.enabled=true</span><br><span class="line">spring.cloud.bus.trace.enabled=true</span><br><span class="line">#mq的地址</span><br><span class="line">spring.rabbitmq.addresses=</span><br><span class="line">#mq的用户名</span><br><span class="line">spring.rabbitmq.username=</span><br><span class="line">#mq的密码</span><br><span class="line">spring.rabbitmq.password=</span><br><span class="line">spring.rabbitmq.publisherConfirms=false</span><br><span class="line">spring.rabbitmq.publisherReturns=false</span><br><span class="line">spring.rabbitmq.virtual-host=/</span><br></pre></td></tr></table></figure></p>
+<p>测试连接<br>测试入口：<a href="http://ip:port/hello" target="_blank" rel="noopener">http://ip:port/hello</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/spring-cloud/">spring cloud</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring-cloud/">spring cloud</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring-config/">spring config</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-pring-admin配置" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/29/pring-admin配置/" class="article-date">
+      <time datetime="2019-05-29T08:54:00.000Z" itemprop="datePublished">2019-05-29</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/29/pring-admin配置/">spring admin配置</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>spring admin 接入 eureka</p>
+<p>pom.xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line"></span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">  xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line"></span><br><span class="line">  &lt;groupId&gt;com.test.springcloud&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;springamdinserver&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;2.1&lt;/version&gt;</span><br><span class="line"></span><br><span class="line">   &lt;name&gt;基础设施:springamdinserver&lt;/name&gt;</span><br><span class="line"></span><br><span class="line">  &lt;parent&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;2.1.0.RELEASE&lt;/version&gt;</span><br><span class="line">    &lt;/parent&gt;</span><br><span class="line"></span><br><span class="line">  &lt;properties&gt;</span><br><span class="line">    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span><br><span class="line">    &lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;</span><br><span class="line">    &lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;</span><br><span class="line">  &lt;/properties&gt;</span><br><span class="line"></span><br><span class="line">  &lt;dependencies&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;junit&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;junit&lt;/artifactId&gt;</span><br><span class="line">      &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;de.codecentric&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-admin-starter-server&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.1.4&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-security&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">  &lt;/dependencies&gt;</span><br><span class="line"></span><br><span class="line">   &lt;dependencyManagement&gt;</span><br><span class="line">        &lt;dependencies&gt;</span><br><span class="line">            &lt;dependency&gt;</span><br><span class="line">                &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt;</span><br><span class="line">                &lt;version&gt;Finchley.RELEASE&lt;/version&gt;</span><br><span class="line">                &lt;type&gt;pom&lt;/type&gt;</span><br><span class="line">                &lt;scope&gt;import&lt;/scope&gt;</span><br><span class="line">            &lt;/dependency&gt;</span><br><span class="line">        &lt;/dependencies&gt;</span><br><span class="line">    &lt;/dependencyManagement&gt;</span><br><span class="line">  &lt;build&gt;</span><br><span class="line">   </span><br><span class="line">    &lt;plugins&gt;</span><br><span class="line">     &lt;!-- 源码格式 --&gt;</span><br><span class="line">            &lt;plugin&gt;  </span><br><span class="line">                &lt;groupId&gt;com.googlecode.maven-java-formatter-plugin&lt;/groupId&gt;  </span><br><span class="line">                &lt;artifactId&gt;maven-java-formatter-plugin&lt;/artifactId&gt;  </span><br><span class="line">                &lt;version&gt;0.4&lt;/version&gt;  </span><br><span class="line">                &lt;configuration&gt;  </span><br><span class="line">                    &lt;configFile&gt;$&#123;project.basedir&#125;/code-style.xml&lt;/configFile&gt;  </span><br><span class="line">                &lt;/configuration&gt;  </span><br><span class="line">                &lt;executions&gt;  </span><br><span class="line">                    &lt;!--                 	&lt;execution&gt;   --&gt;</span><br><span class="line">                    &lt;!--                     	&lt;goals&gt;   --&gt;</span><br><span class="line">                    &lt;!--                         	&lt;goal&gt;format&lt;/goal&gt;   --&gt;</span><br><span class="line">                    &lt;!--                         &lt;/goals&gt;   --&gt;</span><br><span class="line">                    &lt;!--                     &lt;/execution&gt;   --&gt;</span><br><span class="line">                &lt;/executions&gt;  </span><br><span class="line">            &lt;/plugin&gt;</span><br><span class="line">            &lt;!-- 单元测试与覆盖率 --&gt;</span><br><span class="line">            &lt;plugin&gt;</span><br><span class="line">                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;</span><br><span class="line">                &lt;version&gt;2.22.1&lt;/version&gt;&lt;!--$NO-MVN-MAN-VER$--&gt;</span><br><span class="line">                &lt;dependencies&gt;</span><br><span class="line">                    &lt;dependency&gt;</span><br><span class="line">                        &lt;groupId&gt;org.apache.maven.surefire&lt;/groupId&gt;</span><br><span class="line">                        &lt;artifactId&gt;surefire-junit47&lt;/artifactId&gt;</span><br><span class="line">                        &lt;version&gt;2.21.0&lt;/version&gt;</span><br><span class="line">                    &lt;/dependency&gt;</span><br><span class="line">                &lt;/dependencies&gt;</span><br><span class="line">                &lt;configuration&gt;</span><br><span class="line">                    &lt;skip&gt;true&lt;/skip&gt;</span><br><span class="line">                &lt;/configuration&gt;</span><br><span class="line">            &lt;/plugin&gt;</span><br><span class="line">            &lt;plugin&gt;</span><br><span class="line">                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;maven-surefire-report-plugin&lt;/artifactId&gt;</span><br><span class="line">                &lt;version&gt;2.21.0&lt;/version&gt;</span><br><span class="line">                &lt;configuration&gt;</span><br><span class="line">                    &lt;includes&gt;</span><br><span class="line">                        &lt;include&gt;**/*Test.java&lt;/include&gt;</span><br><span class="line">                    &lt;/includes&gt;</span><br><span class="line">                &lt;/configuration&gt;</span><br><span class="line">            &lt;/plugin&gt;</span><br><span class="line">            &lt;plugin&gt;  </span><br><span class="line">                &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;  </span><br><span class="line">                &lt;artifactId&gt;cobertura-maven-plugin&lt;/artifactId&gt;  </span><br><span class="line">                &lt;version&gt;2.7&lt;/version&gt; </span><br><span class="line">                &lt;configuration&gt;</span><br><span class="line">                    &lt;formats&gt;</span><br><span class="line">                        &lt;format&gt;html&lt;/format&gt;</span><br><span class="line">                        &lt;format&gt;xml&lt;/format&gt;</span><br><span class="line">                    &lt;/formats&gt;</span><br><span class="line">                &lt;/configuration&gt; </span><br><span class="line">            &lt;/plugin&gt;</span><br><span class="line">            &lt;!--编译--&gt;</span><br><span class="line">            &lt;plugin&gt;</span><br><span class="line">                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;</span><br><span class="line">                &lt;version&gt;3.8.0&lt;/version&gt;&lt;!--$NO-MVN-MAN-VER$--&gt;</span><br><span class="line">                &lt;configuration&gt;</span><br><span class="line">                    &lt;source&gt;1.8&lt;/source&gt;</span><br><span class="line">                    &lt;target&gt;1.8&lt;/target&gt;</span><br><span class="line">                    &lt;encoding&gt;UTF-8&lt;/encoding&gt;</span><br><span class="line">                &lt;/configuration&gt;</span><br><span class="line">            &lt;/plugin&gt;</span><br><span class="line">            &lt;!-- javadoc文档 --&gt;</span><br><span class="line">            &lt;plugin&gt;</span><br><span class="line">                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;maven-javadoc-plugin&lt;/artifactId&gt;</span><br><span class="line">                &lt;version&gt;3.0.1&lt;/version&gt;&lt;!--$NO-MVN-MAN-VER$--&gt;</span><br><span class="line">                &lt;configuration&gt;</span><br><span class="line">                    &lt;aggregate&gt;true&lt;/aggregate&gt;</span><br><span class="line">                &lt;/configuration&gt;</span><br><span class="line">            &lt;/plugin&gt;</span><br><span class="line">            &lt;!-- spring boot --&gt;</span><br><span class="line">            &lt;plugin&gt;</span><br><span class="line">                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">                &lt;executions&gt;</span><br><span class="line">                    &lt;execution&gt;</span><br><span class="line">                        &lt;goals&gt;</span><br><span class="line">                            &lt;goal&gt;repackage&lt;/goal&gt;</span><br><span class="line">                        &lt;/goals&gt;</span><br><span class="line">                    &lt;/execution&gt;</span><br><span class="line">                &lt;/executions&gt;</span><br><span class="line">            &lt;/plugin&gt;</span><br><span class="line">            &lt;plugin&gt;</span><br><span class="line">                &lt;artifactId&gt;maven-antrun-plugin&lt;/artifactId&gt;</span><br><span class="line">                &lt;version&gt;1.8&lt;/version&gt;&lt;!--$NO-MVN-MAN-VER$--&gt;</span><br><span class="line">                &lt;executions&gt;</span><br><span class="line">                    &lt;execution&gt;</span><br><span class="line">                        &lt;id&gt;copy-lib-src-webapps&lt;/id&gt;</span><br><span class="line">                        &lt;phase&gt;package&lt;/phase&gt;</span><br><span class="line">                        &lt;configuration&gt;</span><br><span class="line">                            &lt;target&gt;</span><br><span class="line">                                &lt;copy todir=&quot;$&#123;project.basedir&#125;/docker&quot;&gt;</span><br><span class="line">                                    &lt;fileset dir=&quot;$&#123;project.basedir&#125;/target&quot;&gt;</span><br><span class="line">                                        &lt;include name=&quot;*.jar&quot; /&gt;</span><br><span class="line">                                    &lt;/fileset&gt;</span><br><span class="line">                                &lt;/copy&gt;</span><br><span class="line">                            &lt;/target&gt;</span><br><span class="line">                        &lt;/configuration&gt;</span><br><span class="line">                        &lt;goals&gt;</span><br><span class="line">                            &lt;goal&gt;run&lt;/goal&gt;</span><br><span class="line">                        &lt;/goals&gt;</span><br><span class="line">                    &lt;/execution&gt;</span><br><span class="line">                &lt;/executions&gt;</span><br><span class="line">            &lt;/plugin&gt;</span><br><span class="line">            &lt;plugin&gt;</span><br><span class="line">                &lt;groupId&gt;com.spotify&lt;/groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;docker-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">                &lt;version&gt;1.2.0&lt;/version&gt;</span><br><span class="line">                &lt;configuration&gt;</span><br><span class="line">                    &lt;!-- imageName必须全为小写 --&gt;</span><br><span class="line">                    &lt;imageName&gt;springboot-unit-test:1.0&lt;/imageName&gt;</span><br><span class="line">                    &lt;dockerDirectory&gt;$&#123;project.basedir&#125;/docker&lt;/dockerDirectory&gt;</span><br><span class="line">                    &lt;resources&gt;</span><br><span class="line">                        &lt;resource&gt;</span><br><span class="line">                            &lt;targetPath&gt;/&lt;/targetPath&gt;</span><br><span class="line">                            &lt;directory&gt;$&#123;project.build.directory&#125;&lt;/directory&gt;</span><br><span class="line">                            &lt;include&gt;$&#123;project.build.finalName&#125;.jar&lt;/include&gt;</span><br><span class="line">                        &lt;/resource&gt;</span><br><span class="line">                    &lt;/resources&gt;</span><br><span class="line">                &lt;/configuration&gt;</span><br><span class="line">            &lt;/plugin&gt;</span><br><span class="line">      &lt;/plugins&gt;</span><br><span class="line">  &lt;/build&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure></p>
+<p>application.properties</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">spring.application.name=springadminserver</span><br><span class="line">server.port=8080</span><br><span class="line">#using the info endpoint</span><br><span class="line">info.tags.environment=test</span><br><span class="line">#配置eureka</span><br><span class="line">eureka.client.serviceUrl.defaultZone=$&#123;EUREKA_SERVICEURL&#125;</span><br><span class="line">eureka.instance.prefer-ip-address=true</span><br><span class="line">spring.cloud.inetutils.preferredNetworks=$&#123;PREFERRED_IP_PATTERN:.*&#125;</span><br><span class="line">eureka.instance.preferIpAddress=true</span><br><span class="line">eureka.instance.instance-id=$&#123;spring.cloud.client.ip-address&#125;:$&#123;server.port&#125;</span><br><span class="line">eureka.instance.leaseRenewalIntervalInSeconds=10</span><br><span class="line">eureka.instance.health-check-url-path=/actuator/health</span><br><span class="line">eureka.client.registryFetchIntervalSeconds=5</span><br><span class="line">#公开的站点</span><br><span class="line">management.endpoints.web.exposure.include=*</span><br><span class="line">management.endpoints.health.show-details=ALWAYS</span><br><span class="line"># 安全密码</span><br><span class="line">spring.security.user.name=user</span><br><span class="line">spring.security.user.password=123456</span><br></pre></td></tr></table></figure>
+<p>SpringBootAdminApplication<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">package com.springamdinserver;</span><br><span class="line"></span><br><span class="line">import org.springframework.boot.SpringApplication;</span><br><span class="line">import org.springframework.boot.autoconfigure.EnableAutoConfiguration;</span><br><span class="line">import org.springframework.cloud.client.discovery.EnableDiscoveryClient;</span><br><span class="line">import org.springframework.context.annotation.Configuration;</span><br><span class="line">import org.springframework.security.config.annotation.web.builders.HttpSecurity;</span><br><span class="line">import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;</span><br><span class="line">import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;</span><br><span class="line"></span><br><span class="line">import de.codecentric.boot.admin.server.config.AdminServerProperties;</span><br><span class="line">import de.codecentric.boot.admin.server.config.EnableAdminServer;</span><br><span class="line"></span><br><span class="line">@Configuration</span><br><span class="line">@EnableAutoConfiguration</span><br><span class="line">@EnableAdminServer</span><br><span class="line">@EnableDiscoveryClient</span><br><span class="line">public class SpringBootAdminApplication &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        SpringApplication.run(SpringBootAdminApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Configuration</span><br><span class="line">    public static class SecurityPermitAllConfig extends WebSecurityConfigurerAdapter &#123;</span><br><span class="line">        private final String adminContextPath;</span><br><span class="line"></span><br><span class="line">        public SecurityPermitAllConfig(AdminServerProperties adminServerProperties) &#123;</span><br><span class="line">            this.adminContextPath = adminServerProperties.getContextPath();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        @Override</span><br><span class="line">        protected void configure(HttpSecurity http) throws Exception &#123;</span><br><span class="line">            // @formatter:off</span><br><span class="line">            SavedRequestAwareAuthenticationSuccessHandler successHandler =</span><br><span class="line">                    new SavedRequestAwareAuthenticationSuccessHandler();</span><br><span class="line">            successHandler.setTargetUrlParameter(&quot;redirectTo&quot;);</span><br><span class="line"></span><br><span class="line">            http.authorizeRequests().antMatchers(adminContextPath + &quot;/assets/**&quot;).permitAll()</span><br><span class="line">                    .antMatchers(adminContextPath + &quot;/login&quot;).permitAll().anyRequest().authenticated().and()</span><br><span class="line">                    .formLogin().loginPage(adminContextPath + &quot;/login&quot;).successHandler(successHandler).and().logout()</span><br><span class="line">                    .logoutUrl(adminContextPath + &quot;/logout&quot;).and().httpBasic().and().csrf().disable();</span><br><span class="line">            // @formatter:on</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>客户端配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">management.endpoints.web.exposure.include=*</span><br><span class="line">management.endpoints.health.show-details=ALWAYS</span><br><span class="line">##日志路径</span><br><span class="line">logging.path=/applog/logincenterWxBindingService</span><br></pre></td></tr></table></figure></p>
+<p>重启服务</p>
+<p>控制台：<br><a href="http://localhost:8080/" target="_blank" rel="noopener">http://localhost:8080/</a><br><img src="/2019/05/29/pring-admin配置/1.png" alt="logo"><br>eurka上服务<br><img src="/2019/05/29/pring-admin配置/2.png" alt="logo"><br>每个服务 内存情况<br><img src="/2019/05/29/pring-admin配置/3.png" alt="logo"><br>查看日志<br><img src="/2019/05/29/pring-admin配置/4.png" alt="logo"><br>流量情况：<br><img src="/2019/05/29/pring-admin配置/5.png" alt="logo"></p>
+<p>参考：<a href="https://github.com/codecentric/spring-boot-admin" target="_blank" rel="noopener">https://github.com/codecentric/spring-boot-admin</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/spring-cloud/">spring cloud</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring-cloud/">spring cloud</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/springAdmin/">springAdmin</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-rabbitmq-队列信息" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/29/rabbitmq-队列信息/" class="article-date">
+      <time datetime="2019-05-29T08:48:00.000Z" itemprop="datePublished">2019-05-29</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/29/rabbitmq-队列信息/">查询rabbitmq 队列信息</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>最近需要做mq 消息预警，消息一旦堆积某个数量就报警。</p>
+<p>RabbitMQ自己就提供了HTTP API手册，比如我本地的API手册地址为：<a href="http://localhost:15672/api" target="_blank" rel="noopener">http://localhost:15672/api</a></p>
+<p><a href="http://localhost:15672/api/queues/%2F/soaSyncPwdQueue" target="_blank" rel="noopener">http://localhost:15672/api/queues/%2F/soaSyncPwdQueue</a><br>可以看到队列相关的所有信息都有记录。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;consumer_details&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;arguments&quot;: &#123;</span><br><span class="line">        </span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;channel_details&quot;: &#123;</span><br><span class="line">        &quot;connection_name&quot;: &quot;10.143.172.86:35833 -&gt; 10.210.93.176:5672&quot;,</span><br><span class="line">        &quot;name&quot;: &quot;10.143.172.86:35833 -&gt; 10.210.93.176:5672 (1)&quot;,</span><br><span class="line">        &quot;node&quot;: &quot;rabbit@CNQLS03247&quot;,</span><br><span class="line">        &quot;number&quot;: 1,</span><br><span class="line">        &quot;peer_host&quot;: &quot;10.143.172.86&quot;,</span><br><span class="line">        &quot;peer_port&quot;: 35833,</span><br><span class="line">        &quot;user&quot;: &quot;logincenter&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;ack_required&quot;: true,</span><br><span class="line">      &quot;consumer_tag&quot;: &quot;amq.ctag-Gvgmd8yxscKvBkBiGp3J3g&quot;,</span><br><span class="line">      &quot;exclusive&quot;: false,</span><br><span class="line">      &quot;prefetch_count&quot;: 0,</span><br><span class="line">      &quot;queue&quot;: &#123;</span><br><span class="line">        &quot;name&quot;: &quot;soaSyncPwdQueue&quot;,</span><br><span class="line">        &quot;vhost&quot;: &quot;/&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  &quot;arguments&quot;: &#123;</span><br><span class="line">    &quot;x-dead-letter-exchange&quot;: &quot;&quot;,</span><br><span class="line">    &quot;x-dead-letter-routing-key&quot;: &quot;DL_soaSyncPwdQueue&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;auto_delete&quot;: false,</span><br><span class="line">  &quot;backing_queue_status&quot;: &#123;</span><br><span class="line">    &quot;avg_ack_egress_rate&quot;: 0.00021645676867156752,</span><br><span class="line">    &quot;avg_ack_ingress_rate&quot;: 0.00021645676867156752,</span><br><span class="line">    &quot;avg_egress_rate&quot;: 0.00021645676867156752,</span><br><span class="line">    &quot;avg_ingress_rate&quot;: 0.00021645676867156752,</span><br><span class="line">    &quot;delta&quot;: [</span><br><span class="line">      &quot;delta&quot;,</span><br><span class="line">      &quot;undefined&quot;,</span><br><span class="line">      0,</span><br><span class="line">      0,</span><br><span class="line">      &quot;undefined&quot;</span><br><span class="line">    ],</span><br><span class="line">    &quot;len&quot;: 0,</span><br><span class="line">    &quot;mode&quot;: &quot;default&quot;,</span><br><span class="line">    &quot;next_seq_id&quot;: 2177,</span><br><span class="line">    &quot;q1&quot;: 0,</span><br><span class="line">    &quot;q2&quot;: 0,</span><br><span class="line">    &quot;q3&quot;: 0,</span><br><span class="line">    &quot;q4&quot;: 0,</span><br><span class="line">    &quot;target_ram_count&quot;: &quot;infinity&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;consumer_utilisation&quot;: null,</span><br><span class="line">  &quot;consumers&quot;: 1,</span><br><span class="line">  &quot;deliveries&quot;: [</span><br><span class="line">    </span><br><span class="line">  ],</span><br><span class="line">  &quot;durable&quot;: true,</span><br><span class="line">  &quot;effective_policy_definition&quot;: [</span><br><span class="line">    </span><br><span class="line">  ],</span><br><span class="line">  &quot;exclusive&quot;: false,</span><br><span class="line">  &quot;exclusive_consumer_tag&quot;: null,</span><br><span class="line">  &quot;garbage_collection&quot;: &#123;</span><br><span class="line">    &quot;fullsweep_after&quot;: 65535,</span><br><span class="line">    &quot;max_heap_size&quot;: 0,</span><br><span class="line">    &quot;min_bin_vheap_size&quot;: 46422,</span><br><span class="line">    &quot;min_heap_size&quot;: 233,</span><br><span class="line">    &quot;minor_gcs&quot;: 294</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;head_message_timestamp&quot;: null,</span><br><span class="line">  &quot;idle_since&quot;: &quot;2019-05-29 7:34:01&quot;,</span><br><span class="line">  &quot;incoming&quot;: [</span><br><span class="line">    </span><br><span class="line">  ],</span><br><span class="line">  &quot;memory&quot;: 18808,</span><br><span class="line">  &quot;message_bytes&quot;: 0,</span><br><span class="line">  &quot;message_bytes_paged_out&quot;: 0,</span><br><span class="line">  &quot;message_bytes_persistent&quot;: 0,</span><br><span class="line">  &quot;message_bytes_ram&quot;: 0,</span><br><span class="line">  &quot;message_bytes_ready&quot;: 0,</span><br><span class="line">  &quot;message_bytes_unacknowledged&quot;: 0,</span><br><span class="line">  &quot;message_stats&quot;: &#123;</span><br><span class="line">    &quot;ack&quot;: 2007,</span><br><span class="line">    &quot;ack_details&quot;: &#123;</span><br><span class="line">      &quot;rate&quot;: 0.0</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;deliver&quot;: 2181,</span><br><span class="line">    &quot;deliver_details&quot;: &#123;</span><br><span class="line">      &quot;rate&quot;: 0.0</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;deliver_get&quot;: 2181,</span><br><span class="line">    &quot;deliver_get_details&quot;: &#123;</span><br><span class="line">      &quot;rate&quot;: 0.0</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;deliver_no_ack&quot;: 0,</span><br><span class="line">    &quot;deliver_no_ack_details&quot;: &#123;</span><br><span class="line">      &quot;rate&quot;: 0.0</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;get&quot;: 0,</span><br><span class="line">    &quot;get_details&quot;: &#123;</span><br><span class="line">      &quot;rate&quot;: 0.0</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;get_no_ack&quot;: 0,</span><br><span class="line">    &quot;get_no_ack_details&quot;: &#123;</span><br><span class="line">      &quot;rate&quot;: 0.0</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;publish&quot;: 2177,</span><br><span class="line">    &quot;publish_details&quot;: &#123;</span><br><span class="line">      &quot;rate&quot;: 0.0</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;redeliver&quot;: 4,</span><br><span class="line">    &quot;redeliver_details&quot;: &#123;</span><br><span class="line">      &quot;rate&quot;: 0.0</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;messages&quot;: 0,</span><br><span class="line">  &quot;messages_details&quot;: &#123;</span><br><span class="line">    &quot;rate&quot;: 0.0</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;messages_paged_out&quot;: 0,</span><br><span class="line">  &quot;messages_persistent&quot;: 0,</span><br><span class="line">  &quot;messages_ram&quot;: 0,</span><br><span class="line">  &quot;messages_ready&quot;: 0, //消息未消费</span><br><span class="line">  &quot;messages_ready_details&quot;: &#123;</span><br><span class="line">    &quot;rate&quot;: 0.0</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;messages_ready_ram&quot;: 0,</span><br><span class="line">  &quot;messages_unacknowledged&quot;: 0, //正在消费</span><br><span class="line">  &quot;messages_unacknowledged_details&quot;: &#123;</span><br><span class="line">    &quot;rate&quot;: 0.0</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;messages_unacknowledged_ram&quot;: 0,</span><br><span class="line">  &quot;name&quot;: &quot;soaSyncPwdQueue&quot;,</span><br><span class="line">  &quot;node&quot;: &quot;rabbit@CNQLS03247&quot;,</span><br><span class="line">  &quot;operator_policy&quot;: null,</span><br><span class="line">  &quot;policy&quot;: null,</span><br><span class="line">  &quot;recoverable_slaves&quot;: null,</span><br><span class="line">  &quot;reductions&quot;: 23652972,</span><br><span class="line">  &quot;reductions_details&quot;: &#123;</span><br><span class="line">    &quot;rate&quot;: 0.0</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;state&quot;: &quot;running&quot;,</span><br><span class="line">  &quot;vhost&quot;: &quot;/&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>注意：<br>虚拟主机名Virtual host在设置的时候不要带/，不然会访问不到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;error&quot;:&quot;Object Not Found&quot;,&quot;reason&quot;:&quot;\&quot;Not Found\&quot;\n&quot;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>之前就是被这个坑了好久，明明按照API写的格式来的，就是访问不到。<br>java代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">jdk 1.8</span><br><span class="line">import java.io.BufferedReader;</span><br><span class="line">import java.io.InputStreamReader;</span><br><span class="line">import java.net.HttpURLConnection;</span><br><span class="line">import java.net.URL;</span><br><span class="line">import java.util.Base64;</span><br><span class="line"></span><br><span class="line">public class Test &#123;</span><br><span class="line">    public static void main(String[] args) throws Exception &#123;</span><br><span class="line">        String host = &quot;&quot;;</span><br><span class="line">        String port = &quot;&quot;;</span><br><span class="line">        String virtualHost = &quot;&quot;;</span><br><span class="line">        String queueName = &quot;&quot;;</span><br><span class="line">        // 发送一个GET请求</span><br><span class="line">        HttpURLConnection httpConn = null;</span><br><span class="line">        BufferedReader in = null;</span><br><span class="line"></span><br><span class="line">        String urlString = &quot;http://&quot; + host + &quot;:&quot; + port + &quot;/api/queues/&quot; + virtualHost + &quot;/&quot; + queueName;</span><br><span class="line">        // urlString = &quot;http://&quot; + host + &quot;:&quot; + port + &quot;/api/queues/&quot;;</span><br><span class="line">        URL url = new URL(urlString);</span><br><span class="line">        httpConn = (HttpURLConnection) url.openConnection();</span><br><span class="line">        // 设置用户名密码</span><br><span class="line">        String user=&quot;&quot;;</span><br><span class="line">        String password=&quot;&quot;;</span><br><span class="line">        String auth = user + &quot;:&quot; + password;</span><br><span class="line"></span><br><span class="line">        String encoding = new String(Base64.getEncoder().encode(auth.getBytes()));</span><br><span class="line">        httpConn.setDoOutput(true);</span><br><span class="line">        httpConn.setRequestProperty(&quot;Authorization&quot;, &quot;Basic &quot; + encoding);</span><br><span class="line">        // 建立实际的连接</span><br><span class="line">        httpConn.connect();</span><br><span class="line">        // 读取响应</span><br><span class="line">        if (httpConn.getResponseCode() == HttpURLConnection.HTTP_OK) &#123;</span><br><span class="line">            StringBuilder content = new StringBuilder();</span><br><span class="line">            String tempStr = &quot;&quot;;</span><br><span class="line">            in = new BufferedReader(new InputStreamReader(httpConn.getInputStream()));</span><br><span class="line">            while ((tempStr = in.readLine()) != null) &#123;</span><br><span class="line">                content.append(tempStr);</span><br><span class="line">            &#125;</span><br><span class="line">            in.close();</span><br><span class="line">            httpConn.disconnect();</span><br><span class="line">            System.out.println(content.toString());</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            System.out.println(httpConn.getResponseCode());</span><br><span class="line">            httpConn.disconnect();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/spring-cloud/">spring cloud</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rabbitMq/">rabbitMq</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring-cloud/">spring cloud</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-sttemplate-问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/29/sttemplate-问题/" class="article-date">
+      <time datetime="2019-05-29T08:38:00.000Z" itemprop="datePublished">2019-05-29</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/29/sttemplate-问题/">resttemplate 问题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>最近遇到一个问题：<br>mq消费 同步调用其他服务，突然不消费mq数据，且mq数据一直堆积</p>
+<p>原因：<br>如果什么都不设置，RestTemplate默认使用的是SimpleClientHttpRequestFactory，其内部使用的是jdk的java.net.HttpURLConnection创建底层连接，默认是没有连接池的，connectTimeout和readTimeout都是 -1，即没有超时时间</p>
+<p>解决方案：<br>http链接池配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">import lombok.Data;</span><br><span class="line">import org.springframework.boot.context.properties.ConfigurationProperties;</span><br><span class="line">import org.springframework.stereotype.Component;</span><br><span class="line"> </span><br><span class="line">@Component</span><br><span class="line">@ConfigurationProperties(prefix = &quot;http-pool&quot;)</span><br><span class="line">@Data</span><br><span class="line">public class HttpPoolProperties &#123;</span><br><span class="line"> </span><br><span class="line">    private Integer maxTotal;</span><br><span class="line">    private Integer defaultMaxPerRoute;</span><br><span class="line">    private Integer connectTimeout;</span><br><span class="line">    private Integer connectionRequestTimeout;</span><br><span class="line">    private Integer socketTimeout;</span><br><span class="line">    private Integer validateAfterInactivity;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">http-pool.maxTotal=200</span><br><span class="line">http-pool.defaultMaxPerRoute=100</span><br><span class="line">http-pool.connectTimeout=5000</span><br><span class="line">http-pool.connectionRequestTimeout=1000</span><br><span class="line">http-pool.socketTimeout=600000</span><br><span class="line">http-pool.validateAfterInactivity=2000</span><br></pre></td></tr></table></figure></p>
+<p>RestTemplateConfig<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">public class RestTemplateConfig &#123;</span><br><span class="line"> </span><br><span class="line">    @Autowired</span><br><span class="line">    private HttpPoolProperties httpPoolProperties;</span><br><span class="line"> </span><br><span class="line">    @Bean</span><br><span class="line">    @LoadBalanced</span><br><span class="line">    public RestTemplate restTemplate() &#123;</span><br><span class="line">        return new RestTemplate(httpRequestFactory());</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    @Bean</span><br><span class="line">    public ClientHttpRequestFactory httpRequestFactory() &#123;</span><br><span class="line">        return new HttpComponentsClientHttpRequestFactory(httpClient());</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    @Bean</span><br><span class="line">    public HttpClient httpClient() &#123;</span><br><span class="line">        Registry&lt;ConnectionSocketFactory&gt; registry = RegistryBuilder.&lt;ConnectionSocketFactory&gt;create()</span><br><span class="line">                .register(&quot;http&quot;, PlainConnectionSocketFactory.getSocketFactory())</span><br><span class="line">                .register(&quot;https&quot;, SSLConnectionSocketFactory.getSocketFactory())</span><br><span class="line">                .build();</span><br><span class="line">        PoolingHttpClientConnectionManager connectionManager = new PoolingHttpClientConnectionManager(registry);</span><br><span class="line">        connectionManager.setMaxTotal(httpPoolProperties.getMaxTotal());</span><br><span class="line">        connectionManager.setDefaultMaxPerRoute(httpPoolProperties.getDefaultMaxPerRoute());</span><br><span class="line">        connectionManager.setValidateAfterInactivity(httpPoolProperties.getValidateAfterInactivity());</span><br><span class="line">        RequestConfig requestConfig = RequestConfig.custom()</span><br><span class="line">                .setSocketTimeout(httpPoolProperties.getSocketTimeout()) //服务器返回数据(response)的时间，超过抛出read timeout</span><br><span class="line">                .setConnectTimeout(httpPoolProperties.getConnectTimeout()) //连接上服务器(握手成功)的时间，超出抛出connect timeout</span><br><span class="line">                .setConnectionRequestTimeout(httpPoolProperties.getConnectionRequestTimeout())//从连接池中获取连接的超时时间，超时间未拿到可用连接，会抛出org.apache.http.conn.ConnectionPoolTimeoutException: Timeout waiting for connection from pool</span><br><span class="line">                .build();</span><br><span class="line">        return HttpClientBuilder.create()</span><br><span class="line">                .setDefaultRequestConfig(requestConfig)</span><br><span class="line">                .setConnectionManager(connectionManager)</span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>引用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@Autowired</span><br><span class="line">  private RestTemplate restTemplate;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/spring-cloud/">spring cloud</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/resttemplate/">resttemplate</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring-cloud/">spring cloud</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-A问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/06/A问题/" class="article-date">
+      <time datetime="2019-05-06T03:00:00.000Z" itemprop="datePublished">2019-05-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/06/A问题/">底层代码构造sql忽略NUll条件</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>代码没有判断查询的值null，导致把全部数据load内存里，这样系统崩溃</p>
+<p>代码：com.test.common.jpa.repository.JpaRepoUtil<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">private static StringBuilder generateQlForQueryByProperties(Map&lt;String, Object&gt; propertiesMap,</span><br><span class="line">		StringBuilder ql, Map&lt;Integer, Object&gt; params, FindByPropertiesType findType) &#123;</span><br><span class="line">	int index = 0;</span><br><span class="line">	</span><br><span class="line">	if (propertiesMap != null &amp;&amp; !propertiesMap.isEmpty()) &#123;</span><br><span class="line">		boolean doDeleteAnd = false, doDeletewWere = true;</span><br><span class="line">		ql.append(&quot; where &quot;);</span><br><span class="line">        for (Entry&lt;String,Object&gt; entry: propertiesMap.entrySet()) &#123;</span><br><span class="line">        	Object value = entry.getValue();</span><br><span class="line">               //忽略null 的值</span><br><span class="line">        	if (value != null) &#123;</span><br><span class="line">        		if (doDeletewWere) </span><br><span class="line">        			doDeletewWere = false;</span><br><span class="line">        		</span><br><span class="line">        		if (value instanceof String &amp;&amp; (findType == null || FindByPropertiesType.Fuzzy.equals(findType))) &#123;</span><br><span class="line">        			String valueStr = (String) entry.getValue();</span><br><span class="line">        			ql.append(&quot;upper(model.&quot; + entry.getKey() + &quot;) like :propertyValue&quot; + index + &quot; and &quot;);</span><br><span class="line">        			params.put(index++, &quot;%&quot; + valueStr.trim().toUpperCase() + &quot;%&quot;);</span><br><span class="line">        		&#125; else if(QueryValue.NULL.equals(value)) &#123;</span><br><span class="line">        			ql.append(&quot;model.&quot; + entry.getKey() + &quot; is null and &quot;);</span><br><span class="line">        		&#125; else if(QueryValue.NotNull.equals(value)) &#123;</span><br><span class="line">        			ql.append(&quot;model.&quot; + entry.getKey() + &quot; is not null and &quot;);</span><br><span class="line">        		&#125; else &#123;</span><br><span class="line">        			ql.append(&quot;model.&quot; + entry.getKey() + &quot;=:propertyValue&quot; + index + &quot; and &quot;);</span><br><span class="line">        			params.put(index++, entry.getValue());</span><br><span class="line">        		&#125;</span><br><span class="line">        		</span><br><span class="line">        		doDeleteAnd = true;</span><br><span class="line">        	&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if (doDeleteAnd)</span><br><span class="line">        	ql = ql.delete(ql.toString().lastIndexOf(&quot; and &quot;), ql.toString().length());</span><br><span class="line">        if (doDeletewWere)</span><br><span class="line">       		ql = ql.delete(ql.toString().lastIndexOf(&quot; where &quot;), ql.toString().length());</span><br><span class="line">	&#125;</span><br><span class="line">	return ql;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2019/05/06/A问题/1.png" alt="upload successful"></p>
+<p>总结：需要深度了解底层代码。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/spring-cloud/">spring cloud</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jpa/">jpa</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-windows下atom上搭建PlantUML书写环境" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/10/14/windows下atom上搭建PlantUML书写环境/" class="article-date">
+      <time datetime="2018-10-14T07:36:00.000Z" itemprop="datePublished">2018-10-14</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/14/windows下atom上搭建PlantUML书写环境/">在windows下atom上搭建PlantUML书写环境</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>PlantUML是一款使用纯文本绘制UML图的开源软件。它的优点是能够帮助作者把精力集中到内容的书写上而不是格式的调整。本文介绍了一种在windows环境下atom编辑器上搭建PlantUML书写环境的方法。</p>
+<h1 id="工具准备"><a href="#工具准备" class="headerlink" title="工具准备"></a>工具准备</h1><ul>
+<li>atom</li>
+<li>graphviz<br><a href="http://www.graphviz.org/" target="_blank" rel="noopener">Graphviz</a>是一款开源图形可视化软件。Atom的PlantUML插件使用graphviz将PlantUML语言绘制成相应的图形。<h1 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h1>github上已经有开发者为atom开发了PlantUML相关的插件。这里推荐以下两个插件</li>
+<li>language-plantuml</li>
+<li>plantuml-viewer<br>其中language-plantuml提供了PlantUML语法高亮支持，plantuml-viewer负责把PlantUML语句转化为对应的UML图。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">有很多博客使用plantuml-preview。本人试用了这两款插件，发现都能很好的支持PlantUML。</span><br><span class="line">但是plantuml-viewer更有优势：plantuml-viewer能够实时显示PlantUML语言描述的图形，</span><br><span class="line">并且可以通过鼠标滚轮流畅的调节图形大小。此外，plantuml-preview需要显式的配置java和plantuml.jar，</span><br><span class="line">而plantuml-viewer不需要，因此我推荐plantuml-viewer</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>安装方法很简单：atom下 File -&gt; Settings -&gt; Install<br><img src="/2018/10/14/windows下atom上搭建PlantUML书写环境/plantuml_plugin.png" alt="logo"></p>
+<h1 id="配置插件"><a href="#配置插件" class="headerlink" title="配置插件"></a>配置插件</h1><p>plantuml-viewer按如下配置<br><img src="/2018/10/14/windows下atom上搭建PlantUML书写环境/plantuml_viewer_setting.png" alt="logo"></p>
+<ul>
+<li>Charset配置成utf-8在生成图形的时候中文不会乱码</li>
+<li>graphviz从官网下载后安装到自定义位置，在plant-viewer中指定dot.exe路径</li>
+</ul>
+<h1 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h1><p>用PlantUML生成工厂模式UML<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">@startuml</span><br><span class="line">skinparam classAttributeIconSize 0</span><br><span class="line">class Product</span><br><span class="line">class ConcreteProduct</span><br><span class="line">class Creator &#123;</span><br><span class="line">  + &#123;abstract&#125; FactoryMethod()</span><br><span class="line">&#125;</span><br><span class="line">class ConcreteCreator &#123;</span><br><span class="line">  + FactoryMethod()</span><br><span class="line">&#125;</span><br><span class="line">Product &lt;|-- ConcreteProduct</span><br><span class="line">Creator &lt;|-- ConcreteCreator</span><br><span class="line">ConcreteProduct &lt;.l. ConcreteCreator</span><br><span class="line">note left of Product: 定义工厂方法所创建的对象的接口</span><br><span class="line">note right of Creator: 声明工厂方法，该方法返回一个Product类型的对象</span><br><span class="line">note left of ConcreteProduct: 具体产品，实现了Product的接口</span><br><span class="line">note right of ConcreteCreator: 重定义工厂方法以返回一个ConcreteProduct实例</span><br><span class="line">@enduml</span><br></pre></td></tr></table></figure></p>
+<p>效果图<br><img src="/2018/10/14/windows下atom上搭建PlantUML书写环境/3.png" alt="logo"></p>
+<p><a href="http://plantuml.com/" target="_blank" rel="noopener">plantuml语法</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/atom/">atom</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/atom/">atom</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/plantuml/">plantuml</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-olr的主从模式Master-Slave" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/10/14/olr的主从模式Master-Slave/" class="article-date">
+      <time datetime="2018-10-14T07:25:00.000Z" itemprop="datePublished">2018-10-14</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/14/olr的主从模式Master-Slave/">Solr的主从模式Master-Slave</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="摘要："><a href="#摘要：" class="headerlink" title="摘要："></a>摘要：</h1><p>如今，为了提高Solr的搜索速度，使其具有很好的容灾能力，往往会配置SolrCloud，但在Solr4之前，还有一种很流行的方式，Master-Slave模式，为什么要提及这种方式，因为我们公司目前用的就是这种方式。</p>
+<h1 id="引入Master-Slave"><a href="#引入Master-Slave" class="headerlink" title="引入Master-Slave"></a>引入Master-Slave</h1><p>Solr在查询的时候，特别忌讳进行写操作，因为它是IO阻塞型的。现在的流行的Elasticsearch就对此有很好的改进。在引入Master-Slave以后，将读写分配到不同的服务器上，你可以使用master来做索引，然后使用slaves来做查询。<br>1.在多台服务器上分别搭建好可以独立运行的Solr，参见<a href="https://smallwenzi.github.io/2018/10/13/lr%E6%95%99%E7%A8%8B/" target="_blank" rel="noopener">这里</a><br>2.指定其中的一台为Master，只需要在SolrConifg.xml中配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;requestHandler name=&quot;/replication&quot; class=&quot;solr.ReplicationHandler&quot;&gt;</span><br><span class="line">     &lt;lst name=&quot;master&quot;&gt;</span><br><span class="line">         &lt;str name=&quot;enable&quot;&gt;$&#123;enable.master:true&#125;&lt;/str&gt;</span><br><span class="line">         &lt;!--</span><br><span class="line">             Create a backup after &apos;optimize&apos;. Other values can be &apos;commit&apos;, &apos;startup&apos;.</span><br><span class="line">             It is possible to have multiple entries of this config string.</span><br><span class="line">             Note that this is just for backup, replication does not require this.</span><br><span class="line">         --&gt;</span><br><span class="line">         &lt;str name=&quot;backupAfter&quot;&gt;optimize&lt;/str&gt;</span><br><span class="line">         &lt;!-- Replicate on &apos;commit&apos;. &apos;startup&apos; and &apos;optimize&apos; are also the valid values for replicateAfter. --&gt;</span><br><span class="line">         &lt;str name=&quot;replicateAfter&quot;&gt;commit&lt;/str&gt;</span><br><span class="line">         &lt;!-- If configuration files need to be replicated give the names here, separated by comma --&gt;</span><br><span class="line">         &lt;str name=&quot;confFiles&quot;&gt;schema.xml,dict.txt,synonyms.txt&lt;/str&gt;</span><br><span class="line">         &lt;str name=&quot;commitReserveDuration&quot;&gt;00:00:10&lt;/str&gt;</span><br><span class="line">     &lt;/lst&gt;</span><br><span class="line">     &lt;int name=&quot;maxNumberOfBackups&quot;&gt;2&lt;/int&gt;</span><br><span class="line">        &lt;/requestHandler&gt;</span><br></pre></td></tr></table></figure></p>
+<p>3.指定其他多有的服务为Slave，只需要分别SolrConifg.xml配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;requestHandler name=&quot;/replication&quot; class=&quot;solr.ReplicationHandler&quot; &gt;</span><br><span class="line">  &lt;lst name=&quot;slave&quot;&gt;</span><br><span class="line">      &lt;str name=&quot;enable&quot;&gt;$&#123;enable.slave:true&#125;&lt;/str&gt;</span><br><span class="line">      &lt;str name=&quot;masterUrl&quot;&gt;http://192.168.1.102:8983/solr/jcg&lt;/str&gt;</span><br><span class="line">      &lt;str name=&quot;pollInterval&quot;&gt;00:00:10&lt;/str&gt;</span><br><span class="line">      &lt;str name=&quot;httpConnTimeout&quot;&gt;5000&lt;/str&gt;</span><br><span class="line">      &lt;str name=&quot;httpReadTimeout&quot;&gt;10000&lt;/str&gt;</span><br><span class="line">   &lt;/lst&gt;</span><br><span class="line">&lt;/requestHandler&gt;</span><br></pre></td></tr></table></figure></p>
+<p>4.重启所有的master-slave服务即可</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/solr/">solr</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/solr/">solr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/solr-master/">solr-master</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/solr-slave/">solr-slave</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+    </nav>
+  
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2017-2020 wen
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+    <script src="/js/GithubRepoWidget.js"></script>
+
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 1;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+    
+
+     
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-25768365-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+             github: ".github-widget a", 
+            
+             post: ".article-entry a[href], .copyright a[href]", 
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

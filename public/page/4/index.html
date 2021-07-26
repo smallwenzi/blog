@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="wen">
+
+
+     
+        <meta name="baidu-site-verification" content="Yi3nkSW723">
+    
+     
+        <meta name="google-site-verification" content="4t79Vu6CdzrRM03i4dF4udzTUUenR2G_8HNofKjCf5g">
+    
+
+
+<meta name="description" content="tanyanwen的技术分享">
+<meta property="og:type" content="website">
+<meta property="og:title" content="wen blog">
+<meta property="og:url" content="https://blog.yanwentan.xyz/page/4/index.html">
+<meta property="og:site_name" content="wen blog">
+<meta property="og:description" content="tanyanwen的技术分享">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="wen blog">
+<meta name="twitter:description" content="tanyanwen的技术分享">
+
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="wen blog" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/img/head.jpg">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <style> .article { opacity: 0;} </style>
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>wen blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: true,
+        isPost: false,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?f4cf750b6a14c0a2f6adcc0977b5309e";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+</head></html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/head.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">wen</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">tanyanwen的技术分享</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:beityw@hotmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/smallwenzi/smallwenzi.github.io" title="GitHub"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DI/">DI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IOC容器/">IOC容器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Inversion-of-Control/">Inversion of Control</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RabbitMq/">RabbitMq</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/">atom</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/githubpage/">githubpage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-admin/">hexo-admin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/httpd/">httpd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jenkins/">jenkins</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jpa/">jpa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/notepad/">notepad</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nutch/">nutch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plantuml/">plantuml</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rabbitMq/">rabbitMq</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/red-hat-Linux/">red hat Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/resttemplate/">resttemplate</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rpm/">rpm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/session/">session</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/solr/">solr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/solr-master/">solr-master</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/solr-slave/">solr-slave</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/">spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring-cloud/">spring cloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring-config/">spring config</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springAdmin/">springAdmin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springsession/">springsession</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thymeleaf/">thymeleaf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tomcat/">tomcat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work/">work</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yum/">yum</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/依赖注入/">依赖注入</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单例模式/">单例模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工作/">工作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工作效率/">工作效率</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能优化/">性能优化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/消息队列/">消息队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/源码/">源码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线程/">线程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">wen</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/head.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">wen</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">tanyanwen的技术分享</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:beityw@hotmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/smallwenzi/smallwenzi.github.io" title="GitHub"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-（六）docker安装本地仓库（root用户）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/05/08/（六）docker安装本地仓库（root用户）/" class="article-date">
+      <time datetime="2018-05-08T09:09:00.000Z" itemprop="datePublished">2018-05-08</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/08/（六）docker安装本地仓库（root用户）/">（六）docker安装本地仓库（root用户）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>参考：<br><a href="/2018/05/08/（四）安装docker（root用户）/">安装docker</a></p>
+<p>创建使用仓库，并设置https 及安全访问</p>
+<h1 id="1下载镜像"><a href="#1下载镜像" class="headerlink" title="1下载镜像"></a>1下载镜像</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; docker pull registry</span><br></pre></td></tr></table></figure>
+<h1 id="2-创建目录"><a href="#2-创建目录" class="headerlink" title="2 创建目录"></a>2 创建目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; mkdir -p ~/certs</span><br></pre></td></tr></table></figure>
+<h1 id="3-进入目录"><a href="#3-进入目录" class="headerlink" title="3 进入目录"></a>3 进入目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; cd ~/certs</span><br></pre></td></tr></table></figure>
+<h1 id="4-创建域名证书"><a href="#4-创建域名证书" class="headerlink" title="4 创建域名证书"></a>4 创建域名证书</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; openssl genrsa -out rep.itmuch.com.key 2048</span><br></pre></td></tr></table></figure>
+<h1 id="5-创建证书"><a href="#5-创建证书" class="headerlink" title="5 创建证书"></a>5 创建证书</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&gt; openssl req -newkey rsa:4096 -nodes -sha256 -keyout \ rep.itmuch.com.key -x509 -days 365 -out \ rep.itmuch.com.crt  </span><br><span class="line"></span><br><span class="line">Country Name (2 letter code) [XX]:       # 你的国家名称</span><br><span class="line"></span><br><span class="line">CN State or Province Name (full name) []:GD    # 省份</span><br><span class="line"></span><br><span class="line">Locality Name (eg, city) [Default City]:GZ      # 所在城市</span><br><span class="line"></span><br><span class="line">Organization Name (eg, company) [DefaultCompany Ltd]:test     # 组织名称</span><br><span class="line"></span><br><span class="line">Organizational Unit Name (eg, section)[]:test      # 组织单元名称</span><br><span class="line"></span><br><span class="line">Common Name (eg, your name or your server&apos;shostname) []:rep.itmuch.com    # 域名</span><br><span class="line"></span><br><span class="line">Email Address []:     # 邮箱</span><br></pre></td></tr></table></figure>
+<h1 id="3-复制证书至docker"><a href="#3-复制证书至docker" class="headerlink" title="3 复制证书至docker"></a>3 复制证书至docker</h1><h2 id="3-1创建目录"><a href="#3-1创建目录" class="headerlink" title="3.1创建目录"></a>3.1创建目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; mkdir -p /etc/docker/certs.d/rep.itmuch.com</span><br></pre></td></tr></table></figure>
+<h2 id="3-2-复制证书至docker目录"><a href="#3-2-复制证书至docker目录" class="headerlink" title="3.2 复制证书至docker目录"></a>3.2 复制证书至docker目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; cp ~/certs/rep.itmuch.com.crt /etc/docker/certs.d/rep.itmuch.com/</span><br></pre></td></tr></table></figure>
+<h2 id="3-3-重启docker"><a href="#3-3-重启docker" class="headerlink" title="3.3 重启docker"></a>3.3 重启docker</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; systemctl restart docker</span><br></pre></td></tr></table></figure>
+<h1 id="4-设置用户名和密码"><a href="#4-设置用户名和密码" class="headerlink" title="4 设置用户名和密码"></a>4 设置用户名和密码</h1><h2 id="4-1-安装-httpd-tools"><a href="#4-1-安装-httpd-tools" class="headerlink" title="4.1 安装 httpd-tools"></a>4.1 安装 httpd-tools</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; yum install httpd-tools</span><br></pre></td></tr></table></figure>
+<h2 id="4-2-当前登录用户"><a href="#4-2-当前登录用户" class="headerlink" title="4.2 当前登录用户"></a>4.2 当前登录用户</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; cd~</span><br></pre></td></tr></table></figure>
+<h2 id="4-3-创建目录"><a href="#4-3-创建目录" class="headerlink" title="4.3 创建目录"></a>4.3 创建目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;mkdir auth</span><br></pre></td></tr></table></figure>
+<h2 id="4-4创建用户名和密码"><a href="#4-4创建用户名和密码" class="headerlink" title="4.4创建用户名和密码"></a>4.4创建用户名和密码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">htpasswd -Bbn testuser testpassword &gt; auth/htpasswd</span><br></pre></td></tr></table></figure>
+<h2 id="5-运行"><a href="#5-运行" class="headerlink" title="5 运行"></a>5 运行</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 443:5000   \-v /root/certs:/certs \ -v/root/auth:/auth \-v /opt/docker-image:/var/lib/registry \-e STORAGE_PATH=/opt/docker-image \-e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/rep.itmuch.com.crt\-e REGISTRY_HTTP_TLS_KEY=/certs/rep.itmuch.com.key\ -e&quot;REGISTRY_AUTH=htpasswd&quot; \  -e&quot;REGISTRY_AUTH_HTPASSWD_REALM=Registry Realm&quot; \  -eREGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd \registry</span><br></pre></td></tr></table></figure>
+<h1 id="host主机名"><a href="#host主机名" class="headerlink" title="host主机名"></a>host主机名</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &apos;192.168.137.8 rep.itmuch.com&apos;&gt;&gt; /etc/hosts</span><br></pre></td></tr></table></figure>
+<h1 id="登录私有库"><a href="#登录私有库" class="headerlink" title="登录私有库"></a>登录私有库</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker login rep.itmuch.com</span><br></pre></td></tr></table></figure>
+<p>push或pull需要登录否则不能报错</p>
+<h1 id="push到私有库"><a href="#push到私有库" class="headerlink" title="push到私有库"></a>push到私有库</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker tag alpine rep.itmuch.com/alpine</span><br><span class="line"></span><br><span class="line">docker push rep.itmuch.com/alpine</span><br></pre></td></tr></table></figure>
+<h1 id="查看镜像目录"><a href="#查看镜像目录" class="headerlink" title="查看镜像目录"></a>查看镜像目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://rep.itmuch.com/v2/_catalog</span><br></pre></td></tr></table></figure>
+<h1 id="查看镜像-版本列表"><a href="#查看镜像-版本列表" class="headerlink" title="查看镜像 版本列表"></a>查看镜像 版本列表</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://rep.itmuch.com/v2/alpine/tags/list</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-）更新docker-版本（root用户）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/05/08/）更新docker-版本（root用户）/" class="article-date">
+      <time datetime="2018-05-08T09:00:00.000Z" itemprop="datePublished">2018-05-08</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/08/）更新docker-版本（root用户）/">（五）更新docker 版本（root用户）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>参考：<a href="/2018/05/08/（四）安装docker（root用户）/">安装docker 操作</a></p>
+<h1 id="1-删除旧版本（以下操作都是使用root用户）"><a href="#1-删除旧版本（以下操作都是使用root用户）" class="headerlink" title="1 删除旧版本（以下操作都是使用root用户）"></a>1 删除旧版本（以下操作都是使用root用户）</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">yum remove docker \</span><br><span class="line"></span><br><span class="line">docker-client \</span><br><span class="line"></span><br><span class="line">docker-client-latest\ </span><br><span class="line"></span><br><span class="line">docker-common \</span><br><span class="line"></span><br><span class="line">docker-latest \</span><br><span class="line"></span><br><span class="line">docker-latest-logrotate \</span><br><span class="line"></span><br><span class="line">docker-logrotate \</span><br><span class="line"></span><br><span class="line">docker-selinux \</span><br><span class="line"></span><br><span class="line">docker-engine-selinux \</span><br><span class="line"></span><br><span class="line">docker-engine</span><br></pre></td></tr></table></figure>
+<h1 id="2-确保docker-ce-edge最新版本"><a href="#2-确保docker-ce-edge最新版本" class="headerlink" title="2 确保docker-ce-edge最新版本"></a>2 确保docker-ce-edge最新版本</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum-config-manager--enable docker-ce-edge</span><br></pre></td></tr></table></figure>
+<h1 id="3-安装docker"><a href="#3-安装docker" class="headerlink" title="3 安装docker"></a>3 安装docker</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install docker-ce</span><br></pre></td></tr></table></figure>
+<h1 id="4-设置集群功能"><a href="#4-设置集群功能" class="headerlink" title="4 设置集群功能"></a>4 设置集群功能</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/systemd/system/multi-user.target.wants/docker.service </span><br><span class="line">在</span><br><span class="line">ExecStart=/usr/bin/dockerd 添加 --experimental=true  表示启用集群功能</span><br></pre></td></tr></table></figure>
+<h1 id="5-重新加载配置"><a href="#5-重新加载配置" class="headerlink" title="5 重新加载配置"></a>5 重新加载配置</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br></pre></td></tr></table></figure>
+<h1 id="6-启动服务"><a href="#6-启动服务" class="headerlink" title="6 启动服务"></a>6 启动服务</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctemctl start docker</span><br></pre></td></tr></table></figure>
+<h1 id="7-查看版本："><a href="#7-查看版本：" class="headerlink" title="7 查看版本："></a>7 查看版本：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker version</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-（四）安装docker（root用户）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/05/08/（四）安装docker（root用户）/" class="article-date">
+      <time datetime="2018-05-08T07:59:00.000Z" itemprop="datePublished">2018-05-08</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/08/（四）安装docker（root用户）/">（四）安装docker（root用户）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>链接：<br><a href="/2018/05/08/）oracle-VM安装red-hat-liunx/">oracle VM安装red hat liunx</a></p>
+<p><a href="/2018/05/08/）Red-Hat-升级-rpm软件、YUM软件（root用户）/">升级RPM和YUM 包</a></p>
+<h1 id="1-安装docker（以下操作都是使用root用户）"><a href="#1-安装docker（以下操作都是使用root用户）" class="headerlink" title="1 安装docker（以下操作都是使用root用户）"></a>1 安装docker（以下操作都是使用root用户）</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">--安装驱动（red-hat为例,不同操作系统，驱动不同详细看官网教程）</span><br><span class="line">&gt; yum install -y yum-utils device-mapper-persistent-data lvm2  </span><br><span class="line"></span><br><span class="line">--添加docker仓库</span><br><span class="line">&gt; yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</span><br><span class="line"></span><br><span class="line">--清除缓存</span><br><span class="line">&gt; yum clean all</span><br><span class="line"></span><br><span class="line">--重新更新缓存</span><br><span class="line">&gt; yum makecache</span><br><span class="line"></span><br><span class="line">--确保docker engine最新</span><br><span class="line">&gt; yum-config-manager --enable docker-ce-edge</span><br><span class="line"></span><br><span class="line">--安装docker</span><br><span class="line">&gt; yum install docker-ce</span><br><span class="line"></span><br><span class="line">开机启动</span><br><span class="line">&gt; systemctl enable docker</span><br><span class="line"></span><br><span class="line">开启集群权限</span><br><span class="line">&gt;vi /etc/systemd/system/multi-user.target.wants/docker.service </span><br><span class="line">在</span><br><span class="line">ExecStart=/usr/bin/dockerd </span><br><span class="line">添加</span><br><span class="line">--experimental=true </span><br><span class="line"></span><br><span class="line">重新加载配置</span><br><span class="line">&gt;systemctl daemon-reload </span><br><span class="line"></span><br><span class="line"> --启动docker</span><br><span class="line">&gt;systemctl start docker</span><br></pre></td></tr></table></figure>
+<p>参考：<a href="https://docs.docker.com/install/linux/docker-ce/centos/" target="_blank" rel="noopener">docker官网</a></p>
+<p>docker 常用命令 参考<a href="https://docs.docker.com/engine/reference/run/" target="_blank" rel="noopener">docker 命令官网</a></p>
+<h1 id="2-查看docker-版本"><a href="#2-查看docker-版本" class="headerlink" title="2 查看docker 版本"></a>2 查看docker 版本</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker version --目前最新版本是 17.12.1-ce</span><br></pre></td></tr></table></figure>
+<h1 id="3-查看docker-信息"><a href="#3-查看docker-信息" class="headerlink" title="3 查看docker 信息"></a>3 查看docker 信息</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker info</span><br></pre></td></tr></table></figure>
+<h1 id="4-运行镜像"><a href="#4-运行镜像" class="headerlink" title="4 运行镜像"></a>4 运行镜像</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run hello-word --本地没有会找镜像库</span><br></pre></td></tr></table></figure>
+<p>关于run 一些参数详细参考<a href="https://docs.docker.com/engine/reference/run/" target="_blank" rel="noopener">docker官网</a></p>
+<h1 id="5-下载镜像"><a href="#5-下载镜像" class="headerlink" title="5 下载镜像"></a>5 下载镜像</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull alpine</span><br></pre></td></tr></table></figure>
+<h1 id="6-制作java环境镜像："><a href="#6-制作java环境镜像：" class="headerlink" title="6 制作java环境镜像："></a>6 制作java环境镜像：</h1><p>使用DockerFile 进行编写 ,参考<a href="https://docs.docker.com/engine/reference/builder/#usage" target="_blank" rel="noopener">dockerFile官网</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">FROM alpine</span><br><span class="line">MAINTAINER killko &lt;killko@qq.com&gt;</span><br><span class="line">ENV TIME_ZONE Asiz/Shanghai</span><br><span class="line">RUN echo &apos;@edge http://nl.alpinelinux.org/alpine/edge/main&apos; &gt;&gt; /etc/apk/repositories &amp;&amp; \</span><br><span class="line">    echo &apos;@community http://nl.alpinelinux.org/alpine/edge/community&apos; &gt;&gt; /etc/apk/repositories &amp;&amp; \</span><br><span class="line">    apk update &amp;&amp; \</span><br><span class="line">    apk upgrade &amp;&amp; \</span><br><span class="line">    apk add ca-certificates openjdk8-jre-base@community &amp;&amp; \</span><br><span class="line">    apk del ca-certificates &amp;&amp; \</span><br><span class="line">    apk add --no-cache tzdata &amp;&amp; \</span><br><span class="line">    echo &quot;$&#123;TIME_ZONE&#125;&quot; &gt; /etc/timezone &amp;&amp; \</span><br><span class="line">    ln -sf /usr/share/zoneinfo/$&#123;TIME_ZONE&#125; /etc/localtime &amp;&amp; \</span><br><span class="line">    rm -rf /tmp/* /var/cache/apk/*</span><br><span class="line">RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime</span><br></pre></td></tr></table></figure>
+<p>编写完成进行build<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;docker build  -t openjre:latest . --表示在当前目录进行制作镜像</span><br><span class="line">&gt;docker images --查看镜像</span><br><span class="line">&gt;docker run -it openjre sh --进行查看java是否安装成功</span><br></pre></td></tr></table></figure></p>
+<h1 id="7-导入镜像"><a href="#7-导入镜像" class="headerlink" title="7 导入镜像"></a>7 导入镜像</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker load &lt; openjre.tar</span><br></pre></td></tr></table></figure>
+<h1 id="8-导出镜像："><a href="#8-导出镜像：" class="headerlink" title="8 导出镜像："></a>8 导出镜像：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker save openjre:latest  openjre.tar</span><br></pre></td></tr></table></figure>
+<h1 id="9-查看镜像"><a href="#9-查看镜像" class="headerlink" title="9 查看镜像"></a>9 查看镜像</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+<h1 id="10-查看正在运行容器"><a href="#10-查看正在运行容器" class="headerlink" title="10 查看正在运行容器"></a>10 查看正在运行容器</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a --查看容器id 运行状态 映射端口</span><br></pre></td></tr></table></figure>
+<h1 id="11-查看容器日志"><a href="#11-查看容器日志" class="headerlink" title="11 查看容器日志"></a>11 查看容器日志</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs -f 容器id --容器id从docker ps -a获取</span><br></pre></td></tr></table></figure>
+<h1 id="12-停止容器"><a href="#12-停止容器" class="headerlink" title="12 停止容器"></a>12 停止容器</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop 容器id ----容器id从docker ps -a获取</span><br></pre></td></tr></table></figure>
+<h1 id="13-删除容器"><a href="#13-删除容器" class="headerlink" title="13 删除容器"></a>13 删除容器</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm 容器id --容器id从docker ps -a获取</span><br></pre></td></tr></table></figure>
+<h1 id="14-删除镜像"><a href="#14-删除镜像" class="headerlink" title="14 删除镜像"></a>14 删除镜像</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi imagename:tag --imagename:tag imagename表示镜像名称 tag表示版本 这些信息可以从docker images进行获取</span><br></pre></td></tr></table></figure>
+<h1 id="15-进入容器-运行sh命令："><a href="#15-进入容器-运行sh命令：" class="headerlink" title="15 进入容器 运行sh命令："></a>15 进入容器 运行sh命令：</h1><p>docker exec -it 容器id sh –容器id从docker ps -a获取</p>
+<h1 id="16-添加普通用户操作docker"><a href="#16-添加普通用户操作docker" class="headerlink" title="16 添加普通用户操作docker"></a>16 添加普通用户操作docker</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">vi etc/systemd/system/multi-user.target.wants/docker.service （操作服务）</span><br><span class="line"></span><br><span class="line">ExecStart=/usr/bin/dockerd -G jenkins  #表示jenkins用户组可以操作docker命令</span><br><span class="line"></span><br><span class="line">保存后</span><br><span class="line"></span><br><span class="line">systemctl daemon-reload --重新加载服务</span><br><span class="line"></span><br><span class="line">systemctl restart docker --重启服务</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-三）linux-安装-GIT（root用户）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/05/08/三）linux-安装-GIT（root用户）/" class="article-date">
+      <time datetime="2018-05-08T07:52:00.000Z" itemprop="datePublished">2018-05-08</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/08/三）linux-安装-GIT（root用户）/">（三）linux 安装 GIT（root用户）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>链接：<br><a href="/2018/05/08/）oracle-VM安装red-hat-liunx/">oracle VM安装red hat liunx</a></p>
+<p> <a href="/2018/05/08/）Red-Hat-升级-rpm软件、YUM软件（root用户）/">升级RPM和YUM 包</a></p>
+<h1 id="安装GIT（root用户）"><a href="#安装GIT（root用户）" class="headerlink" title="安装GIT（root用户）"></a>安装GIT（root用户）</h1><p>yum install git</p>
+<h1 id="1-创建用户"><a href="#1-创建用户" class="headerlink" title="1 创建用户"></a>1 创建用户</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;useradd test</span><br></pre></td></tr></table></figure>
+<h1 id="2-设置密码"><a href="#2-设置密码" class="headerlink" title="2 设置密码"></a>2 设置密码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;passwd test</span><br></pre></td></tr></table></figure>
+<h1 id="3-创建目录"><a href="#3-创建目录" class="headerlink" title="3 创建目录"></a>3 创建目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;mkdir -p /repo</span><br></pre></td></tr></table></figure>
+<h1 id="4-初始化git-库"><a href="#4-初始化git-库" class="headerlink" title="4 初始化git 库"></a>4 初始化git 库</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;git init --shared /repo/code</span><br></pre></td></tr></table></figure>
+<h1 id="5-进入目录："><a href="#5-进入目录：" class="headerlink" title="5 进入目录："></a>5 进入目录：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;cd /repo/code</span><br></pre></td></tr></table></figure>
+<h1 id="6-git-忽略设置"><a href="#6-git-忽略设置" class="headerlink" title="6 git 忽略设置"></a>6 git 忽略设置</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;git config receive.denyCurrentBranch&quot;ignore&quot;</span><br></pre></td></tr></table></figure>
+<h1 id="7-设置-邮件"><a href="#7-设置-邮件" class="headerlink" title="7 设置 邮件"></a>7 设置 邮件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;git config --global user.email  123@126.com</span><br></pre></td></tr></table></figure>
+<h1 id="8-设置-用户名"><a href="#8-设置-用户名" class="headerlink" title="8 设置 用户名"></a>8 设置 用户名</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;git config --global user.name &quot;test&quot;</span><br></pre></td></tr></table></figure>
+<h1 id="9-添加README-md"><a href="#9-添加README-md" class="headerlink" title="9 添加README.md"></a>9 添加README.md</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;touch ./Readme.md</span><br></pre></td></tr></table></figure>
+<h1 id="10-git-add文件"><a href="#10-git-add文件" class="headerlink" title="10 git add文件"></a>10 git add文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;git add ./Readme.md</span><br></pre></td></tr></table></figure>
+<h1 id="11-提交代码"><a href="#11-提交代码" class="headerlink" title="11 提交代码"></a>11 提交代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;git commit -m &quot;init&quot;./Readme.md</span><br></pre></td></tr></table></figure>
+<h1 id="12-设置权限"><a href="#12-设置权限" class="headerlink" title="12 设置权限"></a>12 设置权限</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; chmod -R og+w /repoE</span><br></pre></td></tr></table></figure>
+<h1 id="13-下载代码"><a href="#13-下载代码" class="headerlink" title="13 下载代码"></a>13 下载代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone ssh://test@192.168.137.8/repo/code</span><br></pre></td></tr></table></figure>
+<h1 id="14-添加文件"><a href="#14-添加文件" class="headerlink" title="14 添加文件"></a>14 添加文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add</span><br></pre></td></tr></table></figure>
+<h1 id="15-提交文件"><a href="#15-提交文件" class="headerlink" title="15 提交文件"></a>15 提交文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit</span><br></pre></td></tr></table></figure>
+<h1 id="16-推送代码"><a href="#16-推送代码" class="headerlink" title="16 推送代码"></a>16 推送代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/git/">git</a>
+    </div>
+
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Red-Hat-升级-rpm软件、YUM软件（root用户）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/05/08/Red-Hat-升级-rpm软件、YUM软件（root用户）/" class="article-date">
+      <time datetime="2018-05-08T07:30:00.000Z" itemprop="datePublished">2018-05-08</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/08/Red-Hat-升级-rpm软件、YUM软件（root用户）/">(二）Red-Hat-升级-rpm软件、YUM软件（root用户）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>以下操作是root用户</p>
+<p>1 <a href="/2018/05/08/）oracle-VM安装red-hat-liunx/">oracle VM安装red hat liunx</a></p>
+<p>rpm 下载链接：<a href="http://mirrors.163.com/centos/7/os/x86_64/Packages/" target="_blank" rel="noopener">http://mirrors.163.com/centos/7/os/x86_64/Packages/</a></p>
+<h1 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; rpm version</span><br></pre></td></tr></table></figure>
+<p><img src="/2018/05/08/Red-Hat-升级-rpm软件、YUM软件（root用户）/11278290-76fc51b36f51535f.png" alt="logo"></p>
+<h1 id="升级rpm"><a href="#升级rpm" class="headerlink" title="升级rpm"></a>升级rpm</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;rpm -Uvh rpm-4.11.3-25.el7.x86_64.rpm  rpm-build-libs-4.11.3-25.el7.x86_64.rpm rpm-libs-4.11.3-25.el7.x86_64.rpm rpm-python-4.11.3-25.el7.x86_64.rpm --force -i</span><br></pre></td></tr></table></figure>
+<p><img src="/2018/05/08/Red-Hat-升级-rpm软件、YUM软件（root用户）/11278290-2b0c840c69622e92.png" alt="logo"></p>
+<h1 id="删除旧的yum"><a href="#删除旧的yum" class="headerlink" title="删除旧的yum"></a>删除旧的yum</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; rpm -e yum-metadata-parser-1.1.4-10.el7.x86_64 yum-3.4.3-125.el7.noarch yum-rhn-plugin-2.0.1-5.el7.noarch --nodeps</span><br></pre></td></tr></table></figure>
+<h1 id="安装yum"><a href="#安装yum" class="headerlink" title="安装yum"></a>安装yum</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; rpm -Uvh yum-3.4.3-154.el7.centos.noarch.rpm yum-metadata-parser-1.1.4-10.el7.x86_64.rpm python-urlgrabber-3.10-8.el7.noarch.rpm yum-plugin-fastestmirror-1.1.31-42.el7.noarch.rpm yum-utils-1.1.31-42.el7.noarch.rpm  python-kitchen-1.1.1-5.el7.noarch.rpm python-chardet-2.2.1-1.el7_1.noarch.rpm</span><br></pre></td></tr></table></figure>
+<h1 id="编辑-CentOS6-Base-repo"><a href="#编辑-CentOS6-Base-repo" class="headerlink" title="编辑 CentOS6-Base.repo"></a>编辑 CentOS6-Base.repo</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi CentOS6-Base.repo 文件</span><br></pre></td></tr></table></figure>
+<h1 id="CentOS-Base-repo"><a href="#CentOS-Base-repo" class="headerlink" title="CentOS-Base.repo"></a>CentOS-Base.repo</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"># CentOS-Base.repo</span><br><span class="line">#</span><br><span class="line"># The mirror system uses the connecting IP address of the client and the</span><br><span class="line"># update status of each mirror to pick mirrors that are updated to and</span><br><span class="line"># geographically close to the client.  You should use this for CentOS updates</span><br><span class="line"># unless you are manually picking other mirrors.</span><br><span class="line">#</span><br><span class="line"># If the mirrorlist= does not work for you, as a fall back you can try the </span><br><span class="line"># remarked out baseurl= line instead.</span><br><span class="line">#</span><br><span class="line">#</span><br><span class="line"> </span><br><span class="line">[base]</span><br><span class="line">name=CentOS-7 - Base - mirrors.aliyun.com</span><br><span class="line">failovermethod=priority</span><br><span class="line">baseurl=http://mirrors.aliyun.com/centos/7/os/$basearch/</span><br><span class="line">        http://mirrors.aliyuncs.com/centos/7/os/$basearch/</span><br><span class="line">#mirrorlist=http://mirrorlist.centos.org/?release=7&amp;arch=$basearch&amp;repo=os</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-7</span><br><span class="line"> </span><br><span class="line">#released updates </span><br><span class="line">[updates]</span><br><span class="line">name=CentOS-7 - Updates - mirrors.aliyun.com</span><br><span class="line">failovermethod=priority</span><br><span class="line">baseurl=http://mirrors.aliyun.com/centos/7/updates/$basearch/</span><br><span class="line">        http://mirrors.aliyuncs.com/centos/7/updates/$basearch/</span><br><span class="line">#mirrorlist=http://mirrorlist.centos.org/?release=7&amp;arch=$basearch&amp;repo=updates</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-7</span><br><span class="line"> </span><br><span class="line">#additional packages that may be useful</span><br><span class="line">[extras]</span><br><span class="line">name=CentOS-7 - Extras - mirrors.aliyun.com</span><br><span class="line">failovermethod=priority</span><br><span class="line">baseurl=http://mirrors.aliyun.com/centos/7/extras/$basearch/</span><br><span class="line">        http://mirrors.aliyuncs.com/centos/7/extras/$basearch/</span><br><span class="line">#mirrorlist=http://mirrorlist.centos.org/?release=7&amp;arch=$basearch&amp;repo=extras</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-7</span><br><span class="line"> </span><br><span class="line">#additional packages that extend functionality of existing packages</span><br><span class="line">[centosplus]</span><br><span class="line">name=CentOS-7 - Plus - mirrors.aliyun.com</span><br><span class="line">failovermethod=priority</span><br><span class="line">baseurl=http://mirrors.aliyun.com/centos/7/centosplus/$basearch/</span><br><span class="line">        http://mirrors.aliyuncs.com/centos/7/centosplus/$basearch/</span><br><span class="line">#mirrorlist=http://mirrorlist.centos.org/?release=7&amp;arch=$basearch&amp;repo=centosplus</span><br><span class="line">gpgcheck=1</span><br><span class="line">enabled=0</span><br><span class="line">gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-7</span><br><span class="line"> </span><br><span class="line">#contrib - packages by Centos Users</span><br><span class="line">[contrib]</span><br><span class="line">name=CentOS-7 - Contrib - mirrors.aliyun.com</span><br><span class="line">failovermethod=priority</span><br><span class="line">baseurl=http://mirrors.aliyun.com/centos/7/contrib/$basearch/</span><br><span class="line">        http://mirrors.aliyuncs.com/centos/7/contrib/$basearch/</span><br><span class="line">#mirrorlist=http://mirrorlist.centos.org/?release=7&amp;arch=$basearch&amp;repo=contrib</span><br><span class="line">gpgcheck=1</span><br><span class="line">enabled=0</span><br><span class="line">gpgkey=http://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-7</span><br></pre></td></tr></table></figure>
+<h1 id="复制资源库文件至yum目录"><a href="#复制资源库文件至yum目录" class="headerlink" title="复制资源库文件至yum目录"></a>复制资源库文件至yum目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; cp CentOS6-Base.repo /etc/yum.repos.d/</span><br></pre></td></tr></table></figure>
+<h1 id="清除缓存"><a href="#清除缓存" class="headerlink" title="清除缓存"></a>清除缓存</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;yum clean all</span><br></pre></td></tr></table></figure>
+<h1 id="建立yum-缓存"><a href="#建立yum-缓存" class="headerlink" title="建立yum 缓存"></a>建立yum 缓存</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;yum makecache</span><br></pre></td></tr></table></figure>
+<p><img src="/2018/05/08/Red-Hat-升级-rpm软件、YUM软件（root用户）/11278290-d31d27becb290491.png" alt="logo"></p>
+<h1 id="再次更新yum"><a href="#再次更新yum" class="headerlink" title="再次更新yum"></a>再次更新yum</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum update yum</span><br></pre></td></tr></table></figure>
+<p>yum install yum-rhn*</p>
+<p>yum update redhat*</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rpm/">rpm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/yum/">yum</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-）oracle-VM安装red-hat-liunx" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/05/08/）oracle-VM安装red-hat-liunx/" class="article-date">
+      <time datetime="2018-05-08T07:01:00.000Z" itemprop="datePublished">2018-05-08</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/08/）oracle-VM安装red-hat-liunx/">（一）oracle VM安装red hat liunx</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>软件：Oracle VM VirtualBox</p>
+<p>网络桥接物流网卡：</p>
+<h1 id="1打开Oracle-VMVirtualBox-点击新建按钮"><a href="#1打开Oracle-VMVirtualBox-点击新建按钮" class="headerlink" title="1打开Oracle VMVirtualBox 点击新建按钮"></a>1打开Oracle VMVirtualBox 点击新建按钮</h1><p><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-8cae3ccf049eb036.png" alt="logo"></p>
+<h1 id="2-点击-下一步-按钮"><a href="#2-点击-下一步-按钮" class="headerlink" title="2 点击 下一步 按钮"></a>2 点击 下一步 按钮</h1><p>名称 输入：jenkins</p>
+<p>类型：Linux</p>
+<p>操作系统：Red Rat(64 bit)<br><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-d23c40773d84371f.png" alt="logo"></p>
+<h1 id="3-内存-默认1G，点击-下一步"><a href="#3-内存-默认1G，点击-下一步" class="headerlink" title="3 内存 默认1G，点击 下一步"></a>3 内存 默认1G，点击 下一步</h1><p><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-22f082cba471a8bb.png" alt="logo"></p>
+<h1 id="4-选择-现在创建虚拟硬盘-，点击-创建-按钮"><a href="#4-选择-现在创建虚拟硬盘-，点击-创建-按钮" class="headerlink" title="4 选择 现在创建虚拟硬盘 ，点击 创建 按钮"></a>4 选择 现在创建虚拟硬盘 ，点击 创建 按钮</h1><p><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-6a1302edff3ebf2e.png" alt="logo"></p>
+<h1 id="5-默认选项，点击-下一步"><a href="#5-默认选项，点击-下一步" class="headerlink" title="5 默认选项，点击 下一步"></a>5 默认选项，点击 下一步</h1><p><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-8baeb9eb905c71a2.png" alt="logo"></p>
+<h1 id="6-选择-动态分配-，点击-下一步-按钮"><a href="#6-选择-动态分配-，点击-下一步-按钮" class="headerlink" title="6 选择 动态分配 ，点击 下一步 按钮"></a>6 选择 动态分配 ，点击 下一步 按钮</h1><p><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-7adf8cc44c0ee846.png" alt="logo"></p>
+<h1 id="7-设置硬盘大小-40G-，后点击创建按钮"><a href="#7-设置硬盘大小-40G-，后点击创建按钮" class="headerlink" title="7  设置硬盘大小:40G ，后点击创建按钮"></a>7  设置硬盘大小:40G ，后点击创建按钮</h1><p><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-4e335970ba06000f.png" alt="logo"></p>
+<h1 id="8-点击设置按钮"><a href="#8-点击设置按钮" class="headerlink" title="8 点击设置按钮"></a>8 点击设置按钮</h1><p><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-f9a8280cb4192f6b.png" alt="logo"></p>
+<h1 id="9-选择-网卡-选项，选择-桥接网卡-方式，选择存储选项"><a href="#9-选择-网卡-选项，选择-桥接网卡-方式，选择存储选项" class="headerlink" title="9 选择 网卡 选项，选择 桥接网卡 方式，选择存储选项"></a>9 选择 网卡 选项，选择 桥接网卡 方式，选择存储选项</h1><p><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-24e0f2beb6f3331e.png" alt="logo"></p>
+<h1 id="10-进行选择ISO镜像，点击图中-红色部分"><a href="#10-进行选择ISO镜像，点击图中-红色部分" class="headerlink" title="10 进行选择ISO镜像，点击图中 红色部分"></a>10 进行选择ISO镜像，点击图中 红色部分</h1><p><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-0322ebd8568ed1e0.png" alt="logo"></p>
+<h1 id="11-点击选择-磁盘"><a href="#11-点击选择-磁盘" class="headerlink" title="11 点击选择 磁盘"></a>11 点击选择 磁盘</h1><p><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-82234f6e704f75f6.png" alt="logo"></p>
+<h1 id="12-在弹出窗口-选择-系统镜像，选择完成-，点击打开按钮镜像可以从https-www-linuxprobe-com-tools下载"><a href="#12-在弹出窗口-选择-系统镜像，选择完成-，点击打开按钮镜像可以从https-www-linuxprobe-com-tools下载" class="headerlink" title="12 在弹出窗口 选择 系统镜像，选择完成 ，点击打开按钮镜像可以从https://www.linuxprobe.com/tools下载"></a>12 在弹出窗口 选择 系统镜像，选择完成 ，点击打开按钮镜像可以从<a href="https://www.linuxprobe.com/tools下载" target="_blank" rel="noopener">https://www.linuxprobe.com/tools下载</a></h1><p><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-e8c8a52d140c5609.png" alt="logo"></p>
+<h1 id="13-点击OK-按钮后"><a href="#13-点击OK-按钮后" class="headerlink" title="13 点击OK 按钮后"></a>13 点击OK 按钮后</h1><p><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-e22e0734301c33b6.png" alt="logo"></p>
+<h1 id="14-虚拟机设置完成，点击启动"><a href="#14-虚拟机设置完成，点击启动" class="headerlink" title="14 虚拟机设置完成，点击启动"></a>14 虚拟机设置完成，点击启动</h1><p><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-23e3a150c783f9fb.png" alt="logo"></p>
+<h1 id="15-点击-启动按钮-选择InstallRed-Hat-Enterprise-Linux-7-1–-gt-enter"><a href="#15-点击-启动按钮-选择InstallRed-Hat-Enterprise-Linux-7-1–-gt-enter" class="headerlink" title="15 点击 启动按钮,选择InstallRed Hat Enterprise Linux 7.1–&gt;enter"></a>15 点击 启动按钮,选择InstallRed Hat Enterprise Linux 7.1–&gt;enter</h1><p><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-b20d2391b41df6dc.png" alt="logo"></p>
+<h1 id="16-选择语言-界面-，点击continue"><a href="#16-选择语言-界面-，点击continue" class="headerlink" title="16 选择语言 界面 ，点击continue"></a>16 选择语言 界面 ，点击continue</h1><p><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-fe5bdba62c19c919.png" alt="logo"></p>
+<h1 id="17-点击network-amp-host-name"><a href="#17-点击network-amp-host-name" class="headerlink" title="17 点击network&amp; host name"></a>17 点击network&amp; host name</h1><p><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-77b646357a8b5e8a.png" alt="logo"></p>
+<h1 id="18-OFF-改为ON后，点击DONE"><a href="#18-OFF-改为ON后，点击DONE" class="headerlink" title="18 OFF 改为ON后，点击DONE"></a>18 OFF 改为ON后，点击DONE</h1><p><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-5bc80879edb2e0d6.png" alt="logo"></p>
+<p><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-cd397c4737115c39.png" alt="logo"></p>
+<h1 id="19-选择INSTALLATIONDESTINATION"><a href="#19-选择INSTALLATIONDESTINATION" class="headerlink" title="19 选择INSTALLATIONDESTINATION"></a>19 选择INSTALLATIONDESTINATION</h1><p><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-dc140d95517fb4de.png" alt="logo"></p>
+<h1 id="20-点击Done-默认设置"><a href="#20-点击Done-默认设置" class="headerlink" title="20 点击Done,默认设置"></a>20 点击Done,默认设置</h1><p><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-44f8decd9c26bb76.png" alt="logo"></p>
+<h1 id="21-点击DATE-amp-TIME"><a href="#21-点击DATE-amp-TIME" class="headerlink" title="21 点击DATE&amp;TIME"></a>21 点击DATE&amp;TIME</h1><p><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-62b4d6ecfa01455b.png" alt="logo"></p>
+<h1 id="22-Region-改为Asia-City-上海，networkTime-ON，后点击Done"><a href="#22-Region-改为Asia-City-上海，networkTime-ON，后点击Done" class="headerlink" title="22 Region 改为Asia ,City:上海，networkTime=ON，后点击Done"></a>22 Region 改为Asia ,City:上海，networkTime=ON，后点击Done</h1><p><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-5b08e271ee6f5d60.png" alt="logo"><br><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-f36a34e0fbdd4dbf.png" alt="logo"></p>
+<h1 id="23-点击BeginInstallation"><a href="#23-点击BeginInstallation" class="headerlink" title="23 点击BeginInstallation"></a>23 点击BeginInstallation</h1><p><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-a75186d85c19ec0b.png" alt="logo"></p>
+<h1 id="24-点击ROOT-PASSWORD-进行设置ROOT-密码"><a href="#24-点击ROOT-PASSWORD-进行设置ROOT-密码" class="headerlink" title="24 点击ROOT PASSWORD 进行设置ROOT 密码"></a>24 点击ROOT PASSWORD 进行设置ROOT 密码</h1><p><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-26a6a241112a9517.png" alt="logo"></p>
+<h1 id="25-输入ROOT-密码点击Done"><a href="#25-输入ROOT-密码点击Done" class="headerlink" title="25 输入ROOT 密码点击Done"></a>25 输入ROOT 密码点击Done</h1><p><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-7a2a749fed3fa8f9.png" alt="logo"></p>
+<h1 id="26-耐心等候安装完成-如下图，点击REBOOT"><a href="#26-耐心等候安装完成-如下图，点击REBOOT" class="headerlink" title="26 耐心等候安装完成 如下图，点击REBOOT"></a>26 耐心等候安装完成 如下图，点击REBOOT</h1><p><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-1df5c789751f5083.png" alt="logo"></p>
+<h1 id="27-重启完成，如下图，表示安装成功，使用ROOT用户进行登录"><a href="#27-重启完成，如下图，表示安装成功，使用ROOT用户进行登录" class="headerlink" title="27 重启完成，如下图，表示安装成功，使用ROOT用户进行登录"></a>27 重启完成，如下图，表示安装成功，使用ROOT用户进行登录</h1><p><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-1edb28581c216a0d.png" alt="logo"></p>
+<h1 id="28-输入ip-addr-查看当前虚拟机的ip"><a href="#28-输入ip-addr-查看当前虚拟机的ip" class="headerlink" title="28 输入ip addr 查看当前虚拟机的ip"></a>28 输入ip addr 查看当前虚拟机的ip</h1><p>正常：</p>
+<p><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-92aec236bf64d15a.png" alt="logo"></p>
+<p>不正常：<br><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-105894cde675332f.png" alt="logo"></p>
+<p>解决办法：</p>
+<p> cd/etc/sysconfig/network-scripts/</p>
+<p>打开网卡文件进行设置静态IP vi ifcfg-enp0s3</p>
+<p>首先把BOOTPROTO=”dhcp”改成BOOTPROTO=”static”表示静态获取，</p>
+<p>然后在最后追加比如下面的配置：</p>
+<p>IPADDR=192.168.1.33</p>
+<p>NETMASK=255.255.255.0</p>
+<p>GATEWAY=192.168.1.1</p>
+<p>DNS1=202.96.134.33</p>
+<p>保存后，</p>
+<p>运行systemctl restart network</p>
+<p>再次查看ip addr<br><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-cc3760aa781c68ef.png" alt="logo"></p>
+<h1 id="29-使用SecureCRT-进行连接虚拟机"><a href="#29-使用SecureCRT-进行连接虚拟机" class="headerlink" title="29 使用SecureCRT 进行连接虚拟机"></a>29 使用SecureCRT 进行连接虚拟机</h1><p><img src="/2018/05/08/）oracle-VM安装red-hat-liunx/11278290-01decabbbeebf0d4.png" alt="logo"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/red-hat-Linux/">red hat Linux</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-hymeleaf学习的坑" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/05/08/hymeleaf学习的坑/" class="article-date">
+      <time datetime="2018-05-08T06:30:00.000Z" itemprop="datePublished">2018-05-08</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/08/hymeleaf学习的坑/">thymeleaf学习的坑</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="引入css和js文件"><a href="#引入css和js文件" class="headerlink" title="引入css和js文件"></a>引入css和js文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;link th:href=&quot;@&#123;/resources/admin/css/common.css&#125;&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;</span><br><span class="line">&lt;script  type=&quot;text/javascript&quot; th:src=&quot;@&#123;/resources/admin/js/jquery.js&#125;&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="网页标题-多语言"><a href="#网页标题-多语言" class="headerlink" title="网页标题(多语言)"></a>网页标题(多语言)</h1><p>使用#{key}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">  &lt;title th:text=&quot;#&#123;system.name&#125;&quot;&gt;&lt;/title&gt;</span><br><span class="line"># thymeleaf结合js</span><br><span class="line">&lt;script  th:inline=&quot;javascript&quot;&gt;</span><br><span class="line">       //controller 使用Model设置属性</span><br><span class="line">         var error=[[$&#123;error&#125;]];</span><br><span class="line">       //多语言</span><br><span class="line">       var usernameRequired=[[#&#123;admin.login.usernameRequired&#125;]]</span><br><span class="line">    &lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<h1 id="thymeleaf结合js-冲突"><a href="#thymeleaf结合js-冲突" class="headerlink" title="thymeleaf结合js 冲突"></a>thymeleaf结合js 冲突</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//使用&lt;![CDATA[ ]]&gt;</span><br><span class="line">&lt;script th:inline=&quot;javascript&quot;&gt;</span><br><span class="line">//&lt;![CDATA[</span><br><span class="line">  js code</span><br><span class="line">	// ]]&gt;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="th-include"><a href="#th-include" class="headerlink" title="th:include"></a>th:include</h1><p>compontent/commonJs.html<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div th:fragment=&quot;commonJs&quot;&gt;</span><br><span class="line">&lt;script th:inline=&quot;javascript&quot;&gt;</span><br><span class="line">js代码（国际化语言）</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>引用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div th:include=&quot;compontent/commonJs::commonJs&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<h1 id="th-href"><a href="#th-href" class="headerlink" title="th:href"></a>th:href</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a th:href=&quot;@&#123;/admin/publicInfo/info(id=$&#123;publicInfo.id&#125;)&#125;&quot; target=&quot;iframe&quot; th:text=&quot;#&#123;admin.menu.publicManage.name&#125;&quot;&gt;&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="th-each"><a href="#th-each" class="headerlink" title="th:each"></a>th:each</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;tr th:each=&quot;admin:$&#123;page.content&#125;&quot;&gt;</span><br><span class="line">			  &lt;td th:text=&quot;$&#123;admin.username&#125;&quot;&gt;&lt;/td&gt;</span><br><span class="line">	      &lt;/tr&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="格式化日期"><a href="#格式化日期" class="headerlink" title="格式化日期"></a>格式化日期</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;td th:text=&quot;$&#123;#calendars.format(admin.createDate,&apos;yyyy年MM月dd日&apos;)&#125;&quot;&gt;&lt;/td&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="th-if"><a href="#th-if" class="headerlink" title="th:if"></a>th:if</h1><p>•    单个条件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;td th:if=&quot;$&#123;admin.username&#125;==&apos;admin&apos;&quot;&gt;&lt;input type=&quot;checkbox&quot; name=&quot;ids&quot; th:value=&quot;$&#123;admin.id&#125;&quot; disabled=&quot;disabled&quot;/&gt;&lt;/td&gt;</span><br></pre></td></tr></table></figure></p>
+<p>•    并且条件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;td th:if=&quot;$&#123;session.username&#125;!=&apos;admin&apos; and $&#123;admin.username&#125;==$&#123;session.username&#125;&quot;&gt;</span><br><span class="line">&lt;a th:href=&quot;@&#123;initEdit(id=$&#123;admin.id&#125;)&#125;&quot; th:text=&quot;#&#123;admin.menu.admin.edit&#125;&quot;&gt;</span><br><span class="line">&lt;/a&gt;</span><br><span class="line">&lt;/td&gt;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/thymeleaf/">thymeleaf</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-那些提升开发人员工作效率的在线工具" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/05/08/那些提升开发人员工作效率的在线工具/" class="article-date">
+      <time datetime="2018-05-08T06:20:00.000Z" itemprop="datePublished">2018-05-08</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/08/那些提升开发人员工作效率的在线工具/">那些提升开发人员工作效率的在线工具</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>作为一个Java开发人员，经常要和各种各样的工具打交道，除了我们常用的IDE工具以外，其实还有很多工具是我们在日常开发及学习过程中要经常使用到的。</p>
+<p>Hollis偏爱使用在线工具，因为个人觉得这样比较方便。本文就总结了一下我常用的在线工具。欢迎纠正及补充。</p>
+<h1 id="Java源代码搜索"><a href="#Java源代码搜索" class="headerlink" title="Java源代码搜索"></a>Java源代码搜索</h1><p><a href="http://grepcode.com/" target="_blank" rel="noopener">http://grepcode.com/</a></p>
+<p>Grepcode是一个面向于Java开发人员的网站，在这里你可以通过Java的projects、classes等各种关键字在线查看它对应的源码，知道对应的project、classes等信息。 更方便的是，能提供非常多不同版本的源码在线查看、jar包、源码jar包、doc的下载。 同样，你也可以之间使用xxx-1.1.1.jar类似这样的名字直接找到对应的jar包，从而下载。</p>
+<h1 id="开源代码及文档搜索"><a href="#开源代码及文档搜索" class="headerlink" title="开源代码及文档搜索"></a>开源代码及文档搜索</h1><p><a href="https://searchcode.com/" target="_blank" rel="noopener">https://searchcode.com/</a></p>
+<p>SearchCode 是一个源码搜索引擎，目前支持从 Github、Bitbucket、Google Code、CodePlex、SourceForge 和 Fedora Project 平台搜索公开的源码。</p>
+<h1 id="电子书搜索"><a href="#电子书搜索" class="headerlink" title="电子书搜索"></a>电子书搜索</h1><p><a href="https://www.jiumodiary.com/" target="_blank" rel="noopener">https://www.jiumodiary.com/</a></p>
+<p>鸠摩搜书是一个比较不错的电子书搜索网站。内容也比较全。</p>
+<h1 id="网盘资源搜索"><a href="#网盘资源搜索" class="headerlink" title="网盘资源搜索"></a>网盘资源搜索</h1><p><a href="http://pansou.com/" target="_blank" rel="noopener">http://pansou.com/</a></p>
+<p>这个大家都懂的，可以通过这个网站搜索百度网盘上面的各种资源。</p>
+<h1 id="无版权图片搜索"><a href="#无版权图片搜索" class="headerlink" title="无版权图片搜索"></a>无版权图片搜索</h1><p><a href="https://unsplash.com" target="_blank" rel="noopener">https://unsplash.com</a></p>
+<p>不知道有没有人和我一样，经常需要一些无版权的图片，比如公众号配图。</p>
+<p>unsplash是我用过的最好的网站，不需要登录，图片很高请，也比较全。唯一的缺点就是需要英文搜搜。</p>
+<h1 id="在线UML制图"><a href="#在线UML制图" class="headerlink" title="在线UML制图"></a>在线UML制图</h1><p><a href="https://www.processon.com/" target="_blank" rel="noopener">https://www.processon.com/</a></p>
+<p>ProcessOn是一个在线协作绘图平台，为用户提供最强大、易用的作图工具!支持在线创作流程图、BPMN、UML图、UI界面原型设计、iOS界面原型设计等。</p>
+<h1 id="Json在线验证及格式化"><a href="#Json在线验证及格式化" class="headerlink" title="Json在线验证及格式化"></a>Json在线验证及格式化</h1><p><a href="https://www.json.cn/" target="_blank" rel="noopener">https://www.json.cn/</a></p>
+<p>我用过很多json在线格式化的工具，经过实践，json.cn是比较不错的，不仅支持json格式的验证及格式化，还可以将json格式压缩成普通文本等好用功能。</p>
+<p>Diff Check<br><a href="https://www.diffchecker.com/" target="_blank" rel="noopener">https://www.diffchecker.com/</a></p>
+<p>使用过svn或者git的人对diffcheck肯定不陌生，但有时候我们修改的文本内容并没有被版本控制，那么就可以使用在线的网站查看文件的修改情况。diffchecker很不错。</p>
+<h1 id="MarkDown编辑器"><a href="#MarkDown编辑器" class="headerlink" title="MarkDown编辑器"></a>MarkDown编辑器</h1><p>MaHua ：<a href="http://mahua.jser.me/" target="_blank" rel="noopener">http://mahua.jser.me/</a></p>
+<p>马克飞象 ：<a href="https://maxiang.io/" target="_blank" rel="noopener">https://maxiang.io/</a></p>
+<p>Cmd ：<a href="https://www.zybuluo.com/mdeditor" target="_blank" rel="noopener">https://www.zybuluo.com/mdeditor</a></p>
+<p>以上这几个我都用过，都还好吧，因为我一般都喜欢把自己写过的东西保存下来，所以就用了客户端的，我是用的是MacDown</p>
+<h1 id="Maven依赖查询"><a href="#Maven依赖查询" class="headerlink" title="Maven依赖查询"></a>Maven依赖查询</h1><p><a href="http://mvnrepository.com/" target="_blank" rel="noopener">http://mvnrepository.com/</a></p>
+<p>mvnrepository这个不用详细解释了，就是查询maven的gav信息一类的。因为我们公司有内部的Nexus仓库，所以很少用这个。</p>
+<h1 id="在线代码运行"><a href="#在线代码运行" class="headerlink" title="在线代码运行"></a>在线代码运行</h1><p><a href="https://tool.lu/coderunner/" target="_blank" rel="noopener">https://tool.lu/coderunner/</a></p>
+<p>coderunner可以在线运行php,c,c++,go,python,java,groovy等代码。当我们在外面，没有IDE又想执行个小程序的时候是个不错的选择。</p>
+<h1 id="在线翻译"><a href="#在线翻译" class="headerlink" title="在线翻译"></a>在线翻译</h1><p>Google翻译 ：<a href="https://translate.google.cn/" target="_blank" rel="noopener">https://translate.google.cn/</a></p>
+<p>百度翻译 ：<a href="http://fanyi.baidu.com/" target="_blank" rel="noopener">http://fanyi.baidu.com/</a></p>
+<p>有道翻译 ：<a href="http://fanyi.youdao.com/" target="_blank" rel="noopener">http://fanyi.youdao.com/</a></p>
+<p>说不出具体哪个好，其实都不太准确，还是需要自己根据语境进行翻译。</p>
+<p>不过忍不住吐槽一句国内的这几个翻译网站，既然是做翻译的，域名竟然用拼音，我也是醉了。</p>
+<h1 id="SQL自动生成Java代码"><a href="#SQL自动生成Java代码" class="headerlink" title="SQL自动生成Java代码"></a>SQL自动生成Java代码</h1><p><a href="http://www.autojcode.com/code/sql2class.jsp" target="_blank" rel="noopener">http://www.autojcode.com/code/sql2class.jsp</a></p>
+<p>AutoJCode可以从sql的建表语句中生成一个DO类。</p>
+<h1 id="json生成java类"><a href="#json生成java类" class="headerlink" title="json生成java类"></a>json生成java类</h1><p><a href="http://www.bejson.com/json2javapojo" target="_blank" rel="noopener">http://www.bejson.com/json2javapojo</a></p>
+<p>json是目前JavaWeb中数据传输的主要格式，很多时候会有把json转成Java对象的需求。有时候合作方会提供一个json的样例，需要我们自己定义Java类，这时候这个工具就派上用场了。</p>
+<h1 id="SQL美化-格式化-压缩"><a href="#SQL美化-格式化-压缩" class="headerlink" title="SQL美化/格式化/压缩"></a>SQL美化/格式化/压缩</h1><p><a href="https://tool.lu/sql/" target="_blank" rel="noopener">https://tool.lu/sql/</a></p>
+<p>sql在线美化，格式化，压缩：</p>
+<h1 id="编码转换"><a href="#编码转换" class="headerlink" title="编码转换"></a>编码转换</h1><p><a href="http://tool.chinaz.com/tools/unicode.aspx" target="_blank" rel="noopener">http://tool.chinaz.com/tools/unicode.aspx</a></p>
+<p>站长工具的编码转换比较全面，提供了Unicode编码、UFT8编码、URL编码/解码等功能。</p>
+<h1 id="Corn表达式生成"><a href="#Corn表达式生成" class="headerlink" title="Corn表达式生成"></a>Corn表达式生成</h1><p><a href="http://www.pdtools.net/tools/becron.jsp" target="_blank" rel="noopener">http://www.pdtools.net/tools/becron.jsp</a></p>
+<p>Cron 一般用于配置定时任务的执行。</p>
+<h1 id="正则验证"><a href="#正则验证" class="headerlink" title="正则验证"></a>正则验证</h1><p><a href="http://tool.chinaz.com/regex" target="_blank" rel="noopener">http://tool.chinaz.com/regex</a></p>
+<p>Java开发对正则表达式肯定不陌生。站长工具提供的正则验证还不错。</p>
+<h1 id="正则代码生成"><a href="#正则代码生成" class="headerlink" title="正则代码生成"></a>正则代码生成</h1><p><a href="http://tool.chinaz.com/tools/regexgenerate" target="_blank" rel="noopener">http://tool.chinaz.com/tools/regexgenerate</a></p>
+<p>站长工具提供的正则代码生成。可以一键生成身份证号、邮箱、手机号等验证的正则表达式。</p>
+<h1 id="时间戳转换"><a href="#时间戳转换" class="headerlink" title="时间戳转换"></a>时间戳转换</h1><p><a href="http://tool.chinaz.com/Tools/unixtime.aspx" target="_blank" rel="noopener">http://tool.chinaz.com/Tools/unixtime.aspx</a></p>
+<p>时间戳(英语：Timestamp）是指在一连串的资料中加入辨识文字，如时间或日期，用以保障本地端（local）资料更新顺序与远端（remote）一致。</p>
+<p>Java中很多地方都会用到时间戳，也经常会使用这种转换工具。</p>
+<h1 id="世界时间转换"><a href="#世界时间转换" class="headerlink" title="世界时间转换"></a>世界时间转换</h1><p><a href="http://www.timebie.com/cn/easternbeijing.php" target="_blank" rel="noopener">http://www.timebie.com/cn/easternbeijing.php</a></p>
+<p>世界各地时间转换，我之前做国际业务的时候，比较常用的是北京时间转纽约时间，北京时间转洛杉矶时间。 timebie提供了世界时间相互转换的功能。</p>
+<h1 id="加密解密"><a href="#加密解密" class="headerlink" title="加密解密"></a>加密解密</h1><p><a href="http://tool.chinaz.com/tools/textencrypt.aspx" target="_blank" rel="noopener">http://tool.chinaz.com/tools/textencrypt.aspx</a></p>
+<p>加密解密也是JavaWeb可能会经常遇到的，有的时候我们需要验证加密算法是否正确，或者要解密等场景，就需要一个在线工具。</p>
+<h1 id="查看网页源代码"><a href="#查看网页源代码" class="headerlink" title="查看网页源代码"></a>查看网页源代码</h1><p><a href="http://s.tool.chinaz.com/tools/pagecode.aspx" target="_blank" rel="noopener">http://s.tool.chinaz.com/tools/pagecode.aspx</a></p>
+<p>这个工具，可以输入一个网站，直接查看网站的源码。具体有什么用，大家可以发挥各种想象。</p>
+<h1 id="单位换算"><a href="#单位换算" class="headerlink" title="单位换算"></a>单位换算</h1><p><a href="https://www.convertworld.com/zh-hans/" target="_blank" rel="noopener">https://www.convertworld.com/zh-hans/</a></p>
+<p>convertworld是一个比较全的单位换算的网站。我经常用它进行时间单位和货币单位的换算。</p>
+<h1 id="在线调色板"><a href="#在线调色板" class="headerlink" title="在线调色板"></a>在线调色板</h1><p><a href="http://tool.chinaz.com/Tools/OnlineColor.aspx" target="_blank" rel="noopener">http://tool.chinaz.com/Tools/OnlineColor.aspx</a></p>
+<p>这个对前端开发比较有用，可以在线调色。</p>
+<h1 id="ASCII-ART生成"><a href="#ASCII-ART生成" class="headerlink" title="ASCII ART生成"></a>ASCII ART生成</h1><p><a href="http://patorjk.com/software/taag/" target="_blank" rel="noopener">http://patorjk.com/software/taag/</a></p>
+<p>常用对照表</p>
+<p>ASCII对照表 ： <a href="http://tool.oschina.net/commons?type=4" target="_blank" rel="noopener">http://tool.oschina.net/commons?type=4</a></p>
+<p>HTTP状态码 ： <a href="http://tool.oschina.net/commons?type=5" target="_blank" rel="noopener">http://tool.oschina.net/commons?type=5</a></p>
+<p>HTTP Content-type ： <a href="http://tool.oschina.net/commons" target="_blank" rel="noopener">http://tool.oschina.net/commons</a></p>
+<p>TCP/UDP常见端口参考 ：<a href="http://tool.oschina.net/commons?type=7" target="_blank" rel="noopener">http://tool.oschina.net/commons?type=7</a></p>
+<p>HTML转义字符 ： <a href="http://tool.oschina.net/commons?type=2" target="_blank" rel="noopener">http://tool.oschina.net/commons?type=2</a></p>
+<p>RGB颜色参考 ： <a href="http://tool.oschina.net/commons?type=3" target="_blank" rel="noopener">http://tool.oschina.net/commons?type=3</a></p>
+<p>网页字体参考 ： <a href="http://tool.oschina.net/commons?type=8" target="_blank" rel="noopener">http://tool.oschina.net/commons?type=8</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/work/">work</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/work/">work</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工作/">工作</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-升工作效率" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/05/08/升工作效率/" class="article-date">
+      <time datetime="2018-05-08T06:16:00.000Z" itemprop="datePublished">2018-05-08</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/08/升工作效率/">提升工作效率</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>1 时间常有，时间在于优先。</p>
+<p>2 时间总会有的：每天只计划 4～5 小时真正的工作。</p>
+<p>3 当你在状态时，就多干点；不然就好好休息：有时候会连着几天不是工作状态，有时在工作状态时却又能天天忙活 12 小时，这都很正常的。</p>
+<p>4 重视你的时间，并使其值得重视：你的时间值 1000 美元/小时，你得动起来。</p>
+<p>5 不要多任务，这只会消耗注意力；保持专注，一心一用。</p>
+<p>6、养成工作习惯，并持之以恒，你的身体会适应的。</p>
+<p>7.在有限的时间内，我们总是非常专注并且有效率。</p>
+<p>8.进入工作状态的最佳方式就是工作，从小任务开始做起，让工作运转起来。</p>
+<p>9、迭代工作，期待完美收工会令人窒息：“做完事情，要胜于完美收工” Facebook 办公室墙壁上贴的箴言。动手做，胜过任何完美的想象。</p>
+<p>10、工作时间越长，并不等于效率越高</p>
+<p>11、按重要性工作，提高效率。</p>
+<p>12 有会议就尽早安排，用于准备会议</p>
+<p>的时间往往都浪费掉了。</p>
+<p>13、把会议和沟通 (邮件或电话) 结合，创造不间断工作时间：一个小会，也会毁了一个下午，因为它会把下午撕成两个较小的时间段，以至于啥也干不成。PS：当看到一个程序员冥思苦想时，不要过去打扰，甚至一句问候都是多余的。</p>
+<p>14、一整天保持相同的工作环境。在项目/客户之间切换，会效率低。</p>
+<p>15 工作—放松—工作=高效(番茄工作法)</p>
+<p>16、把不切实际的任务分割成合理的小任务，只要每天都完成小任务，你就会越来越接近那个大目标了。</p>
+<p>17 从来没有两个任务会有相同的优先级，总会有个更重要，仔细考虑待办事情列表。</p>
+<p>18 必须清楚白天必须完成的那件事，是什么。“Only ever work on the thing that will have the biggest impact” 只去做那件有着最大影响的事情。</p>
+<p>19 把任务按时间分段，就能感觉它快被搞定了。</p>
+<p>20 授权并擅用他人的力量。—君子善假于物(人)也，如果某件事其他人也可以做到八成，那就给他做！</p>
+<p>21 把昨天翻过去，只考虑今天和明天。昨天的全垒打赢不了今天的比赛。—好汉不提当年勇。</p>
+<p>22 给所有事情都设定一个期限。不要让工作无期限地进行下去。</p>
+<p>23 针对时间紧或有压力的任务，设置结束时间，万事皆可终结</p>
+<p>24 多记，多做笔记</p>
+<p>25 进入高效状态后，记下任何分散你注意力的东西比如Google搜索词、灵光乍现的想法、新点子等等。如果你把它们记下来，它就不会再蹦来蹦去了。</p>
+<p>26 休息，休息一下～</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/work/">work</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/work/">work</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工作效率/">工作效率</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-tepad-compare" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/06/tepad-compare/" class="article-date">
+      <time datetime="2017-03-06T07:26:00.000Z" itemprop="datePublished">2017-03-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/06/tepad-compare/">Notepad++文本比较插件：Compare</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p><excerpt in index | 首页摘要><br>对程序员来说，文本比较就是代码的比较，对比新老两个版本的代码的差异是经常需要做的事情，尤其是多人开发的代码尤甚，今天，一个转给了同事，然后同事请小长假，代码又回来了，首先就是要了解代码已经修改了哪些地方。</excerpt></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/notepad/">notepad</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2017/03/06/tepad-compare/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+    </nav>
+  
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2017-2020 wen
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+    <script src="/js/GithubRepoWidget.js"></script>
+
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 1;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+    
+
+     
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-25768365-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+             github: ".github-widget a", 
+            
+             post: ".article-entry a[href], .copyright a[href]", 
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
