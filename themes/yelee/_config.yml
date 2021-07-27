@@ -262,7 +262,7 @@ google_analytics: UA-25768365-2
 
 # 百度统计 http://sitecenter.baidu.com/sc-web/
 # 查看代码，填入 //hm.baidu.com/hm.js? 之后的内容
-baidu_tongji: f4cf750b6a14c0a2f6adcc0977b5309e
+baidu_tongji: 4ddf556681628c050408be2e75f02c02
 
 # 不蒜子网站计数设置
 # http://ibruce.info/2015/04/04/busuanzi/

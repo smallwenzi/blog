@@ -3,16 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: wen blog
-subtitle: tanyanwen的技术分享
-description: tanyanwen的技术分享
+title: perter blog
+subtitle: perter的技术分享
+description: perter的技术分享
 author: wen
 language: zh-Hans
 timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://blog.yanwentan.xyz/
+url: https://smallwenzi.github.io/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -107,7 +107,7 @@ baidusitemap:
   path: baidusitemap.xml
 baidu_url_submit:
   count: 10
-  host: https://blog.yanwentan.xyz/
+  host: https://smallwenzi.github.io/
   token: rPfiazIClIO56OPC
   path: baidu_urls.txt
 
